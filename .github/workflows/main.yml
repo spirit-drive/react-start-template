@@ -2,23 +2,31 @@ name: Test, Lint, Build and Deploy on Github Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
 
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # Устанавливаем зависимости
       - name: Install dependencies
-        run: npm install
+          run: npm install
 
       # Запускаем тесты и линтер
       - name: Run tests and linter
-        run:  npm run lint && npm test
+        run: npm run lint && npm test
 
       # Собираем приложение
       - name: Build Application
