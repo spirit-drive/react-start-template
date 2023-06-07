@@ -2,7 +2,7 @@ name: Test, Lint, Build and Deploy on Github Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "origin/main"]
 
 jobs:
   build-and-deploy:
