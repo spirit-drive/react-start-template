@@ -32,11 +32,13 @@ export const getTransformFromCss = (transformCssString: string): ITransformFromC
   };
 };
 
-export const getColorContrastValue = ([red, green, blue]: number[]): number =>
+//кортежи ведь подойдут в данном случае?
+export const getColorContrastValue = ([red, green, blue]: [number, number, number]): number =>
   // http://www.w3.org/TR/AERT#color-contrast
   Math.round((red * 299 + green * 587 + blue * 114) / 1000);
 
-export const getContrastType = (contrastValue: number): string => (contrastValue > 125 ? 'black' : 'white');
+type ContrastTypes = 'black' | 'white';
+export const getContrastType = (contrastValue: number): ContrastTypes => (contrastValue > 125 ? 'black' : 'white');
 
 export const shortColorRegExp = /^#[0-9a-f]{3}$/i;
 export const longColorRegExp = /^#[0-9a-f]{6}$/i;
@@ -45,7 +47,7 @@ export const checkColor = (color: string): never | undefined => {
   if (!longColorRegExp.test(color) && !shortColorRegExp.test(color)) throw new Error(`invalid hex color: ${color}`);
 };
 
-export const hex2rgb = (color: string): number[] => {
+export const hex2rgb = (color: string): [number, number, number] => {
   checkColor(color);
   if (shortColorRegExp.test(color)) {
     const red = parseInt(color.substring(1, 2), 16);

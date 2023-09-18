@@ -174,33 +174,36 @@ export const createRandomProduct = (createdAt: string): Product => {
 
 export const createRandomOperation = (createdAt: string): Operation => {
   const rndmNum = Math.floor(1 + Math.random() * 2);
-  if (rndmNum === 1) {
-    const costName = costsNames[createRndmNum(costsNames)];
-    return {
-      id: createRndmID(),
-      name: costName,
-      desc: `this is cost called ${costName}`,
-      createdAt,
-      amount: Math.floor(Math.random() * 4000) + 1,
-      category: {
+
+  switch (rndmNum) {
+    case 1:
+      const costName = costsNames[createRndmNum(costsNames)];
+      return {
         id: createRndmID(),
-        name: 'Finances',
-      },
-      type: 'Cost',
-    } as Cost;
-  } else {
-    const profitName = profitsNames[createRndmNum(profitsNames)];
-    return {
-      id: createRndmID(),
-      name: profitName,
-      desc: `this is profit called ${profitName}`,
-      createdAt,
-      amount: Math.floor(Math.random() * 4000) + 1,
-      category: {
+        name: costName,
+        desc: `this is cost called ${costName}`,
+        createdAt,
+        amount: Math.floor(Math.random() * 4000) + 1,
+        category: {
+          id: createRndmID(),
+          name: 'Finances',
+        },
+        type: 'Cost',
+      } as Cost;
+
+    case 2:
+      const profitName = profitsNames[createRndmNum(profitsNames)];
+      return {
         id: createRndmID(),
-        name: 'Finances',
-      },
-      type: 'Profit',
-    } as Profit;
+        name: profitName,
+        desc: `this is profit called ${profitName}`,
+        createdAt,
+        amount: Math.floor(Math.random() * 4000) + 1,
+        category: {
+          id: createRndmID(),
+          name: 'Finances',
+        },
+        type: 'Profit',
+      } as Profit;
   }
 };
