@@ -43,14 +43,114 @@
  * - type ('Profit')
  * */
 
+export type Category = {
+  id: string;
+  name: string;
+  photo?: string;
+};
+
+export type Product = {
+  id: string;
+  name: string;
+  photo: string;
+  desc?: string;
+  createdAt: string;
+  oldPrice?: number;
+  price: number;
+  category: Category;
+};
+
+export type Operation = Cost | Profit;
+
+export type BasicProperties = {
+  id: string;
+  name: string;
+  desc?: string;
+  createdAt: string;
+  amount: number;
+  category: Category;
+};
+
+export type Cost = BasicProperties & {
+  type: 'Cost';
+};
+
+export type Profit = BasicProperties & {
+  type: 'Profit';
+};
 /**
  * Создает случайный продукт (Product).
  * Принимает дату создания (строка)
  * */
-// export const createRandomProduct = (createdAt: string) => {};
+export const createRandomProduct = (createdAt: string): Product => {
+  return {
+    id: '1',
+    name: 'xiaomi watch',
+    photo: 'url',
+    createdAt: createdAt,
+    price: 15000,
+    category: {
+      id: '1234',
+      name: 'watches',
+    },
+  };
+};
 
 /**
  * Создает случайную операцию (Operation).
  * Принимает дату создания (строка)
  * */
-// export const createRandomOperation = (createdAt: string) => {};
+export const createRandomOperation = (createdAt: string): Operation => {
+  // const randomOperation: number = Math.floor(Math.random() * 2);
+
+  // switch (randomOperation) {
+  //   case 0:
+  //     return {
+  //       id: '1',
+  //       name: 'xiaomi watch',
+  //       createdAt: createdAt,
+  //       amount: 1,
+  //       category: {
+  //         id: '1234',
+  //         name: 'watches',
+  //       },
+  //       type: 'Cost',
+  //     };
+  //   case 1:
+  //     return {
+  //       id: '1',
+  //       name: 'xiaomi watch',
+  //       createdAt: createdAt,
+  //       amount: 25,
+  //       category: {
+  //         id: '1234',
+  //         name: 'watches',
+  //       },
+  //       type: 'Profit',
+  //     };
+  // }
+
+  return (
+    {
+      id: '1',
+      name: 'xiaomi watch',
+      createdAt: createdAt,
+      amount: 1,
+      category: {
+        id: '1234',
+        name: 'watches',
+      },
+      type: 'Cost',
+    } || {
+      id: '1',
+      name: 'xiaomi watch',
+      createdAt: createdAt,
+      amount: 25,
+      category: {
+        id: '1234',
+        name: 'watches',
+      },
+      type: 'Profit',
+    }
+  );
+};
