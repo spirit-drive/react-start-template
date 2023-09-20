@@ -18,6 +18,12 @@ type Category = {
   photo?: string;
 };
 
+const categories: Category[] = [
+  { id: '1', name: 'Автомобили', photo: './photo/categories/cars.png' },
+  { id: '2', name: 'Мотоциклы', photo: './photo/categories/Motorcycles.png' },
+  { id: '3', name: 'Велосипеды', photo: './photo/categories/Bicycles.png' },
+];
+
 /* Продукт (Product) содержит
  * - id (строка)
  * - name (строка)
@@ -57,7 +63,7 @@ type Cost = {
   createdAt: string;
   amount: number;
   category: Category;
-  type: Cost;
+  type: string;
 };
 
 /* Доход (Profit) содержит
@@ -76,7 +82,7 @@ type Profit = {
   createdAt: string;
   amount: number;
   category: Category;
-  type: Profit;
+  type: string;
 };
 
 /**
@@ -84,12 +90,6 @@ type Profit = {
  * Принимает дату создания (строка)
  * */
 export const createRandomProduct = (createdAt: string): Product => {
-  const categories: Category[] = [
-    { id: '1', name: 'Автомобили', photo: './photo/categories/cars.png' },
-    { id: '2', name: 'Мотоциклы', photo: './photo/categories/Motorcycles.png' },
-    { id: '3', name: 'Велосипеды', photo: './photo/categories/Bicycles.png' },
-  ];
-
   const products: Product[] = [
     {
       id: '1',
@@ -127,11 +127,47 @@ export const createRandomProduct = (createdAt: string): Product => {
 };
 
 for (let i = 0; i < 10; i++) {
-  console.log(createRandomProduct(String(Date.now())));
+  console.log(createRandomProduct(String(new Date())));
 }
 
 /**
  * Создает случайную операцию (Operation).
  * Принимает дату создания (строка)
  * */
-// export const createRandomOperation = (createdAt: string) => {};
+export const createRandomOperation = (createdAt: string): Cost | Profit => {
+  const operations: Array<Cost | Profit> = [
+    {
+      id: '1',
+      name: 'Купил автомобиль BMV',
+      desc: 'Получил скидку у поставщика',
+      createdAt: createdAt,
+      amount: 9580000,
+      category: categories[0],
+      type: 'Cost',
+    },
+    {
+      id: '2',
+      name: 'Продал мотоцикл Harley-Davidson',
+      desc: 'Покупатель долго упрашивал',
+      createdAt: createdAt,
+      amount: 3100000,
+      category: categories[1],
+      type: 'Profit',
+    },
+    {
+      id: '3',
+      name: 'Купил дочери Шоссейный велосипед PINARELLO',
+      desc: 'Была безумно рада',
+      createdAt: createdAt,
+      amount: 3100000,
+      category: categories[2],
+      type: 'Cost',
+    },
+  ];
+
+  return operations[Math.floor(Math.random() * operations.length)];
+};
+
+for (let i = 0; i < 10; i++) {
+  console.log(createRandomOperation(String(new Date())));
+}
