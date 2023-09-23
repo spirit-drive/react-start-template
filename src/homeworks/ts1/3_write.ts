@@ -99,27 +99,33 @@ export const createRandomProduct = (createdAt: string): Product => {
  * Создает случайную операцию (Operation).
  * Принимает дату создания (строка)
  * */
-export const createRandomOperation = (createdAt: string): Operation => {
-  const operationCost: Cost = {
-    id: uuidv4(),
-    amount: 2,
-    category: { id: uuidv4(), name: 'testCategory' + uuidv4() } as Category,
-    createdAt: createdAt,
-    name: 'Покупка продукта ' + uuidv4(),
-    type: 'Cost',
-    desc: 'Описание покупки',
-  };
+export const createRandomOperation = (createdAt: string): Operation | never => {
+  const operations = ['cost', 'profit'];
 
-  const operationProfit: Profit = {
-    id: uuidv4(),
-    amount: 2,
-    category: { id: uuidv4(), name: 'testCategory' + uuidv4() } as Category,
-    createdAt: createdAt,
-    name: 'Пришла аренда за машино-место ' + uuidv4(),
-    type: 'Profit',
-    desc: 'Описание дохода',
-  };
+  const randomOperation = operations[Math.floor(Math.random() * operations.length)];
 
-  const operations = [operationCost, operationProfit];
-  return operations[Math.floor(Math.random() * operations.length)];
+  switch (randomOperation) {
+    case 'cost':
+      return {
+        id: uuidv4(),
+        amount: 2,
+        category: { id: uuidv4(), name: 'testCategory' + uuidv4() } as Category,
+        createdAt: createdAt,
+        name: 'Покупка продукта ' + uuidv4(),
+        type: 'Cost',
+        desc: 'Описание покупки',
+      };
+    case 'profit':
+      return {
+        id: uuidv4(),
+        amount: 2,
+        category: { id: uuidv4(), name: 'testCategory' + uuidv4() } as Category,
+        createdAt: createdAt,
+        name: 'Пришла аренда за машино-место ' + uuidv4(),
+        type: 'Profit',
+        desc: 'Описание дохода',
+      };
+    default:
+      throw new Error(`unknown type`);
+  }
 };

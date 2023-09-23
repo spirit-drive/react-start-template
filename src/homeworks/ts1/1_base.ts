@@ -18,7 +18,12 @@ export const round = (value: number, accuracy = 2): number => {
 const transformRegexp =
   /(matrix\(-?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, )(-?\d+(\.\d+)?), (-?\d+(\.\d+)?)\)/;
 
-export const getTransformFromCss = (transformCssString: string): { x: number; y: number } => {
+export type cssType = {
+  x: number;
+  y: number;
+};
+
+export const getTransformFromCss = (transformCssString: string): cssType => {
   const data: string[] = transformCssString.match(transformRegexp);
   if (!data) return { x: 0, y: 0 };
   return {
@@ -27,20 +32,24 @@ export const getTransformFromCss = (transformCssString: string): { x: number; y:
   };
 };
 
-export const getColorContrastValue = ([red, green, blue]: number[]): number =>
+export type RGBColorType = [number, number, number];
+
+export const getColorContrastValue = ([red, green, blue]: RGBColorType): number =>
   // http://www.w3.org/TR/AERT#color-contrast
   Math.round((red * 299 + green * 587 + blue * 114) / 1000);
 
-export const getContrastType = (contrastValue: number): string => (contrastValue > 125 ? 'black' : 'white');
+export type ContrastType = 'black' | 'white';
+
+export const getContrastType = (contrastValue: number): ContrastType => (contrastValue > 125 ? 'black' : 'white');
 
 export const shortColorRegExp = /^#[0-9a-f]{3}$/i;
 export const longColorRegExp = /^#[0-9a-f]{6}$/i;
 
-export const checkColor = (color: string): void => {
+export const checkColor = (color: string): void | never => {
   if (!longColorRegExp.test(color) && !shortColorRegExp.test(color)) throw new Error(`invalid hex color: ${color}`);
 };
 
-export const hex2rgb = (color: string): number[] => {
+export const hex2rgb = (color: string): RGBColorType => {
   checkColor(color);
   if (shortColorRegExp.test(color)) {
     const red = parseInt(color.substring(1, 2), 16);
@@ -54,23 +63,33 @@ export const hex2rgb = (color: string): number[] => {
   return [red, green, blue];
 };
 
-export const getNumberedArray = (arr: number[]): { value: number; number: number }[] =>
+export type ArrayType = {
+  value: number;
+  number: number;
+};
+
+export const getNumberedArray = (arr: number[]): ArrayType[] =>
   arr.map((value, number) => ({
     value,
     number,
   }));
-export const toStringArray = (arr: { value: number; number: number }[]): string[] =>
-  arr.map(({ value, number }) => `${value}_${number}`);
+export const toStringArray = (arr: ArrayType[]): string[] => arr.map(({ value, number }) => `${value}_${number}`);
 
 interface Customer {
-  id?: string;
+  id: string;
+  name: string;
+  age: number;
+  isSubscribed: boolean;
+}
+
+interface CustomerInfo {
   name: string;
   age: number;
   isSubscribed: boolean;
 }
 
 export const transformCustomers = (customers: Customer[]) => {
-  return customers.reduce((acc: Record<string, Customer>, customer: Customer) => {
+  return customers.reduce((acc: Record<string, CustomerInfo>, customer: Customer) => {
     acc[customer.id] = { name: customer.name, age: customer.age, isSubscribed: customer.isSubscribed };
     return acc;
   }, {});
