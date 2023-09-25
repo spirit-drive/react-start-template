@@ -1,0 +1,33 @@
+.modal {
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 9999;
+    animation: show .4s forwards;
+}
+
+.modal--body {
+    width: 40%;
+    height: 30%;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 6px 6px 10px rgba(0,0,0,0.2);
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

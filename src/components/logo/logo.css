@@ -1,0 +1,13 @@
+.logo--inner__img {
+    transition: width .2s ease;
+}
+
+.logo--inner__img-small {
+    width: 50px;
+}
+.logo--inner__img-medium {
+    width: 64px;
+}
+.logo--inner__img-large {
+    width: 72px;
+}

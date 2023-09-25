@@ -1,0 +1,71 @@
+.page {
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    width: fit-content;
+    background: #3977ad;
+    padding: 1em;
+    color: #ffffff;
+    border-radius: 2px;
+}
+
+.page--inner {
+    display: flex;
+    column-gap: 2em;
+    justify-content: space-between;
+    align-items: center;
+}
+.page--disabled .page--image__wrapper {
+    opacity: .4;
+}
+
+.page--images {
+    width: 48em;
+    height: calc(100vh - 4em);
+    display: grid;
+    gap: .6em;
+    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+}
+
+.page--image {
+    width: 100%;
+    border-radius: 2px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.page--content {
+    width: calc(100% - 2em);
+    height: calc(100vh - 8em);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    user-select: none;
+}
+.page--category {
+    font-weight: normal;
+    font-size: 1rem;
+}
+.page--name {
+    /* max-width: 100px; */
+    line-height: 1;
+}
+.page--description {
+    width: 100%;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+    text-indent: 2em;
+}
+
+.page--price {
+    font-weight: bolder;
+}
+.page--price__old {
+    font-weight: bolder;
+    font-size: 12px;
+    color: #C9CDCF;
+    text-decoration: line-through;
+}
+.page--footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

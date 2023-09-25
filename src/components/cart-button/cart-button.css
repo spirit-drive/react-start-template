@@ -1,0 +1,10 @@
+.cart--button__counter {
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.cart--button__input {
+    border: none;
+    outline: none;
+    max-width: 50px;
+    text-align: center;
+    border-bottom: 2px solid #e1e4eb;
+}
