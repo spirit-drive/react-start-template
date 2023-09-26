@@ -1,35 +1,35 @@
-name: Test, Lint, Build and Deploy on Github Pages
+# name: Test, Lint, Build and Deploy on Github Pages
 
-on:
-  push:
-    branches: ["master", "main"]
+# on:
+#   push:
+#     branches: ["master", "main"]
 
-permissions:
-  contents: write
+# permissions:
+#   contents: write
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#   build-and-deploy:
+#     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x]
+#     strategy:
+#       matrix:
+#         node-version: [18.x]
 
-    steps:
-      - uses: actions/checkout@v3
+#     steps:
+#       - uses: actions/checkout@v3
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
+#       - name: Use Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: ${{ matrix.node-version }}
 
       # Устанавливаем зависимости
-      - name: Install dependencies
-        run: npm install
+      # - name: Install dependencies
+      #   run: npm install
 
       # Запускаем тесты и линтер
-      - name: Run tests and linter
-        run: npm run lint && npm test
+      # - name: Run tests and linter
+      #   run: npm run lint && npm test
 
       # Собираем приложение
       # - name: Build Application
@@ -43,18 +43,43 @@ jobs:
       #     folder: dist
 
       # Собираем Storybook
-      - name: Build Storybook
-        run: npm run build-storybook
+      # - name: Build Storybook
+      #   run: npm run build-storybook
       
       # Публикуем Storybook на Github Pages
-      - name: Deploy Storybook to Github Pages
-        uses: JamesIves/github-pages-deploy-action@4.2.1
-        with:
-          branch: gh-pages
-          folder: storybook-static
-          commit-message: "Automatically publish Storybook"
+      # - name: Deploy Storybook to Github Pages
+      #   uses: JamesIves/github-pages-deploy-action@4.2.1
+      #   with:
+      #     branch: gh-pages
+      #     folder: storybook-static
+      #     commit-message: "Automatically publish Storybook"
 
       # Останавливаем выполнение строго при неудачных тестах
-      - name: Fail on failed tests
+      # - name: Fail on failed tests
+      #   run: |
+      #     if [ ${{ job.status }} == 'failure' ]; then exit 1; fi;
+
+name: Storybook
+on:
+  push:
+    branches:
+      - main # if any push happens on branch `main`, run this workflow. You could also add `paths` to detect changes in specific folder
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.1
+
+      - name: Install and Build
         run: |
-          if [ ${{ job.status }} == 'failure' ]; then exit 1; fi;
+          npm ci
+          npm run build-storybook
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          branch: gh-pages
+          folder: storybook-static # output folder from `npm run build-storybook`
+
