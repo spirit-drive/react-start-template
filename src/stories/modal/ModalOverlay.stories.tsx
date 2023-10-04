@@ -1,5 +1,7 @@
 import {Meta, StoryObj} from '@storybook/react';
 import ModalOverlay from '../../components/modal/ModalOverlay';
+import React from "react";
+
 
 const meta: Meta<typeof ModalOverlay> = {
     title: 'ModalOverlay',
