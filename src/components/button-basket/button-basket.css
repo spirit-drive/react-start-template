@@ -1,0 +1,47 @@
+
+.basket-button {
+    width: 282px;
+    height: 52px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    box-shadow: 0px 10px 22px 0px rgba(168, 134, 94, 0.30);
+    background: linear-gradient(131deg, #D2B490 9.11%, #A6835A 70.56%);
+    border: none;
+}
+
+.basket-button-counter-container {
+    display: flex;
+    width: 282px;
+    height: 52px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.basket-button-counter{
+    width: 52px;
+    height: 52px;
+    background: #E9E9E9;
+    border-radius: 2px;
+}
+
+.basket-button-text {
+    display: flex;
+    width: 112px;
+    height: 29px;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: Gothic A1;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    padding: 12px 85px 11px 85px;
+}
+
+.basket-button-input {
+    width: 178px;
+    height: 52px;
+    background: #323232;
+}
