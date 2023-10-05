@@ -1,0 +1,27 @@
+.operation-summary {
+  width: 300px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.operation-summary__amount {
+  font-weight: bold;
+}
+
+.operation-summary__category {
+  color: #007bff;
+}
+
+.operation-summary__title {
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.operation-summary__description {
+  margin-top: 5px;
+  color: #666;
+}
