@@ -1,0 +1,40 @@
+.opeation-view {
+  width: 500px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.opeation-view__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.opeation-view__header h2 {
+  margin: 0;
+}
+
+.opeation-view__header button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: not-allowed;
+}
+
+.opeation-view__details {
+  font-size: 16px;
+}
+
+.opeation-view__amount,
+.opeation-view__category,
+.opeation-view__description,
+.opeation-view__date {
+  margin-bottom: 5px;
+}
