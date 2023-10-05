@@ -1,0 +1,57 @@
+.modal {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal__backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.23);
+}
+
+.modal__card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  min-height: 450px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.modal__card__close {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-left: auto;
+}
+
+.modal__card__close:before,
+.modal__card__close:after {
+  position: absolute;
+  content: '';
+  height: 25px;
+  width: 2px;
+  background-color: #333;
+}
+.modal__card__close:before {
+  transform: rotate(45deg);
+}
+.modal__card__close:after {
+  transform: rotate(-45deg);
+}
+
+.modal__card__content {
+}
