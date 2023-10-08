@@ -6,8 +6,8 @@ interface IProps {
   children?: ReactElement;
 }
 
-const ModalOverlay: React.FC<IProps> = ({children }) => {
-  return <div className={`${cn('modalOverlay')}`}>{children}</div>;
+const ModalOverlay: React.FC<IProps> = ({ children }) => {
+  return <div className={`${cn('overlay')}`}>{children}</div>;
 };
 
 export default ModalOverlay;

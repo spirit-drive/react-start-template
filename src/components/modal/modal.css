@@ -1,26 +1,19 @@
-.modal {
-    position: relative;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+body.active-modal {
+    overflow-y: hidden;
 }
 
-.modalOverlay{
-    position: absolute;
+.modal .overlay {
+    width: 100vw;
+    height: 100vh;
     top: 0;
+    left: 0;
     right: 0;
     bottom: 0;
-    left: 0;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 1;
+    position: fixed;
+}
+
+.overlay {
+    background: rgba(49,49,49,0.8);
 }
 
 .modalBody{
@@ -30,6 +23,14 @@
     border-radius: 40px;
     border-color: #0E0E0E;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    padding: 14px 28px;
+    max-width: 600px;
+    min-width: 300px;
 }
 
 .modal.open{
