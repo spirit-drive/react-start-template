@@ -6,15 +6,11 @@ import './header.css';
 const AppHeader: React.FC = () => {
   return (
     <header className={cn('header')}>
-      <div>
+      <nav className={cn('nav')}>
         <div>
-          <nav className={cn('nav')}>
-            <div>
-              <Logo />
-            </div>
-          </nav>
+          <Logo />
         </div>
-      </div>
+      </nav>
     </header>
   );
 };
