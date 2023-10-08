@@ -1,9 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Category } from '../../types';
 
 import './index.css';
 
-const OperationSummary = ({ amount, category, title, description }) => {
+interface Props {
+  amount: number;
+  category: Category;
+  title: string;
+  description: string;
+}
+const OperationSummary: React.FC<Props> = ({ amount, category, title, description }) => {
   return (
     <div className="operation-summary">
       <div className="operation-summary__amount">Сумма: {amount} руб.</div>
@@ -12,13 +18,6 @@ const OperationSummary = ({ amount, category, title, description }) => {
       <div className="operation-summary__description">Описание: {description}</div>
     </div>
   );
-};
-
-OperationSummary.propTypes = {
-  amount: PropTypes.number,
-  category: PropTypes.string,
-  title: PropTypes.string,
-  description: PropTypes.string,
 };
 
 export default OperationSummary;

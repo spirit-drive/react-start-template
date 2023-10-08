@@ -1,9 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import './index.css';
 
-const Modal = ({ visible, children }) => {
+interface Props {
+  visible: boolean;
+  children: ReactNode;
+}
+
+const Modal: React.FC<Props> = ({ visible, children }) => {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
@@ -21,11 +26,6 @@ const Modal = ({ visible, children }) => {
       </div>
     </div>
   );
-};
-
-Modal.propTypes = {
-  visible: PropTypes.boolean,
-  children: PropTypes.node,
 };
 
 export default Modal;
