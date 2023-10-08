@@ -1,16 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Layout from './components/Layout';
+import Modal from './components/Modal';
+import OperationSummary from './components/OperationSummary';
+import OperationView from './components/OperationView';
+import { Category } from './types';
 
 function App() {
+  const [modalVisible, setModalVisible] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div>
+      {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </header>
+        </p> */}
+      <Layout />
+      <button onClick={() => setModalVisible(!modalVisible)} style={{ marginTop: 250 }}>
+        Modal
+      </button>
+      <Modal visible={modalVisible}>Modal Text</Modal>
+      <OperationSummary
+        amount={50.0}
+        category={Category.sales}
+        title="Покупка продуктов"
+        description="Покупка продуктов в местном супермаркете."
+      />
+      <OperationView
+        amount={100.0}
+        category={Category.marketing}
+        title="Покупка продуктов"
+        description="Покупка продуктов в местном супермаркете."
+        date={new Date(2023, 8, 30)}
+      />
     </div>
   );
 }
