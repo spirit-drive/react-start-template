@@ -1,0 +1,82 @@
+header {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Open Sans Condensed', sans-serif;
+    background: #4A148C;
+}
+
+.header-menu {
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+}
+
+.header-menu.ul {
+    list-style: none;
+    text-align: center;
+}
+
+.header-menu-item {
+    display: inline-block;
+    list-style: none;
+}
+
+.header-menu-item:not(:last-child) {
+    margin-right: 24px;
+}
+
+.header-menu-item a {
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-wrap: nowrap;
+    color: #fff;
+    display: block;
+    position: relative;
+    padding: 4px 0;
+}
+
+.header-menu-item a::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    transition: 0.5s transform ease;
+    transform: scale3d(0, 1, 1);
+    transform-origin: 0 50%;
+}
+
+.header-menu-item a:hover::before {
+    transform: scale3d(1, 1, 1);
+}
+
+.header-menu-item a::before {
+    background: #E91E63;
+    transform-origin: 100% 50%;
+}
+
+.header-menu-item a:hover::before {
+    transform-origin: 0 50%;
+}
+
+.header-pos-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header-pos-fixed > main {
+    padding-top: 65px;
+}
+
+@media (min-width: 768px) {
+    .storybook-layout {
+        padding: 24px 32px;
+    }
+}

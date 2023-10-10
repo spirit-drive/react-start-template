@@ -1,0 +1,73 @@
+.storybook-modal {
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: none;
+    left: 0;
+    max-height: 100%;
+    justify-content: center;
+    position: fixed;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    top: 0;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1000;
+}
+
+.storybook-modal.storybook-modal-visible + .storybook-overlay {
+    background-color: rgb(33 37 41 / 49%);
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.storybook-modal-body {
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 64px 12px 12px;
+    min-height: 200px;
+    position: relative;
+    width: 100%;
+}
+
+.storybook-modal-header {
+    padding: 24px 32px;
+    border-bottom: 1px solid #000;
+}
+
+.storybook-modal-header h2 {
+    margin: 0;
+}
+
+.storybook-modal-content {
+    font-family: inherit;
+    font-size: 16px;
+    overflow-y: auto;
+    padding: 24px 32px;
+}
+
+.storybook-modal-content p {
+    margin-top: 0;
+}
+
+.storybook-modal-footer {
+    padding: 24px 32px;
+    text-align: right;
+    border-top: 1px solid #000;
+}
+
+.storybook-modal-visible {
+    display: flex;
+}
+
+#story--components-modal--modal-item--primary {
+    min-height: 400px;
+}

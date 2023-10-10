@@ -1,0 +1,9 @@
+.storybook-layout {
+    padding: 12px;
+}
+
+@media (min-width: 768px) {
+    .storybook-layout {
+        padding: 24px 32px;
+    }
+}
