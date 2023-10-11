@@ -11,8 +11,8 @@ export const getFakeApi = async (): Promise<void> => {
 // Мы это не проходили, но по тексту ошибки можно понять, как это починить
 
 export class SomeClass {
-  set: object;
-  channel: object;
+  set: Set<number>;
+  channel: BroadcastChannel;
 
   constructor() {
     this.set = new Set([1]);

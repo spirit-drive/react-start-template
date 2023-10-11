@@ -18,7 +18,12 @@ export const round = (value: number, accuracy = 2): number => {
 const transformRegexp =
   /(matrix\(-?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, )(-?\d+(\.\d+)?), (-?\d+(\.\d+)?)\)/;
 
-export const getTransformFromCss = (transformCssString: string): object => {
+type TGetTransformFromCss = {
+  x: number;
+  y: number;
+};
+
+export const getTransformFromCss = (transformCssString: string): TGetTransformFromCss => {
   const data = transformCssString.match(transformRegexp);
   if (!data) return { x: 0, y: 0 };
   return {
@@ -37,16 +42,18 @@ export const getColorContrastValue = ({ red, green, blue }: IColorContrastProps)
   // http://www.w3.org/TR/AERT#color-contrast
   Math.round((red * 299 + green * 587 + blue * 114) / 1000);
 
-export const getContrastType = (contrastValue: number): string => (contrastValue > 125 ? 'black' : 'white');
+type TGetContrastType = 'black' | 'white';
+
+export const getContrastType = (contrastValue: number): TGetContrastType => (contrastValue > 125 ? 'black' : 'white');
 
 export const shortColorRegExp = /^#[0-9a-f]{3}$/i;
 export const longColorRegExp = /^#[0-9a-f]{6}$/i;
 
-export const checkColor = (color: string): void => {
+export const checkColor = (color: string): never | void => {
   if (!longColorRegExp.test(color) && !shortColorRegExp.test(color)) throw new Error(`invalid hex color: ${color}`);
 };
 
-export const hex2rgb = (color: string): number[] => {
+export const hex2rgb = (color: string): [number, number, number] => {
   checkColor(color);
   if (shortColorRegExp.test(color)) {
     const red = parseInt(color.substring(1, 2), 16);
@@ -64,16 +71,16 @@ export const getNumberedArray = (arr: []): object[] => arr.map((value, number) =
 export const toStringArray = (arr: []): string[] => arr.map(({ value, number }) => `${value}_${number}`);
 
 type TCustomers = {
-  id: number;
+  id?: number;
   name: string;
   age: number;
   isSubscribed: boolean;
 };
 
-type TTransformCustomers = { [key: number]: object };
+type TTransformCustomers = Record<number, TCustomers>;
 
 export const transformCustomers = (customers: TCustomers[]): TTransformCustomers => {
-  return customers.reduce((acc: { [key: number]: object }, customer: TCustomers) => {
+  return customers.reduce((acc: { [key: number]: TCustomers }, customer: TCustomers) => {
     acc[customer.id] = { name: customer.name, age: customer.age, isSubscribed: customer.isSubscribed };
     return acc;
   }, {});
