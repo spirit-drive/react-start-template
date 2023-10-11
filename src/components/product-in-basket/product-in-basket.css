@@ -1,0 +1,123 @@
+:root {
+    --font-family: Geometria;
+}
+
+.product-in-basket-container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 1128px;
+    height: 236px;
+    flex-shrink: 0;
+    border: 4px solid #A5A5A5;
+    background: #FFF;
+}
+
+.product-in-basket-description-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-in-basket-description {
+    display: flex;
+    align-items: center;
+    width: -webkit-fill-available;
+    -webkit-justify-content: space-between;
+}
+
+.product-in-basket-image-container {
+    display: block;
+    width: 156px;
+    height: 156px;
+    padding: 19px 11px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-left: 32px;
+    margin-right: 39px;
+}
+
+.product-in-basket-price {
+    display: flex;
+    margin-right: 72px;
+}
+
+.product-in-basket-price-text {
+    display: flex;
+    width: 164px;
+    height: 28px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+
+    color: #1D1D1D;
+    font-family: var(--font-family);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.product-in-basket-title {
+    display: flex;
+    width: 188px;
+    height: 24px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-bottom: 16px;
+    margin-left: 0;
+
+    color: #C53720;
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.product-in-basket-tag {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 32px;
+    flex-shrink: 0;
+    background: #3CC051;
+}
+
+.product-in-basket-tag-text {
+    display: flex;
+    width: 64px;
+    height: 8px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 12px 18px;
+
+    color: #FFF;
+    text-align: center;
+    font-family: var(--font-family);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.product-in-basket-button-delete-container{
+    display: flex;
+    justify-content: flex-end;
+    margin: 16px 16px 0 1092px;
+}
+
+.product-in-basket-button-delete{
+    box-sizing: border-box;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+    background: #FFF;
+    border: none;
+}
