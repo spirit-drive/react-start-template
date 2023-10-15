@@ -36,15 +36,19 @@ export type Data = {
   value: DataValue;
 };
 
-// Здесь, возможно, нужно использовать as, возможно в switch передавать немного по-другому
-// const getDataAmount = (data: Data): number => {
-//   switch (data.type) {
-//     case 'Money':
-//       return data.value.amount; // не понятно как можно вернуть из Типа числовое значение amount
+//Здесь, возможно, нужно использовать as, возможно в switch передавать немного по-другому
+const getDataAmount = (data: Data): number => {
+  const { amount } = data.value as Money;
 
-//     default: {
-//       const unhandled: never = data.type; // здесь, возможно, нужно использовать нечто другое. :never должен остаться
-//       throw new Error(`unknown type: ${unhandled}`);
-//     }
-//   }
-// };
+  switch (data.type) {
+    case 'Money':
+      return amount;
+
+    default: {
+      const unhandled: never = data.type as never; // здесь, возможно, нужно использовать нечто другое. :never должен остаться
+      throw new Error(`unknown type: ${unhandled}`);
+    }
+  }
+};
+
+export default getDataAmount;

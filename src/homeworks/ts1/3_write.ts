@@ -1,12 +1,20 @@
-/**
+import axios from 'axios';
+
+/*
  * Функции написанные здесь пригодятся на последующих уроках
  * С помощью этих функций мы будем добавлять элементы в список для проверки динамической загрузки
  * Поэтому в идеале чтобы функции возвращали случайные данные, но в то же время не абракадабру.
  * В целом сделайте так, как вам будет удобно.
- * */
+ */
 
-import React from 'react';
-import axios from 'axios';
+/** CommonWrite - общий тип */
+type CommonWrite = {
+  id: string;
+  name: string;
+  desc?: string;
+  createdAt: string;
+  category: Category;
+};
 
 /**
  * Нужно создать тип Category, он будет использоваться ниже.
@@ -14,8 +22,15 @@ import axios from 'axios';
  * - id (строка)
  * - name (строка)
  * - photo (строка, необязательно)
- *
- * Продукт (Product) содержит
+ */
+
+type Category = {
+  id: string;
+  name: string;
+  photo?: string;
+};
+
+/** Продукт (Product) содержит
  * - id (строка)
  * - name (строка)
  * - photo (строка)
@@ -24,10 +39,15 @@ import axios from 'axios';
  * - oldPrice (число, необязательно)
  * - price (число)
  * - category (Категория)
- *
- * Операция (Operation) может быть либо тратой (Cost), либо доходом (Profit)
- *
- * Трата (Cost) содержит
+ */
+
+type Product = {
+  photo: string;
+  oldPrice?: number;
+  price: number;
+} & CommonWrite;
+
+/** Трата (Cost) содержит
  * - id (строка)
  * - name (строка)
  * - desc (строка, необязательно)
@@ -35,8 +55,14 @@ import axios from 'axios';
  * - amount (число)
  * - category (Категория)
  * - type ('Cost')
- *
- * Доход (Profit) содержит
+ */
+
+type Cost = {
+  amount: number;
+  type: 'Cost';
+} & Omit<CommonWrite, 'photo'>;
+
+/** Доход (Profit) содержит
  * - id (строка)
  * - name (строка)
  * - desc (строка, необязательно)
@@ -44,7 +70,24 @@ import axios from 'axios';
  * - amount (число)
  * - category (Категория)
  * - type ('Profit')
- * */
+ */
+
+type Profit = {
+  amount: number;
+  type: 'Profit';
+} & Omit<CommonWrite, 'photo'>;
+
+/** Операция (Operation) может быть либо тратой (Cost), либо доходом (Profit) */
+type Operation = Cost | Profit;
+
+type TApiToProduct = {
+  id: string;
+  title: string;
+  image: string;
+  description: string;
+  price: number;
+  category: string;
+};
 
 /**
  * Создает случайный продукт (Product).
@@ -52,108 +95,43 @@ import axios from 'axios';
  * */
 // export const createRandomProduct = (createdAt: string) => {};
 
+export const CreateRandomProduct = (createdAt: string): Promise<unknown | Product> => {
+  return axios({ method: 'GET', baseURL: 'https://fakestoreapi.com/products/', url: createdAt }).then(({ data }) => {
+    const { id, title, image, description, price, category } = data as TApiToProduct;
+
+    return {
+      id,
+      name: title,
+      photo: image,
+      desc: description,
+      createdAt: new Date().toLocaleDateString('en-US'),
+      oldPrice: price * 1.2,
+      price,
+      category,
+    };
+  });
+};
+
 /**
  * Создает случайную операцию (Operation).
  * Принимает дату создания (строка)
  * */
 // export const createRandomOperation = (createdAt: string) => {};
 
-type Category = {
-  id: string;
-  name: string;
-  photo?: string;
-};
+export const CreateRandomOperation = (createdAt: string): Promise<unknown | Operation> => {
+  return axios({ method: 'GET', baseURL: 'https://fakestoreapi.com/products/', url: createdAt }).then(({ data }) => {
+    const { id, title, description, price, category } = data as TApiToProduct;
 
-interface CommonWrite {
-  id: string;
-  name: string;
-  desc?: string;
-  createdAt: string;
-  category: Category;
-}
-
-interface Product extends CommonWrite {
-  id: string;
-  photo: string;
-  oldPrice?: number;
-  price: number;
-}
-
-interface Cost extends Omit<CommonWrite, 'photo'> {
-  amount: number;
-  type: 'Cost';
-}
-
-interface Profit extends Omit<CommonWrite, 'photo'> {
-  amount: number;
-  type: 'Profit';
-}
-
-type Operation = Cost | Profit;
-
-interface ItransformApiToProduct {
-  image: string;
-  description: string;
-  price: number;
-  id: string;
-  title: string;
-  category: string;
-}
-
-const transformApiToProduct = (data: ItransformApiToProduct): Product => {
-  return {
-    photo: data.image,
-    desc: data.description,
-    createdAt: new Date().toLocaleDateString('en-US'),
-    oldPrice: data.price * 1.2,
-    price: data.price,
-    id: '11',
-    name: data.title,
-    category: {
-      id: data.id,
-      name: data.category,
-    },
-  };
-};
-
-const transformApiToOperation = (data: ItransformApiToProduct): Operation => {
-  return {
-    id: data.id,
-    desc: data.description,
-    createdAt: new Date().toLocaleDateString('en-US'),
-    amount: 10,
-    name: data.title,
-    type: 'Cost',
-    category: {
-      id: data.id,
-      name: data.category,
-    },
-  };
-};
-
-export const CreateRandomProduct = (createdAt: string): Product => {
-  const [data, setData] = React.useState<ItransformApiToProduct>({
-    image: '',
-    description: '',
-    price: null,
-    id: '',
-    title: '',
-    category: '',
+    return {
+      amount: price,
+      type: ['Cost', 'Profit'][Math.floor(Math.random() * 2)],
+      id,
+      name: title,
+      category,
+      desc: description,
+      createdAt: new Date().toLocaleDateString('en-US'),
+    };
   });
-
-  React.useEffect(() => {
-    axios({ method: 'GET', baseURL: 'https://fakestoreapi.com/products/', url: createdAt }).then(({ data }) => {
-      setData(data);
-    });
-  }, [createdAt]);
-
-  return transformApiToProduct(data);
 };
 
-export const CreateRandomOperation = (createdAt: string): Promise<void | Operation> => {
-  return axios({ method: 'GET', baseURL: 'https://fakestoreapi.com/products/', url: createdAt }).then(({ data }) =>
-    console.log(transformApiToOperation(data))
-  );
-};
-
-export default CreateRandomProduct;
+export default { CreateRandomProduct, CreateRandomOperation };
