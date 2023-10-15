@@ -1,7 +1,4 @@
-import React from 'react';
-import styled from '@emotion/styled';
-
-const DeleteButton = styled.div`
+.deleteButton {
     & button {
         cursor: pointer;
         padding: 14px 24px;
@@ -15,12 +12,4 @@ const DeleteButton = styled.div`
             opacity: 0.8;
         }
     }
-`;
-
-export const Delete = () => {
-    return (
-        <DeleteButton>
-            <button>Удалить</button>
-        </DeleteButton>
-    );
-};
+}

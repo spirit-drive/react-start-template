@@ -1,9 +1,4 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
-import PropTypes from 'prop-types';
-
-const Mask = styled.div`
+.mask {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,11 +15,9 @@ const Mask = styled.div`
     z-index: 999;
 
     background-color: rgba(255, 133, 139, 0.6);
+}
 
-    ${(props) => getVisibility(props)}
-`;
-
-const ModalContent = styled.div`
+.modal {
     width: 400px;
     padding: 15px;
     margin-top: 50px;
@@ -36,9 +29,17 @@ const ModalContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-`;
+}
 
-const CloseButton = styled.button`
+.modal--show {
+    display: flex;
+}
+
+.modal--hide {
+    display: none;
+}
+
+.modal_close {
     background-color: transparent;
     border: none;
     position: absolute;
@@ -72,33 +73,4 @@ const CloseButton = styled.button`
     &::after {
         transform: rotate(-45deg);
     }
-`;
-
-const getVisibility = ({ visible = true }) => {
-    return visible
-        ? css`
-              display: flex;
-          `
-        : css`
-              display: none;
-          `;
-};
-
-/** Modal component */
-export const Modal = ({ children, ...rest }) => {
-    return (
-        <Mask {...rest} className="mask">
-            <ModalContent className="modal">
-                {children}
-                <CloseButton className="modal-close" />
-            </ModalContent>
-        </Mask>
-    );
-};
-
-Modal.propTypes = {
-    /** Modal visibility */
-    visible: PropTypes.bool,
-    /** Modal content */
-    children: PropTypes.node,
-};
+}

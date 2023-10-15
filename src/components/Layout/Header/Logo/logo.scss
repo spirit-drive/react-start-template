@@ -1,7 +1,4 @@
-import React from 'react';
-import styled from '@emotion/styled';
-
-const LogoComponent = styled.div`
+.logo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,8 +11,4 @@ const LogoComponent = styled.div`
     height: 60px;
     border-radius: 50%;
     border: 1px solid #778899;
-`;
-
-export const Logo = () => {
-    return <LogoComponent>Company logo</LogoComponent>;
-};
+}
