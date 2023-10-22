@@ -47,10 +47,83 @@
  * Создает случайный продукт (Product).
  * Принимает дату создания (строка)
  * */
-// export const createRandomProduct = (createdAt: string) => {};
 
 /**
  * Создает случайную операцию (Operation).
  * Принимает дату создания (строка)
  * */
-// export const createRandomOperation = (createdAt: string) => {};
+
+type TGeneralFields = {
+  id: string;
+  name: string;
+};
+
+type TCategory = TGeneralFields & {
+  photo?: string;
+};
+
+type TCategoryGeneralFields = {
+  desc?: string;
+  createdAt: string;
+  category: TCategory;
+};
+
+type TProduct = TCategory &
+  TCategoryGeneralFields & {
+    oldPrice?: number;
+    price: number;
+  };
+
+type TOperationGeneralFields = {
+  amount: number;
+};
+
+enum EOperation {
+  Cost,
+  Profit,
+}
+
+type TOperation = TCost | TProfit;
+
+type TCost = TGeneralFields &
+  TCategoryGeneralFields &
+  TOperationGeneralFields & {
+    type: EOperation.Cost;
+  };
+
+type TProfit = TGeneralFields &
+  TCategoryGeneralFields &
+  TOperationGeneralFields & {
+    type: EOperation.Profit;
+  };
+
+export const createRandomProduct = (createdAt: string): TProduct => {
+  return {
+    id: 'random_string',
+    name: 'new product',
+    createdAt,
+    price: 1000,
+    photo: 'photo',
+    desc: 'description',
+    oldPrice: 2000,
+    category: {
+      id: 'category',
+      name: 'new category',
+    },
+  };
+};
+
+export const createRandomOperation = (createdAt: string): TOperation => {
+  return {
+    id: 'random_string',
+    name: 'new operation',
+    createdAt,
+    amount: 1,
+    desc: 'description',
+    type: EOperation.Cost,
+    category: {
+      id: 'category',
+      name: 'new category',
+    },
+  };
+};
