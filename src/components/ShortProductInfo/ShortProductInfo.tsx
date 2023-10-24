@@ -2,6 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 import { Cart } from '../Cart/Cart';
+import s from './shortProductInfo.module.scss';
 
 type Props = {
     /** Image source */
@@ -27,17 +28,16 @@ export const ShortProductInfo = ({
     const newContent = cutDescr(descrContent);
 
     return (
-        <div className="product">
-            <div className="product_image">
+        <div className={s.product}>
+            <div className={s.image}>
                 <img src={imageSrc} alt="Product Image" />
             </div>
-            <div className="product_info">
-                <div className="product_name">{name}</div>
+            <div className={s.info}>
+                <div className={s.name}>{name}</div>
                 <div className="descr">{cutDescr(newContent)}</div>
             </div>
-            <div className="product_priceBlock">
-                <div className="product_price">{price}</div>
-
+            <div className={s.priceBlock}>
+                <div className={s.price}>{price}</div>
                 <Cart count={0} disabled={true} />
             </div>
         </div>

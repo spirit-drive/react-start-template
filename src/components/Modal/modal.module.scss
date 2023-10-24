@@ -31,15 +31,15 @@
     align-items: center;
 }
 
-.modal--show {
+.show {
     display: flex;
 }
 
-.modal--hide {
+.hide {
     display: none;
 }
 
-.modal_close {
+.close {
     background-color: transparent;
     border: none;
     position: absolute;

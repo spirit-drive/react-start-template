@@ -17,7 +17,7 @@ function App() {
     };
     return (
         <div className="App">
-            {/* <Modal visible={true}>Hello</Modal> */}
+            <Modal visible={true}>Hello</Modal>
             {/* <Cart count={0} disabled={false} /> */}
             {/* <Delete /> */}
             {/* <FullProductInfo
@@ -25,7 +25,8 @@ function App() {
                 name={exampleProduct.name}
                 descrContent={exampleProduct.descrContent}
                 category={exampleProduct.category}
-                price={exampleProduct.price} */}
+                price={exampleProduct.price}
+            /> */}
             {/* <Layout /> */}
             {/* <ShortProductInfo
                 imageSrc={exampleProduct.imageSrc}

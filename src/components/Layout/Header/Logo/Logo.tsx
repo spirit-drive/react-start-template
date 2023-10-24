@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './logo.scss';
+import s from './logo.module.scss';
 
 export const Logo = (): React.ReactElement => {
-    return <div className="logo">Company logo</div>;
+    return <div className={s.logo}>Company logo</div>;
 };

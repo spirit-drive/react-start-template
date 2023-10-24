@@ -74,15 +74,15 @@ module.exports = (_, args) => {
                             loader: MiniCssExtractPlugin.loader,
                         },
                         // 'style-loader',
-                        // {
-                        //     loader: 'css-loader',
-                        //     options: {
-                        //         modules: {
-                        //             localIdentName: '[name]_[local]-[hash:base64:5]',
-                        //         },
-                        //     },
-                        // },
-                        'css-loader',
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                modules: {
+                                    localIdentName: '[name]_[local]-[hash:base64:5]',
+                                },
+                            },
+                        },
+                        // 'css-loader',
                         'sass-loader',
                     ],
                 },

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './deleteButton.scss';
+import s from './deleteButton.module.scss';
 
 export const Delete = (): React.ReactElement => {
     return (
-        <div className="deleteButton">
+        <div className={s.deleteButton}>
             <button>Удалить</button>
         </div>
     );

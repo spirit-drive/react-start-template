@@ -3,7 +3,7 @@ import React, { PropsWithChildren } from 'react';
 // import PropTypes from 'prop-types';
 
 import clsx from 'clsx';
-import './modal.scss';
+import s from './modal.module.scss';
 
 type Props = {
     // children: React.ReactNode;
@@ -14,10 +14,10 @@ type Props = {
 /** Modal component */
 export const Modal = ({ children, visible }: PropsWithChildren<Props>) => {
     return (
-        <div className={clsx(['mask', visible ? 'modal--show' : 'modal--hide'])}>
-            <div className="modal">
+        <div className={clsx([s.mask, visible ? s.show : s.hide])}>
+            <div className={s.modal}>
                 {children}
-                <button className="modal_close" />
+                <button className={s.close} />
             </div>
         </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './cart.scss';
+import s from './cart.module.scss';
 
 type Props = {
     /** Number of goods */
@@ -11,16 +11,16 @@ type Props = {
 
 export const Cart = ({ count = 0, disabled = false }: Props): React.ReactElement => {
     return (
-        <div className="cart">
+        <div className={s.cart}>
             {count === 0 ? (
-                <button className="cart_button" disabled={disabled}>
+                <button className={s.button} disabled={disabled}>
                     Добавить в корзину
                 </button>
             ) : (
-                <div className="handleBlock">
-                    <button className="cart_button">-</button>
+                <div className={s.handleBlock}>
+                    <button className={s.button}>-</button>
                     <span>{count}</span>
-                    <button className="cart_button">+</button>
+                    <button className={s.button}>+</button>
                 </div>
             )}
         </div>
