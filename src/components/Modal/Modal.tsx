@@ -9,15 +9,20 @@ type Props = {
     // children: React.ReactNode;
     /** Modal visibility */
     visible: boolean;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 /** Modal component */
-export const Modal = ({ children, visible }: PropsWithChildren<Props>) => {
+export const Modal = ({ children, visible, setIsOpen }: PropsWithChildren<Props>) => {
+    function closeModal() {
+        setIsOpen(false);
+    }
+
     return (
         <div className={clsx([s.mask, visible ? s.show : s.hide])}>
             <div className={s.modal}>
                 {children}
-                <button className={s.close} />
+                <button onClick={() => closeModal()} className={s.close} />
             </div>
         </div>
     );

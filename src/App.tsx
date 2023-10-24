@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { Modal } from './components/Modal/Modal';
 import { Cart } from './components/Cart/Cart';
@@ -6,6 +6,7 @@ import { Delete } from './components/DeleteButton/DeleteButton';
 import { FullProductInfo } from './components/FullProductInfo/FullProductInfo';
 import { Layout } from './components/Layout/Layout';
 import { ShortProductInfo } from './components/ShortProductInfo/ShortProductInfo';
+import { OpenModal } from './components/OpenModal/OpenModal';
 
 function App() {
     const exampleProduct = {
@@ -15,9 +16,14 @@ function App() {
         category: 'Приключения',
         price: 900,
     };
+
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <div className="App">
-            <Modal visible={true}>Hello</Modal>
+            {/* <Modal visible={true} setIsOpen={setIsOpen}>
+                Hello
+            </Modal> */}
             {/* <Cart count={0} disabled={false} /> */}
             {/* <Delete /> */}
             {/* <FullProductInfo
@@ -34,6 +40,7 @@ function App() {
                 descrContent={exampleProduct.descrContent}
                 price={exampleProduct.price}
             /> */}
+            <OpenModal />
         </div>
     );
 }
