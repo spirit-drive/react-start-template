@@ -1,27 +1,31 @@
-import React, { ReactNode, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { Dispatch, ReactNode, SetStateAction, useEffect } from 'react';
 
-import './index.css';
+import s from './index.module.scss';
 
 interface Props {
   visible: boolean;
+  setVisible: Dispatch<SetStateAction<boolean>>;
   children: ReactNode;
 }
 
-const Modal: React.FC<Props> = ({ visible, children }) => {
+const Modal: React.FC<Props> = ({ visible, setVisible, children }) => {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
     return () => {
-      document.body.style.overflow = null;
+      document.body.style.overflow = 'unset';
     };
   }, []);
 
+  const closeModal = () => {
+    setVisible(false);
+  };
+
   return (
-    <div className="modal" hidden={!visible}>
-      <div className="modal__backdrop" />
-      <div className="modal__card">
-        <div className="modal__card__close" />
+    <div className={s.modal} hidden={!visible}>
+      <div className={s.modal__backdrop} />
+      <div className={s.modal__card}>
+        <div className={s.modal__card__close} onClick={closeModal} />
         {children}
       </div>
     </div>

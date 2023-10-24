@@ -1,11 +1,10 @@
 import type { Meta } from '@storybook/react';
-
-import Modal from '.';
+import ModalWithControls from '.';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const meta: Meta<typeof Modal> = {
-  title: 'Example/Modal',
-  component: Modal,
+const meta: Meta<typeof ModalWithControls> = {
+  title: 'Example/ModalWithControls',
+  component: ModalWithControls,
   tags: ['autodocs'],
   argTypes: {
     visible: { control: 'boolean' },
@@ -16,7 +15,7 @@ const meta: Meta<typeof Modal> = {
 export default meta;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const MainModal = {
+export const MainModalWithControls = {
   args: {
     visible: false,
     children: 'ModalText',

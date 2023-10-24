@@ -1,11 +1,14 @@
+@import '../../styles/common';
+
 .operation-summary {
   width: 300px;
-  border: 1px solid #ccc;
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  @include theme(border, operationBorder);
+  @include theme(background-color, operationBgColor);
+  @include theme(box-shadow, operationBoxShadow);
+  @include theme(color, operationColor);
 }
 
 .operation-summary__amount {
@@ -23,5 +26,5 @@
 
 .operation-summary__description {
   margin-top: 5px;
-  color: #666;
+  @include theme(color, operationDescriptionColor);
 }

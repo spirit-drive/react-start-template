@@ -21,6 +21,6 @@ module.exports = {
   },
   modulePaths: ['src'],
   testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js|jsx)$',
-  testPathIgnorePatterns: ['\\.snap$', '\\.sass$', '<rootDir>/node_modules/'],
+  testPathIgnorePatterns: ['\\.snap$', '\\.sass$', '\\.scss$', '<rootDir>/node_modules/'],
   cacheDirectory: '.jest/cache',
 };

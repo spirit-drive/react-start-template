@@ -22,8 +22,9 @@
     "@storybook/addon-interactions": "^7.0.18",
     "@storybook/addon-links": "^7.0.18",
     "@storybook/blocks": "^7.0.18",
+    "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^7.0.18",
-    "@storybook/react-webpack5": "^7.0.18",
+    "@storybook/react-webpack5": "^7.5.1",
     "@storybook/testing-library": "^0.0.14-next.2",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.2.5",
@@ -49,8 +50,10 @@
     "jest-environment-jsdom": "^29.5.0",
     "less-loader": "^11.1.2",
     "mini-css-extract-plugin": "^2.7.6",
+    "node-sass": "^9.0.0",
     "prettier": "2.8.8",
-    "sass-loader": "^13.3.1",
+    "sass": "^1.69.4",
+    "sass-loader": "^13.3.2",
     "storybook": "^7.0.18",
     "style-loader": "^3.3.3",
     "ts-jest": "^29.1.0",
@@ -61,8 +64,10 @@
     "webpack-dev-server": "^4.15.0"
   },
   "dependencies": {
-    "clsx": "^1.2.1",
+    "clsx": "^2.0.0",
+    "i18next": "^23.6.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-i18next": "^13.3.1"
   }
 }

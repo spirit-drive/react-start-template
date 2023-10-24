@@ -1,8 +1,9 @@
 import React from 'react';
 import { formatDate } from '../../helpers';
 import { Category } from '../../types';
+import { Button, ButtonVariant } from '../Button';
 
-import './index.css';
+import s from './index.module.scss';
 
 interface Props {
   amount: number;
@@ -13,25 +14,23 @@ interface Props {
 }
 
 const OperationView: React.FC<Props> = ({ amount, category, title, description, date }) => {
-  console.log(`Сумма: ${amount} руб`);
-
   return (
-    <div className="opeation-view">
-      <div className="opeation-view__header">
+    <div className={s['opeation-view']}>
+      <div className={s['opeation-view__header']}>
         <h2>{title}</h2>
-        <button>Редактировать</button>
+        <Button variant={ButtonVariant.primary}>Редактировать</Button>
       </div>
-      <div className="opeation-view__details">
-        <div className="opeation-view__amount">
+      <div className={s['opeation-view__details']}>
+        <div className={s['opeation-view__amount']}>
           <b>Сумма:</b> {amount} руб.
         </div>
-        <div className="opeation-view__category">
+        <div className={s['opeation-view__category']}>
           <b>Категория:</b> {category}
         </div>
-        <div className="opeation-view__description">
+        <div className={s['opeation-view__description']}>
           <b>Описание:</b> {description}
         </div>
-        <div className="opeation-view__date">
+        <div className={s['opeation-view__date']}>
           <b>Дата:</b> {formatDate(date)}
         </div>
       </div>

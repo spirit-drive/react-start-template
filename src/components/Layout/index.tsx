@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Header from './Header';
 
-import './index.css';
+import s from './index.module.scss';
 
-const Layout = () => {
+interface Props {
+  children: ReactNode;
+}
+
+const Layout: React.FC<Props> = ({ children }) => {
   return (
-    <div className="layout">
+    <div className={s.layout}>
       <Header />
+      {children}
     </div>
   );
 };

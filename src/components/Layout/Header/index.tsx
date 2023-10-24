@@ -1,12 +1,18 @@
 import React from 'react';
 import Logo from '../../Logo';
+import ThemeToggle from './ThemeToggle';
 
-import './index.css';
+import s from './index.module.scss';
+import LocalizationToggle from './LocalizationToggle';
 
 const Header = () => {
   return (
-    <div className="header">
+    <div className={s.header}>
       <Logo />
+      <div className={s.header__controls}>
+        <LocalizationToggle />
+        <ThemeToggle />
+      </div>
     </div>
   );
 };
