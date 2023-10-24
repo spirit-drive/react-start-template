@@ -1,0 +1,30 @@
+@import '../../styles/common';
+
+.operation-summary {
+  width: 300px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  @include theme(border, operationBorder);
+  @include theme(background-color, operationBgColor);
+  @include theme(box-shadow, operationBoxShadow);
+  @include theme(color, operationColor);
+}
+
+.operation-summary__amount {
+  font-weight: bold;
+}
+
+.operation-summary__category {
+  color: #007bff;
+}
+
+.operation-summary__title {
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.operation-summary__description {
+  margin-top: 5px;
+  @include theme(color, operationDescriptionColor);
+}

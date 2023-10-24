@@ -1,0 +1,19 @@
+@import '../../../styles/common';
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  @include theme(background-color, headerBg);
+}
+
+.header__controls {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}

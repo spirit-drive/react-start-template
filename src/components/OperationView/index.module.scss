@@ -1,0 +1,38 @@
+@import '../../styles/common';
+
+.opeation-view {
+  width: 500px;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+  @include theme(border, operationBorder);
+  @include theme(background-color, operationBgColor);
+  @include theme(box-shadow, operationBoxShadow);
+  @include theme(color, operationColor);
+}
+
+.opeation-view__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.opeation-view__header h2 {
+  margin: 0;
+}
+
+.opeation-view__header button {
+  cursor: not-allowed;
+}
+
+.opeation-view__details {
+  font-size: 16px;
+}
+
+.opeation-view__amount,
+.opeation-view__category,
+.opeation-view__description,
+.opeation-view__date {
+  margin-bottom: 5px;
+}

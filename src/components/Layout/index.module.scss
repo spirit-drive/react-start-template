@@ -1,0 +1,6 @@
+@import '../../styles/common.scss';
+
+.layout {
+  min-height: 100vh;
+  @include theme(background-color, mainBg);
+}

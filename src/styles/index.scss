@@ -1,0 +1,19 @@
+@import 'common';
+@import 'reset';
+
+* {
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+html,
+body {
+  height: 100%;
+  font-size: 14px;
+  font-family: 'Open Sans', 'Helvetica', 'Helvetica Neue', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+}
+body {
+  @include theme(color, text);
+  @include theme(background-color, bg);
+}

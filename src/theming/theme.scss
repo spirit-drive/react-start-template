@@ -1,0 +1,25 @@
+// Переменные для светлой темы
+$light: (
+  mainBg: #fff,
+  headerBg: #3333cc,
+  logoBg: #eee,
+  logoColor: #000,
+  operationBorder: 1px solid #ccc,
+  operationBgColor: #f9f9f9,
+  operationBoxShadow: 0 2px 4px rgba(0, 0, 0, 0.1),
+  operationColor: #000,
+  operationDescriptionColor: #666,
+);
+
+// Переменные для темной темы
+$dark: (
+  mainBg: #23272f,
+  headerBg: #fff,
+  logoBg: #000,
+  logoColor: #eee,
+  operationBorder: 1px solid #333,
+  operationBgColor: #1c1c1c,
+  operationBoxShadow: 0 2px 4px rgba(255, 255, 255, 0.1),
+  operationColor: #fff,
+  operationDescriptionColor: #fff,
+);
