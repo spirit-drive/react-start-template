@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Budgets } from './budgets';
+import { Budgets } from './Budgets';
 
 import { NamesColumns, TBudgetType } from './models';
 

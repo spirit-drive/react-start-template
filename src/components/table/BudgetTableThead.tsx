@@ -1,11 +1,11 @@
 import React from 'react';
-import { NamesColumns } from './models';
+import { NamesColumns } from '../budget/models';
 import './style.css';
 
 /**
  *  Заголовки столбцов таблицы
  */
-const TableThead = () => (
+const BudgetTableThead = () => (
   <thead>
     <tr>
       <th>{NamesColumns.Name}</th>
@@ -17,4 +17,4 @@ const TableThead = () => (
   </thead>
 );
 
-export default TableThead;
+export default BudgetTableThead;

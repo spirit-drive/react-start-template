@@ -1,7 +1,7 @@
 import React from 'react';
-import './style.css';
+import './../table/style.css';
 import { TBudgetType, TTableList } from './models';
-import Table from './table';
+import Table from '../table/BudgetTable';
 
 interface BudgetProps {
   data: TTableList[];

@@ -1,12 +1,12 @@
 import React from 'react';
-import { NamesColumns } from './models';
+import { NamesColumns } from '../budget/models';
 
 import './style.css';
 
 /**
  *  Ячейка таблицы
  */
-const TableRow = ({ itemRow }: { itemRow: NamesColumns[] }) => (
+const BudgetTableRow = ({ itemRow }: { itemRow: NamesColumns[] }) => (
   <tr>
     {itemRow.map((item) => (
       <td key={item}>{item}</td>
@@ -17,4 +17,4 @@ const TableRow = ({ itemRow }: { itemRow: NamesColumns[] }) => (
   </tr>
 );
 
-export default TableRow;
+export default BudgetTableRow;
