@@ -4,34 +4,40 @@ import './modal.css';
 import { Button } from '../../stories/Button';
 
 interface ModalProps {
-  /**
-   * Признак открытия модального окна
-   */
-  visible: boolean;
-  /**
-   * Контент модального окна
-   */
-  children: React.ReactElement;
+  /** Контент модального окна */
+  content: string | React.ReactElement;
+  /** Признак открытия модального окна */
+  isOpen: boolean;
+  /** Обработчик открытия и закрытия модального окна */
+  setIsOpen: (isOpenModal: boolean) => void;
 }
 
 /**
  * Modal UI component for user interaction
  */
-export const Modal = ({ visible = false, children }: ModalProps) => (
-  <>
-    <div className={cn('storybook-modal', visible && `storybook-modal-visible`)}>
-      <div className="storybook-modal-body">
-        <div className="storybook-modal-header">
-          <h2>Модальное окно</h2>
-        </div>
-        <div className="storybook-modal-content">
-          <p>{children}</p>
-        </div>
-        <div className="storybook-modal-footer">
-          <Button label="Закрыть" primary />
+export const Modal = ({ content, isOpen, setIsOpen }: ModalProps) => {
+  React.useEffect(() => {
+    isOpen ? setIsOpen(true) : setIsOpen(false);
+  }, [isOpen, setIsOpen]);
+
+  const handleClickButton = (): void => setIsOpen(false);
+
+  return (
+    <>
+      <div className={cn('storybook-modal', isOpen && `storybook-modal-visible`)}>
+        <div className="storybook-modal-body">
+          <div className="storybook-modal-header">
+            <h2>Модальное окно</h2>
+          </div>
+          <div className="storybook-modal-content">
+            <p>{content}</p>
+          </div>
+          <div className="storybook-modal-footer">
+            <Button label="Закрыть" primary onClick={handleClickButton} />
+          </div>
         </div>
       </div>
-    </div>
-    <div className="storybook-overlay" />
-  </>
-);
+      <div className="storybook-overlay" />
+    </>
+  );
+};
