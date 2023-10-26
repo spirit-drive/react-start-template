@@ -1,8 +1,6 @@
 import React from 'react';
 import s from './button.module.sass';
 
-console.log(s);
-
 interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
