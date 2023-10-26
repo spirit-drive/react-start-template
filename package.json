@@ -51,6 +51,7 @@
     "less-loader": "^11.1.2",
     "mini-css-extract-plugin": "^2.7.6",
     "prettier": "2.8.8",
+    "sass": "^1.69.5",
     "sass-loader": "^13.3.1",
     "storybook": "^7.0.18",
     "style-loader": "^3.3.3",

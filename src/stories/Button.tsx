@@ -1,5 +1,7 @@
 import React from 'react';
-import './button.css';
+import s from './button.module.sass';
+
+console.log(s);
 
 interface ButtonProps {
   /**
@@ -28,11 +30,11 @@ interface ButtonProps {
  * Primary UI component for user interaction
  */
 export function Button({ primary = false, size = 'medium', backgroundColor, label, ...props }: ButtonProps) {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const mode = primary ? s.primary : s.secondary;
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={[s.button, s[size], mode].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >
