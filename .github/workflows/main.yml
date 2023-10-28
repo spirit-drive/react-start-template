@@ -4,6 +4,9 @@ on:
   push:
     branches: ["master", "main"]
 
+  # Позволяет запустить этот рабочий процесс вручную на вкладке Actions
+  workflow_dispatch:
+
 permissions:
   contents: write
 
