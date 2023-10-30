@@ -97,33 +97,61 @@ type TProfit = TGeneralFields &
     type: EOperation.Profit;
   };
 
+const productNames = ['AMD', 'INTEL', 'NVIDIA', 'ATI', 'MSI'];
+
+const productCategories = ['CPU', 'RAM', 'videoСard', 'systemUnit', 'HDD', 'SSD', 'LAN'];
+
+const productPrices = [1000, 2000, 3000, 1500, 2700];
+
+const operationNames = ['buy', 'sell', /*  */ 'pay', 'return', 'add to basket'];
+
+function makeRandomString(length: number) {
+  let text = '';
+  const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+  for (let i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+
+  return text;
+}
+
+const getRandomIndex = (length: number) => Math.floor(Math.random() * length);
+
 export const createRandomProduct = (createdAt: string): TProduct => {
+  const productName = productNames[getRandomIndex(productNames.length)];
+  const productPrice = productPrices[getRandomIndex(productPrices.length)];
+  const productCategory = productCategories[getRandomIndex(productCategories.length)];
+
   return {
-    id: 'random_string',
-    name: 'new product',
     createdAt,
-    price: 1000,
-    photo: 'photo',
-    desc: 'description',
-    oldPrice: 2000,
+    id: makeRandomString(5),
+    name: productName,
+    price: productPrice,
+    photo: productName + '.jpg',
+    desc: 'description to' + productName,
+    oldPrice: productPrice - 200,
     category: {
-      id: 'category',
-      name: 'new category',
+      id: makeRandomString(5),
+      name: productCategory,
     },
   };
 };
 
 export const createRandomOperation = (createdAt: string): TOperation => {
+  const operationName = operationNames[getRandomIndex(productNames.length)];
+  const productCategory = productCategories[getRandomIndex(productCategories.length)];
+  const type = getRandomIndex(1) ? EOperation.Cost : EOperation.Profit;
   return {
-    id: 'random_string',
-    name: 'new operation',
     createdAt,
+    type,
+    id: makeRandomString(5),
+    name: operationName,
     amount: 1,
-    desc: 'description',
-    type: EOperation.Cost,
+    desc: 'description to ' + operationName,
     category: {
-      id: 'category',
-      name: 'new category',
+      id: makeRandomString(5),
+      name: productCategory,
     },
   };
 };

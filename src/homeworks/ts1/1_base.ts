@@ -31,13 +31,14 @@ export const getTransformFromCss = (transformCssString: string): TTransformFromC
   };
 };
 
-type TColorTypple = [number, number, number];
+type TRgbColor = [number, number, number];
 
-export const getColorContrastValue = ([red, green, blue]: TColorTypple): number =>
+export const getColorContrastValue = ([red, green, blue]: TRgbColor): number =>
   // http://www.w3.org/TR/AERT#color-contrast
   Math.round((red * 299 + green * 587 + blue * 114) / 1000);
 
-export const getContrastType = (contrastValue: number): string => (contrastValue > 125 ? 'black' : 'white');
+type TContrastType = 'black' | 'white';
+export const getContrastType = (contrastValue: number): TContrastType => (contrastValue > 125 ? 'black' : 'white');
 
 export const shortColorRegExp = /^#[0-9a-f]{3}$/i;
 export const longColorRegExp = /^#[0-9a-f]{6}$/i;
@@ -46,7 +47,7 @@ export const checkColor = (color: string): never | void => {
   if (!longColorRegExp.test(color) && !shortColorRegExp.test(color)) throw new Error(`invalid hex color: ${color}`);
 };
 
-export const hex2rgb = (color: string): TColorTypple => {
+export const hex2rgb = (color: string): TRgbColor => {
   checkColor(color);
   if (shortColorRegExp.test(color)) {
     const red = parseInt(color.substring(1, 2), 16);
@@ -60,10 +61,7 @@ export const hex2rgb = (color: string): TColorTypple => {
   return [red, green, blue];
 };
 
-type TArrayMap = {
-  value: number;
-  number: number;
-};
+type TArrayMap = Record<'value' | 'number', number>;
 
 export const getNumberedArray = (arr: Array<number>): Array<TArrayMap> =>
   arr.map((value, number) => ({ value, number }));
@@ -76,22 +74,16 @@ export const toStringArray = (arr: Array<TStringArray>): Array<string> =>
   arr.map(({ value, number }) => `${value}_${number}`);
 
 type TCustomer = {
-  name: string;
-  age: number;
-  isSubscribed: boolean;
-};
-
-type TCustomerWithId = {
   id: string;
   name: string;
   age: number;
   isSubscribed: boolean;
 };
-interface IAcc {
-  [N: string]: TCustomer;
-}
-export const transformCustomers = (customers: Array<TCustomerWithId>): IAcc => {
-  return customers.reduce((acc: IAcc, customer) => {
+
+type TCustomerWithoutId = Record<string, Omit<TCustomer, 'id'>>;
+
+export const transformCustomers = (customers: Array<TCustomer>): TCustomerWithoutId => {
+  return customers.reduce((acc: TCustomerWithoutId, customer) => {
     acc[customer.id] = { name: customer.name, age: customer.age, isSubscribed: customer.isSubscribed };
     return acc;
   }, {});

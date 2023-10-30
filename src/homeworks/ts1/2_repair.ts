@@ -20,8 +20,13 @@ export class SomeClass {
   }
 }
 
+enum DataType {
+  Money,
+  Percent,
+}
+
 export type Data = {
-  type: 'Money' | 'Percent';
+  type: DataType;
   value: DataValue;
 };
 
@@ -39,12 +44,12 @@ export type Percent = {
 // Здесь, возможно, нужно использовать as, возможно в switch передавать немного по-другому
 const getDataAmount = (data: Data): number => {
   switch (data.type) {
-    case 'Money':
+    case DataType.Money:
       return (data.value as Money).amount;
 
     default: {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const unhandled: never = data as never; // здесь, возможно, нужно использовать нечто другое. :never должен остаться
+      const unhandled: never = data; // здесь, возможно, нужно использовать нечто другое. :never должен остаться
       throw new Error(`unknown type: ${data.type}`);
     }
   }
