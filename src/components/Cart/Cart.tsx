@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import s from './cart.module.scss';
 
@@ -10,11 +11,12 @@ type Props = {
 };
 
 export const Cart = ({ count = 0, disabled = false }: Props): React.ReactElement => {
+    const { t } = useTranslation();
     return (
         <div className={s.cart}>
             {count === 0 ? (
                 <button className={s.button} disabled={disabled}>
-                    Добавить в корзину
+                    {t(`buttons.add`)}
                 </button>
             ) : (
                 <div className={s.handleBlock}>

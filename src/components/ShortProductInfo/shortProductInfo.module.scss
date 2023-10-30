@@ -1,12 +1,14 @@
+@import '../../styles/common.scss';
+
 .product {
-    max-width: 900px;
+    // max-width: 900px;
     margin: 40px;
     padding: 20px;
-    border: 1px solid rgba(255, 133, 139, 1);
-    background-color: rgba(255, 133, 139, 0.1);
+    // border: 1px solid rgba(255, 133, 139, 1);
+    // background-color: rgba(255, 133, 139, 0.1);
     border-radius: 20px;
-
     display: flex;
+    @include theme(border, border);
 }
 
 .info {

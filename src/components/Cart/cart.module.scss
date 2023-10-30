@@ -1,3 +1,5 @@
+@import '../../styles/common.scss';
+
 .cart {
     margin: 20px 0;
 }
@@ -5,8 +7,8 @@
 .button {
     cursor: pointer;
     padding: 20px 20px;
-    background-color: rgba(255, 133, 139, 1);
-    border: 1px solid #000;
+    @include theme(background-color, headerBg);
+    @include theme(border, border);
     border-radius: 5px;
     color: #fff;
     opacity: 1;

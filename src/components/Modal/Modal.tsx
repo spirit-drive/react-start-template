@@ -13,7 +13,7 @@ type Props = {
 };
 
 /** Modal component */
-export const Modal = ({ children, visible, setIsOpen }: PropsWithChildren<Props>) => {
+export const Modal = ({ children, visible, setIsOpen }: PropsWithChildren<Props>): React.ReactElement => {
     function closeModal() {
         setIsOpen(false);
     }

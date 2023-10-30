@@ -1,9 +1,12 @@
+@import '../../styles/common.scss';
+
 .deleteButton {
     & button {
         cursor: pointer;
         padding: 14px 24px;
-        background-color: rgba(255, 133, 139, 1);
-        border: 1px solid #000;
+        // background-color: rgba(255, 133, 139, 1);
+        @include theme(background-color, headerBg);
+        @include theme(border, border);
         border-radius: 5px;
         color: #fff;
         opacity: 1;

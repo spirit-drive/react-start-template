@@ -1,0 +1,15 @@
+$light: (
+    mainBg: rgba(246, 191, 195, 1),
+    headerBg: rgba(255, 133, 139, 1),
+    logoText: rgba(255, 133, 139, 1),
+    border: 1px solid #222,
+    maskColor: rgba(255, 133, 139, 0.6),
+);
+
+$dark: (
+    mainBg: rgba(135, 164, 164, 1),
+    headerBg: darkslategrey,
+    logoText: darkslategrey,
+    border: 1px solid #fff,
+    maskColor: rgba(119, 136, 153, 0.6),
+);

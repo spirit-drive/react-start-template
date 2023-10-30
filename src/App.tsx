@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css';
 import { Modal } from './components/Modal/Modal';
 import { Cart } from './components/Cart/Cart';
 import { Delete } from './components/DeleteButton/DeleteButton';
@@ -7,6 +6,8 @@ import { FullProductInfo } from './components/FullProductInfo/FullProductInfo';
 import { Layout } from './components/Layout/Layout';
 import { ShortProductInfo } from './components/ShortProductInfo/ShortProductInfo';
 import { OpenModal } from './components/OpenModal/OpenModal';
+import { ThemeProvider } from './theming/ThemeProvider';
+import { LangProvider } from './localization/LocalizationProvider';
 
 function App() {
     const exampleProduct = {
@@ -20,28 +21,31 @@ function App() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="App">
-            {/* <Modal visible={true} setIsOpen={setIsOpen}>
+        <ThemeProvider>
+            <LangProvider>
+                <Layout />
+                {/* <Modal visible={true} setIsOpen={setIsOpen}>
                 Hello
             </Modal> */}
-            {/* <Cart count={0} disabled={false} /> */}
-            {/* <Delete /> */}
-            {/* <FullProductInfo
-                imageSrc={exampleProduct.imageSrc}
-                name={exampleProduct.name}
-                descrContent={exampleProduct.descrContent}
-                category={exampleProduct.category}
-                price={exampleProduct.price}
-            /> */}
-            {/* <Layout /> */}
-            {/* <ShortProductInfo
-                imageSrc={exampleProduct.imageSrc}
-                name={exampleProduct.name}
-                descrContent={exampleProduct.descrContent}
-                price={exampleProduct.price}
-            /> */}
-            <OpenModal />
-        </div>
+                <Cart count={0} disabled={false} />
+                <Delete />
+                {/* <FullProductInfo
+                    imageSrc={exampleProduct.imageSrc}
+                    name={exampleProduct.name}
+                    descrContent={exampleProduct.descrContent}
+                    category={exampleProduct.category}
+                    price={exampleProduct.price}
+                /> */}
+
+                {/* <ShortProductInfo
+                    imageSrc={exampleProduct.imageSrc}
+                    name={exampleProduct.name}
+                    descrContent={exampleProduct.descrContent}
+                    price={exampleProduct.price}
+                /> */}
+                <OpenModal />
+            </LangProvider>
+        </ThemeProvider>
     );
 }
 

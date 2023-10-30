@@ -1,0 +1,10 @@
+@import './theme.scss';
+
+@mixin theme($property, $var, $before: null, $after: null) {
+    @at-root html:global(.light) #{&} {
+        #{$property}: #{$before} #{map-get($light, $var)} #{$after};
+    }
+    @at-root html:global(.dark) #{&} {
+        #{$property}: #{$before} #{map-get($dark, $var)} #{$after};
+    }
+}

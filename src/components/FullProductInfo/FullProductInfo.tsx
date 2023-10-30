@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import PropTypes from 'prop-types';
 import { Cart } from '../Cart/Cart';
@@ -25,15 +26,17 @@ export const FullProductInfo = ({
     category = 'Приключения',
     price = 900,
 }: Props): React.ReactElement => {
+    const { t } = useTranslation();
+
     return (
         <div className={s.product}>
             <div className={s.image}>
                 <img src={imageSrc} alt="Product Image" />
             </div>
             <div className={s.info}>
-                <div className={s.name}>{name}</div>
-                <div className="descr">{descrContent}</div>
-                <div className={s.category}>{category}</div>
+                <div className={s.name}>{t(`product.name`)}</div>
+                <div className="descr">{t(`product.descr`)}</div>
+                <div className={s.category}>{t(`product.category`)}</div>
             </div>
             <div className={s.priceBlock}>
                 <div className={s.price}>{price}</div>

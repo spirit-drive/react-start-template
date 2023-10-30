@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from '../Modal/Modal';
+import { useTranslation } from 'react-i18next';
 
 import s from './openModal.module.scss';
 
@@ -17,11 +18,13 @@ export const OpenModal = (): React.ReactElement => {
         setInputValue(e.currentTarget.value);
     }
 
+    const { t } = useTranslation();
+
     return (
         <>
             <input onChange={handleChange} value={inputValue} type="text" />
             <div className={s.openButton}>
-                <button onClick={() => handleClick()}>Открыть модальное окно</button>
+                <button onClick={() => handleClick()}>{t(`buttons.openModal`)}</button>
             </div>
             <Modal visible={isOpen} children={content} setIsOpen={setIsOpen} />
         </>

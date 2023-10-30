@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import PropTypes from 'prop-types';
 import { Cart } from '../Cart/Cart';
@@ -21,11 +22,13 @@ export const ShortProductInfo = ({
     descrContent = `Перед вами трилогия "Властелин Колец". Своеобразная "Библия от фэнтези". Книга Книг ХХ века. Самое популярное, самое читаемое, самое культовое произведение ушедшего столетия. Стены Минас-Тирита, крепости Последней Надежды, осаждают бесчисленные рати Черного Властелина Саурона. Повелитель сил Тьмы уже готов праздновать победу, не замечая в упоении собственной мощью двух маленьких человечков, приближающихся к Роковой Горе, чтобы уничтожить Кольцо Всевластия. От мужества полуросликов зависит судьба всего Средиземья…`,
     price = 900,
 }: Props): React.ReactElement => {
+    const { t } = useTranslation();
+
     function cutDescr(text: string) {
         const shortedText = text.slice(0, 100);
         return `${shortedText}...`;
     }
-    const newContent = cutDescr(descrContent);
+    const newContent = cutDescr(t(`product.descr`));
 
     return (
         <div className={s.product}>
@@ -33,7 +36,7 @@ export const ShortProductInfo = ({
                 <img src={imageSrc} alt="Product Image" />
             </div>
             <div className={s.info}>
-                <div className={s.name}>{name}</div>
+                <div className={s.name}>{t(`product.name`)}</div>
                 <div className="descr">{cutDescr(newContent)}</div>
             </div>
             <div className={s.priceBlock}>
