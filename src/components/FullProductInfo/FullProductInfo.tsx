@@ -6,7 +6,7 @@ import { Cart } from '../Cart/Cart';
 
 import s from './fullProductInfo.module.scss';
 
-type Props = {
+export type FullProductProps = {
     /** Image source */
     imageSrc: string;
     /** Product name */
@@ -25,7 +25,7 @@ export const FullProductInfo = ({
     descrContent = `Перед вами трилогия "Властелин Колец". Своеобразная "Библия от фэнтези". Книга Книг ХХ века. Самое популярное, самое читаемое, самое культовое произведение ушедшего столетия. Стены Минас-Тирита, крепости Последней Надежды, осаждают бесчисленные рати Черного Властелина Саурона. Повелитель сил Тьмы уже готов праздновать победу, не замечая в упоении собственной мощью двух маленьких человечков, приближающихся к Роковой Горе, чтобы уничтожить Кольцо Всевластия. От мужества полуросликов зависит судьба всего Средиземья…`,
     category = 'Приключения',
     price = 900,
-}: Props): React.ReactElement => {
+}: FullProductProps): React.ReactElement => {
     const { t } = useTranslation();
 
     return (

@@ -47,9 +47,8 @@ module.exports = (_, args) => {
                 {
                     test: /\.less$/,
                     use: [
-                        {
-                            loader: MiniCssExtractPlugin.loader,
-                        },
+                        MiniCssExtractPlugin.loader,
+                        // 'style-loader',
                         'css-loader',
                         'less-loader',
                     ],
@@ -57,9 +56,8 @@ module.exports = (_, args) => {
                 {
                     test: /\.css$/,
                     use: [
-                        {
-                            loader: MiniCssExtractPlugin.loader,
-                        },
+                        MiniCssExtractPlugin.loader,
+                        // 'style-loader',
                         'css-loader',
                     ],
                 },
@@ -70,9 +68,7 @@ module.exports = (_, args) => {
                 {
                     test: /\.s[ac]ss$/i,
                     use: [
-                        {
-                            loader: MiniCssExtractPlugin.loader,
-                        },
+                        MiniCssExtractPlugin.loader,
                         // 'style-loader',
                         {
                             loader: 'css-loader',

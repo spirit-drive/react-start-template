@@ -12,6 +12,4 @@ export default meta;
 
 type Story = StoryObj<typeof ShortProductInfo>;
 
-export const Default: Story = {
-    
-};
+export const Default: Story = {};

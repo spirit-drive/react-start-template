@@ -26,7 +26,9 @@ export const OpenModal = (): React.ReactElement => {
             <div className={s.openButton}>
                 <button onClick={() => handleClick()}>{t(`buttons.openModal`)}</button>
             </div>
-            <Modal visible={isOpen} children={content} setIsOpen={setIsOpen} />
+            <Modal visible={isOpen} setIsOpen={setIsOpen}>
+                {content}
+            </Modal>
         </>
     );
 };
