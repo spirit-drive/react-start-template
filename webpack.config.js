@@ -11,7 +11,7 @@ const host = 'localhost';
 
 module.exports = (_, args) => {
   return {
-    entry: './index.tsx',
+    entry: './index.js',
     devtool: 'source-map',
     context: src,
     devServer: {
