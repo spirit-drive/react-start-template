@@ -15,29 +15,15 @@ const meta: Meta<typeof Logo> = {
 export default meta;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary = {
+export const Store = {
   args: {
     primary: true,
-    label: 'Button',
+    label: 'E-Shop',
   },
 };
 
-export const Secondary = {
+export const Journal = {
   args: {
-    label: 'Button',
-  },
-};
-
-export const Large = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small = {
-  args: {
-    size: 'small',
-    label: 'Button',
+    label: 'Журнал доходов и расходов',
   },
 };
