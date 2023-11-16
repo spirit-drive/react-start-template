@@ -82,6 +82,13 @@ module.exports = (_, args) => {
             'sass-loader',
           ],
         },
+        {
+          test: /\.woff2$/i,
+          type: "asset/resource",
+          generator: {
+              filename: "fonts/[name][ext]"
+          }
+      },
       ],
     },
     plugins: [
