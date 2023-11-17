@@ -1,3 +1,7 @@
+@import "styles/fonts"
+@import "styles/bootstrap.min.css"
+@import "styles/all.min.css"
+
 *, ::after, ::before
     box-sizing: border-box
 
@@ -13,8 +17,6 @@
 html,
 body
     height: 100%
-    margin: 0
-    padding: 0
 
 body
     min-width: 320px
@@ -22,11 +24,48 @@ body
     background-color: var(--bg-color)
     color: var(--text-color)
 
-    /* cyrillic-ext */
-    @font-face
-        font-family: 'Roboto'
-        font-style: normal
-        font-weight: 400
-        font-display: swap
-        src: url('fonts/Roboto-400-cyrillic-ext.woff2') format('woff2')
-        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+a
+    color: var(--text-color)
+    text-decoration: underline
+    &:hover
+        text-decoration: none
+
+img
+    max-width: 100%
+    height: auto
+
+
+.btn,
+.dropdown-menu,
+.form-control,
+.form-select
+    border-radius: 0
+
+.form-control:focus,
+.form-select:focus
+    color: var(--text-color)
+    border-color: var(--accent-color)
+    box-shadow: none
+
+.form-control::placeholder
+    color: var(--grey-color)
+
+.btn-warning
+    background-color: var(--accent-color)
+    color: var(--contrast-color)
+
+.btn-outline-warning
+    border-color: var(--accent-color)
+
+.bg-warning
+    background-color: var(--accent-color) !important
+
+.btn-outline-warning:hover
+    background-color: var(--accent-color)
+    color: var(--contrast-color)
+
+.dropdown-item:active
+    background-color: var(--contrast-color)
+
+textarea
+    resize: none

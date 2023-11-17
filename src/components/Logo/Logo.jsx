@@ -1,8 +1,8 @@
 import React from "react";
-import s from "./Logo.module.sass";
+import "./Logo.sass";
 
 export const Logo = ({title}) => {
     return (
-        <a href="index.html" className={`${s.logo} h1`}>{title}</a>
+        <a href="index.html" className="header-logo h1">{title}</a>
     );
 };
