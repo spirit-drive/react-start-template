@@ -1,6 +1,6 @@
 import React from 'react';
-import { NamesColumns } from '../budget/models';
 import './style.css';
+import { t } from 'i18next';
 
 /**
  *  Заголовки столбцов таблицы
@@ -8,10 +8,10 @@ import './style.css';
 const BudgetTableThead = () => (
   <thead>
     <tr>
-      <th>{NamesColumns.Name}</th>
-      <th>{NamesColumns.Category}</th>
-      <th>{NamesColumns.Description}</th>
-      <th>{NamesColumns.Amount}</th>
+      <th>{t('table_column_name')}</th>
+      <th>{t('table_column_category')}</th>
+      <th>{t('table_column_description')}</th>
+      <th>{t('table_column_amount')}</th>
       <th />
     </tr>
   </thead>

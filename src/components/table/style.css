@@ -44,14 +44,41 @@ tr {
   text-align: left;
 }
 
+main.dark .table-title {
+  color: #fff;
+}
+
+main.light .table-title {
+  color: #6c757d;
+}
+
+main.dark table {
+  color: #fff;
+}
+
 .title-border {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid;
   padding-bottom: 12px;
+}
+
+main.dark .title-border {
+  border-color: 1px solid #fff;
+}
+
+main.light .table-title {
+  border-color: 1px solid #000;
 }
 
 a {
   cursor: pointer;
+}
+
+main.light table a {
   color: blue;
+}
+
+main.dark table a {
+  color: #6c757d;
 }
 
 .list-space-large dd:not(:last-child) {

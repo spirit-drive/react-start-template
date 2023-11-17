@@ -40,3 +40,32 @@
 .d-block {
     display: block;
 }
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.margin-left-auto {
+    margin-left: auto;
+}
+
+.margin-right-auto {
+    margin-right: auto;
+}
+
+.mt-24 {
+    margin-top: 24px;
+}
+
+.mr-16 {
+    margin-right: 16px;
+}
+
+.mr-24 {
+    margin-right: 24px;
+}

@@ -1,0 +1,10 @@
+{
+  "menu_item_income": "Income",
+  "menu_item_coast": "Outlay",
+  "table_column_name": "Title",
+  "table_column_category": "Category",
+  "table_column_description": "Description",
+  "table_column_amount": "Amount",
+  "table_link_details": "in detail",
+  "table_title_link_details": "Operation Details"
+}

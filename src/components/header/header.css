@@ -2,7 +2,19 @@ header {
     display: flex;
     flex-direction: row;
     font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.header:not(.dark) {
     background: #4A148C;
+}
+
+.header.dark {
+   background-color: #5c5c5c;
+}
+
+.header.dark .form-check-input:checked {
+    background-color: #949494;
+    border-color: #949494;
 }
 
 .header-menu {
@@ -71,7 +83,7 @@ header {
     width: 100%;
 }
 
-.header-pos-fixed > main {
+.header-pos-fixed + main {
     padding-top: 65px;
 }
 

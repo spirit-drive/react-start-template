@@ -1,0 +1,10 @@
+{
+  "menu_item_income": "Доходы",
+  "menu_item_coast": "Расходы",
+  "table_column_name": "Название",
+  "table_column_category": "Категория",
+  "table_column_description": "Описание",
+  "table_column_amount": "Сумма",
+  "table_link_details": "Подробно",
+  "table_title_link_details": "Детали операции"
+}
