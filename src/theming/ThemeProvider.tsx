@@ -10,7 +10,6 @@ import React, {
     useMemo,
 } from 'react';
 import { Theme } from './types';
-import '../styles/index.scss';
 
 type SetStateType<T> = Dispatch<SetStateAction<T>>;
 

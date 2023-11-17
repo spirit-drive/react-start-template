@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Modal } from './components/Modal/Modal';
+import React, { useState, useCallback } from 'react';
+import { MemoizedModal } from './components/Modal/Modal';
 import { Cart } from './components/Cart/Cart';
 import { Delete } from './components/DeleteButton/DeleteButton';
 import { FullProductInfo } from './components/FullProductInfo/FullProductInfo';
@@ -37,21 +37,18 @@ function App() {
         price: 900,
     };
 
-    
+    const [isOpen, setIsOpen] = useState(true);
 
-    const [isOpen, setIsOpen] = useState(false);
-
-    const blabla = [
-        { id: 12, name: 'Max', age: 38 },
-        { id: 23, name: 'Steve', age: 73 },
-    ];
+    const closeModal = useCallback(() => {
+        setIsOpen(false);
+    }, [isOpen]);
     return (
         <ThemeProvider>
             <LangProvider>
                 {/* <Layout /> */}
-                {/* <Modal visible={true} setIsOpen={setIsOpen}>
-                Hello
-            </Modal> */}
+                <MemoizedModal visible={isOpen} closeModal={closeModal}>
+                    Hello
+                </MemoizedModal>
                 {/* <Cart count={0} disabled={false} /> */}
                 {/* <Delete /> */}
                 <FullProductInfo
@@ -68,8 +65,7 @@ function App() {
                     descrContent={exampleProduct.descrContent}
                     price={exampleProduct.price}
                 /> */}
-                {/* <OpenModal /> */}
-                <ProductList items={blabla} />
+                <OpenModal />
             </LangProvider>
         </ThemeProvider>
     );

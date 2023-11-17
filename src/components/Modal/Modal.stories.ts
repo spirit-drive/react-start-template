@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Modal } from './Modal';
+import { MemoizedModal } from './Modal';
 
-const meta: Meta<typeof Modal> = {
+const meta: Meta<typeof MemoizedModal> = {
     title: 'Modal',
-    component: Modal,
+    component: MemoizedModal,
     // tags: ['autodocs'],
     argTypes: {
         visible: { control: 'boolean' },
@@ -14,7 +14,7 @@ const meta: Meta<typeof Modal> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Modal>;
+type Story = StoryObj<typeof MemoizedModal>;
 
 export const VisibleModal: Story = {
     args: {

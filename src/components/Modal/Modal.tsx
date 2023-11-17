@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, memo } from 'react';
 
 // import PropTypes from 'prop-types';
 
@@ -6,18 +6,13 @@ import clsx from 'clsx';
 import s from './modal.module.scss';
 
 type Props = {
-    // children: React.ReactNode;
     /** Modal visibility */
     visible: boolean;
-    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    closeModal: () => void;
 };
 
 /** Modal component */
-export const Modal = ({ children, visible, setIsOpen }: PropsWithChildren<Props>): React.ReactElement => {
-    function closeModal() {
-        setIsOpen(false);
-    }
-
+const Modal = ({ children, visible, closeModal }: PropsWithChildren<Props>): React.ReactElement => {
     return (
         <div className={clsx([s.mask, visible ? s.show : s.hide])}>
             <div className={s.modal}>
@@ -27,6 +22,8 @@ export const Modal = ({ children, visible, setIsOpen }: PropsWithChildren<Props>
         </div>
     );
 };
+
+export const MemoizedModal = memo(Modal);
 
 // Modal.propTypes = {
 //     /** Modal visibility */
