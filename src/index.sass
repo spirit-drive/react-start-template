@@ -69,3 +69,37 @@ img
 
 textarea
     resize: none
+
+main.main
+    flex: 1 1 auto
+
+section
+    padding: 50px 0
+
+.section-title
+    position: relative
+    text-transform: uppercase
+    color: var(--contrast-color)
+    font-weight: 700
+
+    span
+        background-color: var(--bg-color)
+        padding-right: 1rem
+        position: relative
+        z-index: 1
+    
+
+    &::after
+        position: absolute
+        content: ""
+        width: 100%
+        top: 50%
+        left: 0
+        border-top: 1px dashed var(--text-color)
+
+label.required::before
+    content: "* "
+    color: #dc3545
+    font-weight: bold
+
+

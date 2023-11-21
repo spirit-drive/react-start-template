@@ -20,8 +20,8 @@ export const ShortProductDisplay = ({product}) => {
                     <p className="product-excerpt">{desc}</p>
                     <div className="product-bottom-details d-flex justify-content-between">
                         <div className="product-price">
-                            <small>{price}</small>
-                            {oldPrice}
+                            <small>{oldPrice}</small>
+                            {price}
                         </div>
                         <div className="product-links">
                             <a href="#" className="btn btn-outline-secondary add-to-cart">
