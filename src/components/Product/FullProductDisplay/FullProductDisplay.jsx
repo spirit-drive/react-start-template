@@ -1,5 +1,6 @@
 import React from "react";
 import "./FullProductDisplay.sass";
+import { AddToCartButton } from "../../AddToCartButton";
 
 export const FullProductDisplay = ({product}) => {
     const {id, name, photos, desc, chreateAt, oldPrice, price, category, properties} = product;
@@ -50,12 +51,7 @@ export const FullProductDisplay = ({product}) => {
                                 {price}
                             </div>
                             <p>{desc}</p>
-                            <div className="product-add2cart">
-                                <div className="input-group">
-                                    <input type="number" className="form-control" defaultValue="1" min="1" />
-                                    <button className="btn btn-warning"><i className="fas fa-shopping-cart"></i> Add to cart</button>
-                                </div>
-                            </div>
+                            <AddToCartButton />
                             <div className="row mt-3">
                                 <div className="col-lg-4  mb-2">
                                     <div className="card h-100">
