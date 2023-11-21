@@ -1,6 +1,4 @@
 import { Layout } from "./Layout";
-import "../../index.sass";
-
 
 export default {
   title: "Компоненты/Layout",

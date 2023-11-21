@@ -1,6 +1,6 @@
 import React from "react";
 import "./HeaderMiddle.sass";
-import { Logo } from "src/components/Logo";
+import { Logo } from "../../Logo";
 
 export const HeaderMiddle = () => {
     return (
