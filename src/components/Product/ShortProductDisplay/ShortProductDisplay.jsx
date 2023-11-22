@@ -2,7 +2,7 @@ import React from "react";
 import "./ShortProductDisplay.sass";
 
 export const ShortProductDisplay = ({product}) => {
-    const {name, photo, desc, oldPrice, price} = product;
+    const {name, photos, desc, oldPrice, price} = product;
     return (
         <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-3">
             <div className="product-card">
@@ -11,7 +11,7 @@ export const ShortProductDisplay = ({product}) => {
                     <div className="offer-new">New</div>
                 </div>
                 <div className="product-thumb">
-                    <a href="product.html"><img src={require(`../photos/${photo}`)} /></a>
+                    <a href="product.html"><img src={require(`../photos/${photos[0]}`)} /></a>
                 </div>
                 <div className="product-details">
                     <h4>

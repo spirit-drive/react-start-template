@@ -1,8 +1,8 @@
-import { ShortProductDisplay } from "./ShortProductDisplay";
+import { CartProductDisplay } from "./CartProductDisplay";
 
 export default {
-  title: "Компоненты/Product/ShortProductDisplay",
-  component: ShortProductDisplay,
+  title: "Компоненты/Product/CartProductDisplay",
+  component: CartProductDisplay,
   tags: ['autodocs'],
   argTypes: {
     product: {
@@ -12,7 +12,7 @@ export default {
   }
 }
 
-const Template = (arg) => <ShortProductDisplay {...arg} />
+const Template = (arg) => <CartProductDisplay {...arg} />
 
 export const Товар_1 = Template.bind({});
 export const Товар_2 = Template.bind({});
