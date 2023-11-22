@@ -1,13 +1,4 @@
-import React, {
-  createContext,
-  FC,
-  useCallback,
-  useContext,
-  useInsertionEffect,
-  useState,
-  useMemo,
-  useLayoutEffect,
-} from 'react';
+import React, { createContext, FC, useCallback, useContext, useState, useMemo, useLayoutEffect } from 'react';
 import { Theme } from './types';
 import '../styles/index.scss';
 
