@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useInsertionEffect, useMemo, useState } from 'react';
+import React, { createContext, useCallback, useContext, useLayoutEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LANG_STORAGE_KEY, Language } from './settings';
 
@@ -22,12 +22,10 @@ export const LocalizationProvider: React.FC<LocalizationProviderProps> = ({ chil
     i18n.language in Language ? (i18n.language as Language) : Language.ru
   );
 
-  useInsertionEffect(() => {
+  useLayoutEffect(() => {
     localStorage.setItem(LANG_STORAGE_KEY, language);
-    const html = document.body.parentElement;
-    html.lang = language;
     i18n.changeLanguage(language);
-  }, [language]);
+  }, [i18n, language]);
 
   const toggleLanguage = useCallback(
     () => setLanguage((language) => (language === Language.ru ? Language.en : Language.ru)),

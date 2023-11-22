@@ -1,4 +1,13 @@
-import React, { createContext, FC, useCallback, useContext, useInsertionEffect, useState, useMemo } from 'react';
+import React, {
+  createContext,
+  FC,
+  useCallback,
+  useContext,
+  useInsertionEffect,
+  useState,
+  useMemo,
+  useLayoutEffect,
+} from 'react';
 import { Theme } from './types';
 import '../styles/index.scss';
 
@@ -21,7 +30,7 @@ const KEY = 'theme';
 export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => (localStorage.getItem(KEY) as Theme) || Theme.light);
 
-  useInsertionEffect(() => {
+  useLayoutEffect(() => {
     localStorage.setItem(KEY, theme);
     const html = document.body.parentElement;
     if (html) {
