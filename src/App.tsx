@@ -18,6 +18,9 @@ function App() {
       <button onClick={() => setModalVisible(!modalVisible)} style={{ marginTop: 250 }}>
         Modal
       </button>
+      <OperationSummary
+        amount={50.0}
+        category="Покупки"
       <Modal visible={modalVisible}>Modal Text</Modal>
       <OperationSummary
         amount={50.0}
@@ -27,6 +30,10 @@ function App() {
       />
       <OperationView
         amount={100.0}
+        category="Покупки"
+        title="Покупка продуктов"
+        description="Покупка продуктов в местном супермаркете."
+        date="2023-09-30"
         category={Category.marketing}
         title="Покупка продуктов"
         description="Покупка продуктов в местном супермаркете."
