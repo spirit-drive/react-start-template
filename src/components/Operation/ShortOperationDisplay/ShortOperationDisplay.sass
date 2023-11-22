@@ -1,0 +1,60 @@
+$white-color: #fff
+$primary-color: #00cdff
+$grey-color: #cacaca
+$cell-padding: 0.4em
+
+.tm-table-flex
+    font-size: 16px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    .tm-table-flex__row
+        display: flex
+        flex-direction: row
+
+        .tm-table-flex__cell
+            width: 100%
+            flex: 1 1 auto
+
+    &.tm-table-flex--sticky-head
+        .tm-table-flex__head
+            position: sticky
+            top: 0
+
+    &.tm-table-flex--sticky-foot
+        .tm-table-flex__foot
+            position: sticky
+            bottom:0
+
+    &.tm-table-flex--theme-default
+        .tm-table-flex__head
+            border-bottom: 2px solid darken($grey-color, 40%)
+
+            .tm-table-flex__row
+                .tm-table-flex__cell
+                    font-weight: 600
+        
+        .tm-table-flex__body
+            .tm-table-flex__row
+                .tm-table-flex__cell
+                    border-bottom: 1px solid $grey-color
+
+        .tm-table-flex__foot
+            border-top: 2px solid darken($grey-color, 20%)
+
+        .tm-table-flex__row
+            .tm-table-flex__cell
+                padding: $cell_padding
+                border-right: 1px solid $primary-color
+
+                &:last-child
+                    border-right: 1px-solid-transparent
+
+        &.tm-table-flex--sticky-head
+            .tm-table-flex__head
+                background-color: $white-color
+
+        &.tm-table-flex--sticky-foot
+            .tm-table-flex__foot
+                background-color: $white-color
