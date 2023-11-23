@@ -14,7 +14,7 @@ export const HeaderBottom = () => {
                     aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="offcanvas offcanvas-start" id="offcanvasNavbar" tabIndex="-1" aria-labelledby="offcanvasNavbarLabel">
+                    <div className="offcanvas offcanvas-start" id="offcanvasNavbar" tabIndex={-1} aria-labelledby="offcanvasNavbarLabel">
                         <div className="offcanvas-header">
                             <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Catalog</h5>
                             <button className="btn-close" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
