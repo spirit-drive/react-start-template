@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'clsx';
 import './layout.css';
-import { Context } from './../../App';
+import { Context } from '../../App';
 
 interface LayoutProps {
   /** Контент */

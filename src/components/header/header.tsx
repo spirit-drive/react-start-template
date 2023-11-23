@@ -3,10 +3,10 @@ import cn from 'clsx';
 import './header.css';
 import { Logo } from '../logo';
 import { Menu } from '../menu';
-import { Switcher as ThemeSwitcher } from './../form/switcher';
+import { Switcher as ThemeSwitcher } from '../switcher';
 
 import imageFile from './../logo/logo.svg';
-import { Context, Themes } from './../../App';
+import { Context, Themes } from '../../App';
 import { useTranslation } from 'react-i18next';
 
 interface headerProps {

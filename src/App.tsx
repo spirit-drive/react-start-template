@@ -2,7 +2,7 @@ import React, { Dispatch } from 'react';
 import './App.css';
 import { Header } from './components/header';
 import { Layout } from './components/layout';
-import { Budgets } from './components/budget/Budgets';
+import { Budgets } from './components/budget';
 import { useTranslation } from 'react-i18next';
 
 export enum Themes {
