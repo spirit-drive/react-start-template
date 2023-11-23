@@ -23,13 +23,13 @@ export const Операция_6 = Template.bind({});
 
 Операция_1.args = {
     operation: {
-        id: "1",
+        id: 1,
         name: "Хлеб",
         desc: "Магазин Пятёрочка",
-        createAt: "01.01.2023",
+        createAt: "01.01.2023 23:59:59",
         amount: 56,
-        category: {id: "1", name: "Продукты", photo: ""},
-        type: "Расход" 
+        category: {id: 1, name: "Продукты", photo: ""},
+        type: "Расход"
     },
 };
 

@@ -1,8 +1,13 @@
-import React from "react";
+import React, { FC } from "react";
 import cn from "classnames";
 import "./Modal.sass";
 
-export const Modal = ({visible, children}) => {
+type IProps = {
+    visible: boolean;
+    children?: React.ReactNode;
+};
+
+export const Modal: FC<IProps> = ({visible, children}) => {
     return (
         <div className={cn("modal", {open: visible})} id="my-modal">
             <div className="modal__box" >
