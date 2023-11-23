@@ -16,9 +16,9 @@ export const HeaderTop = () => {
 
                     <div className="col-sm-4 d-none d-sm-block">
                         <ul className="social-icons d-flex justify-content-center">
-                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i className="fa-brands fa-youtube"></i></a></li>
+                            <li><a href="#"><i className="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i className="fa-brands fa-instagram"></i></a></li>
                         </ul>
                     </div>
 

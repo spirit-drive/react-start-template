@@ -12,7 +12,7 @@ export const HeaderMiddle = () => {
                         <Logo title="E-Shop" />
                     </div>
 
-                    <div class="col-sm-6 mt-2 mt-md-0">
+                    <div className="col-sm-6 mt-2 mt-md-0">
                         <form action="">
                             <div className="input-group">
                                 <input className="form-control" type="text"  name="search" placeholder="Searching..." aria-label="Searching..." aria-describedby="button-search" />

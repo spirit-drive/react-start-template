@@ -23,6 +23,20 @@ export const FullOperationDisplay = ({operation}) => {
                                                 </div>
                                             </div>
                                             <div className="mb-3">
+                                                <label for="amount" className="form-label required">Сумма</label>
+                                                <input type="text" className="form-control" id="Amount" placeholder="Amount" value={amount} required />
+                                                <div className="invalid-feedback">
+                                                    Amount is required
+                                                </div>
+                                            </div>
+                                            <div className="mb-3">
+                                                <label for="category" className="form-label required">Категория</label>
+                                                <input type="category" className="form-control" id="category" placeholder="Category" value={category.name} required />
+                                                <div className="invalid-feedback">
+                                                    Category is required
+                                                </div>
+                                            </div>
+                                            <div className="mb-3">
                                                 <label for="name" className="form-label required">Название</label>
                                                 <input type="name" className="form-control" id="name" placeholder="Name" value={name} required />
                                                 <div className="invalid-feedback">
@@ -41,20 +55,6 @@ export const FullOperationDisplay = ({operation}) => {
                                                 <input type="text" className="form-control" id="password" placeholder="createAt" value={createAt} required />
                                                 <div className="invalid-feedback">
                                                     createAt is required
-                                                </div>
-                                            </div>
-                                            <div className="mb-3">
-                                                <label for="amount" className="form-label required">Сумма</label>
-                                                <input type="text" className="form-control" id="Amount" placeholder="Amount" value={amount} required />
-                                                <div className="invalid-feedback">
-                                                    Amount is required
-                                                </div>
-                                            </div>
-                                            <div className="mb-3">
-                                                <label for="category" className="form-label required">Категория</label>
-                                                <input type="category" className="form-control" id="category" placeholder="Category" value={category.name} required />
-                                                <div className="invalid-feedback">
-                                                    Category is required
                                                 </div>
                                             </div>
                                             <div className="mb-3">
