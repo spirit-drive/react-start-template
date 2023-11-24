@@ -2,10 +2,17 @@ import React, { FC } from "react";
 import "./AddToCartButton.sass";
 
 interface AddToCartButtonProps {
+/**
+ * Если счётчик равен нулю, это кнопка, если больше нуля, то это инпут
+ * с отображением количества товара и двумя кнопками по краям (увеличения/уменьшения)
+ */
     counter?: number;
 };
 
-export const AddToCartButton: FC<AddToCartButtonProps> = ({counter}) => {
+/**
+ *  Кнопка добавления товара в корзину
+ */
+export const AddToCartButton: FC<AddToCartButtonProps> = ({counter = 0}) => {
     return (
         <div className="product-add2cart">
             <div className="input-group">
