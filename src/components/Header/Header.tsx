@@ -1,10 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 import "./Header.sass";
 import { HeaderTop } from "./HeaderTop";
 import { HeaderMiddle } from "./HeaderMiddle";
 import { HeaderBottom } from "./HeaderButtom";
 
-export const Header = () => {
+export const Header: FC = () => {
     return (
         <>
             <header className="header">

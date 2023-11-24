@@ -1,10 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import "./ShortProductDisplay.sass";
+import { ProductProps } from "../ProductPropsInterface";
 
-export const ShortProductDisplay = ({product}) => {
+export const ShortProductDisplay: FC<ProductProps> = ({product}) => {
     const {name, photos, desc, oldPrice, price} = product;
     return (
-        <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-3">
+        <div className="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-3">
             <div className="product-card">
                 <div className="product-card-offer">
                     <div className="offer-hit">Hit</div>

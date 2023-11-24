@@ -1,8 +1,8 @@
-import React from "react";
+import React, { FC } from "react";
 import "./HeaderMiddle.sass";
 import { Logo } from "../../Logo";
 
-export const HeaderMiddle = () => {
+export const HeaderMiddle: FC = () => {
     return (
         <div className="header-middle bg-white py-4">
             <div className="container-fluid">

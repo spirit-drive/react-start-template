@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 import "./HeaderTop.sass";
 
-export const HeaderTop = () => {
+export const HeaderTop: FC = () => {
     return (
         <div className="header-top py-1">
             <div className="container-fluid">

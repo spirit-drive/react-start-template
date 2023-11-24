@@ -1,8 +1,8 @@
-import React from "react";
+import React, { FC } from "react";
+import { ProductProps } from "../ProductPropsInterface";
 
-export const CartProductDisplay = ({product}) => {
-    const {id, name, photos, desc, chreateAt, oldPrice, price, category, properties} = product;
-
+export const CartProductDisplay: FC<ProductProps> = ({product}) => {
+    const {id, name, photos, desc, createAt, oldPrice, price, category, properties} = product;
     return (
         <div className="container-fluid">
             <div className="row">
@@ -28,10 +28,10 @@ export const CartProductDisplay = ({product}) => {
                                         </td>
                                         <td>
                                             <a href="#" className="cart-content-title">
-                                                Product 1 Lorem ipsum dolor, sit amet consectetur adipisicing.
+                                                {name}
                                             </a>
                                         </td>
-                                        <td>$65</td>
+                                        <td>{price}</td>
                                         <td>
                                             <input type="number" defaultValue="1" className="form-control cart-qty" />
                                         </td>
@@ -44,7 +44,7 @@ export const CartProductDisplay = ({product}) => {
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <td colSpan="5" className="text-end">
+                                        <td colSpan={5} className="text-end">
                                             <button className="btn btn-outline-warning">Update Cart</button>
                                         </td>
                                     </tr>

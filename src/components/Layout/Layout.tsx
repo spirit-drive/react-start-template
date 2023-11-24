@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import "./Layout.sass";
 
-type IProps = {
-    children: React.ReactNode;
+interface LayoutProps {
+    children?: React.ReactNode;
 };
 
-export const Layout: FC<IProps> = ({children}) => {
+export const Layout: FC<LayoutProps> = ({children}) => {
     return (
         <div className="layout">
             {children}

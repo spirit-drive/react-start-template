@@ -1,24 +1,9 @@
 import React, { FC } from "react";
 import { Modal } from "../../Modal";
 import "./FullOperationDisplay.sass";
+import { OperationProps } from "../OperationPropsInterface";
 
-type IProps = {
-    operation: {
-        id: number,
-        name: string,
-        desc: string,
-        createAt: string,
-        amount: number,
-        category: {
-            id: number,
-            name: string,
-            photo: string,
-        },
-        type: string,
-    };
-}
-
-export const FullOperationDisplay: FC<IProps> = ({operation}) => {
+export const FullOperationDisplay: FC<OperationProps> = ({operation}) => {
     const {id, name, desc, createAt, amount, category, type} = operation;
     return (
         <div className="operation-description">

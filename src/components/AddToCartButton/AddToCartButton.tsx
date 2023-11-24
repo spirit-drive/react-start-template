@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import "./AddToCartButton.sass";
 
-type IProps = {
-    counter: number;
+interface AddToCartButtonProps {
+    counter?: number;
 };
 
-export const AddToCartButton: FC<IProps> = ({counter}) => {
+export const AddToCartButton: FC<AddToCartButtonProps> = ({counter}) => {
     return (
         <div className="product-add2cart">
             <div className="input-group">

@@ -1,15 +1,16 @@
-import React from "react";
+import React, { FC } from "react";
 import "./FullProductDisplay.sass";
 import { AddToCartButton } from "../../AddToCartButton";
+import { ProductProps } from "../ProductPropsInterface";
 
-export const FullProductDisplay = ({product}) => {
-    const {id, name, photos, desc, chreateAt, oldPrice, price, category, properties} = product;
+export const FullProductDisplay: FC<ProductProps> = ({product}) => {
+    const {id, name, photos, desc, createAt, oldPrice, price, category, properties} = product;
     return (
         <>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <nav class="breadcrumbs">
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-12">
+                        <nav className="breadcrumbs">
                             <ul>
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="category.html">{category.name}</a></li>
@@ -51,7 +52,7 @@ export const FullProductDisplay = ({product}) => {
                                 {price}
                             </div>
                             <p>{desc}</p>
-                            <AddToCartButton />
+                            <AddToCartButton counter={0} />
                             <div className="row mt-3">
                                 <div className="col-lg-4  mb-2">
                                     <div className="card h-100">
@@ -101,17 +102,17 @@ export const FullProductDisplay = ({product}) => {
                                     <button className="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description-tab-pane" type="button" role="tab" aria-controls="description-tab-pane" aria-selected="true">Description</button>
                                 </li>
                                 <li className="nav-item" role="presentation">
-                                    <button className="nav-link" id="features-tab" data-bs-toggle="tab" data-bs-target="#features-tab-pane" type="button" role="tab" aria-controls="features-tab-pane" aria-selected="false" tabIndex="-1">Features</button>
+                                    <button className="nav-link" id="features-tab" data-bs-toggle="tab" data-bs-target="#features-tab-pane" type="button" role="tab" aria-controls="features-tab-pane" aria-selected="false" tabIndex={-1}>Features</button>
                                 </li>
                                 <li className="nav-item" role="presentation">
-                                    <button className="nav-link" id="video-tab" data-bs-toggle="tab" data-bs-target="#video-tab-pane" type="button" role="tab" aria-controls="video-tab-pane" aria-selected="false" tabIndex="-1">Video</button>
+                                    <button className="nav-link" id="video-tab" data-bs-toggle="tab" data-bs-target="#video-tab-pane" type="button" role="tab" aria-controls="video-tab-pane" aria-selected="false" tabIndex={-1}>Video</button>
                                 </li>
                             </ul>
                             <div className="tab-content" id="myTabContent">
-                                <div className="tab-pane fade active show" id="description-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabIndex="0">
+                                <div className="tab-pane fade active show" id="description-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabIndex={0}>
                                     {desc}
                                 </div>
-                                <div className="tab-pane fade" id="features-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabIndex="0">
+                                <div className="tab-pane fade" id="features-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabIndex={0}>
                                     <table className="table">
                                         <tbody>
                                             <tr>
@@ -125,9 +126,9 @@ export const FullProductDisplay = ({product}) => {
                                         </tbody>
                                     </table>
                                 </div>
-                                <div className="tab-pane fade" id="video-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabIndex="0">
+                                <div className="tab-pane fade" id="video-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabIndex={0}>
                                     <div className="ratio ratio-16x9">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/I10XB1-IIbA?si=fdECpgGFeE6n_epy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/I10XB1-IIbA?si=fdECpgGFeE6n_epy" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                                     </div>
                                 </div>
                             </div>

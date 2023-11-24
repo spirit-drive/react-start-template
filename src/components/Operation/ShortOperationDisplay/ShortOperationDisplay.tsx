@@ -1,7 +1,8 @@
-import React from "react";
+import React, { FC } from "react";
 import "./ShortOperationDisplay.sass";
+import { OperationProps } from "../OperationPropsInterface";
 
-export const ShortOperationDisplay = ({operation}) => {
+export const ShortOperationDisplay: FC<OperationProps> = ({operation}) => {
     const {id, amount, category, type, desc} = operation;
     return (
         <div className="container mtb-3">

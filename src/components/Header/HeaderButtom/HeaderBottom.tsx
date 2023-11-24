@@ -1,11 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import "./HeaderBottom.sass";
 
 window.addEventListener("scroll", function () {
     document.getElementById("header-nav").classList.toggle("headernav-scroll", window.scrollY > 135);
 });
 
-export const HeaderBottom = () => {
+export const HeaderBottom: FC = () => {
     return (
         <div className="header-bottom sticky-top" id="header-nav">
             <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">

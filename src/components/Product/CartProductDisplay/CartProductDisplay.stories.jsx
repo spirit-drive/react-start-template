@@ -1,4 +1,5 @@
 import { CartProductDisplay } from "./CartProductDisplay";
+import { ProductProps } from "../ProductPropsInterface";
 
 export default {
   title: "Компоненты/Product/CartProductDisplay",
@@ -6,7 +7,7 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     product: {
-      type: Object,
+      type: ProductProps,
       description: "Информация о продукте",
     },
   }
