@@ -2,6 +2,9 @@ import React, { FC } from "react";
 import "./ShortOperationDisplay.sass";
 import { OperationProps } from "../OperationPropsInterface";
 
+/**
+ * Компонент краткого отображения операции. Содержит сумму операции, название категории, название, описание (обрезанно) - все это он получает из пропсов
+ */
 export const ShortOperationDisplay: FC<OperationProps> = ({operation}) => {
     const {id, amount, category, type, desc} = operation;
     return (

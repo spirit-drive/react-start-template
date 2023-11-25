@@ -3,11 +3,22 @@ import { Modal } from "../../Modal";
 import "./FullOperationDisplay.sass";
 import { OperationProps } from "../OperationPropsInterface";
 
-export const FullOperationDisplay: FC<OperationProps> = ({operation}) => {
+interface VisibleProps {
+
+    /**
+     * Отобразить/Скрыть операцию
+     */
+    visible: boolean
+}
+
+/**
+ * Компонент полного отображения операции. Содержит сумму операции, название категории, название, описание, дату - все это он получает из пропсов. Также в нем есть кнопка редактирования (пока не активная)
+ */
+export const FullOperationDisplay: FC<OperationProps & VisibleProps> = ({ operation, visible = false,}) => {
     const {id, name, desc, createAt, amount, category, type} = operation;
     return (
         <div className="operation-description">
-            <Modal visible={true}>
+            <Modal visible={visible}>
                 <div className="container-fluid mb-3">
                     <div className="row">
                         <div className="col-12">

@@ -4,6 +4,9 @@ import { HeaderTop } from "./HeaderTop";
 import { HeaderMiddle } from "./HeaderMiddle";
 import { HeaderBottom } from "./HeaderButtom";
 
+/**
+ * Компонент Header. Должен прилипать при прокрутке страницы и содержать компонент Logo
+ */
 export const Header: FC = () => {
     return (
         <>

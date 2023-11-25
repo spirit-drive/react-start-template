@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import "./Layout.sass";
 
 interface LayoutProps {
+    
     /**
      * Внутреннее содержимое макета
      */
@@ -9,9 +10,7 @@ interface LayoutProps {
 };
 
 /**
- * Компонент Layout. Это презентационный компонент, будет использован в навигации и содержит компонент Header 
- * @param param0 
- * @returns 
+ * Компонент Layout. Это презентационный компонент, будет использован в навигации и содержит компонент Header
  */
 export const Layout: FC<LayoutProps> = ({children}) => {
     return (

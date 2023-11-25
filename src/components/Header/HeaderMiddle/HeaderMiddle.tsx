@@ -2,6 +2,9 @@ import React, { FC } from "react";
 import "./HeaderMiddle.sass";
 import { Logo } from "../../Logo";
 
+/**
+ * Компонент средней части шапки сайта
+ */
 export const HeaderMiddle: FC = () => {
     return (
         <div className="header-middle bg-white py-4">

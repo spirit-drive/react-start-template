@@ -1,10 +1,14 @@
 import React, { FC } from "react";
+import "./CartProductDisplay.sass";
 import { ProductProps } from "../ProductPropsInterface";
 
+/**
+ * Компонент товара для корзины. Содержит кнопку удаления
+ */
 export const CartProductDisplay: FC<ProductProps> = ({product}) => {
     const {id, name, photos, desc, createAt, oldPrice, price, category, properties} = product;
     return (
-        <div className="container-fluid">
+        <div id="cart-product-display" className="container-fluid">
             <div className="row">
                 <div className="col-lg-8 mb-3">
                     <div className="cart-content p-3 h-100 bg-white">
@@ -31,7 +35,7 @@ export const CartProductDisplay: FC<ProductProps> = ({product}) => {
                                                 {name}
                                             </a>
                                         </td>
-                                        <td>{price}</td>
+                                        <td>${price}</td>
                                         <td>
                                             <input type="number" defaultValue="1" className="form-control cart-qty" />
                                         </td>

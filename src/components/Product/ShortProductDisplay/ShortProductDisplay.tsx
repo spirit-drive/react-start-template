@@ -2,6 +2,9 @@ import React, { FC } from "react";
 import "./ShortProductDisplay.sass";
 import { ProductProps } from "../ProductPropsInterface";
 
+/**
+ * Компонент краткого отображения товара. Содержит стоимость, изображение, название, описание (обрезанно) - все это он получает из пропсов. Также пока не активная кнопка "в корзину"
+ */
 export const ShortProductDisplay: FC<ProductProps> = ({product}) => {
     const {name, photos, desc, oldPrice, price} = product;
     return (

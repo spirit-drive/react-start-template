@@ -3,6 +3,9 @@ import "./FullProductDisplay.sass";
 import { AddToCartButton } from "../../AddToCartButton";
 import { ProductProps } from "../ProductPropsInterface";
 
+/**
+ * Компонент полного отображения товара. Содержит стоимость, изображения, название категории, название, описание - все это он получает из пропсов. Также пока не активная кнопка "в корзину"
+ */
 export const FullProductDisplay: FC<ProductProps> = ({product}) => {
     const {id, name, photos, desc, createAt, oldPrice, price, category, properties} = product;
     return (
@@ -49,7 +52,7 @@ export const FullProductDisplay: FC<ProductProps> = ({product}) => {
                             <h1 className="section-title h3"><span>{name}</span></h1>
                             <div className="product-price">
                                 <small>{oldPrice}</small>
-                                {price}
+                                ${price}
                             </div>
                             <p>{desc}</p>
                             <AddToCartButton counter={0} />

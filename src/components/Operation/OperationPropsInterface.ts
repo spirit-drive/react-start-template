@@ -1,4 +1,8 @@
 export interface OperationProps {
+    
+    /**
+     * Информация об одной операции
+     */
     operation: {
         id: number,
         name: string,

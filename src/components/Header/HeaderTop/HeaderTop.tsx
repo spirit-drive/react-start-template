@@ -1,6 +1,9 @@
 import React, { FC } from "react";
 import "./HeaderTop.sass";
 
+/**
+ * Компонент верхней части шапки сайта
+ */
 export const HeaderTop: FC = () => {
     return (
         <div className="header-top py-1">

@@ -1,4 +1,8 @@
 export interface ProductProps {
+
+    /**
+     * Информация об одном товаре
+     */
     product: {
         id: number,
         name: string,

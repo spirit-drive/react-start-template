@@ -3,11 +3,23 @@ import cn from "classnames";
 import "./Modal.sass";
 
 interface ModalProps {
+
+    /**
+     * Отображать/Скрыть модальное окно
+     */
     visible: boolean;
+
+    /**
+     * Внутреннее содержимое модального окна
+     */
     children?: React.ReactNode;
 };
 
-export const Modal: FC<ModalProps> = ({visible, children}) => {
+/**
+ * Компонент модального окна. Состоит из темной маски, белого квадратного окна и кнопки закрытия. Обработчики писать пока не нужно. Обладает пропсом 
+ * visible и children, для них должны быть реализовано управление в сторибук. Логики монтирования в body пока не нужно реализовывать.
+ */
+export const Modal: FC<ModalProps> = ({visible = false, children}) => {
     return (
         <div className={cn("modal", {open: visible})} id="my-modal">
             <div className="modal__box" >
