@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import "./Header.sass";
 import { HeaderTop } from "./HeaderTop";
 import { HeaderMiddle } from "./HeaderMiddle";
@@ -7,7 +7,7 @@ import { HeaderBottom } from "./HeaderButtom";
 /**
  * Компонент Header. Должен прилипать при прокрутке страницы и содержать компонент Logo
  */
-export const Header: FC = () => {
+export const Header: FC = (): ReactElement => {
     return (
         <>
             <header className="header">

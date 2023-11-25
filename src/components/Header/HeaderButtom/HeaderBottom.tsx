@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import "./HeaderBottom.sass";
 
 window.addEventListener("scroll", function () {
@@ -8,7 +8,7 @@ window.addEventListener("scroll", function () {
 /**
  * Компонент нижней части шапки сайта
  */
-export const HeaderBottom: FC = () => {
+export const HeaderBottom: FC = (): ReactElement => {
     return (
         <div className="header-bottom sticky-top" id="header-nav">
             <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">

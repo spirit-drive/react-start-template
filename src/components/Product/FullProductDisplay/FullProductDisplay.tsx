@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import "./FullProductDisplay.sass";
 import { AddToCartButton } from "../../AddToCartButton";
 import { ProductProps } from "../ProductPropsInterface";
@@ -6,7 +6,7 @@ import { ProductProps } from "../ProductPropsInterface";
 /**
  * Компонент полного отображения товара. Содержит стоимость, изображения, название категории, название, описание - все это он получает из пропсов. Также пока не активная кнопка "в корзину"
  */
-export const FullProductDisplay: FC<ProductProps> = ({product}) => {
+export const FullProductDisplay: FC<ProductProps> = ({product}): ReactElement => {
     const {id, name, photos, desc, createAt, oldPrice, price, category, properties} = product;
     return (
         <>

@@ -1,11 +1,11 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import "./CartProductDisplay.sass";
 import { ProductProps } from "../ProductPropsInterface";
 
 /**
  * Компонент товара для корзины. Содержит кнопку удаления
  */
-export const CartProductDisplay: FC<ProductProps> = ({product}) => {
+export const CartProductDisplay: FC<ProductProps> = ({product}): ReactElement => {
     const {id, name, photos, desc, createAt, oldPrice, price, category, properties} = product;
     return (
         <div id="cart-product-display" className="container-fluid">

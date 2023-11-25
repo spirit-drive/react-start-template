@@ -1,11 +1,11 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import "./ShortProductDisplay.sass";
 import { ProductProps } from "../ProductPropsInterface";
 
 /**
  * Компонент краткого отображения товара. Содержит стоимость, изображение, название, описание (обрезанно) - все это он получает из пропсов. Также пока не активная кнопка "в корзину"
  */
-export const ShortProductDisplay: FC<ProductProps> = ({product}) => {
+export const ShortProductDisplay: FC<ProductProps> = ({product}): ReactElement => {
     const {name, photos, desc, oldPrice, price} = product;
     return (
         <div className="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-3">
@@ -25,7 +25,7 @@ export const ShortProductDisplay: FC<ProductProps> = ({product}) => {
                     <div className="product-bottom-details d-flex justify-content-between">
                         <div className="product-price">
                             <small>{oldPrice}</small>
-                            {price}
+                            ${price}
                         </div>
                         <div className="product-links">
                             <a href="#" className="btn btn-outline-secondary add-to-cart">

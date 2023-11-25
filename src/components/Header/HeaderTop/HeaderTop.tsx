@@ -1,10 +1,10 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import "./HeaderTop.sass";
 
 /**
  * Компонент верхней части шапки сайта
  */
-export const HeaderTop: FC = () => {
+export const HeaderTop: FC = (): ReactElement => {
     return (
         <div className="header-top py-1">
             <div className="container-fluid">

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ReactElement } from 'react';
 import "./Layout.sass";
 
 interface LayoutProps {
@@ -12,7 +12,7 @@ interface LayoutProps {
 /**
  * Компонент Layout. Это презентационный компонент, будет использован в навигации и содержит компонент Header
  */
-export const Layout: FC<LayoutProps> = ({children}) => {
+export const Layout: FC<LayoutProps> = ({children}): ReactElement => {
     return (
         <div className="layout">
             {children}

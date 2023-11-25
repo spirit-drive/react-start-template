@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import { Modal } from "../../Modal";
 import "./FullOperationDisplay.sass";
 import { OperationProps } from "../OperationPropsInterface";
@@ -14,7 +14,7 @@ interface VisibleProps {
 /**
  * Компонент полного отображения операции. Содержит сумму операции, название категории, название, описание, дату - все это он получает из пропсов. Также в нем есть кнопка редактирования (пока не активная)
  */
-export const FullOperationDisplay: FC<OperationProps & VisibleProps> = ({ operation, visible = false,}) => {
+export const FullOperationDisplay: FC<OperationProps & VisibleProps> = ({ operation, visible = false,}): ReactElement => {
     const {id, name, desc, createAt, amount, category, type} = operation;
     return (
         <div className="operation-description">

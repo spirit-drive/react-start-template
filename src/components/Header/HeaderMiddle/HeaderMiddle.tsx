@@ -1,11 +1,11 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import "./HeaderMiddle.sass";
 import { Logo } from "../../Logo";
 
 /**
  * Компонент средней части шапки сайта
  */
-export const HeaderMiddle: FC = () => {
+export const HeaderMiddle: FC = (): ReactElement => {
     return (
         <div className="header-middle bg-white py-4">
             <div className="container-fluid">
