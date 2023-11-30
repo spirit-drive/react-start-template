@@ -1,9 +1,8 @@
 import type { Meta } from '@storybook/react';
-
 import { AddToCartButton } from './AddToCartButton';
 
 const meta: Meta<typeof AddToCartButton> = {  
-  title: 'Компоненты/AddToCartButton',
+  title: 'Компоненты/Buttons/AddToCartButton',
   component: AddToCartButton,
   tags: ['autodocs'],
   argTypes: {

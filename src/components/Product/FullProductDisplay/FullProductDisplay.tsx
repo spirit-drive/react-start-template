@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from "react";
 import "./FullProductDisplay.scss";
-import { AddToCartButton } from "../../AddToCartButton";
+import { AddToCartButton } from "../../Buttons/AddToCartButton";
 import { ProductProps } from "../ProductPropsInterface";
 
 /**
