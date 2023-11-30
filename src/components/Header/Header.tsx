@@ -1,5 +1,4 @@
 import React, { FC, ReactElement } from "react";
-import "./Header.sass";
 import { HeaderTop } from "./HeaderTop";
 import { HeaderMiddle } from "./HeaderMiddle";
 import { HeaderBottom } from "./HeaderButtom";
@@ -10,7 +9,7 @@ import { HeaderBottom } from "./HeaderButtom";
 export const Header: FC = (): ReactElement => {
     return (
         <>
-            <header className="header">
+            <header>
                 <HeaderTop />
                 <HeaderMiddle />
             </header>

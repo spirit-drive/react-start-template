@@ -1,0 +1,10 @@
+.header-logo {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    transition: all .3s;
+    
+    &:hover {
+        color: var(--contrast-color);
+    }
+}

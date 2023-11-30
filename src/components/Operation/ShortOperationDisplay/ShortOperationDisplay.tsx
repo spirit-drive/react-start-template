@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from "react";
-import "./ShortOperationDisplay.sass";
+import "./ShortOperationDisplay.scss";
 import { OperationProps } from "../OperationPropsInterface";
 
 /**

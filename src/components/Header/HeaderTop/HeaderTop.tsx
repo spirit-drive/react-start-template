@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from "react";
-import "./HeaderTop.sass";
+import "./HeaderTop.scss";
 
 /**
  * Компонент верхней части шапки сайта

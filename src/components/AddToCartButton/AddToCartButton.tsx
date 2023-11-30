@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from "react";
-import "./AddToCartButton.sass";
+import "./AddToCartButton.scss";
 
 interface AddToCartButtonProps {
     

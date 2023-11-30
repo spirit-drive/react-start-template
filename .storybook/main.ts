@@ -15,7 +15,7 @@ const config = {
   docs: {
     autodocs: "tag",
   },
-  webpackFinal: async (config: Configuration): Promise<Configuration> => {
+  /*webpackFinal: async (config: Configuration): Promise<Configuration> => {
     config.module.rules.push({
       test: /\.scss$/,
       use: [
@@ -39,6 +39,6 @@ const config = {
       exclude: /\.module\.scss/,
     });
     return config;
-  }
+  }*/
 };
 export default config;

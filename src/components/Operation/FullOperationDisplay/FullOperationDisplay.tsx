@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from "react";
 import { Modal } from "../../Modal";
-import "./FullOperationDisplay.sass";
+import "./FullOperationDisplay.scss";
 import { OperationProps } from "../OperationPropsInterface";
 
 interface VisibleProps {

@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from "react";
-import "./Logo.sass";
+import "./Logo.scss";
 
 interface LogoProps{
 

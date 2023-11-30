@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from "react";
-import "./CartProductDisplay.sass";
+import "./CartProductDisplay.scss";
 import { ProductProps } from "../ProductPropsInterface";
 
 /**

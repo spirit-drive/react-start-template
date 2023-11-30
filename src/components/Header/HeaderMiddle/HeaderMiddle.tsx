@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from "react";
-import "./HeaderMiddle.sass";
+import "./HeaderMiddle.scss";
 import { Logo } from "../../Logo";
 
 /**

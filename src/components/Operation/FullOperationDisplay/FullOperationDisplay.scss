@@ -1,0 +1,21 @@
+.operation-description {
+    .modal__box {
+        min-width: 50vw;
+
+        .section-title {
+            span {
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+.needs-validation {
+    div:last-child {
+        text-align: right;
+        
+        button {
+            margin-left: 20px;
+        }
+    }
+}

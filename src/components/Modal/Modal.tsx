@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from "react";
 import cn from "classnames";
-import "./Modal.sass";
+import "./Modal.scss";
 
 interface ModalProps {
 

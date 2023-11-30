@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react';
-import "./Layout.sass";
+import "./Layout.scss";
 
 interface LayoutProps {
     

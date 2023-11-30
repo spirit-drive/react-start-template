@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from "react";
-import "./HeaderBottom.sass";
+import "./HeaderBottom.scss";
 
 window.addEventListener("scroll", function () {
     document.getElementById("header-nav").classList.toggle("headernav-scroll", window.scrollY > 135);

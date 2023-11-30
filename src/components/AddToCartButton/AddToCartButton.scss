@@ -1,0 +1,19 @@
+.product-add2cart {
+    .input-group {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        width: 250px;
+
+        input {
+            text-align: center;
+            background-color: #fff;
+            border-color: var(--accent-color);
+        }
+
+        button {
+            border-color: var(--accent-color);
+        }
+    }
+}
