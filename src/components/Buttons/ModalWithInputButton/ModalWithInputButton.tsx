@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, useState, ChangeEvent, useEffect } from "react";
+import React, { FC, ReactElement, useState, ChangeEvent, } from "react";
 import { Modal } from "../../Modal";
 
 /**
@@ -21,7 +21,7 @@ export const ModalWithInputButton: FC = (): ReactElement => {
         <>
             <input onChange={(e) => handlerChangeInput(e)} value={input}></input><br /><br />
             <button onClick={() => handlerModalWindow(true)}>Кнопка</button>
-            <Modal visible={visible} setVisible={handlerModalWindow} children={input}/>
+            <Modal visible={visible} onCloseModalWindow={handlerModalWindow} children={input}/>
         </>
     );
 };
