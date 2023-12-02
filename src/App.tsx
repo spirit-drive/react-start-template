@@ -4,13 +4,19 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Текст писать тут
-        </p>
-      </header>
+    <div>
+        <ul>Цели:</ul> 
+           <li>Изучить ts, React</li> 
+           <li>Понять принципы постояния архитектуры приложения с использованием данных технологий</li> 
+           <ul>Навыки:</ul> 
+           <li>JS, JQuery</li> 
+           <li>html, css</li> 
+           <li>.Net, C#</li> 
+           <li>SQL</li> 
+           <li>TFS</li> 
+           Опыт работы backend разработчиком более 2-х лет, последний год работаю в компании, 
+           занимающейся облачными решениями в качестве fullstack-разработчика. 
+           Фронт реализован на MVC в планах перевести на React. 
     </div>
   );
 }
