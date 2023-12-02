@@ -8,7 +8,11 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quod error dolor impedit possimus, molestiae reiciendis voluptas ducimus vero ullam doloribus ratione modi maxime harum minima voluptatum fuga cumque cupiditate!
+          В мае 2021 ушёл со стройки во фронтенд<br/>
+          Сейчас  работаю в SMM агенстве в отделе разработки<br />
+          Навык работы с React минимальный <br/>
+          React интересен и нужен для разработки офлайн приложений для заказчиков.<br/>
+Сложно сказать - какие технологии интересны... Знаний мало когда что то попробую -пойму , что мне нужно.интересно
         </p>
       </header>
     </div>
