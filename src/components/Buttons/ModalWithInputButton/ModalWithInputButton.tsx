@@ -9,19 +9,19 @@ export const ModalWithInputButton: FC = (): ReactElement => {
     const [input, setInput] = useState<string>("");
     const [visible, setVisible] = useState<boolean>(false);
 
-    const handlerChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
+    const handlerChangeInput = (e: ChangeEvent<HTMLInputElement>): void => {
        setInput(e.target.value);
     };
     
-    const handlerClickButton = (visible: boolean) => {
+    const handlerModalWindow = (visible: boolean): void => {
         setVisible(visible);
     };
 
     return (
         <>
-            <input onChange={(e) => handlerChangeInput(e)}></input><br /><br />
-            <button onClick={() => handlerClickButton(true)}>Кнопка</button>
-            <Modal visible={visible} setVisible={handlerClickButton} children={input}/>
+            <input onChange={(e) => handlerChangeInput(e)} value={input}></input><br /><br />
+            <button onClick={() => handlerModalWindow(true)}>Кнопка</button>
+            <Modal visible={visible} setVisible={handlerModalWindow} children={input}/>
         </>
     );
 };
