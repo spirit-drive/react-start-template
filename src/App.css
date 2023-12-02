@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
 .App {
     text-align: center;
 }
@@ -11,6 +13,13 @@
     .App-logo {
         animation: App-logo-spin infinite 20s linear;
     }
+}
+* {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.App-container {
+    padding: 0 12px;
 }
 
 .App-header {
@@ -26,6 +35,11 @@
 
 .App-link {
     color: #61dafb;
+}
+
+.App-ol,
+.App-about {
+    text-align: start;
 }
 
 @keyframes App-logo-spin {
