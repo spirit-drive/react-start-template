@@ -2,7 +2,7 @@ import React, { FC, ReactElement } from "react";
 import cn from "classnames";
 import "./Modal.scss";
 
-interface ModalProps {
+export interface ModalProps {
 
     /** Отображать/Скрыть модальное окно */
     visible: boolean;

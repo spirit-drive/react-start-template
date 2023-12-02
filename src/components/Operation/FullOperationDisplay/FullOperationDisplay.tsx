@@ -2,23 +2,17 @@ import React, { FC, ReactElement } from "react";
 import { Modal } from "../../Modal";
 import "./FullOperationDisplay.scss";
 import { OperationProps } from "../OperationPropsInterface";
-
-interface VisibleProps {
-
-    /**
-     * Отобразить/Скрыть операцию
-     */
-    visible: boolean
-}
+import { ModalProps } from "../../Modal";
 
 /**
- * Компонент полного отображения операции. Содержит сумму операции, название категории, название, описание, дату - все это он получает из пропсов. Также в нем есть кнопка редактирования (пока не активная)
+ * Компонент полного отображения операции. Содержит сумму операции, название категории, название, описание,
+ * дату - все это он получает из пропсов. Также в нем есть кнопка редактирования (пока не активная)
  */
-export const FullOperationDisplay: FC<OperationProps & VisibleProps> = ({ operation, visible = false,}): ReactElement => {
+export const FullOperationDisplay: FC<OperationProps & ModalProps> = ({ operation, visible = false,}): ReactElement => {
     const {id, name, desc, createAt, amount, category, type} = operation;
     return (
         <div className="operation-description">
-            <Modal visible={visible}>
+            <Modal visible={visible} onCloseModalWindow={null}>
                 <div className="container-fluid mb-3">
                     <div className="row">
                         <div className="col-12">

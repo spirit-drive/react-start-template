@@ -1,1 +1,1 @@
-export { ModalWithInput } from "./ModalWithInputButton";
+export { ModalWithInputButton } from "./ModalWithInputButton";

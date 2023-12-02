@@ -1,10 +1,17 @@
-import React, { FC, ReactElement } from "react";
+import React, { FC, ReactElement, useContext } from "react";
 import "./HeaderTop.scss";
+import { ThemeContext } from "../../../theming/ThemeProvider";
+import cn from "classnames";
 
 /**
  * Компонент верхней части шапки сайта
  */
 export const HeaderTop: FC = (): ReactElement => {
+    const [theme, setTheme] = useContext(ThemeContext);
+    const changeTheme = () => {
+        setTheme(theme === "light" ? "dark" : "light");
+    };
+
     return (
         <div className="header-top py-1">
             <div className="container-fluid">
@@ -27,6 +34,11 @@ export const HeaderTop: FC = (): ReactElement => {
 
                     <div className="col-6 col-sm-4">
                         <div className="header-top-account d-flex justify-content-end">
+                            <div className="btn-group me-2">
+                                <ul className="theme-switcher d-flex justify-content-center">
+                                    <li><a><i className={cn("fa-regular", `${theme === "light" ? "fa-moon" : "fa-sun"}`)} onClick={changeTheme}></i></a></li>
+                                </ul>
+                            </div>
                             <div className="btn-group me-2">
                                 <div className="dropdown">
                                     <button className="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> Account </button>
