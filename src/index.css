@@ -12,8 +12,10 @@ code {
         monospace;
 }
 .my-description{
-    max-width: 1200px;
     text-align: left;
+    padding-bottom: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 .my-description p{
     margin-top: 0;
