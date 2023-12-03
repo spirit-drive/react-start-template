@@ -36,7 +36,7 @@ export const HeaderTop: FC = (): ReactElement => {
                         <div className="header-top-account d-flex justify-content-end">
                             <div className="btn-group me-2">
                                 <ul className="theme-switcher d-flex justify-content-center">
-                                    <li><a><i className={cn("fa-regular", `${theme === "light" ? "fa-moon" : "fa-sun"}`)} onClick={changeTheme}></i></a></li>
+                                    <li><a onClick={changeTheme}><i className={cn("fa-regular", `${theme === "light" ? "fa-moon" : "fa-sun"}`)}></i></a></li>
                                 </ul>
                             </div>
                             <div className="btn-group me-2">
