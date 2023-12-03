@@ -12,6 +12,25 @@
         animation: App-logo-spin infinite 20s linear;
     }
 }
+p.item{
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-size: 22px;
+}
+p.item > div > span{
+    display: inline-block;
+    border: 1px dashed #ffffff70;
+    padding: 5px;
+    border-radius: 4px;
+    background: #61dafb14;
+    margin: 5px;
+}
+p.item > small{
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1px;
+    opacity: .5;
+}
 
 .App-header {
     background-color: #282c34;
@@ -22,6 +41,7 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+    padding-bottom: 60px;
 }
 
 .App-link {
