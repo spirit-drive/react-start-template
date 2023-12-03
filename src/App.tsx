@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>1.2.3.4.5</p>
+        <p><b>Моя цель</b> научиться разрабатывать современные, а главное – масштабируемые веб-приложения.</p>
       </header>
     </div>
   );
