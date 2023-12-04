@@ -11,7 +11,6 @@
  * - id (строка)
  * - name (строка)
  * - photo (строка, необязательно)
- *
  * Продукт (Product) содержит
  * - id (строка)
  * - name (строка)
@@ -42,15 +41,92 @@
  * - category (Категория)
  * - type ('Profit')
  * */
+type Category = {
+  id: string;
+  name: string;
+  photo?: string;
+};
+
+type Product = {
+  id: string;
+  name: string;
+  photo?: string;
+  desc?: string;
+  createdAt: string;
+  oldPrice?: number;
+  price: number;
+  category: Category;
+};
+
+interface Operation {
+  id: string;
+  name: string;
+  desc?: string;
+  createdAt: string;
+  amount: number;
+  category: Category;
+}
+
+export interface Cost extends Operation {
+  type: 'Cost';
+}
+
+export interface Profit extends Operation {
+  type: 'Profit';
+}
 
 /**
  * Создает случайный продукт (Product).
  * Принимает дату создания (строка)
  * */
-// export const createRandomProduct = (createdAt: string) => {};
+const getRandomId = () => Math.random().toString(26).slice(2);
+const getRandomPrice = () => Math.floor(Math.random() * 500) + 100;
+const getRandomName = () => `Name_${getRandomId()}`;
+const getRandomPhoto = () => `http://dummyimage.com/200x200.png/5fa2dd/ffffff&text=${getRandomId()}`;
+
+const dummyCategory: Category = {
+  id: getRandomId(),
+  name: getRandomName(),
+  photo: getRandomPhoto(),
+};
+
+export const createRandomProduct = (createdAt: string): Product => ({
+  id: getRandomId(),
+  name: getRandomName(),
+  photo: getRandomPhoto(),
+  desc: 'This is a random product',
+  createdAt,
+  oldPrice: getRandomPrice(),
+  price: getRandomPrice(),
+  category: dummyCategory,
+});
 
 /**
  * Создает случайную операцию (Operation).
  * Принимает дату создания (строка)
  * */
-// export const createRandomOperation = (createdAt: string) => {};
+const getRandomAmount = () => Math.floor(Math.random() * 1000) + 100;
+const getRandomType = () => (Math.random() > 0.5 ? 'Cost' : 'Profit');
+
+export const createRandomOperation = (createdAt: string) => {
+  const baseOperation: Operation = {
+    id: getRandomId(),
+    name: getRandomName(),
+    desc: 'random desc',
+    createdAt,
+    amount: getRandomAmount(),
+    category: dummyCategory,
+  };
+
+  if (getRandomType() === 'Cost') {
+    return {
+      ...baseOperation,
+      type: 'Cost',
+    };
+  } else {
+    return {
+      ...baseOperation,
+      type: 'Profit',
+    };
+  }
+};
