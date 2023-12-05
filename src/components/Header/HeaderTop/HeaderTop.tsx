@@ -1,7 +1,9 @@
 import React, { FC, ReactElement, useContext } from "react";
 import "./HeaderTop.scss";
 import { ThemeContext } from "../../../theming/ThemeProvider";
+import { LangSwitcher } from "../../LangSwitcher";
 import cn from "classnames";
+import { useTranslation } from "react-i18next";
 
 /**
  * Компонент верхней части шапки сайта
@@ -11,7 +13,7 @@ export const HeaderTop: FC = (): ReactElement => {
     const changeTheme = () => {
         setTheme(theme === "light" ? "dark" : "light");
     };
-
+    const { t } = useTranslation();
     return (
         <div className="header-top py-1">
             <div className="container-fluid">
@@ -41,20 +43,16 @@ export const HeaderTop: FC = (): ReactElement => {
                             </div>
                             <div className="btn-group me-2">
                                 <div className="dropdown">
-                                    <button className="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> Account </button>
+                                    <button className="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> {t("header.header-top.account.title")} </button>
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item" href="#">Sign In</a></li>
-                                        <li><a className="dropdown-item" href="#">Sign Up</a></li>
+                                        <li><a className="dropdown-item" href="#">{t("header.header-top.account.signIn")}</a></li>
+                                        <li><a className="dropdown-item" href="#">{t("header.header-top.account.signUp")}</a></li>
                                     </ul>
                                     </div>
                             </div>
                             <div className="btn-group">
                                 <div className="dropdown">
-                                    <button className="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> En </button>
-                                    <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item" href="#">Ru</a></li>
-                                        <li><a className="dropdown-item" href="#">De</a></li>
-                                    </ul>
+                                    <LangSwitcher />
                                 </div>
                             </div> 
                         </div>
