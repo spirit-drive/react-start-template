@@ -16,10 +16,10 @@ function App() {
 		    <div>Изучить typescript</div>
 		    <div>Углубиться в React</div>
 
-		    <h3>С чем знаком по фронтовой части:<h3>
+		    <h3>С чем знаком по фронтовой части:</h3>
 		    <div>JS,CSS,HTML,git,SOAP UI,gitLab,Oracle PL/SQL</div>
 
-		    <h3>Какие технологии интересны:<h3>
+		    <h3>Какие технологии интересны:</h3>
 		    <div>ReactJS</div>
 			  <div>Typescript</div>
 			  <div>Redux + Redux-Saga</div>
