@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Start repo with required configuration",
   "main": "src/index.tsx",
-  "author": "Igor <spirit-drive@yandex.ru>",
+  "author": "Oskar S <oskar.stud@gmail.com>",
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
