@@ -47,10 +47,111 @@
  * Создает случайный продукт (Product).
  * Принимает дату создания (строка)
  * */
-// export const createRandomProduct = (createdAt: string) => {};
 
 /**
  * Создает случайную операцию (Operation).
  * Принимает дату создания (строка)
  * */
-// export const createRandomOperation = (createdAt: string) => {};
+
+type TGeneralFields = {
+  id: string;
+  name: string;
+};
+
+type TCategory = TGeneralFields & {
+  photo?: string;
+};
+
+type TCategoryGeneralFields = {
+  desc?: string;
+  createdAt: string;
+  category: TCategory;
+};
+
+type TProduct = TCategory &
+  TCategoryGeneralFields & {
+    oldPrice?: number;
+    price: number;
+  };
+
+type TOperationGeneralFields = {
+  amount: number;
+};
+
+enum EOperation {
+  Cost,
+  Profit,
+}
+
+type TOperation = TCost | TProfit;
+
+type TCost = TGeneralFields &
+  TCategoryGeneralFields &
+  TOperationGeneralFields & {
+    type: EOperation.Cost;
+  };
+
+type TProfit = TGeneralFields &
+  TCategoryGeneralFields &
+  TOperationGeneralFields & {
+    type: EOperation.Profit;
+  };
+
+const productNames = ['AMD', 'INTEL', 'NVIDIA', 'ATI', 'MSI'];
+
+const productCategories = ['CPU', 'RAM', 'videoСard', 'systemUnit', 'HDD', 'SSD', 'LAN'];
+
+const productPrices = [1000, 2000, 3000, 1500, 2700];
+
+const operationNames = ['buy', 'sell', /*  */ 'pay', 'return', 'add to basket'];
+
+function makeRandomString(length: number) {
+  let text = '';
+  const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+  for (let i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+
+  return text;
+}
+
+const getRandomIndex = (length: number) => Math.floor(Math.random() * length);
+
+export const createRandomProduct = (createdAt: string): TProduct => {
+  const productName = productNames[getRandomIndex(productNames.length)];
+  const productPrice = productPrices[getRandomIndex(productPrices.length)];
+  const productCategory = productCategories[getRandomIndex(productCategories.length)];
+
+  return {
+    createdAt,
+    id: makeRandomString(5),
+    name: productName,
+    price: productPrice,
+    photo: productName + '.jpg',
+    desc: 'description to' + productName,
+    oldPrice: productPrice - 200,
+    category: {
+      id: makeRandomString(5),
+      name: productCategory,
+    },
+  };
+};
+
+export const createRandomOperation = (createdAt: string): TOperation => {
+  const operationName = operationNames[getRandomIndex(productNames.length)];
+  const productCategory = productCategories[getRandomIndex(productCategories.length)];
+  const type = getRandomIndex(1) ? EOperation.Cost : EOperation.Profit;
+  return {
+    createdAt,
+    type,
+    id: makeRandomString(5),
+    name: operationName,
+    amount: 1,
+    desc: 'description to ' + operationName,
+    category: {
+      id: makeRandomString(5),
+      name: productCategory,
+    },
+  };
+};
