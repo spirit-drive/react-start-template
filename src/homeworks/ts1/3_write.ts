@@ -88,18 +88,18 @@ export type Profit = {
  * */
 export const createRandomProduct = (createdAt: string): Product => {
   const category = {
-    id: '1',
-    name: 'Продукты питания',
+    id: `${Math.floor(Math.random())}`,
+    name: `Продукты питания ${createdAt}`,
   };
 
   return {
-    id: '1',
-    name: 'Шоколадная паста Nestle',
-    photo: 'nestle',
+    id: `${Math.floor(Math.random())}`,
+    name: `${category.name}-${Math.floor(Math.random())}-продукт`,
+    photo: `${Math.random().toString(36)}`,
     desc: '',
     createdAt,
-    oldPrice: 100,
-    price: 120,
+    oldPrice: Math.floor(Math.random()) + 5,
+    price: Math.floor(Math.random()) + 10,
     category,
   };
 };
@@ -110,17 +110,17 @@ export const createRandomProduct = (createdAt: string): Product => {
  * */
 export const createRandomOperation = (createdAt: string): Operation => {
   const category = {
-    id: '1',
-    name: 'Продукты питания',
+    id: `${Math.floor(Math.random())}`,
+    name: `${Math.random().toString(10)}-${createdAt}`,
   };
 
   return {
-    id: '1',
-    name: 'salary',
-    createdAt,
-    amount: 10,
+    id: `${Math.floor(Math.random())}`,
+    name: `${category.name}-salary-${createdAt}`,
+    amount: Math.floor(Math.random()),
     desc: '',
     category,
+    createdAt,
     type: 'Profit',
   };
 };

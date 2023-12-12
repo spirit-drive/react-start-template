@@ -10,8 +10,8 @@ export const getFakeApi = async (): Promise<void> => {
 
 // Мы это не проходили, но по тексту ошибки можно понять, как это починить
 export class SomeClass {
-  private set;
-  private channel;
+  private set: Set<number>;
+  private channel: BroadcastChannel;
   constructor() {
     this.set = new Set([1]);
     this.channel = new BroadcastChannel('test-broadcast-channel');
