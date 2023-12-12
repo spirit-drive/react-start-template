@@ -43,10 +43,10 @@ export const HeaderTop: FC = (): ReactElement => {
                             </div>
                             <div className="btn-group me-2">
                                 <div className="dropdown">
-                                    <button className="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> {t("header.header-top.account.title")} </button>
+                                    <button className="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> {t("account.title")} </button>
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item" href="#">{t("header.header-top.account.signIn")}</a></li>
-                                        <li><a className="dropdown-item" href="#">{t("header.header-top.account.signUp")}</a></li>
+                                        <li><a className="dropdown-item" href="#">{t("account.signIn")}</a></li>
+                                        <li><a className="dropdown-item" href="#">{t("account.signUp")}</a></li>
                                     </ul>
                                     </div>
                             </div>

@@ -1,5 +1,7 @@
 import React, { FC, ReactElement } from "react";
 import "./HeaderBottom.scss";
+import { useTranslation } from "react-i18next";
+
 
 window.addEventListener("scroll", function () {
     document.getElementById("header-nav").classList.toggle("headernav-scroll", window.scrollY > 135);
@@ -9,6 +11,7 @@ window.addEventListener("scroll", function () {
  * Компонент нижней части шапки сайта
  */
 export const HeaderBottom: FC = (): ReactElement => {
+    const { t } = useTranslation();
     return (
         <div className="header-bottom sticky-top" id="header-nav">
             <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
@@ -25,50 +28,50 @@ export const HeaderBottom: FC = (): ReactElement => {
                         <div className="offcanvas-body">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="index.html">Home</a>
+                                    <a className="nav-link active" aria-current="page" href="index.html">{t("navbar.home")}</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">About</a>
+                                    <a className="nav-link" href="#">{t("navbar.about")}</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Contact</a>
+                                    <a className="nav-link" href="#">{t("navbar.contact")}</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Payment</a>
+                                    <a className="nav-link" href="#">{t("navbar.payment")}</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Delivery</a>
+                                    <a className="nav-link" href="#">{t("navbar.delivery")}</a>
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false" data-bs-auto-close="outside"> Catalog </a>
+                                    aria-expanded="false" data-bs-auto-close="outside"> {t("navbar.catalog")} </a>
                                     <ul className="dropdown-menu dropdown-menu-end">
                                         <li>
-                                            <a className="dropdown-item" href="category.html">Shoes</a>
+                                            <a className="dropdown-item" href="category.html">{t("navbar.shoes")}</a>
                                         </li>
                                         <li>
-                                            <a className="dropdown-item" href="category.html">Jeans</a>
+                                            <a className="dropdown-item" href="category.html">{t("navbar.jeans")}</a>
                                         </li>
                                         <li className="nav-item dropend">
                                             <a className="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                            data-bs-auto-close="outside">Sportswear</a>
+                                            data-bs-auto-close="outside">{t("navbar.sportswear")}</a>
                                             <ul className="dropdown-menu dropdown-menu-end">
                                                 <li>
-                                                    <a className="dropdown-item" href="category.html">Men's Sportswear</a>
+                                                    <a className="dropdown-item" href="category.html">{t("navbar.mensSportswear")}</a>
                                                 </li>
                                                 <li>
-                                                    <a className="dropdown-item" href="category.html">Women's Sportswear</a>
+                                                    <a className="dropdown-item" href="category.html">{t("navbar.womensSportswear")}</a>
                                                 </li>
                                                 <li>
-                                                    <a className="dropdown-item" href="category.html">Baby's Sportswear</a>
+                                                    <a className="dropdown-item" href="category.html">{t("navbar.babysSportswear")}</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <a className="dropdown-item" href="category.html">Coat</a>
+                                            <a className="dropdown-item" href="category.html">{t("navbar.coat")}</a>
                                         </li>
                                         <li>
-                                            <a className="dropdown-item" href="category.html">Shirs</a>
+                                            <a className="dropdown-item" href="category.html">{t("navbar.shirts")}</a>
                                         </li>
                                     </ul>
                                 </li>
