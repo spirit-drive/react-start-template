@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from "react";
 import { HeaderTop } from "./HeaderTop";
 import { HeaderMiddle } from "./HeaderMiddle";
-import { HeaderBottom } from "./HeaderButtom";
+import { HeaderBottom } from "./HeaderBottom";
 import { ThemeProvider } from "../../theming/ThemeProvider";
 
 /**
