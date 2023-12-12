@@ -28,9 +28,9 @@ export const HeaderTop: FC = (): ReactElement => {
 
                     <div className="col-sm-4 d-none d-sm-block">
                         <ul className="social-icons d-flex justify-content-center">
-                            <li><a href="#"><i className="fa-brands fa-youtube"></i></a></li>
-                            <li><a href="#"><i className="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i className="fa-brands fa-instagram"></i></a></li>
+                            <li><a><i className="fa-brands fa-youtube"></i></a></li>
+                            <li><a><i className="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a><i className="fa-brands fa-instagram"></i></a></li>
                         </ul>
                     </div>
 
@@ -45,8 +45,8 @@ export const HeaderTop: FC = (): ReactElement => {
                                 <div className="dropdown">
                                     <button className="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> {t("account.title")} </button>
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item" href="#">{t("account.signIn")}</a></li>
-                                        <li><a className="dropdown-item" href="#">{t("account.signUp")}</a></li>
+                                        <li><a className="dropdown-item">{t("account.signIn")}</a></li>
+                                        <li><a className="dropdown-item">{t("account.signUp")}</a></li>
                                     </ul>
                                     </div>
                             </div>

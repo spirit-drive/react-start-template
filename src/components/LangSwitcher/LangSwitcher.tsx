@@ -1,6 +1,7 @@
 import React, { FC, ReactElement } from "react";
 import { useTranslation } from "react-i18next";
 import { Locale } from "../../localization";
+import "./LangSwitcher.scss";
 
 export const LangSwitcher: FC = (): ReactElement => {
     const { i18n } = useTranslation();
@@ -8,9 +9,9 @@ export const LangSwitcher: FC = (): ReactElement => {
     return (
         <>
             <button className="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> {i18n.language} </button>
-            <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#" onClick={() => i18n.changeLanguage(lang)}>Ru</a></li>
-                <li><a className="dropdown-item" href="#" onClick={() => i18n.changeLanguage(lang)}>En</a></li>
+            <ul className="dropdown-menu lang-switcher">
+                <li><a className="dropdown-item" onClick={() => i18n.changeLanguage(lang)}>Ru</a></li>
+                <li><a className="dropdown-item" onClick={() => i18n.changeLanguage(lang)}>En</a></li>
             </ul>
         </>
     );

@@ -27,6 +27,7 @@
             border-radius: 50%;
             float: left;
             text-align: center;
+            cursor: pointer;
             
             &:hover {
                 background-color: var(--contrast-color);
@@ -61,9 +62,10 @@
                 color: var(--accent-color);
                 transition: all .3s;
             }
-        }        
+        }
     }
 
+    
     .btn {
         background-color: #fff;
     }

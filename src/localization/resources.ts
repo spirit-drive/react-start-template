@@ -13,7 +13,7 @@ export const resources = {
                 placeholder: "Поиск...",
             },
             navbar: {
-                home: "Домашняя",
+                home: "Дом",
                 about: "О нас",
                 contact: "Контакты",
                 payment: "Оплата",
