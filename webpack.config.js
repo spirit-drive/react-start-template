@@ -15,6 +15,7 @@ module.exports = (_, args) => {
     devtool: 'source-map',
     context: src,
     devServer: {
+      allowedHosts: 'all',
       open: true,
       port,
       hot: true,
@@ -73,7 +74,7 @@ module.exports = (_, args) => {
             },
             {
               loader: 'css-loader',
-/*               options: {
+              /*               options: {
                 modules: {
                   localIdentName: '[name]_[local]-[hash:base64:5]',
                 },
@@ -84,11 +85,11 @@ module.exports = (_, args) => {
         },
         {
           test: /\.woff2$/i,
-          type: "asset/resource",
+          type: 'asset/resource',
           generator: {
-              filename: "fonts/[name][ext]"
-          }
-      },
+            filename: 'fonts/[name][ext]',
+          },
+        },
       ],
     },
     plugins: [
