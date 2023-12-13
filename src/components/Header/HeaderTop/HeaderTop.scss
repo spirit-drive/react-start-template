@@ -1,74 +1,77 @@
-.header-top {    
-    .header-top-phone {
-        a {
-            text-decoration: none;
+.header-top {
+  .header-top-phone {
+    a {
+      text-decoration: none;
 
-            &:hover { 
-                text-decoration: underline;
-            }
-        }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  ul.social-icons {
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+
+    li {
+      margin-right: 10px;
     }
 
-    ul.social-icons {
-        list-style: none;
-        margin-bottom: 0;
-        padding: 0;
+    a {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 50%;
+      float: left;
+      text-align: center;
+      cursor: pointer;
 
-        li {
-            margin-right: 10px;
-        }
+      &:hover {
+        background-color: var(--contrast-color);
+        color: var(--accent-color);
+        transition: all 0.3s;
+      }
+    }
+  }
 
-        a {
-            background-color: var(--accent-color);
-            color: var(--contrast-color);
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-            border-radius: 50%;
-            float: left;
-            text-align: center;
-            cursor: pointer;
-            
-            &:hover {
-                background-color: var(--contrast-color);
-                color: var(--accent-color);
-                transition: all .3s;
-            }
-        }
+  ul.theme-switcher {
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+
+    li {
+      margin-right: 10px;
     }
 
-    ul.theme-switcher {
-        list-style: none;
-        margin-bottom: 0;
-        padding: 0;
+    a {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 50%;
+      float: left;
+      text-align: center;
+      cursor: pointer;
 
-        li {
-            margin-right: 10px;
-        }
-
-        a {
-            background-color: var(--accent-color);
-            color: var(--contrast-color);
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-            border-radius: 50%;
-            float: left;
-            text-align: center;
-            cursor: pointer;
-            
-            &:hover {
-                background-color: var(--contrast-color);
-                color: var(--accent-color);
-                transition: all .3s;
-            }
-        }
+      &:hover {
+        background-color: var(--contrast-color);
+        color: var(--accent-color);
+        transition: all 0.3s;
+      }
     }
+  }
 
-    
-    .btn {
-        background-color: #fff;
+  .header-top-account {
+    a {
+      cursor: pointer;
     }
+  }
 
-
+  .btn {
+    background-color: #fff;
+  }
 }
