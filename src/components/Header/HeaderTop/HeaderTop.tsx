@@ -1,19 +1,14 @@
 import React, { FC, ReactElement, useContext } from 'react';
 import './HeaderTop.scss';
-import { ThemeContext } from '../../../theming/ThemeProvider';
-import { LangSwitcher } from '../../LangSwitcher';
+import { ThemeSwitcher } from '../../Switchers/ThemeSwitcher';
+import { AccountSwitcher } from '../../Switchers/AccountSwitcher';
+import { LangSwitcher } from '../../Switchers/LangSwitcher';
 import cn from 'classnames';
-import { useTranslation } from 'react-i18next';
 
 /**
  * Компонент верхней части шапки сайта
  */
 export const HeaderTop: FC = (): ReactElement => {
-  const [theme, setTheme] = useContext(ThemeContext);
-  const changeTheme = () => {
-    setTheme(theme === 'Light' ? 'Dark' : 'Light');
-  };
-  const { t } = useTranslation();
   return (
     <div className="header-top py-1">
       <div className="container-fluid">
@@ -48,41 +43,15 @@ export const HeaderTop: FC = (): ReactElement => {
           </div>
 
           <div className="col-6 col-sm-4">
-            <div className="header-top-account d-flex justify-content-end">
+            <div className="d-flex justify-content-end">
               <div className="btn-group me-2">
-                <ul className="theme-switcher d-flex justify-content-center">
-                  <li>
-                    <a onClick={changeTheme}>
-                      <i className={cn('fa-regular', `${theme === 'Light' ? 'fa-moon' : 'fa-sun'}`)}></i>
-                    </a>
-                  </li>
-                </ul>
+                <ThemeSwitcher />
               </div>
               <div className="btn-group me-2">
-                <div className="dropdown">
-                  <button
-                    className="btn btn-sm dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    {' '}
-                    {t('account.title')}{' '}
-                  </button>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <a className="dropdown-item">{t('account.signIn')}</a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item">{t('account.signUp')}</a>
-                    </li>
-                  </ul>
-                </div>
+                <AccountSwitcher />
               </div>
               <div className="btn-group">
-                <div className="dropdown">
-                  <LangSwitcher />
-                </div>
+                <LangSwitcher />
               </div>
             </div>
           </div>

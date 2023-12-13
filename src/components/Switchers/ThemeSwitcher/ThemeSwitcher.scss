@@ -1,15 +1,4 @@
-.header-top {
-  .header-top-phone {
-    a {
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  ul.social-icons {
+ul.theme-switcher {
     list-style: none;
     margin-bottom: 0;
     padding: 0;
@@ -36,8 +25,3 @@
       }
     }
   }
-
-  .btn {
-    background-color: #fff;
-  }
-}

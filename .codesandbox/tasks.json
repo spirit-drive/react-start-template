@@ -19,28 +19,26 @@
     },
     "build": {
       "name": "build",
-      "command": "npm run build",
-      "runAtStart": false
+      "command": "npm run build"
     },
     "test": {
       "name": "test",
-      "command": "npm run test",
-      "runAtStart": false
+      "command": "npm run test"
     },
     "lint": {
       "name": "lint",
-      "command": "npm run lint",
-      "runAtStart": false
+      "command": "npm run lint"
     },
     "storybook": {
       "name": "storybook",
       "command": "npm run storybook",
-      "runAtStart": false
+      "preview": {
+        "port": 6006
+      }
     },
     "build-storybook": {
       "name": "build-storybook",
-      "command": "npm run build-storybook",
-      "runAtStart": false
+      "command": "npm run build-storybook"
     }
   }
 }
