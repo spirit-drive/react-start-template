@@ -3,7 +3,6 @@ import './HeaderTop.scss';
 import { ThemeSwitcher } from '../../Switchers/ThemeSwitcher';
 import { AccountSwitcher } from '../../Switchers/AccountSwitcher';
 import { LangSwitcher } from '../../Switchers/LangSwitcher';
-import cn from 'classnames';
 
 /**
  * Компонент верхней части шапки сайта

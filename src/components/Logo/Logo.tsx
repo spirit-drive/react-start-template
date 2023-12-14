@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react';
 import './Logo.scss';
 
-interface LogoProps {
+interface ILogo {
   /**
    * Текстовый заголовок логотипа
    */
@@ -11,6 +11,6 @@ interface LogoProps {
 /**
  * Компонент Logo. Презентационный компонент, сделайте любой на свой вкус, можно использовать и просто круг, главное обозначить его место в хедере.
  */
-export const Logo: FC<LogoProps> = ({ title = 'E-Shop' }): ReactElement => {
+export const Logo: FC<ILogo> = ({ title = 'E-Shop' }): ReactElement => {
   return <a className="header-logo h1">{title}</a>;
 };
