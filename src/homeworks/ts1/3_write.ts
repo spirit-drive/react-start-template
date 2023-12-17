@@ -84,7 +84,16 @@ export const createRandomProduct = (createdAt: string): Product  => {
     if(createdAt.length == 0) {
       throw new Error('Нет даты');
     }
-    return new Product(createdAt);
+    var product = new Product(createdAt);
+    product.id = (Math.floor(Math.random() * 100) + 1).toString();
+    product.name = 'Продукт1';
+    product.photo = 'Фото1';
+    product.price = 20;
+    product.category ={
+        id : (Math.floor(Math.random() * 100) + 1).toString(),  
+        name: "Категория1"
+    } as Category;
+    return product;
 };
 
 // Создает случайную операцию(Operation).
@@ -93,5 +102,14 @@ export const createRandomOperation = (createdAt: string): Cost => {
     if(createdAt.length == 0) {
         throw new Error('Нет даты');
       }
-      return new Cost(createdAt);
+      var cost = new Cost(createdAt);
+      cost.id = (Math.floor(Math.random() * 100) + 1).toString();
+      cost.name = 'Операция1';
+      cost.amount = 10;
+      cost.type = Operation.Cost;
+      cost.category ={
+        id : (Math.floor(Math.random() * 100) + 1).toString(),  
+        name: "Категория1"
+    } as Category;
+      return cost;
 };
