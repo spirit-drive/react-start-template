@@ -41,7 +41,7 @@ export const getContrastType = (contrastValue:number):contrastType => (contrastV
 export const shortColorRegExp = /^#[0-9a-f]{3}$/i;
 export const longColorRegExp = /^#[0-9a-f]{6}$/i;
 
-export const checkColor = (color:string):void => {
+export const checkColor = (color:string):void | never => {
   if (!longColorRegExp.test(color) && !shortColorRegExp.test(color)) throw new Error(`invalid hex color: ${color}`);
 };
 
@@ -71,7 +71,6 @@ type toStringArrayType = {
 }
 export const toStringArray = <T>(arr:Array<toStringArrayType>):string[] => arr.map(({ value, number }):string => `${value}_${number}`);
 
-
 type transformCustomersType = {
   id: number,
   name: string,
@@ -79,9 +78,11 @@ type transformCustomersType = {
   isSubscribed: boolean
 }
 
+type transformCustomersReturnType = Omit<transformCustomersType, 'id'>;
+
 export const transformCustomers = (customers: Array<transformCustomersType>) => {
-  return customers.reduce((acc: Record<number, { name: string; age: number; isSubscribed: boolean }>, customer:transformCustomersType) => {
+  return customers.reduce((acc: Record<number, transformCustomersReturnType>, customer:transformCustomersType) => {
     acc[customer.id] = { name: customer.name, age: customer.age, isSubscribed: customer.isSubscribed };
     return acc;
-  }, {} as Record<number, { name: string; age: number; isSubscribed: boolean }>);
+  }, {} as Record<number, transformCustomersReturnType>);
 };
