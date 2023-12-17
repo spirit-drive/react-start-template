@@ -3,11 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TSConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const port = 2233;
 const dist = path.join(__dirname, 'dist');
 const src = path.join(__dirname, 'src');
 const host = 'localhost';
+const exts = ['.js', '.jsx', '.ts', '.tsx', '.json'];
 
 module.exports = (_, args) => {
   return {
@@ -23,10 +25,12 @@ module.exports = (_, args) => {
     },
     resolve: {
       modules: [src, 'node_modules'],
-      extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
-      alias: {
-        src,
-      },
+      extensions: exts,
+      plugins: [
+        new TSConfigPathsPlugin({
+          extensions: exts,
+        }),
+      ],
     },
     output: {
       path: dist,
@@ -86,8 +90,8 @@ module.exports = (_, args) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './index.html',
-        favicon: './favicon.svg',
+        template: './public/index.html',
+        favicon: './public/favicon.png',
       }),
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({
