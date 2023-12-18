@@ -44,6 +44,7 @@
  * */
 
 export type Operation = Cost | Profit;
+export type TypeOperation = 'Cost' | 'Profit';
 
 export type Category = {
   id: string;
@@ -109,6 +110,8 @@ export const createRandomProduct = (createdAt: string): Product => {
  * Принимает дату создания (строка)
  * */
 export const createRandomOperation = (createdAt: string): Operation => {
+  const type: TypeOperation[] = ['Profit', 'Cost'];
+
   const category = {
     id: `${Math.floor(Math.random())}`,
     name: `${Math.random().toString(10)}-${createdAt}`,
@@ -121,6 +124,6 @@ export const createRandomOperation = (createdAt: string): Operation => {
     desc: '',
     category,
     createdAt,
-    type: 'Profit',
+    type: type[Math.round(Math.random())],
   };
 };

@@ -52,7 +52,7 @@ export const getTransformFromCss = (transformCssString: string): TTransform => {
   };
 };
 
-export const getColorContrastValue = ([red, green, blue]: Array<number>) =>
+export const getColorContrastValue = ([red, green, blue]: Array<number>): number =>
   // http://www.w3.org/TR/AERT#color-contrast
   Math.round((red * 299 + green * 587 + blue * 114) / 1000);
 
