@@ -1,5 +1,4 @@
 import React from 'react';
-import { ThemeProvider } from '../../theming/ThemeProvider';
 import { LocalizationInitiator } from '../../localization/LocalizationInitiator';
 import { Layout } from '../Layout';
 import { Header } from '../Header';
@@ -10,12 +9,12 @@ import { Header } from '../Header';
  */
 function App() {
   return (
-    <ThemeProvider>
+    <>
       <LocalizationInitiator />
       <Layout>
         <Header />
       </Layout>
-    </ThemeProvider>
+    </>
   );
 }
 

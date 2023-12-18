@@ -21,11 +21,8 @@
 .Dark {
   --bg-color: black;
   --text-color: white;
-  --accent-color: #ffd333;
-  --contrast-color: #3d464d;
-  --grey-color: #ccc;
-  --red-color: #ee6e73;
-  --light-grey-color: #eee;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 html,

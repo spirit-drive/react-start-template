@@ -11,8 +11,20 @@ interface ThemeProviderProps {
 export const ThemeProvider: FC<ThemeProviderProps> = ({ children }): ReactElement => {
     const [theme, setTheme] = useLocalStorage(Theme.key, Theme.light);
     useEffect(() => {
-        if (theme === Theme.dark) document.body.classList.add(Theme.dark);
-        else document.body.classList.remove(Theme.dark);
+        let docsSb = document.getElementsByClassName("innerZoomElementWrapper")[0]
+        if (theme === Theme.dark) {
+            if (docsSb ) {
+                docsSb.classList.add(Theme.dark);
+            } else {
+                document.body.classList.add(Theme.dark);
+            }
+        } else {
+            if (docsSb ) {
+                docsSb.classList.remove(Theme.dark);
+            } else {
+                document.body.classList.remove(Theme.dark);
+            }
+        }
     }, [theme]);
     return (
         <ThemeContext.Provider value={[theme, setTheme]}>

@@ -1,12 +1,10 @@
 import React, { FC, ReactElement, useContext } from 'react';
-import { ThemeContext } from '../../../theming/ThemeProvider';
+import { ThemeProvider } from "../../../theming";
+import { ThemeContext } from '../../../theming';
 import "./ThemeSwitcher.scss";
 import cn from 'classnames';
 
-/**
- * Компонент - переключатель цветовой темы.
- */
-export const ThemeSwitcher: FC = (): ReactElement => {
+const ThemeSwitcherElement: FC = (): ReactElement => {
     const [theme, setTheme] = useContext(ThemeContext);
     
     const changeThemeHandler = () => {
@@ -23,3 +21,14 @@ export const ThemeSwitcher: FC = (): ReactElement => {
       </ul>
     );
 };
+
+/**
+ * Компонент - переключатель цветовой темы.
+ */
+export const ThemeSwitcher: FC = (): ReactElement => {
+  return(
+    <ThemeProvider>
+      <ThemeSwitcherElement />
+    </ThemeProvider>
+  );
+}; 

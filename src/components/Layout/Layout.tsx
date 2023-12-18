@@ -12,5 +12,5 @@ interface ILayout {
  * Компонент Layout. Это презентационный компонент, будет использован в навигации и содержит компонент Header
  */
 export const Layout: FC<ILayout> = ({ children }): ReactElement => {
-  return <div className="layout">{children}</div>;
+  return <div id="layout" className="layout">{children}</div>;
 };
