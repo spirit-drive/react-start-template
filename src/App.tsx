@@ -1,12 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
+import LogoImg from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo"/>
+        <LogoImg className='App-logo'/>
           <p>Цель: систематизировать уже имеющиеся знания и получить новые.</p>
           <p>Чем хочу овладеть: <s>миром</s> актуальными навыками по front-end</p>
           <p>Чем владею: HTML, CSS(SASS, LESS), JS(JQuery, React), Siebel CRM</p>
