@@ -1,7 +1,6 @@
 import React, { FC, useEffect, useState } from "react"
 import * as styles from './styles.module.scss'
 import { LuX } from 'react-icons/lu'
-import Logo from "../Logo"
 
 export interface IModal {
     visible: boolean
