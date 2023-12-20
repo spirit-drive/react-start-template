@@ -1,0 +1,32 @@
+.overlay{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.5); 
+}
+.modal-content{
+    display: block;
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    padding: 40px 16px 16px 16px;
+    min-width: 200px;
+    min-height: 200px;
+
+}
+.button-close{
+    display: block;
+    position: absolute;
+    color:#10002b;
+    top:16px;
+    right: 16px;
+    border-radius: 100%;
+    transition: 0.2s linear;
+    cursor: pointer;
+    &:hover{
+        transform: rotate(180deg);
+    }
+}
