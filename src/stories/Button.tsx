@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './button.module.sass';
+import './button.css';
 
 interface ButtonProps {
   /**
@@ -27,16 +27,22 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export function Button({ primary = false, size = 'medium', backgroundColor, label, ...props }: ButtonProps) {
-  const mode = primary ? s.primary : s.secondary;
+export const Button = ({
+  primary = false,
+  size = 'medium',
+  backgroundColor,
+  label,
+  ...props
+}: ButtonProps) => {
+  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
     <button
       type="button"
-      className={[s.button, s[size], mode].join(' ')}
+      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >
       {label}
     </button>
   );
-}
+};
