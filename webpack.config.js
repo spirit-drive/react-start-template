@@ -62,8 +62,10 @@ module.exports = (_, args) => {
           ],
         },
         {
-          test: /\.svg/,
-          type: 'asset/inline',
+          test: /\.svg$/,
+          // issuer: /\.[jt]sx$/,
+          use: ['@svgr/webpack'],
+          // type: 'asset/resource',
         },
         {
           test: /\.s[ac]ss$/i,
