@@ -1,12 +1,15 @@
 import React, { FC, ReactElement } from 'react';
 import './CartProductDisplay.scss';
-import { TypeProduct } from '../types';
+import { Product, Photo } from '../types';
 
 /**
  * Компонент товара для корзины. Содержит кнопку удаления
  */
-export const CartProductDisplay: FC<TypeProduct> = ({ product }): ReactElement => {
-  const { id, name, photos, desc, createAt, oldPrice, price, category, properties } = product;
+export const CartProductDisplay: FC<Pick<Product, 'name' | 'price'> & Photo> = ({
+  name,
+  photo,
+  price,
+}): ReactElement => {
   return (
     <div id="cart-product-display" className="container-fluid">
       <div className="row">
@@ -29,7 +32,7 @@ export const CartProductDisplay: FC<TypeProduct> = ({ product }): ReactElement =
                   <tr>
                     <td className="pruduct-img-td">
                       <a href="#">
-                        <img src={require(`../photos/${photos[0]}`)} alt="Товар 1" />
+                        <img src={require(`../photos/${photo}`)} alt="Товар 1" />
                       </a>
                     </td>
                     <td>
