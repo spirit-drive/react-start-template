@@ -1,6 +1,6 @@
 export type Photo = {
   /** Имя файла с фотографией товара */
-  photo: string;
+  photo: string | Photo;
 };
 
 export type Category = {

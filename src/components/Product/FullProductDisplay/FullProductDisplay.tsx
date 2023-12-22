@@ -1,13 +1,19 @@
 import React, { FC, ReactElement } from 'react';
 import './FullProductDisplay.scss';
-import { TypeProduct } from '../types';
 import { AddToCartButton } from '../../Buttons/AddToCartButton';
+import { Product } from '../types';
 
 /**
  * Компонент полного отображения товара. Содержит стоимость, изображения, название категории, название, описание - все это он получает из пропсов. Также пока не активная кнопка "в корзину"
  */
-export const FullProductDisplay: FC<TypeProduct> = ({ product }): ReactElement => {
-  const { id, name, photos, desc, createAt, oldPrice, price, category, properties } = product;
+export const FullProductDisplay: FC<Pick<Product, 'name' | 'photos' | 'desc' | 'oldPrice' | 'price' | 'category'>> = ({
+  name,
+  photos,
+  desc,
+  oldPrice = 0,
+  price = 0,
+  category,
+}): ReactElement => {
   return (
     <>
       <div className="container-fluid">

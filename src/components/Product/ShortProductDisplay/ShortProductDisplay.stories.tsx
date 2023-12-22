@@ -1,139 +1,112 @@
-import type { Meta } from "@storybook/react";
-import { ShortProductDisplay } from "./ShortProductDisplay";
+import type { Meta } from '@storybook/react';
+import { ShortProductDisplay } from './ShortProductDisplay';
 
 const meta: Meta<typeof ShortProductDisplay> = {
-  title: "Компоненты/Product/ShortProductDisplay",
+  title: 'Компоненты/Product/ShortProductDisplay',
   component: ShortProductDisplay,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
+  argTypes: {
+    photo: {
+      options: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg'],
+      control: {
+        type: 'select',
+      },
+    },
+  },
 };
 
 export default meta;
 
-
 export const Товар_1 = {
   args: {
-    product: {
-      id: 1,
-      name: "Product 1 Lorem ipsum dolor, sit amet consecteturProduct 1 Lorem ipsum dolor, sit amet consecteturProduct 1 Lorem ipsum dolor, sit amet consectetur",
-      photos: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg"],
-      desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,",
-      createAt: "01.01.2023 23:59:59",
-      oldPrice: 65,
-      price: 70,
-      category: {id: 1, name: "Платья", photo: ""},
-      properties: {hit: "HIT", new: "NEW"},
-    }
+    name: 'Product 1 Lorem ipsum dolor, sit amet consecteturProduct 1 Lorem ipsum dolor, sit amet consecteturProduct 1 Lorem ipsum dolor, sit amet consectetur',
+    photo: '1.jpg',
+    desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,',
+    oldPrice: 65,
+    price: 70,
   },
 };
 
 export const Товар_2 = {
-args: {
-  product: {
-    id: 2,
-    name: "Product 2",
-    photos: ["2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "1.jpg"],
-    desc: "Lorem ipsum, dolor",
-    createAt: "01.01.2023 23:59:59",
-    oldPrice: "",
-    price: 65,
-    category: {id: 2, name: "Кофты", photo: ""},
-    properties: {new: "NEW"},
-  }
-},
+  args: {
+    name: 'Product 2',
+    photo: '2.jpg',
+    desc: 'Lorem ipsum, dolor',
+    oldPrice: 65,
+    price: 70,
+    hit: true,
+    nеw: true,
+  },
 };
 
 export const Товар_3 = {
-args: {
-  product: {
-    id: 3,
-    name: "Product 3 Lorem ipsum.",
-    photos: ["3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "1.jpg", "2.jpg", ],
-    desc: "Lorem ipsum",
-    createAt: "01.01.2023 23:59:59",
-    oldPrice: "",
+  args: {
+    name: 'Product 3 Lorem ipsum.',
+    photo: '3.jpg',
+    desc: 'Lorem ipsum',
+    oldPrice: 0,
     price: 100,
-    category: {id: 3, name: "Кросовки", photo: ""},
-    properties: {},
-  }
-},
+    hit: true,
+    nеw: false,
+  },
 };
 
 export const Товар_4 = {
-args: {
-  product: {
-    id: 4,
-    name: "Product 4 Lorem ipsum dolor",
-    photos: ["4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "1.jpg", "2.jpg", "3.jpg", ],
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,",
-    createAt: "01.01.2023 23:59:59",
-    oldPrice: "",
-    price: "",
-    category: {id: 3, name: "Кросовки", photo: ""},
-    properties: {hit: "HIT"},
-  }
-},
+  args: {
+    name: 'Product 4 Lorem ipsum dolor',
+    photo: '4.jpg',
+    desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,',
+    oldPrice: 24,
+    price: 142,
+    hit: false,
+    nеw: true,
+  },
 };
 
 export const Товар_5 = {
-args: {
-  product: {
-    id: 5,
-    name: "Product 5 Lorem ipsum dolor, sit amet consecteturProduct 5 Lorem ipsum dolor, sit amet consecteturProduct 5 Lorem ipsum dolor, sit amet consectetur",
-    photos: ["5.jpg", "6.jpg", "7.jpg", "8.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", ],
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,",
-    createAt: "01.01.2023 23:59:59",
+  args: {
+    name: 'Product 5 Lorem ipsum dolor, sit amet consecteturProduct 5 Lorem ipsum dolor, sit amet consecteturProduct 5 Lorem ipsum dolor, sit amet consectetur',
+    photo: '5.jpg',
+    desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,',
     oldPrice: 70,
     price: 65,
-    category: {id: 3, name: "Кросовки", photo: ""},
-    properties: {hit: "HIT", new: "NEW"},
-  }
-},
+    hit: false,
+    nеw: false,
+  },
 };
 
 export const Товар_6 = {
-args: {
-  product: {
-    id: 6,
-    name: "Product 6 Lorem ipsum dolor, sit amet consecteturProduct 6 Lorem ipsum dolor, sit amet consecteturProduct 6 Lorem ipsum dolor, sit amet consectetur",
-    photos: ["6.jpg", "7.jpg", "8.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", ],
-    desc: "",
-    createAt: "01.01.2023 23:59:59",
+  args: {
+    name: 'Product 6 Lorem ipsum dolor, sit amet consecteturProduct 6 Lorem ipsum dolor, sit amet consecteturProduct 6 Lorem ipsum dolor, sit amet consectetur',
+    photo: '6.jpg',
+    desc: '',
     oldPrice: 70,
     price: 65,
-    category: {id: 2, name: "Кофты", photo: ""},
-    properties: {hit: "HIT", new: "NEW"},
-  }
-},
+    hit: true,
+    nеw: false,
+  },
 };
 
 export const Товар_7 = {
-args: {
-  product: {
-    id: 7,
-    name: "Product 7 Lorem ipsum dolor, sit amet consecteturProduct 7 Lorem ipsum dolor, sit amet consecteturProduct 7 Lorem ipsum dolor, sit amet consectetur",
-    photos: ["7.jpg", "8.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", ],
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. EumLorem ipsum, dolor sit amet consectetur adipisicing elit. EumLorem ipsum, dolor sit amet consectetur adipisicing elit. Eum",
-    createAt: "01.01.2023 23:59:59",
-    oldPrice: 70,
-    price: 65,
-    category: {id: 2, name: "Кофты", photo: ""},
-    properties: {hit: "HIT", new: "NEW"},
-  }
-},
+  args: {
+    name: 'Product 7 Lorem ipsum dolor, sit amet consecteturProduct 7 Lorem ipsum dolor, sit amet consecteturProduct 7 Lorem ipsum dolor, sit amet consectetur',
+    photo: '7.jpg',
+    desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. EumLorem ipsum, dolor sit amet consectetur adipisicing elit. EumLorem ipsum, dolor sit amet consectetur adipisicing elit. Eum',
+    oldPrice: 724,
+    price: 726,
+    hit: true,
+    nеw: false,
+  },
 };
 
 export const Товар_8 = {
-args: {
-  product: {
-    id: 8,
-    name: "Product 8 Lorem ipsum dolor, sit amet consectetur",
-    photos: ["8.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", ],
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,",
-    createAt: "01.01.2023 23:59:59",
-    oldPrice: 70,
+  args: {
+    name: 'Product 8 Lorem ipsum dolor, sit amet consectetur',
+    photo: '8.jpg',
+    desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,',
+    oldPrice: 0,
     price: 65,
-    category: {id: 3, name: "Кросовки", photo: ""},
-    properties: {hit: "HIT", new: "NEW"},
-  }
-},
+    hit: true,
+    nеw: true,
+  },
 };
