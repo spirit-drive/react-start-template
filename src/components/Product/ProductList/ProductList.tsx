@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react';
-import { Photo, Product } from '../types';
+import { Product } from '../types';
 import { ShortProductDisplay } from '../ShortProductDisplay';
 
 type ProductList = {

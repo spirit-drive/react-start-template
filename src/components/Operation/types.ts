@@ -1,16 +1,24 @@
-export type TypeOperation = {
-  /** Объект с информацией об одной операции */
-  operation: {
-    id: number;
-    name: string;
-    desc: string;
-    createAt: string;
-    amount: number;
-    category: {
-      id: number;
-      name: string;
-      photo: string;
-    };
-    type: string;
-  };
+import { Category } from '../Product/types';
+
+export type Operation = {
+  /** Уникальный идентификатор операции */
+  id: number;
+
+  /** Название операции */
+  name: string;
+
+  /** Описание операции */
+  desc: string;
+
+  /** Дата постановки на учёт. (Дата создания записи в базе данных) */
+  createAt: string;
+
+  /** Сумма операции */
+  amount: number;
+
+  /** Категория, к которой относится операция */
+  category: Category;
+
+  /** Тип операции. Доход/Расход */
+  type: string;
 };
