@@ -38,6 +38,15 @@ module.exports = (_, args) => {
     module: {
       rules: [
         {
+          test: /\.(jpg|png|gif|woff|eot|ttf|svg)/,
+          use: {
+            loader: 'url-loader',
+            options: {
+              limit: 50000
+            },
+          }
+        },
+        {
           test: /\.(js|ts)x?$/,
           loader: require.resolve('babel-loader'),
           exclude: /node_modules/,
