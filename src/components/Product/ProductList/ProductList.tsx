@@ -1,10 +1,20 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC, ReactElement, useState, useEffect } from 'react';
 import { Product } from '../types';
 import { ShortProductDisplay } from '../ShortProductDisplay';
 
 type ProductList = {
   /** Массив объектов. В каждом объекте хранится информация об одном товаре */
   products: Product[];
+};
+
+let id = 9;
+
+/** Функция создания случайного продукта */
+const createRandomProduct = (products: Product[]): Product => {
+  const getId = () => id++;
+  const product = structuredClone(products[Math.floor(Math.random() * products.length)]);
+  product.id = getId();
+  return product;
 };
 
 /**
@@ -14,6 +24,20 @@ type ProductList = {
  * @returns ReactElement;
  */
 export const ProductList: FC<ProductList> = ({ products }): ReactElement => {
+  const [productsArray, setProductsArray] = useState(products);
+
+  useEffect(() => {
+    const cards = document.getElementsByClassName('product-card');
+    lastCardObserver.observe(cards[cards.length - 1]);
+  }, [productsArray]);
+
+  /** Наблюдатель за последней карточкой товара */
+  const lastCardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(({ isIntersecting }) => {
+      isIntersecting && setProductsArray([...productsArray, createRandomProduct(products)]);
+    });
+  }, {});
+
   return (
     <section className="featured-products">
       <div className="container-fluid">
@@ -25,8 +49,7 @@ export const ProductList: FC<ProductList> = ({ products }): ReactElement => {
           </div>
         </div>
         <div className="row">
-          {products.map(function (product) {
-            const { id, name, photos, desc, oldPrice, price, properties } = product;
+          {productsArray.map(({ id, name, photos, desc, oldPrice, price, properties }) => {
             const { hit, nеw } = properties;
             return (
               <ShortProductDisplay
