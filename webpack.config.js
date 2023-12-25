@@ -61,9 +61,13 @@ module.exports = (_, args) => {
             'css-loader',
           ],
         },
+        // {
+        //   test: /\.svg/,
+        //   type: 'asset/inline',
+        // },
         {
-          test: /\.svg/,
-          type: 'asset/inline',
+          test: /\.svg$/,
+          use: ['@svgr/webpack'],
         },
         {
           test: /\.s[ac]ss$/i,
@@ -73,11 +77,11 @@ module.exports = (_, args) => {
             },
             {
               loader: 'css-loader',
-              options: {
-                modules: {
-                  localIdentName: '[name]_[local]-[hash:base64:5]',
-                },
-              },
+              // options: {
+              //   modules: {
+              //     localIdentName: '[name]_[local]-[hash:base64:5]',
+              //   },
+              // },
             },
             'sass-loader',
           ],

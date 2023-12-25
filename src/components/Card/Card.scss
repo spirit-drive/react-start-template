@@ -1,0 +1,35 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 25px;
+  max-width: 250px;
+  background: #ffffff;
+  color: #000000;
+  text-align: left;
+  font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+  &:hover {
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.14);
+  }
+
+  &__picture {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  &__description {
+    font-size: 13px;
+    font-weight: 400;
+  }
+  &__price {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 140%;
+    padding-bottom: 15px;
+  }
+}

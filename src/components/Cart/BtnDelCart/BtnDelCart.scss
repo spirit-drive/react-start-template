@@ -1,0 +1,11 @@
+.btn__del-cart {
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #919191;
+  &:hover {
+    color: #0156ff;
+    transition: all .4s;
+  }
+}

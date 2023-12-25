@@ -1,0 +1,52 @@
+.product {
+  background: #ffffff;
+  color: #000000;
+  display: flex;
+  max-width: 1400px;
+  font-family: Helvetica, Arial, sans-serif;
+
+  &__pictures, &__info {
+    width: 50%;
+    padding: 20px;
+  }
+  &__pictures {
+    text-align: center;
+  }
+  &__info {
+    text-align: left;
+    border-left: 1px solid #d2d2d2;
+  }
+
+  &__gallery {
+    &-items {
+
+    }
+
+    &-item {
+      max-width: 120px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+  }
+
+  &__cover {
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    font-size: 24px;
+
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  &__price {
+    margin: 30px 0;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+}
