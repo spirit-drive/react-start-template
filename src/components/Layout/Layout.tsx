@@ -1,7 +1,7 @@
-import React from "react";
+import React, {FC} from "react";
 import Header from "src/components/Header/Header";
 
-const Layout = () => {
+const Layout: FC = () => {
     return (
         <>
             <Header />

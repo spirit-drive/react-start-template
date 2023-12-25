@@ -1,9 +1,9 @@
-import React from "react";
+import React, {FC} from "react";
 import classNames from './Logo.module.css'
 import clsx from "clsx";
 import logo from '../../assets/logo.png'
 
-const Logo = () => {
+const Logo: FC = () => {
     return (
         <div className={clsx(classNames.logo)}>
             <img src={logo}/>

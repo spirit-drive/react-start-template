@@ -1,22 +1,21 @@
-import React from "react";
-import classNames from './displayProduct.module.css'
+import React, {FC} from "react";
+import classNames from './diplayProductBasket.module.css';
 import clsx from "clsx";
-import ButtonBasket from "src/components/ButtonBasket/ButtonBasket";
+import {DisplayProductBasketProps} from "src/types";
 
-const DisplayProduct = ({coast, category, img, title, description}) => {
+const DisplayProductBasket: FC<DisplayProductBasketProps> = ({coast, img, title, shortDescription}) => {
     return (
-        <div className={clsx(classNames.DisplayProductWrapper)}>
+        <div className={clsx(classNames.displayProductWrapper)}>
             <h3 className={clsx(classNames.title)}>{title}</h3>
             <div className={clsx(classNames.about)}>
                 <div className={clsx(classNames.imgContainer)}>
                     <img src={img} alt="productImg"/>
                 </div>
                 <div className={clsx(classNames.info)}>
-                    <p className={clsx(classNames.category)}>Категория: {category}</p>
-                    <p className={clsx(classNames.description)}>{description}</p>
+                    <p className={clsx(classNames.description)}>{shortDescription}</p>
                     <div className={clsx(classNames.buyProduct)}>
                         <span>{coast}&#8381;</span>
-                        <ButtonBasket />
+                        <button>Удалить</button>
                     </div>
                 </div>
             </div>
@@ -24,4 +23,4 @@ const DisplayProduct = ({coast, category, img, title, description}) => {
     )
 }
 
-export default DisplayProduct
+export default DisplayProductBasket

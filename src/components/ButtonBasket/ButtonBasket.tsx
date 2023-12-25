@@ -1,8 +1,9 @@
-import React from "react";
+import React, {FC} from "react";
 import classNames from './ButtonBasket.module.css'
 import clsx from "clsx";
+import {ButtonBasketProps} from "src/types";
 
-const ButtonBasket = ({productCount}) => {
+const ButtonBasket: FC<ButtonBasketProps> = ({productCount}) => {
     if(!productCount) return (
         <button className={clsx(classNames.buttonBasket)}>В корзину</button>
     )

@@ -1,7 +1,8 @@
-import React from "react";
+import React, {FC} from "react";
 import clsx from "clsx";
 import classNames from './modalWindow.module.css'
-const ModalWindow = ({visible, children}) => {
+import {ModalWindowProps} from "src/types";
+const ModalWindow: FC<ModalWindowProps> = ({visible, children}) => {
     if (!visible) return null;
 
     return (
