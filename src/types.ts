@@ -1,12 +1,10 @@
-import {ReactNode} from "react";
-
 export type ButtonBasketProps = {
     productCount: number,
 }
 
 export type ModalWindowProps = {
     visible: boolean,
-    children: ReactNode,
+    children: string,
 }
 
 export type DisplayProductProps = {
