@@ -18,10 +18,7 @@ const createRandomProduct = (products: Product[]): Product => {
 };
 
 /**
- * Комонент списка товаров. Этот компонент принимает массив данных
- * и выводит список их компонентов-товаров
- * @param products - Массив товаров;
- * @returns ReactElement;
+ Компонент списка товаров. Этот компонент принимает массив данных и выводит список их компонентов-товаров, который мы делали ранее. Сделать динамическое добавление товаров в список, для этого используйте функции создания случайного товара, которые вы писали в первом домашнем задании. Добавление можно сделать с помощью кнопки "показать еще", но лучше использовать IntersectionObserver. <b>Здесь использован IntersectionObserver</b>.
  */
 export const ProductList: FC<ProductList> = ({ products }): ReactElement => {
   const [productsArray, setProductsArray] = useState(products);

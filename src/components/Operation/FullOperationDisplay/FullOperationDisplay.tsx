@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react';
-import { TypeOperation } from '../types';
+import { Operation } from '../types';
 import { TypeModal, Modal } from '../../Modal';
 import './FullOperationDisplay.scss';
 
@@ -7,8 +7,7 @@ import './FullOperationDisplay.scss';
  * Компонент полного отображения операции. Содержит сумму операции, название категории, название, описание,
  * дату - все это он получает из пропсов. Также в нем есть кнопка редактирования (пока не активная)
  */
-export const FullOperationDisplay: FC<TypeOperation & TypeModal> = ({ operation, visible = false }): ReactElement => {
-  const { id, name, desc, createAt, amount, category, type } = operation;
+export const FullOperationDisplay: FC<Operation & TypeModal> = ({ id, name, desc, createAt, amount, category, type, visible = false }): ReactElement => {
   return (
     <div className="operation-description">
       <Modal visible={visible} onCloseModalWindow={null}>

@@ -30,7 +30,7 @@ export type Product = {
   name: string;
 
   /** Массив с разными фотографиями одного и того же товара */
-  photos: Photo[];
+  photos: Photo[] | string[];
 
   /** Описание товара */
   desc: string;

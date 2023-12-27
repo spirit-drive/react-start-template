@@ -7,7 +7,7 @@ export type TypeModal = {
   visible: boolean;
 
   /** Функция, скрывающая модальное окно */
-  onCloseModalWindow: (visible: boolean) => void;
+  onCloseModalWindow?: (visible: boolean) => void;
 
   /** Внутреннее содержимое модального окна */
   children?: React.ReactNode;
