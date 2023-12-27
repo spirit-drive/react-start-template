@@ -12,7 +12,7 @@ interface IProduct {
 }
 
 export const Product:FC<IProduct> = ({image, name, description, price}) => {
-    const images:React.JSX.Element[] = image.map((image: string) => <img className={cn('product__gallery-item')} src={image} alt=""/>);
+    const images:React.JSX.Element[] = image.map((image: string, index:number) => <img key={index} className={cn('product__gallery-item')} src={image} alt=""/>);
 
     return (
         <div className={cn('product')}>
