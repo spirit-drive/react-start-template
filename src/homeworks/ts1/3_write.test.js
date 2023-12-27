@@ -31,4 +31,4 @@ describe('all', () => {
     expect(product).toHaveProperty('price');
     expect(product).toHaveProperty('category');
   });
-// });
+});

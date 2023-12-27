@@ -94,7 +94,7 @@ interface IOperation {
 
 
 
-export const createRandomProduct = (createdAt: string): Product {
+export const createRandomProduct = (createdAt: string): Product => {
     return {
       id: generateId(),
       name: generateProductName(),

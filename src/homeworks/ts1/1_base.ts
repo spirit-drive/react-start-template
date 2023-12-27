@@ -7,7 +7,7 @@ export const addPlus = (string:string):string => `+${string}`;
 
 export const removeFirstZeros = (value:string):string  => value.replace(/^(-)?[0]+(-?\d+.*)$/, '$1$2');
 
-export const getBeautifulNumber = (value:string, separator = ' '):string | undefined=>
+export const getBeautifulNumber = (value:number, separator = ' '):string | undefined=>
   value?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
 
 export const round = (value:number, accuracy:number = 2):number => {
@@ -31,7 +31,7 @@ export const getTransformFromCss = (transformCssString:string):IPoint => {
   };
 };
 
-export const getColorContrastValue = ([red, green, blue]:number[]) =>
+export const getColorContrastValue = ([red, green, blue]:[number, number, number]) =>
   // http://www.w3.org/TR/AERT#color-contrast
   Math.round((red * 299 + green * 587 + blue * 114) / 1000);
 
@@ -44,7 +44,7 @@ export const checkColor = (color:string):void | never  => {
   if (!longColorRegExp.test(color) && !shortColorRegExp.test(color)) throw new Error(`invalid hex color: ${color}`);
 };
 
-export const hex2rgb = (color:string):number[]=> {
+export const hex2rgb = (color:string):[number, number, number]=> {
   checkColor(color);
   if (shortColorRegExp.test(color)) {
     const red = parseInt(color.substring(1, 2), 16);
@@ -69,9 +69,9 @@ type Customer = {
   isSubscribed: boolean;
 };
 
-export const transformCustomers = (customers:Array<Customer>): Record<number, Omit<Customer, 'id'>> => {
+export const transformCustomers = (customers:Array<Customer>): Record<Customer["id"], Omit<Customer, 'id'>> => {
   return customers.reduce((acc, customer) => {
     acc[customer.id] = { name: customer.name, age: customer.age, isSubscribed: customer.isSubscribed };
     return acc ;
-  }, {} as  Record<number, Omit<Customer, 'id'>>) ;
+  }, {} as  Record<Customer["id"], Omit<Customer, 'id'>>) ;
 };
