@@ -1,6 +1,8 @@
+import React from "react";
+
 export type ButtonBasketProps = {
     productCount: number,
-}
+} & React.HTMLAttributes<HTMLButtonElement>
 
 export type ModalWindowProps = {
     visible: boolean,
