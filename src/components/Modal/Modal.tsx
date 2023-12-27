@@ -1,8 +1,13 @@
-// import React from "react";
+import React, {FC} from "react";
 import cn from "clsx";
 import './Modal.scss';
 
-export const Modal = ({visible, children}) => {
+interface IModal {
+    visible: boolean,
+    children: React.ReactNode
+}
+
+export const Modal:FC<IModal> = ({visible, children}) => {
     const visibleModal = visible && 'modal--opened';
     return (
         <div className={cn('modal', visibleModal)}>
@@ -11,7 +16,6 @@ export const Modal = ({visible, children}) => {
                     <a href='#' className={cn('modal__close-btn')}>×</a>
                 </div>
                 <div className={cn('modal__content')}>
-
                     {children}
                 </div>
             </div>

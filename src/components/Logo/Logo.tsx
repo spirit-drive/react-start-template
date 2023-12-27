@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {FC} from 'react';
 import LogoImg from "./logo.svg"
 
-export const Logo = () => {
+export const Logo:FC = () => {
     return (<div className="logo"><LogoImg /></div>);
 };

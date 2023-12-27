@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {FC} from 'react';
 import cn from "clsx";
 import "./Product.scss"
 import {BtnToCart} from "../BtnToCard/BtnToCart";
+import {priceFormat} from "../utils";
 
-export const Product = ({image, name, description, price}) => {
-    const images = image.map(image => <img className={cn('product__gallery-item')} src={image} alt=""/>)
-    const priceFormat = (number, thousandsSeparator = ' ') => (
-        number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSeparator)
-    );
+interface IProduct {
+    image: string[],
+    name: string,
+    description: string,
+    price: number | string,
+}
+
+export const Product:FC<IProduct> = ({image, name, description, price}) => {
+    const images:React.JSX.Element[] = image.map((image: string) => <img className={cn('product__gallery-item')} src={image} alt=""/>);
 
     return (
         <div className={cn('product')}>

@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {FC} from 'react';
 import cn from "clsx";
 import "./Header.scss"
 import {Navigation} from "../Navigation/Navigation";
+import {Logo} from "../Logo/Logo";
 
-export const Header = ({children}) => {
+export const Header:FC = () => {
+
     return (
         <header className={cn('header')}>
             <div className="header__inner">
-                {children}
+                <Logo />
                 <Navigation />
             </div>
         </header>

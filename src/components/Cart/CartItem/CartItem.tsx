@@ -1,13 +1,19 @@
-import React from "react";
+import React, {FC} from "react";
 import cn from "clsx";
 import "./CartItem.scss"
 import {BtnDelCart} from "../BtnDelCart/BtnDelCart";
+import {priceFormat} from "../../utils";
 
-export const CartItem = ({image, name, description, price}) => {
+interface ICartItem {
+    image: string[],
+    name: string,
+    description: string,
+    price: string | number
+}
+
+export const CartItem:FC<ICartItem> = ({image, name, description, price}) => {
     const descCrop = description.slice(0, 300);
-    const priceFormat = (number, thousandsSeparator = ' ') => (
-        number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSeparator)
-    );
+
     return (
         <div className={cn('cart__item')}>
             <img className={cn('cart__item-picture')} src={image[0]} alt=""/>
