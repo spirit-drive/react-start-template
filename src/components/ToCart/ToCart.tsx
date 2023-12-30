@@ -17,12 +17,18 @@ export function ToCart({ className, count = 0 }: LayoutProps): ReactElement {
   return (
     <div className={cn(style.root, className)}>
       {isEmpty ? (
-        <button onClick={handlePlusClick}>В корзину</button>
+        <button className={cn(style.toCart)} onClick={handlePlusClick}>
+          В корзину
+        </button>
       ) : (
         <div>
-          <button onClick={handlePlusClick}>+</button>
-          <input type="text" value={cnt} />
-          <button onClick={handleMinusClick}>-</button>
+          <button className={cn(style.plus)} onClick={handlePlusClick}>
+            +
+          </button>
+          <input className={cn(style.count)} type="text" value={cnt} />
+          <button className={cn(style.minus)} onClick={handleMinusClick}>
+            -
+          </button>
         </div>
       )}
     </div>

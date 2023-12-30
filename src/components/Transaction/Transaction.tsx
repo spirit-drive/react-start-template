@@ -14,13 +14,17 @@ type TransactionProps = {
 
 export function Transaction({ className, name, desc, date, category, cost, short }: TransactionProps): ReactElement {
   return (
-    <div className={cn(style.root, className)}>
-      <div className={style.name}>{name}</div>
-      {category && <div className={style.category}>{category}</div>}
-      {desc && <div className={style.desc}>{desc}</div>}
-      {!short && date && <div className={style.date}>{date}</div>}
-      <div className={style.cost}>{cost}₽</div>
-      {short && <button>edit</button>}
+    <div className={cn(style.root, { [style.short]: short }, className)}>
+      <div className={style.left}>
+        <div className={style.name}>{name}</div>
+        {category && <div className={style.category}>{category}</div>}
+        {desc && <div className={style.desc}>{desc}</div>}
+        {!short && date && <div className={style.date}>{date}</div>}
+      </div>
+      <div className={style.right}>
+        <div className={style.cost}>{cost}₽</div>
+        {short && <button className={style.edit}>edit</button>}
+      </div>
     </div>
   );
 }

@@ -1,17 +1,43 @@
 .root
   position: relative
+  display: flex
+  border: 1px solid gray
+  padding: 20px
+  border-radius: 10px
+  align-items: center
 
 .name
   font-size: 22px
 
 .desc
+  margin-top: 4px
   font-size: 12px
 
 .category
-  font-size: 12px
+  font-size: 16px
+  margin-top: 4px
 
 .date
   font-size: 12px
 
 .cost
   font-size: 18px
+
+.costWrapper
+  flex-shrink: 0
+  padding: 10px
+
+.action
+  white-space: nowrap
+
+.actionWrapper
+  flex-shrink: 0
+  padding: 10px
+
+.short
+  .desc
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-line-clamp: 2
+    -webkit-box-orient: vertical

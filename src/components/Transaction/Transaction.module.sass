@@ -1,17 +1,51 @@
 .root
   position: relative
+  display: flex
+  border: 1px solid gray
+  padding: 20px
+  border-radius: 10px
+  align-items: center
 
 .name
   font-size: 22px
 
+.category
+  font-size: 16px
+  margin-top: 4px
+
 .desc
   font-size: 12px
-
-.category
-  font-size: 12px
+  margin-top: 4px
+  color: #535353
 
 .date
-  font-size: 12px
+  font-size: 14px
+  margin-top: 4px
+  color: #535353
 
 .cost
   font-size: 18px
+
+.edit
+  border-radius: 5px
+  background: transparent
+  border: none
+  margin-top: 5px
+  color: gray
+  text-decoration: underline
+  cursor: pointer
+
+.right
+  min-width: 100px
+  margin-left: 50px
+  flex-shrink: 0
+  text-align: right
+
+
+.short
+  .desc
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-line-clamp: 2
+    -webkit-box-orient: vertical
