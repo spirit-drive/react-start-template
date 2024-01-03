@@ -1,0 +1,42 @@
+.button{
+    padding: 0;
+    margin: 0;
+    list-style-type: none ;
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
+}
+.button.header-button{
+    color:  #FFF;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    border-radius: 10px;
+    background-color:  #3AC771;
+    transition: all .5s linear;
+    padding: 25px 20px;
+}
+.button.header-button:hover{
+    background-color:  #3ac77056;
+    transition:all .5s linear;
+    color:  #3AC771;
+}
+.button.itemPreview{
+    color:  #FFF;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    border-radius: 10px;
+    background-color:  #ff0000;
+    transition: all .5s linear;
+    padding: 25px 20px;
+}
+.button.itemPreview:hover{
+    background-color:  #fda6a656;
+    transition:all .5s linear;
+    color:  #ff0000;
+}

@@ -1,0 +1,22 @@
+.magasine__basket-button{
+    border-radius: 10px;
+    background:#EBB13E;
+    display: flex;
+    padding: 20px 18px;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #EBB13E;
+    transition:all .3s linear;    
+}
+.magasine__basket-button:hover{
+    background-color: #FFF;
+    color:#EBB13E;
+    transition:all .3s linear;
+}

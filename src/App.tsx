@@ -1,35 +1,40 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { MainLayout } from './components/accountingComponents/lauout/MainLayout';
+import { PreviewOperation } from './components/accountingComponents/previewOperation/PreviewOperation';
+import { DetailsOperation } from './components/accountingComponents/detailsOperation/DetailsOperation';
+import { BasketButton } from './components/magazineComponents/BasketButton/BasketButton';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <div className='my-description'>
-          <h2>Немного обо мне</h2>
-          <ul>
-            <li>Виталий 33 года</li>
-            <li>г. Санкт-Петербург</li>
-            <li>До мая 2021 работал монтажником СКУД\СКС\пожарки\Электрики и тп...<br/> В общем - тянул провода на стройках и разных объектах</li>
-            <li>Сейчас работаю в СММ агенстве в отделе разработки по направлению frontend</li>
-          </ul>
-          <h2>Навыки </h2>
-          <p>если рассматривать только фронт</p>
-          <ul>
-            <li>HTML</li>
-            <li>CSS/SCSS</li>
-            <li>JS</li>
-          </ul>
-          <h2>Цель:</h2>
-          <p>Цель достаточно простая. Получить знания и систематизировать те крохи по реакту, которые уже есть. <br/> Какие то технологии выделять нехочу так как нужно знать или хотя бы поверхностно понимать как можно больше</p>
+    <MainLayout>
+      <div className="previews-operations">
+      <PreviewOperation
+      operationId={1}
+      operationSumm={55511}
+      operationCalegory={'1Расходы'}
+      operationName={'1хз куда потратил'}
+      operationDescription = {'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab et aliquam culpa, in doloremque odio vero omnis delectus fugit exercitationem, pariatur fugiat maxime neque unde a modi aspernatur sint cum nemo blanditiis. Commodi totam non distinctio vitae quibusdam sint eos perspiciatis vero omnis. Quo itaque velit in rerum id earum.'}
+      />
+      </div>
+      <DetailsOperation
+      operationId={1}
+      operationSumm={55511}
+      operationCalegory={'1Расходы'}
+      operationName={'1хз куда потратил'}
+      operationDescription = {'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab et aliquam culpa, in doloremque odio vero omnis delectus fugit exercitationem, pariatur fugiat maxime neque unde a modi aspernatur sint cum nemo blanditiis. Commodi totam non distinctio vitae quibusdam sint eos perspiciatis vero omnis. Quo itaque velit in rerum id earum.'}
+      operationDate={'20.12.2024'}
+      />
+      {/* <BasketButton
+      numberOfGoods = {0}/> */}
 
+      
+    
+    </MainLayout>
 
-        </div>
-      </header>
-    </div>
   );
 }
 
 export default App;
+
