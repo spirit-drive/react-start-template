@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import cn from 'clsx';
-import { sum } from './sum';
 import './button.css';
 
 interface ButtonProps {
@@ -8,16 +7,14 @@ interface ButtonProps {
   backgroundColor?: string | null;
   size?: string;
   label: string;
+  func: Function;
 }
-/**
- * Primary UI component for user interaction
- */
 
-export const Button: FC<ButtonProps> = ({ primary, backgroundColor, size, label, ...props }) => {
+export const Button: FC<ButtonProps> = ({ primary, backgroundColor, size, label, func, ...props }) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
 
   const onClick = () => {
-    sum(4, 5);
+    func();
   };
 
   return (
