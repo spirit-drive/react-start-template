@@ -25,7 +25,7 @@ module.exports = (_, args) => {
       modules: [src, 'node_modules'],
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
-        src,
+        src: path.resolve(__dirname, 'src'),
       },
     },
     output: {
@@ -37,6 +37,15 @@ module.exports = (_, args) => {
     },
     module: {
       rules: [
+        {
+          test: /\.(jpg|png|gif|woff|eot|ttf|svg)/,
+          use: {
+            loader: 'url-loader',
+            options: {
+              limit: 50000
+            },
+          }
+        },
         {
           test: /\.(js|ts)x?$/,
           loader: require.resolve('babel-loader'),
