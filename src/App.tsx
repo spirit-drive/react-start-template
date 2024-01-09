@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import Layout from "src/components/Layout/Layout";
-
+import Layout from './components/Layout/Layout';
 function App() {
   return (
     <div className="App">
@@ -53,8 +52,8 @@ function App() {
       {/*  </div>*/}
       {/*</header>*/}
 
-        {/*<ModalWindow visible={true} children='Modal window'/>*/}
-        <Layout />
+      {/*<ModalWindow visible={true} children='Modal window'/>*/}
+      <Layout />
     </div>
   );
 }
