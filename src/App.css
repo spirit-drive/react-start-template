@@ -50,3 +50,7 @@
         transform: rotate(360deg);
     }
 }
+
+body {
+    margin-top: 100px;
+}

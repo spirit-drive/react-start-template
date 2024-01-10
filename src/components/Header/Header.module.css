@@ -6,4 +6,6 @@
     display: grid;
     grid-template-columns: 70px auto;
     align-items: center;
+    top: 0;
 }
+

@@ -1,15 +1,17 @@
-import React from "react";
-import ModalWindow from "./ModalWindow";
-import {ModalWindowProps} from "src/types";
+import ModalWindow from './ModalWindow';
+import { Meta, StoryObj } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
-export default {
-    title: 'ModalWindow',
-    component: ModalWindow,
-}
+const meta: Meta<typeof ModalWindow> = {
+  component: ModalWindow,
+};
 
-const Template = (arg: ModalWindowProps) => <ModalWindow {...arg} />
-export const DefaultModal = Template.bind({});
-DefaultModal.args = {
-    children: 'test children',
-    visible: true,
-}
+type Story = StoryObj<typeof ModalWindow>;
+
+export const Primary: Story = {
+  args: {
+    text: 'test text',
+    toggleModal: action('toggleModal'),
+  },
+};
+export default meta;
