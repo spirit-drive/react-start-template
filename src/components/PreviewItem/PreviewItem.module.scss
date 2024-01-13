@@ -1,0 +1,43 @@
+.item{
+    display: grid;
+    grid-template-columns: repeat( 4, 1fr);
+    grid-template-areas:
+    "title title title title"
+    "date category name total"
+    "desc desc desc desc"
+    "btn btn btn btn"
+    ;
+    background-color: bisque;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.title{
+    grid-area: title;
+}
+.desc{
+    grid-area: desc;
+}
+.category{
+    grid-area: category;
+}
+.date{
+    grid-area: date;
+}
+.name{
+    grid-area: name;
+}
+.total{
+    grid-area: total;
+}
+.btn{
+    grid-area: btn;
+}
+.df{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.infoTitle{
+font-size: 18px;
+font-weight: 700;
+}

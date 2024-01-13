@@ -1,34 +1,33 @@
-import React, { FC } from 'react';
-import cn from 'clsx';
-import { sum } from './sum';
-import './button.css';
+import React from "react";
+import styles from './Button.module.scss';
+import { FC } from "react";
 
-interface ButtonProps {
-  primary?: boolean;
-  backgroundColor?: string | null;
-  size?: string;
-  label: string;
+
+export type ButtonProps = {
+    type?: 'header' | 'footer',
+    children?: string,
+    itemClass?: string,
+    buttonData?:string
 }
-/**
- * Primary UI component for user interaction
- */
 
-export const Button: FC<ButtonProps> = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-
-  const onClick = () => {
-    sum(4, 5);
-  };
-
-  return (
-    <button
-      type="button"
-      className={cn('storybook-button', `storybook-button--${size}`, mode)}
-      style={{ backgroundColor: backgroundColor || 'green' }}
-      onClick={onClick}
-      {...props}
-    >
-      {label}
-    </button>
-  );
-};
+export const Button: FC<ButtonProps> = ({ type, children, itemClass, buttonData,  ...props }) => {
+    function buttonStyles() {
+        if(type == 'header') {
+            return styles.header
+        } else if (type == 'footer') {
+            return styles.footer
+        } else {
+            return styles.base
+        }
+    }
+    return (
+        <button
+            className={`${styles.button}
+                        ${buttonStyles()}
+                        ${itemClass}`}
+            data-type={buttonData}
+                    >
+            {children}
+        </button>
+    )
+}
