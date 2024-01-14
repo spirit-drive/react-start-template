@@ -7,7 +7,7 @@ interface ButtonProps {
   backgroundColor?: string | null;
   size?: string;
   label: string;
-  func: Function;
+  func: () => void;
 }
 
 export const Button: FC<ButtonProps> = ({ primary, backgroundColor, size, label, func, ...props }) => {

@@ -1,7 +1,7 @@
 import React from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import {OperationShort} from '../components/operationShort/operationShort';
+import { OperationShort } from '../components/operationShort/operationShort';
 
 const meta: Meta<typeof OperationShort> = {
   component: OperationShort,
@@ -12,4 +12,4 @@ export default meta;
 
 type Story = StoryObj<typeof OperationShort>;
 
-export const Basic: Story = {args: {}};
+export const Basic: Story = { args: {} };

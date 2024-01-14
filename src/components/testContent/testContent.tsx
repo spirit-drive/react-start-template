@@ -4,6 +4,6 @@ interface TestContentProps {
   prop?: string;
 }
 
-export function TestContent({prop = 'контент'}: TestContentProps) {
+export function TestContent({ prop = 'контент' }: TestContentProps) {
   return <div>{prop}</div>;
 }

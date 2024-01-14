@@ -10,8 +10,8 @@ interface OperationShortProps {
 
 export const OperationShort: FC<OperationShortProps> = ({ amount, name, categoryName, description }) => {
   return (
-    <div className='operationShort'>
-     <h3>Параметры операции (кратко)</h3>
+    <div className="operationShort">
+      <h3>Параметры операции (кратко)</h3>
       <p>
         <strong>Стоимость:</strong>
         <div>{amount}</div>
@@ -26,7 +26,7 @@ export const OperationShort: FC<OperationShortProps> = ({ amount, name, category
       </p>
       <p>
         <strong>Описание:</strong>
-        <div className='textShort'>{description}</div>
+        <div className="textShort">{description}</div>
       </p>
     </div>
   );

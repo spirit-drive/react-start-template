@@ -9,3 +9,4 @@
 /.husky/pre-commit
 /.storybook/preview.ts
 /.storybook/main.ts
+/.jest/cache
