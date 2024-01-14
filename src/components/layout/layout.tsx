@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { Navbar } from '../navbar/navbar';
+import { Header } from '../header/header';
 import { Button } from '../button/button';
 import { Modal} from '../modal/modal';
 import './layout.css';
@@ -45,7 +45,7 @@ export const Layout: FC = () => {
   }
 
   return <div>
-  <Navbar />
+  <Header />
   <main className ='layout' >  
     <Button primary = {true}
      size = {'small'}

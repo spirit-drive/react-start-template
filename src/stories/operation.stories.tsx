@@ -1,7 +1,7 @@
 import React from 'react';
 import type {Meta, StoryObj} from '@storybook/react';
 
-import {Operation} from './operation';
+import {Operation} from '../components/operation/operation';
 
 const meta: Meta<typeof Operation> = {
   component: Operation,
