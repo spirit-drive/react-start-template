@@ -12,10 +12,10 @@ export type obj = {
 }
 
 export type PreviewItemsProps = {
-    elementsData:Array<obj>}
+    elementsData: Array<obj>
+}
 
 export const PreviewItems:FC<PreviewItemsProps> = ({elementsData, ...props}) => {
-    console.log(elementsData)
     return (
         <>
             {elementsData.map((elementData, index) => (

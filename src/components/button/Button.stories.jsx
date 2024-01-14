@@ -1,14 +1,14 @@
-import Button from './Button'
-import './Button.module.scss';
+import { Button } from './Button';
+
 
 export default {
-    title: 'CostAccounting/Button',
+    title: 'CostAccounting/UI/Button',
     component: Button,
     description: 'Варианты внешнего вида кнопки',
-    defaulValue: 'header-button',
-    options: ['header', 'footer', null],
+    defaulValue: 'header',
+    options: ['header', 'footer'],
     control: {
-        type:'raidio'
+        type:'radio'
     }
 }
 
@@ -19,3 +19,7 @@ Default.args = {
     children: "Button",
     type:'header'
 }
+export const WithoutType = ButtonTemplate.bind({})
+    WithoutType.args = {
+        children: "Button",
+    }
