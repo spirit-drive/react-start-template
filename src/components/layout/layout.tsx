@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { Header } from '../header/header';
-import { Button } from '../button/button';
+import { Button } from '../button/Button';
 import { Modal} from '../modal/modal';
 import './layout.css';
 import { TestContent } from '../testContent/testContent';
