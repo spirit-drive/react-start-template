@@ -1,11 +1,22 @@
-.header {
+@import "../../variables.css";
+
+.headerGeneral {
     width: 100%;
     height: 100px;
-    background-color: #E5FDFE;
     position: fixed;
     display: grid;
-    grid-template-columns: 70px auto;
+    grid-template-columns: 70px auto 70px;
     align-items: center;
     top: 0;
 }
+
+.header-light {
+    background-color: var(--contrast-color-light);
+}
+
+.header-dark {
+    background-color: var(--contrast-color-dark);
+}
+
+
 
