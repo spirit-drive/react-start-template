@@ -3,6 +3,7 @@ import classNames from './Header.module.css';
 import clsx from 'clsx';
 import Logo from 'src/components/Logo/Logo';
 import ThemeSwitch from 'src/components/ThemeSwitch/ThemeSwitch';
+import LanguageSwitch from 'src/components/LanguageSwitch/LanguageSwitch';
 import { useTheme } from 'src/helper/useTheme';
 
 const Header: FC = () => {
@@ -11,8 +12,8 @@ const Header: FC = () => {
   return (
     <header className={clsx(classNames[themeClass], classNames.headerGeneral)}>
       <Logo />
-      <h2>HEADER</h2>
       <ThemeSwitch />
+      <LanguageSwitch />
     </header>
   );
 };

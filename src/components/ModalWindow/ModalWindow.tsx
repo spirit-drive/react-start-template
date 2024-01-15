@@ -1,8 +1,7 @@
-import React, { FC, useContext } from 'react';
+import React, { FC } from 'react';
 import clsx from 'clsx';
 import classNames from './modalWindow.module.css';
 import { ModalWindowProps } from 'src/types';
-import { ThemeContext } from 'src/helper/contexts';
 import { useTheme } from 'src/helper/useTheme';
 const ModalWindow: FC<ModalWindowProps> = ({ text, toggleModal }) => {
   const { theme } = useTheme();

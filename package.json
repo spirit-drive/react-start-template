@@ -65,8 +65,10 @@
   "dependencies": {
     "clsx": "^1.2.1",
     "file-loader": "^6.2.0",
+    "i18next": "^23.7.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^14.0.0",
     "url-loader": "^4.1.1"
   }
 }

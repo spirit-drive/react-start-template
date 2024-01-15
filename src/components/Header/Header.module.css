@@ -5,7 +5,7 @@
     height: 100px;
     position: fixed;
     display: grid;
-    grid-template-columns: 70px auto 70px;
+    grid-template-columns: 1fr 70px 70px;
     align-items: center;
     top: 0;
 }
