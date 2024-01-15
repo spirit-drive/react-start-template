@@ -20,8 +20,8 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const storedTheme: string = getThemeLocalStorage();
-  const [theme, setTheme] = useState<string>(storedTheme || Theme.Light);
+  let storedTheme: string = getThemeLocalStorage();
+  const [theme, setTheme] = useState<string>(storedTheme || Theme.Dark);
 
   const toggleTheme = (): void => {
     const newTheme: Theme = theme === Theme.Light ? Theme.Dark : Theme.Light;

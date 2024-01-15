@@ -21,7 +21,7 @@ export const useLanguage = () => {
 
 export const LanguageProvider: FC<LanguageProviderProps> = ({ children }) => {
   const storedLanguage = getLanguageLocalStorage();
-  const [language, setLanguage] = useState<string>(storedLanguage || Languages.RU);
+  const [language, setLanguage] = useState<string>(storedLanguage || Languages.EN);
 
   const toggleLanguage = (): void => {
     const newLanguage: Languages = language === Languages.RU ? Languages.EN : Languages.RU;
