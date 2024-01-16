@@ -118,15 +118,8 @@ export const createRandomOperation = (createdAt: string) => {
     category: dummyCategory,
   };
 
-  if (getRandomType() === 'Cost') {
-    return {
-      ...baseOperation,
-      type: 'Cost',
-    };
-  } else {
-    return {
-      ...baseOperation,
-      type: 'Profit',
-    };
-  }
+  return {
+    ...baseOperation,
+    type: getRandomType(),
+  };
 };

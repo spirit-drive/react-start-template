@@ -18,7 +18,12 @@ export const round = (value: number, accuracy = 2): number => {
 const transformRegexp =
   /(matrix\(-?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, )(-?\d+(\.\d+)?), (-?\d+(\.\d+)?)\)/;
 
-export const getTransformFromCss = (transformCssString: string): { x: number; y: number } => {
+type TransformCoordinates = {
+  x: number;
+  y: number;
+};
+
+export const getTransformFromCss = (transformCssString: string): TransformCoordinates => {
   const data = transformCssString.match(transformRegexp);
   if (!data) return { x: 0, y: 0 };
   return {
@@ -31,12 +36,14 @@ export const getColorContrastValue = ([red, green, blue]: [number, number, numbe
   // http://www.w3.org/TR/AERT#color-contrast
   Math.round((red * 299 + green * 587 + blue * 114) / 1000);
 
-export const getContrastType = (contrastValue: number): string => (contrastValue > 125 ? 'black' : 'white');
+type Contrast = 'black' | 'white';
+
+export const getContrastType = (contrastValue: number): Contrast => (contrastValue > 125 ? 'black' : 'white');
 
 export const shortColorRegExp = /^#[0-9a-f]{3}$/i;
 export const longColorRegExp = /^#[0-9a-f]{6}$/i;
 
-export const checkColor = (color: string): void => {
+export const checkColor = (color: string): never | void => {
   if (!longColorRegExp.test(color) && !shortColorRegExp.test(color)) throw new Error(`invalid hex color: ${color}`);
 };
 
@@ -63,7 +70,7 @@ export const toStringArray = <T>(arr: { value: T; number: number }[]): string[] 
 
 type Customer = { id: string | number; name: string; age: number; isSubscribed: boolean };
 
-type TransformedCustomer = { [key: string | number]: { name: string; age: number; isSubscribed: boolean } };
+type TransformedCustomer = { [key: string | number]: Omit<Customer, 'id'> };
 
 export const transformCustomers = (customers: Customer[]): TransformedCustomer => {
   return customers.reduce((acc: TransformedCustomer, customer) => {
