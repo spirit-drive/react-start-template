@@ -1,21 +1,17 @@
-import ModalWindow from './ModalWindow';
+import LanguageSwitch from '../LanguageSwitch/LanguageSwitch';
 import { Meta, StoryObj } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { ThemeProvider } from 'src/helper/useTheme';
-import { LanguageProvider } from 'src/helper/useLanguage';
 import React from 'react';
+import { LanguageProvider } from 'src/helper/useLanguage';
 
-const meta: Meta<typeof ModalWindow> = {
-  component: ModalWindow,
+const meta: Meta<typeof LanguageSwitch> = {
+  component: LanguageSwitch,
 };
 
-type Story = StoryObj<typeof ModalWindow>;
+type Story = StoryObj<typeof LanguageSwitch>;
 
 export const Primary: Story = {
-  args: {
-    text: 'test text',
-    toggleModal: action('toggleModal'),
-  },
+  args: {},
   decorators: [
     (Story) => (
       <ThemeProvider>
@@ -26,4 +22,5 @@ export const Primary: Story = {
     ),
   ],
 };
+
 export default meta;

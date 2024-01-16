@@ -1,14 +1,14 @@
-import ModalController from '../ModalController/ModalController';
+import Layout from '../Layout/Layout';
+import { LanguageProvider } from 'src/helper/useLanguage';
+import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider } from 'src/helper/useTheme';
-import React from 'react';
-import { LanguageProvider } from 'src/helper/useLanguage';
 
-const meta: Meta<typeof ModalController> = {
-  component: ModalController,
+const meta: Meta<typeof Layout> = {
+  component: Layout,
 };
 
-type Story = StoryObj<typeof ModalController>;
+type Story = StoryObj<typeof Layout>;
 
 export const Primary: Story = {
   args: {},

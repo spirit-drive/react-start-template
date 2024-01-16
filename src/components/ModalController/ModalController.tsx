@@ -26,7 +26,7 @@ const ModalController = () => {
   };
 
   return (
-    <div>
+    <div className={clsx(classNames.modalController)}>
       <label htmlFor="inputText">{i18n.t('test')}</label>
       <input
         className={clsx(classNames.inputText)}
