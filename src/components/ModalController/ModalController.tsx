@@ -1,17 +1,15 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from './modalController.module.css';
 import clsx from 'clsx';
-import ModalWindow from 'src/components/ModalWindow/ModalWindow';
+import ModalWindow from '../../components/ModalWindow/ModalWindow';
 import { useTranslation } from 'react-i18next';
-import i18n from 'src/helper/i18n';
-import { useLanguage } from 'src/helper/useLanguage';
+import i18n from '../../helper/i18n';
+import { useLanguage } from '../../helper/useLanguage';
 
 const ModalController = () => {
   const [isShow, setIsShow] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const { language } = useLanguage();
-  const { t } = useTranslation();
 
   useEffect(() => {
     i18n.changeLanguage(language);

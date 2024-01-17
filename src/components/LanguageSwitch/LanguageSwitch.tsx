@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useLanguage } from 'src/helper/useLanguage';
-import { getLanguageLocalStorage } from 'src/helper/localStorage';
+import { useLanguage } from '../../helper/useLanguage';
+import { getLanguageLocalStorage } from '../../helper/localStorage';
 
 const LanguageSwitch = () => {
   const { toggleLanguage } = useLanguage();

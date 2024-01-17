@@ -1,8 +1,8 @@
 import Layout from '../Layout/Layout';
-import { LanguageProvider } from 'src/helper/useLanguage';
+import { LanguageProvider } from '../../helper/useLanguage';
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { ThemeProvider } from 'src/helper/useTheme';
+import { ThemeProvider } from '../../helper/useTheme';
 
 const meta: Meta<typeof Layout> = {
   component: Layout,

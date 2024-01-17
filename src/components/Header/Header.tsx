@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import classNames from './Header.module.css';
 import clsx from 'clsx';
-import Logo from 'src/components/Logo/Logo';
-import ThemeSwitch from 'src/components/ThemeSwitch/ThemeSwitch';
-import LanguageSwitch from 'src/components/LanguageSwitch/LanguageSwitch';
-import { useTheme } from 'src/helper/useTheme';
+import Logo from '../Logo/Logo';
+import ThemeSwitch from '../ThemeSwitch/ThemeSwitch';
+import LanguageSwitch from '../LanguageSwitch/LanguageSwitch';
+import { useTheme } from '../../helper/useTheme';
 
 const Header: FC = () => {
   const { theme } = useTheme();

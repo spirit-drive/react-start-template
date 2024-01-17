@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { getThemeLocalStorage, setThemeLocalStorage } from './localStorage';
-import { ThemeContext, ThemeContextType } from 'src/helper/contexts';
+import { ThemeContext, ThemeContextType } from '../helper/contexts';
 
 enum Theme {
   Light = 'light',
@@ -20,7 +20,7 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  let storedTheme: string = getThemeLocalStorage();
+  const storedTheme: string = getThemeLocalStorage();
   const [theme, setTheme] = useState<string>(storedTheme || Theme.Dark);
 
   const toggleTheme = (): void => {

@@ -1,8 +1,7 @@
 import ThemeSwitch from '../ThemeSwitch/ThemeSwitch';
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ThemeProvider } from 'src/helper/useTheme';
-import { action } from '@storybook/addon-actions';
+import { ThemeProvider } from '../../helper/useTheme';
 
 const meta: Meta<typeof ThemeSwitch> = {
   component: ThemeSwitch,

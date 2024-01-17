@@ -1,8 +1,8 @@
 import LanguageSwitch from '../LanguageSwitch/LanguageSwitch';
 import { Meta, StoryObj } from '@storybook/react';
-import { ThemeProvider } from 'src/helper/useTheme';
+import { ThemeProvider } from '../../helper/useTheme';
 import React from 'react';
-import { LanguageProvider } from 'src/helper/useLanguage';
+import { LanguageProvider } from '../../helper/useLanguage';
 
 const meta: Meta<typeof LanguageSwitch> = {
   component: LanguageSwitch,

@@ -1,8 +1,8 @@
 import ModalWindow from './ModalWindow';
 import { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { ThemeProvider } from 'src/helper/useTheme';
-import { LanguageProvider } from 'src/helper/useLanguage';
+import { ThemeProvider } from '../../helper/useTheme';
+import { LanguageProvider } from '../../helper/useLanguage';
 import React from 'react';
 
 const meta: Meta<typeof ModalWindow> = {

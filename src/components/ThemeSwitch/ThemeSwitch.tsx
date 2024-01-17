@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { getThemeLocalStorage } from 'src/helper/localStorage';
+import { getThemeLocalStorage } from '../../helper/localStorage';
 import classNames from './themeSwither.module.css';
 import clsx from 'clsx';
-import { useTheme } from 'src/helper/useTheme';
+import { useTheme } from '../../helper/useTheme';
 
 const ThemeSwitch = () => {
   const { toggleTheme } = useTheme();

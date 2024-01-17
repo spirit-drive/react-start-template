@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
 import classNames from './modalWindow.module.css';
-import { ModalWindowProps } from 'src/types';
-import { useTheme } from 'src/helper/useTheme';
+import { ModalWindowProps } from '../../types';
+import { useTheme } from '../../helper/useTheme';
 const ModalWindow: FC<ModalWindowProps> = ({ text, toggleModal }) => {
   const { theme } = useTheme();
   const themeClass = `box-${theme}`;

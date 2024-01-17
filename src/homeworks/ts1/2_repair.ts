@@ -4,17 +4,17 @@
 
 // Мы это не проходили, но по тексту ошибки можно понять, как это починить
 export const getFakeApi = async (): Promise<void> => {
-  const result: unknown = await fetch('https://jsonplaceholder.typicode.com/todos/1')
-      .then((response) => response.json());
+  const result: unknown = await fetch('https://jsonplaceholder.typicode.com/todos/1').then((response) =>
+    response.json()
+  );
   console.log(result);
 };
 
 // Мы это не проходили, но по тексту ошибки можно понять, как это починить
 
-type BroadcastChannelType = string;
 export class SomeClass {
-  set: Set<number>
-  channel: BroadcastChannel
+  set: Set<number>;
+  channel: BroadcastChannel;
   constructor() {
     this.set = new Set([1]);
     this.channel = new BroadcastChannel('test-broadcast-channel');
