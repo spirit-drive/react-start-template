@@ -7,7 +7,7 @@ export const addPlus = (string: string): string => `+${string}`;
 
 export const removeFirstZeros = (value: string): string => value.replace(/^(-)?[0]+(-?\d+.*)$/, '$1$2');
 
-export const getBeautifulNumber = (value: any, separator = ' '): string =>
+export const getBeautifulNumber = (value: number, separator = ' '): string =>
   value?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
 
 export const round = (value: number, accuracy = 2): number => {
@@ -32,7 +32,7 @@ export const getTransformFromCss = (transformCssString: string): tTransformCssSt
   };
 };
 
-type tRGB = Array<number>;
+type tRGB = [number, number, number];
 export const getColorContrastValue = ([red, green, blue]: tRGB): number =>
   // http://www.w3.org/TR/AERT#color-contrast
   Math.round((red * 299 + green * 587 + blue * 114) / 1000);
@@ -73,9 +73,8 @@ interface Customer {
   age: number;
   isSubscribed: boolean;
 }
-type TransformCustomer = {
-  [key: string]: Omit<Customer, 'id'>;
-};
+type TransformCustomer = Record<string, Omit<Customer, 'id'>>;
+
 export const transformCustomers = (customers: Customer[]) => {
   return customers.reduce((acc: TransformCustomer, customer: Customer) => {
     acc[customer.id] = { name: customer.name, age: customer.age, isSubscribed: customer.isSubscribed };
