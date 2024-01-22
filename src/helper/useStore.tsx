@@ -1,8 +1,9 @@
 import {store} from '../store'
-import {StoreContext} from "../helper/contexts";
-import React, {FC, useContext} from "react";
+import {StoreContext, StoreContextType} from "../helper/contexts";
+import React, {FC, useContext, useState} from "react";
+import {DisplayProductProps} from "../types";
 
-type StoreContextType = {
+type StoreProviderType = {
     children: React.ReactNode
 }
 
@@ -14,6 +15,12 @@ export const useStore = () => {
     return context
 }
 
-export const StoreProvider:FC<StoreContextType> = ({children}) => {
-    return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>;
+export const StoreProvider:FC<StoreProviderType> = ({children}) => {
+    const [product, setProduct] = useState<DisplayProductProps[]>(store.products);
+
+    const addProduct = (newProduct: DisplayProductProps): any => {
+        setProduct([...product, newProduct])
+    }
+
+    return <StoreContext.Provider value={{product, addProduct} as StoreContextType} >{children}</StoreContext.Provider>;
 }

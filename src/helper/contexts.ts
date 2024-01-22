@@ -1,5 +1,5 @@
-import { createContext } from 'react';
-import { StoreType } from '../store';
+import React, { createContext } from 'react';
+import {DisplayProductProps} from "src/types";
 
 export type ThemeContextType = {
   theme: string;
@@ -11,8 +11,13 @@ export type LanguageContextType = {
   toggleLanguage: () => void;
 };
 
+export type StoreContextType = {
+  product: DisplayProductProps[],
+  addProduct: (newPoduct: DisplayProductProps) => void,
+}
+
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const StoreContext = createContext<StoreType | undefined>(undefined);
+export const StoreContext = createContext<StoreContextType | undefined>(undefined);
