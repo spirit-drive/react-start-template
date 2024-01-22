@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import { ThemeProvider } from './helper/useTheme';
 import { LanguageProvider } from './helper/useLanguage';
+import { StoreProvider } from './helper/useStore';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
-  <LanguageProvider>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
-  </LanguageProvider>
+  <StoreProvider>
+    <LanguageProvider>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </LanguageProvider>
+  </StoreProvider>
 );

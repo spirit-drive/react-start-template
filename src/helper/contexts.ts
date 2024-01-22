@@ -1,4 +1,5 @@
 import { createContext } from 'react';
+import { StoreType } from '../store';
 
 export type ThemeContextType = {
   theme: string;
@@ -13,3 +14,5 @@ export type LanguageContextType = {
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+export const StoreContext = createContext<StoreType | undefined>(undefined);
