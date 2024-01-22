@@ -1,29 +1,99 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { Layout } from './components/Layout';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <div className="container">
-          <h4>Кто?</h4>
-          <p>Шайхутдинов Оскар. ПАО Сбер.</p>
-        </div>
-        <div className="container">
-          <h4>Знания?</h4>
-          <p>HTML/CSS · React · Redux · Jest</p>
-        </div>
-        <div className="container">
-          <h4>Цель?</h4>
-          <p>Структурировать знания. Восполнить пробелы в React и Redux. Узнать Websocket, GraphQL.</p>
-        </div>
-        <div className="container">
-          <h4>Зачем?</h4>
-          <p>Использовать знания в проектах.</p>
-        </div>
-      </header>
+      <Layout />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam
+        ex ipsam, impedit neque unde sequi facere itaque! Quos sunt praesentium aliquam vero!
+      </p>
     </div>
   );
 }

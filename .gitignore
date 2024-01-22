@@ -131,3 +131,5 @@ dist
 .idea
 .jest
 storybook-static
+
+.DS_Store
