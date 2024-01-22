@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import classNames from './modalController.module.css';
 import clsx from 'clsx';
 import ModalWindow from '../../components/ModalWindow/ModalWindow';
-import { useTranslation } from 'react-i18next';
 import i18n from '../../helper/i18n';
 import { useLanguage } from '../../helper/useLanguage';
 
