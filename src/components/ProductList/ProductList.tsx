@@ -4,23 +4,10 @@ import clsx from "clsx";
 import { useStore } from "../../helper/useStore";
 import DisplayProduct from "../../components/DisplayProduct/DisplayProduct";
 import {DisplayProductProps} from "../../types";
-import {createRandomProduct} from "src/homeworks/ts1/3_write";
+import {ButtonCreateProduct} from "../../components/Buttons/ButtonCreateProduct";
 
 const ProductList = () => {
-    const { product, addProduct } = useStore();
-    const handleRandomProduct = () => {
-        const randomProduct = createRandomProduct('now');
-        const validProduct = {
-            key: Date.now(),
-            coast: randomProduct.price,
-            category: randomProduct.category.name,
-            img: 'http://placehold.it/50x50',
-            title: randomProduct.name,
-            description: randomProduct.desc,
-        }
-
-        addProduct(validProduct);
-    }
+    const { product } = useStore();
 
     return (
         <section className={clsx(classNames.productList)}>
@@ -34,7 +21,7 @@ const ProductList = () => {
                             description={product.description}/>
             })}
 
-            <button onClick={handleRandomProduct}>create product</button>
+            <ButtonCreateProduct />
         </section>
     )
 }
