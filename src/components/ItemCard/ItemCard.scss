@@ -1,0 +1,21 @@
+.item-card {
+  width: 356px;
+  padding: 20px;
+  flex-direction: column;
+  border: 1px solid var(--gray-color);
+  border-radius: 20px;
+}
+
+.item-card_image {
+  height: 236px;
+  border-radius: 60px;
+  background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+}
+
+.item-card_header {
+  font-family: Poppins;
+  font-size: 24px;
+  color: var(--white-color);
+  font-weight: 600;
+  line-height: normal;
+}
