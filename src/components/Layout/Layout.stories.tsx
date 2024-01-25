@@ -3,6 +3,7 @@ import { LanguageProvider } from '../../helper/useLanguage';
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider } from '../../helper/useTheme';
+import { StoreProvider } from '../../helper/useStore';
 
 const meta: Meta<typeof Layout> = {
   component: Layout,
@@ -14,11 +15,13 @@ export const Primary: Story = {
   args: {},
   decorators: [
     (Story) => (
-      <ThemeProvider>
-        <LanguageProvider>
-          <Story />
-        </LanguageProvider>
-      </ThemeProvider>
+      <StoreProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <Story />
+          </LanguageProvider>
+        </ThemeProvider>
+      </StoreProvider>
     ),
   ],
 };

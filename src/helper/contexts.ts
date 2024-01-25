@@ -1,5 +1,5 @@
-import React, { createContext } from 'react';
-import {DisplayProductProps} from "src/types";
+import { createContext } from 'react';
+import { DisplayProductProps } from '../types';
 
 export type ThemeContextType = {
   theme: string;
@@ -12,9 +12,9 @@ export type LanguageContextType = {
 };
 
 export type StoreContextType = {
-  product: DisplayProductProps[],
-  addProduct: (newPoduct: DisplayProductProps) => void,
-}
+  product: DisplayProductProps[];
+  addProduct: (newPoduct: DisplayProductProps) => void;
+};
 
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 

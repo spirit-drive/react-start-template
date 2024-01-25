@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import ModalWindow from '../../components/ModalWindow/ModalWindow';
 import i18n from '../../helper/i18n';
 import { useLanguage } from '../../helper/useLanguage';
-import {createPortal} from "react-dom";
+import { createPortal } from 'react-dom';
 
 const bodyElement = document.querySelector('body');
 const ModalController = () => {
