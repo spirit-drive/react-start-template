@@ -4,7 +4,9 @@ import clsx from 'clsx';
 import ModalWindow from '../../components/ModalWindow/ModalWindow';
 import i18n from '../../helper/i18n';
 import { useLanguage } from '../../helper/useLanguage';
+import {createPortal} from "react-dom";
 
+const bodyElement = document.querySelector('body');
 const ModalController = () => {
   const [isShow, setIsShow] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -35,7 +37,7 @@ const ModalController = () => {
       <button className={clsx(classNames.showModalBtn)} onClick={toggleModal}>
         {i18n.t('buttons.modalBtn')}
       </button>
-      {isShow && <ModalWindow text={inputValue} toggleModal={toggleModal} />}
+      {isShow && createPortal(<ModalWindow text={inputValue} toggleModal={toggleModal} />, bodyElement)}
     </div>
   );
 };
