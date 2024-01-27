@@ -1,0 +1,19 @@
+.button_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.button_container button,
+.button_container input {
+  height: 30px;
+}
+
+.single_button {
+  width: 100px;
+  height: 30px;
+  background-color: blue;
+  color: #FFF;
+  border: none;
+}
