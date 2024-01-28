@@ -2,7 +2,10 @@ name: Test, Lint, Build and Deploy on Github Pages
 
 on:
   push:
-    branches: ["master", "main", 'homework-2-jsx-css']
+    branches: ["master", "main"]
+
+  # Позволяет запустить этот рабочий процесс вручную на вкладке Actions
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -31,16 +34,16 @@ jobs:
       - name: Run tests and linter
         run: npm run lint && npm test
 
-      # Собираем приложение
-      - name: Build Application
-        run: npm run build
-
-      # Публикуем приложение на Github Pages
-      - name: Deploy to Github Pages
-        uses: JamesIves/github-pages-deploy-action@4.2.1
-        with:
-          branch: gh-pages
-          folder: dist
+      #      # Собираем приложение
+      #      - name: Build Application
+      #        run: npm run build
+      #
+      #      # Публикуем приложение на Github Pages
+      #      - name: Deploy to Github Pages
+      #        uses: JamesIves/github-pages-deploy-action@4.2.1
+      #        with:
+      #          branch: gh-pages
+      #          folder: dist
 
       # Собираем Storybook
       - name: Build Storybook
@@ -50,7 +53,7 @@ jobs:
       - name: Deploy Storybook to Github Pages
         uses: JamesIves/github-pages-deploy-action@4.2.1
         with:
-          branch: storybook-static
+          branch: gh-pages
           folder: storybook-static
           commit-message: "Automatically publish Storybook"
 
