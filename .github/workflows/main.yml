@@ -2,7 +2,7 @@ name: Test, Lint, Build and Deploy on Github Pages
 
 on:
   push:
-    branches: ["master", "main"]
+    branches: ["master", "main", 'homework-2-jsx-css']
 
 permissions:
   contents: write
