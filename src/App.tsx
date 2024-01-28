@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import Modal from './components/Modal/Modal';
 import Layout from './components/Layout/Layout';
 import './App.css';
-import ProductDetail from 'src/components/ProductDetail/ProductDetail';
-import ProductPreview from 'src/components/ProductPreview/ProductPreview';
-import CardItem from 'src/components/CardItem/CardItem';
-import AddToCartButton from 'src/components/AddToCartButton/AddToCartButton';
+import ProductDetail from './components/ProductDetail/ProductDetail';
+import ProductPreview from './components/ProductPreview/ProductPreview';
+import CardItem from './components/CardItem/CardItem';
+import AddToCartButton from './components/AddToCartButton/AddToCartButton';
 
 const App: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
