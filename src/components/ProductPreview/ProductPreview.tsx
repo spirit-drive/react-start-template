@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.module.css';
 import AddToCartButton from '../AddToCartButton/AddToCartButton';
 
-interface ProductPreviewProps {
+export interface ProductPreviewProps {
   cost: number;
   image: string;
   title: string;

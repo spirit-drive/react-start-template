@@ -1,8 +1,12 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-const Logo: React.FC = () => {
-  return <div className={styles.logo} />;
+export interface LogoProps {
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const Logo: React.FC<LogoProps> = ({ size = 'md' }) => {
+  return <div className={`${styles.logo} ${styles[size]}`} />;
 };
 
 export default Logo;

@@ -4,7 +4,7 @@ import Layout from './components/Layout/Layout';
 import './App.css';
 import ProductDetail from './components/ProductDetail/ProductDetail';
 import ProductPreview from './components/ProductPreview/ProductPreview';
-import CardItem from './components/CardItem/CardItem';
+import CartItem from './components/CartItem/CartItem';
 import AddToCartButton from './components/AddToCartButton/AddToCartButton';
 
 const App: React.FC = () => {
@@ -17,7 +17,7 @@ const App: React.FC = () => {
         <h1>Моя модалка</h1>
         <p>Тут какой-то текст...</p>
       </Modal>
-      <CardItem title="Наушники" />
+      <CartItem title="Наушники" />
       <AddToCartButton count={0} />
       <ProductDetail
         cost={2}

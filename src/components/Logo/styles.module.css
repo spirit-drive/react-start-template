@@ -1,7 +1,20 @@
 .logo {
-  width: 60px;
-  height: 60px;
   border-radius: 50%;
   background-color: #000;
   margin: 0 10px;
+}
+
+.logo.sm {
+  width: 30px;
+  height: 30px;
+}
+
+.logo.md {
+  width: 60px;
+  height: 60px;
+}
+
+.logo.lg {
+  width: 90px;
+  height: 90px;
 }

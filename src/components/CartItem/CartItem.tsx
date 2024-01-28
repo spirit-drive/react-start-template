@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-interface CartItemProps {
+export interface CartItemProps {
   title: string;
 }
 
-const CardItem: React.FC<CartItemProps> = ({ title }) => {
+const CartItem: React.FC<CartItemProps> = ({ title }) => {
   return (
     <div className={styles.cart_item_container}>
       <h2>{title}</h2>
@@ -14,4 +14,4 @@ const CardItem: React.FC<CartItemProps> = ({ title }) => {
   );
 };
 
-export default CardItem;
+export default CartItem;

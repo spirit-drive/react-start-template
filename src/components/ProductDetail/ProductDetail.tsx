@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.module.css';
 import AddToCartButton from '../AddToCartButton/AddToCartButton';
 
-interface ProductDetailProps {
+export interface ProductDetailProps {
   cost: number;
   images: string[];
   category: string;
