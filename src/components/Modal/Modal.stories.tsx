@@ -19,7 +19,7 @@ const Template: Story<IModalProps> = (args) => {
 
       <Modal showModal={showModal} handleClose={() => setShowModal(false)}>
         <h1>Модальное окно</h1>
-        <p>Текст модального окнаа</p>
+        <p>Текст модального окна</p>
       </Modal>
     </div>
   );
