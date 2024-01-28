@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-interface AddToCartButtonProps {
+export interface AddToCartButtonProps {
   count: number;
 }
 
@@ -10,7 +10,7 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({ count }) => {
     return (
       <div className={styles.button_container}>
         <button>-</button>
-        <input value={count} readOnly />
+        <input value={count} />
         <button>+</button>
       </div>
     );
