@@ -10,7 +10,7 @@
     "test": "jest src",
     "lint": "eslint src --fix",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "build-storybook -o docs-build"
+    "build-storybook": "storybook build"
   },
   "license": "MIT",
   "devDependencies": {
