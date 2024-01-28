@@ -53,7 +53,7 @@ jobs:
       - name: Deploy Storybook to Github Pages
         uses: JamesIves/github-pages-deploy-action@4.2.1
         with:
-          branch: storybook-static
+          branch: gh-pages
           folder: storybook-static
           commit-message: "Automatically publish Storybook"
 
