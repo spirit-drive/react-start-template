@@ -14,7 +14,7 @@ export const ProductDetailShoes = Template.bind({});
 ProductDetailShoes.args = {
   cost: 300,
   images: ['https://fineshoes.ru/upload/iblock/a86/loake_badminton_mahogany_4.jpg'],
-  category: 'Обувь',
+  category: 'Обувь.',
   title: 'Броги',
   description: 'Коричневые броги',
 };
