@@ -1,16 +1,19 @@
-import React, { FC } from 'react';
+import React, { FC, useContext} from 'react';
+import ThemeContext from '../layout/layout';
 import { Logo } from '../logo/logo';
-import './header.css';
+import { LocaleSwitcher } from '../switchers/localSwitcher';
+import  './header.css';
+import { useTranslation } from "react-i18next";
 
-export interface headerProps {
-  prop?: string;
-}
+export const Header: FC = () => {
+  const { t  } = useTranslation();
+  const theme = useContext(ThemeContext);
 
-export const Header: FC = ({ prop = 'Учет доходов-расходов' }: headerProps) => {
   return (
-    <div className="header">
+    <div className = { theme == 'dark' ? "dark": "light" }>
       <Logo />
-      {prop}
+      <div className="title">{t("title")}</div> 
+      <LocaleSwitcher />
     </div>
   );
 };

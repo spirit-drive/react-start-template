@@ -9,8 +9,8 @@ interface ModalProps {
 export const Modal: FC<ModalProps> = ({ children, setActive }) => {
   return (
     <div>
-      <div className="overlay"></div>
-      <div className="modal active">
+      <div className= "overlay"></div>
+      <div className="modal">
         <div className="close" onClick={() => setActive(false)}></div>
         {children}
       </div>

@@ -8,7 +8,7 @@
   left: 50%;
 }
 
-.overlay{
+.overlay {
   content: '';
   position: absolute;
   top: 0;
