@@ -1,4 +1,13 @@
+@import '../global.css';
+
 .header {
-  background-color: #4682b4;
-  color: aliceblue;
+  color: rgb(0, 0, 0);
+  width: 100%;
 }
+
+.title {
+  display: inline-flex;
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+

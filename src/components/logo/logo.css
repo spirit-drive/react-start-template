@@ -1,5 +1,5 @@
 .logo {
-    display: inline-block;
+    display: inline-flex;
     background-color: aliceblue;
     border-radius: 50%;
     height: 3rem;

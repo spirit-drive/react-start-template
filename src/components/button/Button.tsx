@@ -1,5 +1,4 @@
-import React, { FC } from 'react';
-import cn from 'clsx';
+import React, { FC, useContext  } from 'react';
 import './button.css';
 
 interface ButtonProps {
@@ -11,7 +10,7 @@ interface ButtonProps {
 }
 
 export const Button: FC<ButtonProps> = ({ primary, backgroundColor, size, label, func, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const mode = primary ? "storybookButtonPrimary" : "storybookButtonSecondary";
 
   const onClick = () => {
     func();
@@ -20,8 +19,8 @@ export const Button: FC<ButtonProps> = ({ primary, backgroundColor, size, label,
   return (
     <button
       type="button"
-      className={cn('storybook-button', `storybook-button--${size}`, mode)}
-      style={{ backgroundColor: backgroundColor || 'green' }}
+      className="storybookButton"
+      style={{ backgroundColor: backgroundColor}}
       onClick={onClick}
       {...props}
     >

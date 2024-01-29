@@ -1,0 +1,57 @@
+.toggle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+  
+  .toggle__conteiner {
+    position: relative;
+    width: 1.75rem;
+    height: 1rem;
+    background: var(--line, #CDD5DC);
+    box-sizing: border-box;
+    border-radius: 1rem;
+    padding: 0.125rem;
+    transition: background-color 0.5s ease-out;
+  }
+  
+  .toggle__checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:0;
+    height:0;
+    opacity: 0;
+  }
+  
+  .toggle__slider {
+    position: absolute;
+    left: 0.125rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    background: var(--white, #fff);
+    border-radius: 1rem;
+    transition: transform 200ms linear ;
+  }
+  
+  .toggle__label {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 0.875rem;
+      line-height: 130%;
+      color: var(--dark, #152949);
+      text-decoration: none;
+      font-family: "Lucida Console", Courier, monospace;
+  }
+  
+  .toggle__checkbox:checked ~ .toggle__conteiner {
+    background: var(--green, #4682b4);
+  }
+
+  
+.toggle__checkbox:checked ~ .toggle__conteiner > .toggle__slider {
+    transform: translateX(100%);
+  }

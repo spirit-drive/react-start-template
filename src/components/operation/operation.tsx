@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import './operation.css';
+import  './operation.css';
 
 interface OperationProps {
   amount: number;
