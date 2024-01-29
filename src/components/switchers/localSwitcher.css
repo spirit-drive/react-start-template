@@ -1,0 +1,4 @@
+.select {
+    float: right;
+    color: var(--light, #A3AED0);
+}

@@ -1,6 +1,4 @@
-import React, { FC } from 'react';
-import cn from 'clsx';
-import { sum } from './sum';
+import React, { FC, useContext  } from 'react';
 import './button.css';
 
 interface ButtonProps {
@@ -8,23 +6,21 @@ interface ButtonProps {
   backgroundColor?: string | null;
   size?: string;
   label: string;
+  func: () => void;
 }
-/**
- * Primary UI component for user interaction
- */
 
-export const Button: FC<ButtonProps> = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+export const Button: FC<ButtonProps> = ({ primary, backgroundColor, size, label, func, ...props }) => {
+  const mode = primary ? "storybookButtonPrimary" : "storybookButtonSecondary";
 
   const onClick = () => {
-    sum(4, 5);
+    func();
   };
 
   return (
     <button
       type="button"
-      className={cn('storybook-button', `storybook-button--${size}`, mode)}
-      style={{ backgroundColor: backgroundColor || 'green' }}
+      className="storybookButton"
+      style={{ backgroundColor: backgroundColor}}
       onClick={onClick}
       {...props}
     >
