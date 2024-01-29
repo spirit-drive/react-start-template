@@ -1,21 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLanguage } from '../../helper/useLanguage';
-import { getLanguageLocalStorage } from '../../helper/localStorage';
-import i18n from '../../helper/i18n';
 
 const LanguageSwitch = () => {
   const { toggleLanguage, language } = useLanguage();
-  const [currentLanguage, setCurrentLanguage] = useState(getLanguageLocalStorage());
 
-  const handleChange = () => {
+  const handleChange = (): void => {
     toggleLanguage();
-    setCurrentLanguage(getLanguageLocalStorage());
-    i18n.changeLanguage(language);
   };
 
   return (
     <>
-      <button onClick={handleChange}>{currentLanguage === 'en' ? 'EN' : 'RU'}</button>
+      <button onClick={handleChange}>{language === 'en' ? 'EN' : 'RU'}</button>
     </>
   );
 };

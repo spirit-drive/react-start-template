@@ -1,6 +1,7 @@
 import React, { FC, useContext, useState } from 'react';
 import { LanguageContext, LanguageContextType } from '../helper/contexts';
 import { getLanguageLocalStorage, setLanguageLocalStorage } from '../helper/localStorage';
+import i18n from "../helper/i18n";
 
 enum LanguagesEnum {
   RU = 'ru',
@@ -21,13 +22,13 @@ export const useLanguage = () => {
 
 export const LanguageProvider: FC<LanguageProviderProps> = ({ children }) => {
   const storedLanguage: string = getLanguageLocalStorage();
-  if (!storedLanguage) setLanguageLocalStorage(LanguagesEnum.EN);
   const [language, setLanguage] = useState<string>(storedLanguage || LanguagesEnum.EN);
 
   const toggleLanguage = (): void => {
     const newLanguage: LanguagesEnum = language === LanguagesEnum.EN ? LanguagesEnum.RU : LanguagesEnum.EN;
     setLanguage(newLanguage);
     setLanguageLocalStorage(newLanguage);
+    i18n.changeLanguage(newLanguage);
   };
 
   return (

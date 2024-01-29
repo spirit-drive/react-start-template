@@ -10,11 +10,7 @@ const bodyElement = document.querySelector('body');
 const ModalController = () => {
   const [isShow, setIsShow] = useState(false);
   const [inputValue, setInputValue] = useState('');
-  const { language } = useLanguage();
-
-  useEffect(() => {
-    i18n.changeLanguage(language);
-  }, [language]);
+  useLanguage();
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -23,7 +19,6 @@ const ModalController = () => {
   const toggleModal = () => {
     setIsShow(!isShow);
   };
-
   return (
     <div className={clsx(classNames.modalController)}>
       <label htmlFor="inputText">{i18n.t('test')}</label>
