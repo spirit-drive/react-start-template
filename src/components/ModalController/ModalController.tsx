@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import classNames from './modalController.module.css';
 import clsx from 'clsx';
 import ModalWindow from '../../components/ModalWindow/ModalWindow';

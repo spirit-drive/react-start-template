@@ -1,7 +1,7 @@
 import React, { FC, useContext, useState } from 'react';
 import { LanguageContext, LanguageContextType } from '../helper/contexts';
 import { getLanguageLocalStorage, setLanguageLocalStorage } from '../helper/localStorage';
-import i18n from "../helper/i18n";
+import i18n from '../helper/i18n';
 
 enum LanguagesEnum {
   RU = 'ru',
