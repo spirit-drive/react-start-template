@@ -1,4 +1,4 @@
-import i18n, {InitOptions} from 'i18next';
+import i18n from 'i18next';
 import {initReactI18next} from 'react-i18next';
 import {translationData} from "./";
 
@@ -19,6 +19,6 @@ i18n
         interpolation: {
             escapeValue: false,
         },
-    } as InitOptions);
+    });
 
 export default i18n;

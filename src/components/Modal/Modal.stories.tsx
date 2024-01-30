@@ -11,12 +11,18 @@ const meta: Meta<typeof Modal> = {
 export default meta;
 type Story = StoryObj<typeof Modal>;
 
+interface ModalProps {
+    onClose: () => void;
+    children: React.ReactNode;
+    isOpen: boolean;
+}
+
 export const Default: Story = {
     args: {
-        onClose: (): void => {},
+        onClose: () => {},
         children: 'Modal window',
         isOpen: false
-    },
+    } as ModalProps,
     render: ({...args}) => {
         const [{isOpen}, updateArgs] = useArgs();
         const handleClose = () => updateArgs({isOpen: !isOpen});

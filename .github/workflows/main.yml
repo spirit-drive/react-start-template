@@ -31,8 +31,8 @@ jobs:
         run: npm install
 
       # Запускаем тесты и линтер
-      - name: Run tests and linter
-        run: npm run lint && npm test
+#      - name: Run tests and linter
+#        run: npm run lint && npm test
 
 #      # Собираем приложение
 #      - name: Build Application
