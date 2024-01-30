@@ -1,7 +1,7 @@
 import React, {FC} from "react";
 import cn from "clsx";
 import "./Card.scss"
-import {BtnToCart} from "../BtnToCard/BtnToCart";
+import {BtnToCart} from "../BtnToCart/BtnToCart";
 import {priceFormat} from "../utils";
 
 interface ICard {

@@ -1,0 +1,8 @@
+{
+  "components": {
+    "testComponent": {
+      "greeting": "Привет",
+      "buttonText": "Кликни меня"
+    }
+  }
+}

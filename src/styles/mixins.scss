@@ -1,0 +1,10 @@
+@import "./themes";
+
+@mixin theme($property, $var, $before:null, $after:null) {
+  @at-root :global([data-theme="light"]) #{&} {
+    #{$property}: #{$before} #{map-get($light, $var)} #{$after};
+  }
+  @at-root :global([data-theme="dark"]) #{&} {
+    #{$property}: #{$before} #{map-get($dark, $var)} #{$after};
+  }
+}

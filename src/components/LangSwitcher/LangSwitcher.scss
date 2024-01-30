@@ -1,0 +1,45 @@
+.lang-switch {
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .lang-switch__container .lang-switch__slider {
+      transform: translateX(24px);
+    }
+  }
+
+  &__container {
+    background-color: #476173;
+    position: relative;
+    display: inline-block;
+    width: 54px;
+    height: 24px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  &__slider {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    display: block;
+    background: #d8e9ef;
+    width: 22px;
+    height: 16px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    transition: .4s;
+
+    span {
+      display: block;
+      color: #333333;
+      font-size: 12px;
+      line-height: 12px;
+      text-align: center;
+      transition: .4s;
+    }
+  }
+}

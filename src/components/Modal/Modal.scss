@@ -1,10 +1,10 @@
 .modal {
-  display: none;
   font-family: sans-serif;
+  color: #000000;
+  text-align: left;
 
   &:before {
     content: "";
-    display: none;
     background: rgba(0, 0, 0, 0.6);
     position: fixed;
     top: 0;
@@ -28,10 +28,6 @@
     box-shadow:0 5px 10px rgba(0,0,0,0.3);
   }
 
-  &--opened, &:before {
-    display: block;
-  }
-
   &__close {
     &-btn {
       color: #aaaaaa;
@@ -41,6 +37,9 @@
       position: absolute;
       right: 7px;
       top: 0;
+      background: transparent;
+      border: unset;
+      cursor: pointer;
 
       &:hover {
         color: #919191;

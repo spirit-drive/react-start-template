@@ -1,16 +1,23 @@
+@import "../../styles/common";
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
   width: 100%;
-  background: #ffffff;
+  @include theme(background-color, mainBg);
+  @include theme(color, text);
+
   &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     max-width: 1400px;
     text-align: left;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 10px 15px 0;
   }
 
   .logo {
