@@ -1,16 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import clsx from 'clsx';
+import Layout from './components/Layout/Layout';
+import { useTheme } from './helper/useTheme';
 
 function App() {
+  const { theme } = useTheme();
+  const className = `app-${theme}`;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Текст писать тут
-        </p>
-      </header>
+    <div className={clsx(className, 'general')}>
+      <Layout />
     </div>
   );
 }

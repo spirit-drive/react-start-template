@@ -1,0 +1,25 @@
+.modalController {
+    margin-top: 100px;
+}
+
+label {
+    text-align: center;
+    display: block;
+}
+
+.inputText {
+    display: block;
+    padding: 5px 10px;
+    margin: 10px auto;
+}
+
+.showModalBtn {
+    display: block;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    background-color: #e8670b;
+    cursor: pointer;
+    color: #FFF;
+    margin: 0px auto;
+}
