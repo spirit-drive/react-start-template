@@ -1,17 +1,10 @@
 import styles from './Layout.module.scss';
-import React from "react";
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 export type LayoutProps = {
-    children?:React.ReactNode
-}
+  children?: React.ReactNode;
+};
 
-
-export const Layout:FC<LayoutProps> = ({children, ...props}) => {
-    return (
-        <div className={`${styles.container} container`}>
-            {children}
-
-            </div>
-    )
-}
+export const Layout: FC<LayoutProps> = ({ children, ...props }) => {
+  return <div className={`${styles.container} container`}>{children}</div>;
+};

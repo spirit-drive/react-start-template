@@ -1,37 +1,32 @@
-import React, { createContext, useContext, useReducer } from "react";
-
+import React, { createContext, useContext, useReducer } from 'react';
 
 export type Action = 'light' | 'darck';
 export type State = typeof defaultTheme;
 export type Dispatch = (Action: Action) => void;
 
-const defaultTheme = { theme: 'light' }
-const ThemeContext = createContext < { state: State, dispatch: Dispatch } | undefined >(undefined);
+const defaultTheme = { theme: 'light' };
+const ThemeContext = createContext<{ state: State; dispatch: Dispatch } | undefined>(undefined);
 
-function themeReduser(state:State, action:Action) {
-    if (action == 'darck') {
-        return {
-            theme: "darck"
-        }
-    } else {
-        return {
-            theme: "light"
-        }
-    }
+function themeReduser(state: State, action: Action) {
+  if (action == 'darck') {
+    return {
+      theme: 'darck',
+    };
+  } else {
+    return {
+      theme: 'light',
+    };
+  }
 }
 
-export function ThemeProvider({ children }:{children:React.ReactNode}) {
-    const [state, dispatch] = useReducer(themeReduser, defaultTheme)
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [state, dispatch] = useReducer(themeReduser, defaultTheme);
 
-    return (
-        <ThemeContext.Provider value={{ state, dispatch }}>
-        {children}
-    </ThemeContext.Provider>
-    )
+  return <ThemeContext.Provider value={{ state, dispatch }}>{children}</ThemeContext.Provider>;
 }
 
 export function useTheme() {
-    const context = useContext(ThemeContext)
-    if (!context) throw new Error('useContext inside ThemeProvider !!!!')
-    return context
+  const context = useContext(ThemeContext);
+  if (!context) throw new Error('useContext inside ThemeProvider !!!!');
+  return context;
 }

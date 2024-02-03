@@ -11,24 +11,18 @@ import { LanguageControllerButton } from '../../controllers/LanguageController/L
 export const Header = () => {
   const { state, dispatch } = useTheme();
 
-  const { stateLang, dispatchLang } = useLanguage()
+  const { stateLang, dispatchLang } = useLanguage();
   const navItems = ['navItem 1', 'navItem 2', 'navItem 3', 'navItem 4'];
   return (
     <div className={`${styles.header} ${state.theme == 'light' ? '' : styles.darck}`}>
       <div className={`container ${styles.container} `}>
         <Logo type="header" />
         <HeaderNav navItems={navItems} />
-          <LanguageControllerButton
-            handler={dispatchLang}
-            Language={stateLang}
-          />
+        <LanguageControllerButton handler={dispatchLang} Language={stateLang} />
 
-              <ThemeControlsButton
-                  handler={dispatch}
-                  themeType = {state}
-              />
+        <ThemeControlsButton handler={dispatch} themeType={state} />
       </div>
-      <LanguageConponent/>
+      <LanguageConponent />
     </div>
   );
 };
