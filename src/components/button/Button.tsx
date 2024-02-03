@@ -1,16 +1,19 @@
 import React from "react";
 import styles from './Button.module.scss';
 import { FC } from "react";
+import { Dispatch } from "../context/ThemeContext";
 
 
 export type ButtonProps = {
     type?: 'header' | 'footer',
     children?: string,
     itemClass?: string,
-    buttonData?:string
+    buttonData?: string,
+    handler?: Dispatch,
+    onClick?:(event:any)=>void
 }
 
-export const Button: FC<ButtonProps> = ({ type, children, itemClass, buttonData,  ...props }) => {
+export const Button: FC<ButtonProps> = ({ type, children, itemClass, buttonData, onClick, ...props }) => {
     function buttonStyles() {
         if(type == 'header') {
             return styles.header
@@ -26,6 +29,7 @@ export const Button: FC<ButtonProps> = ({ type, children, itemClass, buttonData,
                         ${buttonStyles()}
                         ${itemClass}`}
             data-type={buttonData}
+            onClick={onClick}
                     >
             {children}
         </button>

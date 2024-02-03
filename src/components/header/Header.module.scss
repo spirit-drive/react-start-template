@@ -15,4 +15,17 @@
     z-index: 10;
     box-shadow: 0px 5px 11px -1px rgba(34, 60, 80, 0.2);
     background-color: #FFFFFF;
+
+
+}
+.darck{
+    background-color: black;
+    color: #FFFFFF;
+}
+.darckButton{
+    background-color: red !important ;
+    color: #FFFFFF !important ;
+    &:hover{
+        background-color: rgb(178, 71, 71) !important ;
+    }
 }

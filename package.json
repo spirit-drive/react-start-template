@@ -9,8 +9,8 @@
     "build": "webpack --mode production",
     "test": "jest src",
     "lint": "eslint src --fix",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 6006 ",
+    "build-storybook": "storybook build public"
   },
   "license": "MIT",
   "devDependencies": {
@@ -18,13 +18,14 @@
     "@babel/preset-env": "^7.22.4",
     "@babel/preset-react": "^7.22.3",
     "@babel/preset-typescript": "^7.21.5",
-    "@storybook/addon-essentials": "^7.0.18",
-    "@storybook/addon-interactions": "^7.0.18",
-    "@storybook/addon-links": "^7.0.18",
-    "@storybook/blocks": "^7.0.18",
+    "@storybook/addon-essentials": "^7.6.12",
+    "@storybook/addon-interactions": "^7.6.12",
+    "@storybook/addon-links": "^7.6.12",
+    "@storybook/addon-mdx-gfm": "^7.6.12",
+    "@storybook/blocks": "^7.6.12",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/react": "^7.0.18",
-    "@storybook/react-webpack5": "^7.0.18",
+    "@storybook/react": "^7.6.12",
+    "@storybook/react-webpack5": "^7.6.12",
     "@storybook/testing-library": "^0.0.14-next.2",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.2.5",
@@ -43,9 +44,13 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.6.15",
     "fork-ts-checker-webpack-plugin": "^8.0.0",
     "html-webpack-plugin": "^5.5.1",
     "husky": "^8.0.0",
+    "i18next": "^23.8.2",
+    "i18next-browser-languagedetector": "^7.2.0",
+    "i18next-http-backend": "^2.4.3",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
     "less-loader": "^11.1.2",
@@ -53,7 +58,9 @@
     "prettier": "2.8.8",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.1",
-    "storybook": "^7.0.18",
+    "storybook": "^7.6.12",
+    "storybook-addon-i18n": "^5.1.13",
+    "storybook-react-i18next": "^2.0.10",
     "style-loader": "^3.3.3",
     "ts-jest": "^29.1.0",
     "ts-loader": "^9.4.3",
@@ -65,6 +72,7 @@
   "dependencies": {
     "clsx": "^1.2.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-i18next": "^14.0.1"
   }
 }

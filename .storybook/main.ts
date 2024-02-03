@@ -5,6 +5,7 @@ const config = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/preset-scss",
+
   ],
   framework: {
     name: "@storybook/react-webpack5",
@@ -13,5 +14,6 @@ const config = {
   docs: {
     autodocs: "tag",
   },
+  staticDirs: ['../public']
 };
 export default config;

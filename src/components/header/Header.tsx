@@ -1,35 +1,34 @@
-import React from "react";
-import { FC } from "react";
+import React from 'react';
 import styles from './Header.module.scss';
-import { Button } from "../button/Button";
-import { Logo } from "../logo/Logo";
-import { HeaderNav } from "../HeaderNav/HeaderNav";
-
+import { Logo } from '../logo/Logo';
+import { HeaderNav } from '../HeaderNav/HeaderNav';
+import { useTheme } from '../context/ThemeContext';
+import { ThemeControlsButton } from '../ThemeControlsButton/ThemeControlsButton';
+import { useLanguage } from '../context/LanguageContext';
+import { LanguageConponent } from '../LanguageConponent/LanguageConponent';
+import { LanguageControllerButton } from '../../controllers/LanguageController/LanguageControllerButton';
 
 export const Header = () => {
-    const navItems = [
-        'navItem 1',
-        'navItem 2',
-        'navItem 3',
-        'navItem 4'
-    ]
+  const { state, dispatch } = useTheme();
 
-    return (
-        <div className={styles.header}>
-            <div className={`container ${styles.container}`}>
-                <Logo
-                    type="header"
-                />
-                <HeaderNav
-                    navItems = {navItems}
-                />
-                <Button
-                    type="header"
-                >
-                       headerButton
-                </Button>
-            </div>
+  const { stateLang, dispatchLang } = useLanguage()
+  const navItems = ['navItem 1', 'navItem 2', 'navItem 3', 'navItem 4'];
+  return (
+    <div className={`${styles.header} ${state.theme == 'light' ? '' : styles.darck}`}>
+      <div className={`container ${styles.container} `}>
+        <Logo type="header" />
+        <HeaderNav navItems={navItems} />
+          <LanguageControllerButton
+            handler={dispatchLang}
+            Language={stateLang}
+          />
 
-        </div>
-    )
-}
+              <ThemeControlsButton
+                  handler={dispatch}
+                  themeType = {state}
+              />
+      </div>
+      <LanguageConponent/>
+    </div>
+  );
+};

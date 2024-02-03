@@ -1,7 +1,7 @@
 import { PreviewItems } from "./PreviewItems";
 
 export default {
-    title: 'CostAccounting/ItemPreviewsssss',
+    title: 'CostAccounting/ItemPreviews',
     component: PreviewItems,
     description:'Превью Операций'
 }
