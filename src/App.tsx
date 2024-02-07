@@ -9,6 +9,7 @@ import { PopupWithButton } from './components/popupWithButton/PopupWithButton';
 import { ThemeProvider } from './components/context/ThemeContext';
 import { LanguageConponent } from './components/LanguageConponent/LanguageConponent';
 import { LanguageProvider } from './components/context/LanguageContext';
+import { ComponentsList } from './components/componentsList/ComponentsList';
 
 function App() {
   const [popupState, setPopupState] = useState(false);
@@ -53,12 +54,10 @@ function App() {
 
   return (
     <>
-      {' '}
-      <Suspense fallback="...Loading">
+      {/* <Suspense fallback="...Loading">
         <LanguageProvider>
           <ThemeProvider>
             <Header />
-
             <Layout>
               <PopupWithButton />
               <PreviewItems elementsData={operations} />
@@ -71,7 +70,8 @@ function App() {
             </PopupWrapper>
           </ThemeProvider>
         </LanguageProvider>
-      </Suspense>
+      </Suspense> */}
+      <ComponentsList/>
     </>
   );
 }
