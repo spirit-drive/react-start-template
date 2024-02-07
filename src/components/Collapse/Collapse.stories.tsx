@@ -12,13 +12,17 @@ type Story = StoryObj<typeof Collapse>;
 
 export const Primary: Story = {
   args: {
-    opened: true, // Измените значение по желанию
-    children: <div>Ваш текст или компоненты здесь</div>, // Ваш контент для Collapse
+    opened: false,
+    children: <div>Ваш текст или компоненты здесь</div>,
   },
   decorators: [
     (Story) => (
       <ThemeProvider>
         <LanguageProvider>
+          <div>
+            <h1>Collapse component</h1>
+            <div>Измените значение opened для отображения</div>
+          </div>
           <Story />
         </LanguageProvider>
       </ThemeProvider>

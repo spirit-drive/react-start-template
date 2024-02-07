@@ -1,10 +1,10 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { FC, useLayoutEffect, useState } from 'react';
 
 type CollapseProps = {
   opened: boolean;
   children: React.ReactNode;
 };
-const Collapse: React.FC<CollapseProps> = ({ opened, children }) => {
+const Collapse: FC<CollapseProps> = ({ opened, children }) => {
   const [height, setHeight] = useState<number | null>(null);
   const [isTransitionEnd, setIsTransitionEnd] = useState(false);
   const [opacity, setOpacity] = useState<number>(0);

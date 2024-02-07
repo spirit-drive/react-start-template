@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 @import '../../variables.css';
 
-
-body {
-    margin-top: 100px;
-}
-
 .general {
     text-align: center;
 }

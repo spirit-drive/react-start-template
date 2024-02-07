@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import Header from '../../components/Header/Header';
 import ModalController from '../../components/ModalController/ModalController';
 import ProductList from '../../components/ProductList/ProductList';
-import Collapse from '../../components/Collapse/Collapse';
+import Collapse from '../Collapse/Collapse';
 
 const Layout: FC = () => {
   const [opened, setOpend] = useState(false);
