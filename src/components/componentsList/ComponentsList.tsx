@@ -7,7 +7,7 @@ import cn from "classnames";
 import cl from './ComponentsList.module.scss'
 import { Button } from "../button/Button";
 import { createRandomOperation} from "./functions";
-
+import { CoMponentItem } from "./ComponentItem";
 const operations = [
     {
         operationId: '01',
@@ -52,38 +52,20 @@ export const ComponentsList = () => {
     const [catalog, setCatalog] = useState(operations)
     function generateOperation() {
         let date = new Date()
-        // console.log(new Date().getTime())
-        console.log(createRandomOperation(date))
         let newItem = createRandomOperation(date)
-        console.log('=====')
-        console.log('newItem')
-        console.log(newItem)
-        console.log('=====')
-        console.log('catalog')
-        console.log(operations)
-        console.log('=====')
-        console.log("catalog push")
-        operations.push(createRandomOperation(date))
-        console.log(operations)
-        setCatalog(operations)
-
+        catalog.push(newItem)
+        setCatalog([...catalog])
     }
 
     return (
         <>
             <Layout>
                 <div className={cn(cl.operations_wrapper)}>
-                {catalog.map((catalog) => (
-                    <div className={cn(cl.item_wrapper)} key={catalog.operationId}>
-                            <span className={cn(cl.name)}> имя операции : {catalog.name}</span>
-                        <span>Дата операции : {catalog.createdAt}</span>
-                        <span>Категория : { catalog.category}</span>
-                        {catalog.total ?<>
-                            <span> Сумма операции : {catalog.total}</span>
-                            <button datatype={catalog.operationId}>showMore</button>
-                            </>
-                            : <span>сгенерированная операция</span>}
-                    </div>
+                {catalog.map((catalogItem) => (
+                    <CoMponentItem
+                    key={catalogItem.operationId}
+                    item={catalogItem}/>
+
                 ))}
                 </div>
                 <div className={cn(cl.buttons)}>

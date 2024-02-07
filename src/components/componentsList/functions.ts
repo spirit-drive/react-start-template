@@ -19,7 +19,6 @@ export const createRandomOperation = (operationDate: Date) :randomOperation => {
     const createdAt = `${operationDate.getDay()}-${operationDate.getMonth()}-${operationDate.getFullYear()}`;
     const name = 'Сгенерированное название операции';
     const category = getRandomOperation()
-    console.log(category)
     return {
         operationId,
         total,
