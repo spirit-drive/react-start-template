@@ -19,7 +19,8 @@ interface ModalProps {
 
 export const Default: Story = {
     args: {
-        onClose: () => {},
+        onClose: () => {
+        },
         children: 'Modal window',
         isOpen: false
     } as ModalProps,
@@ -28,14 +29,12 @@ export const Default: Story = {
         const handleClose = () => updateArgs({isOpen: !isOpen});
 
         return (
-            <>
-                <Modal
-                    isOpen={isOpen}
-                    onClose={handleClose}
-                >
-                    <p>{args.children}</p>
-                </Modal>
-            </>
+            <Modal
+                isOpen={isOpen}
+                onClose={handleClose}
+            >
+                {args.children}
+            </Modal>
         )
     }
 };
@@ -55,7 +54,6 @@ export const TestShowModal: Story = {
                     onBlur={(e) => setInputValue(e.target.value)}
                 />
                 <button onClick={handleShowModal}>open</button>
-
                 <Modal
                     isOpen={isOpen}
                     onClose={setIsOpen}
@@ -63,7 +61,6 @@ export const TestShowModal: Story = {
                     <p>{inputValue}</p>
                 </Modal>
             </>
-
         );
     }
 };

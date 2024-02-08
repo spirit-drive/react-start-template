@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import cn from "clsx";
 import "./Product.scss"
 import {BtnToCart} from "../BtnToCart/BtnToCart";
-import {priceFormat} from "../utils";
+import {priceFormat} from "../helpers";
 
 interface IProduct {
     image: string[],

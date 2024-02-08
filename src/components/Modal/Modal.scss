@@ -1,7 +1,6 @@
+@import "../../styles/common";
+
 .modal {
-  font-family: sans-serif;
-  color: #000000;
-  text-align: left;
 
   &:before {
     content: "";
@@ -22,10 +21,11 @@
     z-index: 11;
     width: 300px;
     min-height: 150px;
-    background: #fff;
     border-radius: 10px;
     border: 1px solid #aaa;
     box-shadow:0 5px 10px rgba(0,0,0,0.3);
+    @include theme(background-color, mainBg);
+    @include theme(color, text);
   }
 
   &__close {

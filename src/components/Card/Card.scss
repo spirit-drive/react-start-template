@@ -1,12 +1,16 @@
+@import "../../styles/common";
+
 .card {
   display: flex;
   flex-direction: column;
   padding: 15px 25px;
   max-width: 250px;
-  background: #ffffff;
-  color: #000000;
-  text-align: left;
-  font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+  transition: box-shadow .2s ease-in;
+  cursor: pointer;
+
+  @include theme(background-color, mainBg);
+  @include theme(color, text);
+
   &:hover {
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.14);
   }
@@ -14,6 +18,8 @@
   &__picture {
     width: 100%;
     margin: 0 auto;
+    aspect-ratio: 1/1;
+    mix-blend-mode: multiply;
   }
 
   &__name {

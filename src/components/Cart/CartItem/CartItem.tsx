@@ -2,7 +2,7 @@ import React, {FC} from "react";
 import cn from "clsx";
 import "./CartItem.scss"
 import {BtnDelCart} from "../BtnDelCart/BtnDelCart";
-import {priceFormat} from "../../utils";
+import {priceFormat} from "../../helpers";
 
 interface ICartItem {
     image: string[],

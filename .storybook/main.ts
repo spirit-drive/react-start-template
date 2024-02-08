@@ -12,6 +12,7 @@ const config: StorybookConfig = {
         '../src/**/*.mdx',
         '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'
     ],
+    staticDirs: ['../public'],
     // Optional
     addons: [
         "@storybook/addon-links",
