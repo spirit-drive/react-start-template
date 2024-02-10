@@ -3,6 +3,7 @@ import Header from '../../components/Header/Header';
 import ModalController from '../../components/ModalController/ModalController';
 import ProductList from '../../components/ProductList/ProductList';
 import Collapse from '../Collapse/Collapse';
+import SliderRange from '../../components/SliderRange/SliderRange';
 
 const Layout: FC = () => {
   const [opened, setOpend] = useState(false);
@@ -12,19 +13,20 @@ const Layout: FC = () => {
       <ModalController />
 
       {/*collapse component for demonstration*/}
-      <Collapse opened={opened}>
-        <div
-          style={{
-            height: 'auto',
-            overflow: 'hidden',
-            border: '1px solid black',
-            padding: '10px 5px',
-          }}
-        >
-          my collapse children
-        </div>
-      </Collapse>
-      <button onClick={() => setOpend(!opened)}>{opened ? 'Hide' : 'Show'}</button>
+      {/*<Collapse opened={opened}>*/}
+      {/*  <div*/}
+      {/*    style={{*/}
+      {/*      height: 'auto',*/}
+      {/*      overflow: 'hidden',*/}
+      {/*      border: '1px solid black',*/}
+      {/*      padding: '10px 5px',*/}
+      {/*    }}*/}
+      {/*  >*/}
+      {/*    my collapse children*/}
+      {/*  </div>*/}
+      {/*</Collapse>*/}
+      {/*<button onClick={() => setOpend(!opened)}>{opened ? 'Hide' : 'Show'}</button>*/}
+      <SliderRange min={0} max={100} />
 
       <ProductList />
     </>
