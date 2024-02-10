@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import styles from './Button.module.scss';
-import { FC } from "react";
 import { Dispatch } from "../context/ThemeContext";
 import cn from "classnames"
 
