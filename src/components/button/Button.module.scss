@@ -31,6 +31,13 @@
     padding: 20px;
     border-radius: 10px;
     background: #272F44;
+    transition: all .5s linear;
+    &:hover{
+        color: #433720;
+        background-color: #EBB13E;
+        border-radius: 40px;
+        transition: all .5s linear;
+    }
 }
 .footer{
     border-radius: 10px;

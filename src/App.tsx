@@ -11,6 +11,7 @@ import { LanguageConponent } from './components/LanguageConponent/LanguageConpon
 import { LanguageProvider } from './components/context/LanguageContext';
 // import { ComponentsList } from './components/componentsList/ComponentsList';
 import { ComponentsList } from './components/componentsListWithObserver/ComponentsList';
+import { PortalPopup } from './components/portalPopup/portalPopup';
 function App() {
   const [popupState, setPopupState] = useState(false);
   const operations = [
@@ -72,7 +73,8 @@ function App() {
         </LanguageProvider>
       </Suspense> */}
       {/* <ComponentsList/> */}
-      <ComponentsList/>
+      {/* <ComponentsList/> */}
+      <PortalPopup/>
     </>
   );
 }

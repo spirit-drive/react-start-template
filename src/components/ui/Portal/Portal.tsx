@@ -8,15 +8,18 @@ const root = document.querySelector('body');
 export interface IPortalProps {
     className?: string,
     children?: React.ReactNode,
-    visible:boolean
+    visible: boolean,
+    closePortal:()=>void
 
 }
 
 
-export const Portal: FC<IPortalProps> = ({className,children,visible }) => {
+export const Portal: FC<IPortalProps> = ({ className, children, visible, closePortal }) => {
+
     return root ? ReactDOM.createPortal(
         <PopupWrapper
-        visible={visible}>
+            close={()=>closePortal()}
+            visible={visible}>
             {children}
         </PopupWrapper>,
         root

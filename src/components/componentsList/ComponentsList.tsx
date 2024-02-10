@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { FC } from "react";
 import { Layout } from "../lauout/Layout";
-import { PreviewItems } from "../PreviewItems/PreviewItems";
-import { Portal } from "../ui/Portal/Portal";
 import cn from "classnames";
 import cl from './ComponentsList.module.scss'
 import { Button } from "../button/Button";
@@ -47,8 +45,6 @@ const operations = [
     }
 ];
 export const ComponentsList = () => {
-
-    // const [popup, setPopup] = useState(false)
     const [catalog, setCatalog] = useState(operations)
     function generateOperation() {
         let date = new Date()
@@ -84,9 +80,7 @@ export const ComponentsList = () => {
                 </div>
 
             </Layout>
-            {/* <Portal
-                visible={popup}
-            >asdaa</Portal> */}
+
         </>
     )
 }
