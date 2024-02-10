@@ -22,8 +22,7 @@ export const Header = () => {
 
         <ThemeControlsButton handler={dispatch} themeType={state} />
       </div>
-      <LanguageConponent
-      theme={state.theme} />
+      <LanguageConponent theme={state.theme} />
     </div>
   );
 };

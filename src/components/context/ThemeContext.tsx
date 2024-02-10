@@ -7,19 +7,19 @@ export type Dispatch = (Action: Action) => void;
 const defaultTheme = { theme: 'light' };
 const ThemeContext = createContext<{ state: State; dispatch: Dispatch } | undefined>(undefined);
 
-function themeReduser(state:State, action:Action) {
-    switch (action) {
-        case ('darck'):
-            return {
-                theme: 'darck'
-            }
-            break;
-        case ('light'):
-            return {
-                theme: 'light'
-            }
-            break;
-    }
+function themeReduser(state: State, action: Action) {
+  switch (action) {
+    case 'darck':
+      return {
+        theme: 'darck',
+      };
+      break;
+    case 'light':
+      return {
+        theme: 'light',
+      };
+      break;
+  }
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {

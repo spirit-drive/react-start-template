@@ -5,6 +5,6 @@ export type LayoutProps = {
   children?: React.ReactNode;
 };
 
-export const Layout: FC<LayoutProps> = ({ children, ...props }) => {
+export const Layout: FC<LayoutProps> = ({ children }) => {
   return <div className={`${styles.container} container`}>{children}</div>;
 };

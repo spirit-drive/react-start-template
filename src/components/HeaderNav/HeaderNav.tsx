@@ -5,7 +5,7 @@ export type HeaderNavProps = {
   navItems: Array<string>;
 };
 
-export const HeaderNav: FC<HeaderNavProps> = ({ navItems, ...props }) => {
+export const HeaderNav: FC<HeaderNavProps> = ({ navItems }) => {
   return (
     <nav className={`${styles.nav}`}>
       {navItems.map((navItem, index) => (

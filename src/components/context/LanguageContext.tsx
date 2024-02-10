@@ -8,18 +8,18 @@ const defaultLanguage = { lang: 'ru' };
 const LanguageContext = createContext<{ stateLang: StateLang; dispatchLang: DispatchLang } | undefined>(undefined);
 
 function languageReduser(stateLang: StateLang, action: Action) {
-    switch (action) {
-        case ('ru'):
-            return {
-                lang: 'ru'
-            }
-            break;
-        case ('en'):
-            return {
-                lang: 'en'
-            }
-            break;
-    }
+  switch (action) {
+    case 'ru':
+      return {
+        lang: 'ru',
+      };
+      break;
+    case 'en':
+      return {
+        lang: 'en',
+      };
+      break;
+  }
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {

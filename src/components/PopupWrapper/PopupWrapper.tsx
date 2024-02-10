@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, ReactEventHandler, useState, FC } from 'react';
+import React, { ReactEventHandler, FC } from 'react';
 import styles from './PopupWrapper.module.scss';
 
 export type PopupWrapperProps = {
@@ -7,7 +7,7 @@ export type PopupWrapperProps = {
   close?: ReactEventHandler;
 };
 
-export const PopupWrapper: FC<PopupWrapperProps> = ({ visible, children, close, ...props }) => {
+export const PopupWrapper: FC<PopupWrapperProps> = ({ visible, children, close }) => {
   if (visible) {
     return (
       <div className={styles.wrapper}>

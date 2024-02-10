@@ -15,7 +15,7 @@ export type PreviewItemProps = {
   elementData: array;
 };
 
-export const PreviewItem: FC<PreviewItemProps> = ({ elementData, ...props }) => {
+export const PreviewItem: FC<PreviewItemProps> = ({ elementData }) => {
   return (
     <div className={`${styles.item}`}>
       <h1 className={`${styles.title} ${styles.df}`}>Подробности операции </h1>

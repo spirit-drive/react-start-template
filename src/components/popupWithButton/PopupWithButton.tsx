@@ -1,5 +1,4 @@
 import React, { ChangeEventHandler, useState } from 'react';
-import cl from './PopupWithButton.module.scss';
 import { PopupWrapper } from '../PopupWrapper/PopupWrapper';
 
 export const PopupWithButton = () => {
@@ -17,11 +16,9 @@ export const PopupWithButton = () => {
       <button onClick={closePopup}>popup visibility</button>
       <input type="text" value={popupChildren} onChange={handleChangeInput} />
 
-            <PopupWrapper
-                visible={popupVisibility}
-                children={popupChildren}
-                close={() => setPopupVisibility(!popupVisibility)}
-            />
-        </>
-    )
-}
+      <PopupWrapper visible={popupVisibility} close={() => setPopupVisibility(!popupVisibility)}>
+        ` {popupChildren}`
+      </PopupWrapper>
+    </>
+  );
+};

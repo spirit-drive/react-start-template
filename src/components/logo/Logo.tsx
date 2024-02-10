@@ -5,7 +5,7 @@ export type LogoProps = {
   type: 'header' | 'footer';
 };
 
-export const Logo: FC<LogoProps> = ({ type, ...props }) => {
+export const Logo: FC<LogoProps> = ({ type }) => {
   function logoType() {
     if (type == 'header') return styles.header;
     else return styles.footer;
