@@ -71,12 +71,7 @@ export const ComponentsList = () => {
                     >
                         Добавить произвольную операцию
                     </Button>
-                    <Button
-                    // onClick={ }
-                    itemClass={cl.showMore2}
-                >
-                    Добавить операцию
-                </Button>
+
                 </div>
 
             </Layout>
