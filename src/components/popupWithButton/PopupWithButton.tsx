@@ -29,9 +29,7 @@ export const PopupWithButton = () => {
             <PopupWrapper
                 visible={popupVisibility}
                 children={popupChildren}
-                close={(e: any) => {
-                    setPopupVisibility(!popupVisibility)
-                }}
+                close={() => setPopupVisibility(!popupVisibility)}
             />
         </>
     )

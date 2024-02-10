@@ -2,6 +2,7 @@ import React from "react";
 import styles from './Button.module.scss';
 import { FC } from "react";
 import { Dispatch } from "../context/ThemeContext";
+import cn from "classnames"
 
 
 export type ButtonProps = {
@@ -10,10 +11,11 @@ export type ButtonProps = {
     itemClass?: string,
     buttonData?: string,
     handler?: Dispatch,
-    onClick?:(event:any)=>void
+    onClick?: (event: any) => void,
+    theme?:string
 }
 
-export const Button: FC<ButtonProps> = ({ type, children, itemClass, buttonData, onClick, ...props }) => {
+export const Button: FC<ButtonProps> = ({ type, children, itemClass, buttonData, onClick,theme, ...props }) => {
     function buttonStyles() {
         if(type == 'header') {
             return styles.header
@@ -23,11 +25,14 @@ export const Button: FC<ButtonProps> = ({ type, children, itemClass, buttonData,
             return styles.base
         }
     }
+    console.log(theme)
     return (
         <button
-            className={`${styles.button}
-                        ${buttonStyles()}
-                        ${itemClass}`}
+            // className={`${styles.button}
+            //             ${buttonStyles()}
+            //             ${itemClass}
+            //             ${theme}`}
+            className={cn(styles.button, buttonStyles(), itemClass, theme)}
             data-type={buttonData}
             onClick={onClick}
                     >

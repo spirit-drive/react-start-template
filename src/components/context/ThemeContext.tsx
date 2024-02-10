@@ -9,14 +9,26 @@ const defaultTheme = { theme: 'light' }
 const ThemeContext = createContext < { state: State, dispatch: Dispatch } | undefined >(undefined);
 
 function themeReduser(state:State, action:Action) {
-    if (action == 'darck') {
-        return {
-            theme: "darck"
-        }
-    } else {
-        return {
-            theme: "light"
-        }
+    // if (action == 'darck') {
+    //     return {
+    //         theme: "darck"
+    //     }
+    // } else {
+    //     return {
+    //         theme: "light"
+    //     }
+    // }
+    switch (action) {
+        case ('darck'):
+            return {
+                theme: 'darck'
+            }
+            break;
+        case ('light'):
+            return {
+                theme: 'light'
+            }
+            break;
     }
 }
 

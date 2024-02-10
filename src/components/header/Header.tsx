@@ -28,7 +28,8 @@ export const Header = () => {
                   themeType = {state}
               />
       </div>
-      <LanguageConponent/>
+      <LanguageConponent
+      theme={state.theme} />
     </div>
   );
 };
