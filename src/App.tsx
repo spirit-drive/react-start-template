@@ -52,23 +52,23 @@ function App() {
   ];
 
   return (
-    <>
-      {' '}
-      <Suspense fallback="...Loading">
-        <LanguageProvider>
-          <ThemeProvider>
-            <Header />
 
-            <Layout>
-              <PopupWithButton />
-              <PreviewItems elementsData={operations} />
-              <LanguageConponent />
-              <PreviewItem elementData={operations[0]} />
-            </Layout>
-
-            <PopupWrapper visible={popupState}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, libero.12311
-            </PopupWrapper>
+    <> <Suspense fallback="...Loading">
+      <LanguageProvider>
+        <ThemeProvider>
+          <Header />
+          <Layout>
+          < PopupWithButton/>
+            <PreviewItems
+                elementsData={operations} />
+                        <LanguageConponent/>
+            <PreviewItem
+                elementData={operations[0]} />
+          </Layout>
+        <PopupWrapper
+        visible={popupState}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, libero.12311
+          </PopupWrapper>
           </ThemeProvider>
         </LanguageProvider>
       </Suspense>

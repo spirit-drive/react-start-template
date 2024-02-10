@@ -17,14 +17,11 @@ export const PopupWithButton = () => {
       <button onClick={closePopup}>popup visibility</button>
       <input type="text" value={popupChildren} onChange={handleChangeInput} />
 
-      <PopupWrapper
-        visible={popupVisibility}
-        close={(e: any) => {
-          setPopupVisibility(!popupVisibility);
-        }}
-      >
-        {popupChildren}
-      </PopupWrapper>
-    </>
-  );
-};
+            <PopupWrapper
+                visible={popupVisibility}
+                children={popupChildren}
+                close={() => setPopupVisibility(!popupVisibility)}
+            />
+        </>
+    )
+}
