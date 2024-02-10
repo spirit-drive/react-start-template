@@ -9,8 +9,8 @@ import { PopupWithButton } from './components/popupWithButton/PopupWithButton';
 import { ThemeProvider } from './components/context/ThemeContext';
 import { LanguageConponent } from './components/LanguageConponent/LanguageConponent';
 import { LanguageProvider } from './components/context/LanguageContext';
-import { ComponentsList } from './components/componentsList/ComponentsList';
-
+// import { ComponentsList } from './components/componentsList/ComponentsList';
+import { ComponentsList } from './components/componentsListWithObserver/ComponentsList';
 function App() {
   const [popupState, setPopupState] = useState(false);
   const operations = [
@@ -71,6 +71,7 @@ function App() {
           </ThemeProvider>
         </LanguageProvider>
       </Suspense> */}
+      {/* <ComponentsList/> */}
       <ComponentsList/>
     </>
   );
