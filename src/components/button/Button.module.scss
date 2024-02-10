@@ -49,3 +49,14 @@
     line-height: 140%;
     padding: 20px;
 }
+.darck{
+    background-color: black;
+    color: #FFFFFF;
+}
+.darckButton{
+    background-color: red  ;
+    color: #FFFFFF  ;
+    &:hover{
+        background-color: rgb(178, 71, 71)  ;
+    }
+}

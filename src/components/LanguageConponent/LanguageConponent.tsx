@@ -1,14 +1,17 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import '../../App.css'
 
-export const LanguageConponent = () => {
-  const { t, i18n } = useTranslation();
-  return (
-    <div className="languageSection">
-      {/* <h2 className='textField'>Book name: {t('main.title')}</h2> */}
-      {/* <span className="textField__author">author: <span>{t('main.author')}</span></span> */}
-      <span>Some text from book</span>
-      <p>{t('main.text')}</p>
-    </div>
-  );
-};
+export type langThemeType = {
+    theme?: string
+}
+export const LanguageConponent = ({theme}:langThemeType) => {
+    const { t, i18n } = useTranslation();
+    console.log(theme)
+    return (
+        <div className={theme}>
+            <span>Some text from book</span>
+                <p>{t('main.text')}</p>
+            </div>
+    )
+}
