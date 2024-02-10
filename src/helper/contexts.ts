@@ -16,8 +16,15 @@ export type StoreContextType = {
   addProduct: (newPoduct: DisplayProductProps) => void;
 };
 
+export type LoginContexType = {
+  isLogin: boolean;
+  toggleIsLogin: () => void;
+};
+
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const StoreContext = createContext<StoreContextType | undefined>(undefined);
+
+export const LoginContext = createContext<LoginContexType | undefined>(undefined);
