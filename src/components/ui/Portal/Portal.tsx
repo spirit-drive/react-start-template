@@ -1,7 +1,7 @@
 import React, { FC, } from "react";
 import ReactDOM from "react-dom";
 import cn from "classnames"
-import { PopupWrapper } from "src/components/PopupWrapper/PopupWrapper";
+import { PopupWrapper } from "../../PopupWrapper/PopupWrapper";
 
 const root = document.querySelector('body');
 
