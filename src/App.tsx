@@ -10,7 +10,7 @@ import './App.css';
 // import { LanguageConponent } from './components/LanguageConponent/LanguageConponent';
 // import { LanguageProvider } from './components/context/LanguageContext';
 // import { ComponentsList } from './components/componentsList/ComponentsList';
-// import { ComponentsList } from './components/componentsListWithObserver/ComponentsList';
+import { ComponentsList } from './components/componentsListWithObserver/ComponentsList';
 import { PortalPopup } from './components/portalPopup/portalPopup';
 function App() {
   // const [popupState, setPopupState] = useState(false);
@@ -73,7 +73,7 @@ function App() {
         </LanguageProvider>
       </Suspense> */}
       {/* <ComponentsList/> */}
-      {/* <ComponentsList/> */}
+      <ComponentsList/>
       <PortalPopup />
     </>
   );

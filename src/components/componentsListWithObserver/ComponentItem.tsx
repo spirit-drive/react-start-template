@@ -1,6 +1,5 @@
-import React, { FC, memo, useEffect } from 'react';
+import React, { FC } from 'react';
 import cl from './ComponentsList.module.scss';
-import { Button } from '../button/Button';
 import cn from 'classnames';
 type array = {
   operationId: string;
@@ -15,8 +14,7 @@ export type ItemProps = {
   item: array;
 };
 
-export const CoMponentItem: FC<ItemProps> = memo(({ item, ...props }) => {
-  useEffect(() => console.log('update'));
+export const CoMponentItem: FC<ItemProps> = ({ item }) => {
   return (
     <>
       <div className={cn(cl.item_wrapper)} key={item.operationId}>
@@ -26,7 +24,7 @@ export const CoMponentItem: FC<ItemProps> = memo(({ item, ...props }) => {
         {item.total ? (
           <>
             <span> Сумма операции : {item.total}</span>
-            <button datatype={item.operationId}>showMore</button>
+            <button data-type={item.operationId}>showMore</button>
           </>
         ) : (
           <span>сгенерированная операция</span>
@@ -34,4 +32,4 @@ export const CoMponentItem: FC<ItemProps> = memo(({ item, ...props }) => {
       </div>
     </>
   );
-});
+};

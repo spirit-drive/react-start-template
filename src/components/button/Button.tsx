@@ -9,11 +9,11 @@ export type ButtonProps = {
   itemClass?: string;
   buttonData?: string;
   handler?: Dispatch;
-  onClick?: (event: any) => void;
+  onClick?: () => void;
   theme?: string;
 };
 
-export const Button: FC<ButtonProps> = ({ type, children, itemClass, buttonData, onClick, theme}) => {
+export const Button: FC<ButtonProps> = ({ type, children, itemClass, buttonData, onClick, theme }) => {
   function buttonStyles() {
     if (type == 'header') {
       return styles.header;
