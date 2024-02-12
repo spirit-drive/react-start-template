@@ -9,7 +9,7 @@ import { OperationShort } from '../operationShort/operationShort';
 import { Operation } from '../operation/operation';
 import { useTranslation } from "react-i18next";
 import { Toggle } from '../toggles/toggle';
-import OperationTable from '../table/operationTable';
+import { OperationTable } from '../table/operationTable';
 import { createPortal } from 'react-dom';
 
 export interface layoutProps {
@@ -34,12 +34,12 @@ export const Layout: FC = () => {
     setCost([...modalCost, cost]);
   }, [])
 
-  function OpenModalEmpty(): void {
+  function openModalEmpty(): void {
     setChild(<TestContent prop={nameInput} />);
     setModalActive(true);
   }
 
-  function OpenShortOperation(): void {
+  function openShortOperation(): void {
     const cost = createRandomOperation('12.12.2023');
     setChild(
       <OperationShort amount={cost.amount} categoryName={cost.category.name} description={cost.desc} name={cost.name} />
@@ -47,7 +47,7 @@ export const Layout: FC = () => {
     setModalActive(true);
   }
 
-  function OpenOperation(): void {
+  function openOperation(): void {
     const cost = createRandomOperation('12.12.2023');
     setChild(
       <Operation
@@ -61,7 +61,7 @@ export const Layout: FC = () => {
     setModalActive(true);
   }
   
-  function CreateRows() : void {
+  function createRows() : void {
     const item = createRandomOperation(Date.now.toString());
     setCost([...modalCost, item]);    
   }
@@ -88,32 +88,16 @@ export const Layout: FC = () => {
             size={'small'}
              backgroundColor={backgroundColor}
             label={t("buttonCreateOperation")}
-            func={CreateRows}
+            func={createRows}
           />
         <main className={className}>
-          {/* <div className="inputWithButton">
-            <input value={nameInput} type='text' onChange={e => setNameInput(e.target.value)}></input>
-            <Button
-              primary={true}
-              size={'small'}
-              backgroundColor={backgroundColor}
-              label={t("buttonModalOpen")}
-              func={OpenModalEmpty}
-            /></div> */}
           <Button
             primary={true}
             size={'small'}
             backgroundColor={backgroundColor}
             label={t("buttonShowOperation")}
-            func={OpenOperation}
-          />
-          {/* <Button
-            primary={true}
-            size={'small'}
-            backgroundColor={backgroundColor}
-            label={t("buttonShowOperationShort")}
-            func={OpenShortOperation}
-          /> */}
+            func={openOperation}
+          />     
         </main>
 
         {modalActive ?  createPortal
