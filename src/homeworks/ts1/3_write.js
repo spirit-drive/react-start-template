@@ -48,7 +48,6 @@ var createRandomProduct = function (createdAt) {
 };
 exports.createRandomProduct = createRandomProduct;
 var randomProduct = (0, exports.createRandomProduct)('сейчас');
-console.log(randomProduct);
 /**
  * Создает случайную операцию (Operation).
  * Принимает дату создания (строка)

@@ -7,7 +7,7 @@ import { useLogin } from '../../helper/useLogin';
 import { useTheme } from '../../helper/useTheme';
 import RegistrationForm from '../RegistrationForm/RegistrationForm';
 import classNames from './layout.module.css';
-
+      
 const Layout: FC = () => {
   const { isLogin } = useLogin();
   const { theme } = useTheme();
