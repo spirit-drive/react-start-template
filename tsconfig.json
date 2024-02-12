@@ -3,7 +3,8 @@
 		"outDir": "./dist",
 	  "baseUrl": ".",
 	  "paths": {
-		"src/*": ["src/*"]
+		"src/*": ["src/*"],
+		"@src/*": ["src/*"]
 	  },
 	  "lib": ["dom", "dom.iterable", "esnext"],
 	  "allowJs": true,
@@ -17,7 +18,9 @@
 	  "downlevelIteration": true,
 	  "moduleResolution": "node",
 	  "resolveJsonModule": true,
-	  "jsx": "react"
+	  "jsx": "react",
+	  "plugins": [{
+		"name": "typescript-plugin-css-modules"
+	  }]
 	}
 }
-  
