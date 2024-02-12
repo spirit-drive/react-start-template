@@ -2,5 +2,6 @@
     "title": "Учет доходов-расходов",
     "buttonModalOpen": "Открыть модальное окно",
     "buttonShowOperation": "Отобразить операцию",
-    "buttonShowOperationShort": "Отобразить операцию(кратко)"
+    "buttonShowOperationShort": "Отобразить операцию(кратко)",
+    "buttonCreateOperation": "Добавить операцию"
 }
