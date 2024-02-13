@@ -11,7 +11,7 @@ const meta: Meta<typeof OperationTable> = {
 export default meta;
 
 type Story = StoryObj<typeof OperationTable>;
-const headers = ['Название', 'Стоимость', 'Категория']
-var category = {id:"1", name:"categoryTest"} as Category;
-var rows = [{name: "test", amount:5, category: category} as Cost]
-export const Basic: Story = { args: {headers: headers, rows: rows } };
+const headers = ['Название', 'Стоимость', 'Категория'];
+const category = { id: '1', name: 'categoryTest' } as Category;
+const rows = [{ name: 'test', amount: 5, category: category } as Cost];
+export const Basic: Story = { args: { headers: headers, rows: rows } };

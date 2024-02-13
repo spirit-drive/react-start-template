@@ -36,7 +36,7 @@ export type Percent = {
 
 // Здесь, возможно, нужно использовать as, возможно в switch передавать немного по-другому
 const getDataAmount = (data: Data): number | never => {
-  var val = (data.value as Money).amount ?? (data.value as Percent).percent;
+  const val = (data.value as Money).amount ?? (data.value as Percent).percent;
   if (val) {
     const unhandled: never = data as never; // здесь, возможно, нужно использовать нечто другое. :never должен остаться
     throw new Error(`unknown type: ${data.type}`);
