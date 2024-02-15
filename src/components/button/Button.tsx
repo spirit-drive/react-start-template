@@ -23,7 +23,6 @@ export const Button: FC<ButtonProps> = ({ type, children, itemClass, buttonData,
       return styles.base;
     }
   }
-  console.log(theme);
   return (
     <button
       // className={`${styles.button}
