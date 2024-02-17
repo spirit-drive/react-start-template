@@ -15,21 +15,20 @@
 //     children:'Сожердимое дочернего компонента'
 // }
 
-
-import React from "react";
-import { Collapse, collapseProps } from "./Collapse";
+import React from 'react';
+import { Collapse, collapseProps } from './Collapse';
 export default {
-    title: "CostAccounting/collapseElement",
-    component: Collapse,
-    argTypes: {
-        visible: {
-            type:'boolean'
-        }
-    }
-}
-const Template = (arg: React.JSX.IntrinsicAttributes & collapseProps) => <Collapse {...arg} />
-export const Default = Template.bind({})
+  title: 'CostAccounting/collapseElement',
+  component: Collapse,
+  argTypes: {
+    visible: {
+      type: 'boolean',
+    },
+  },
+};
+const Template = (arg: React.JSX.IntrinsicAttributes & collapseProps) => <Collapse {...arg} />;
+export const Default = Template.bind({});
 Default.args = {
-    visible: true,
-    children:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, delectus.'
-}
+  visible: true,
+  children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, delectus.',
+};
