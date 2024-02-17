@@ -18,7 +18,7 @@ const Header: FC = () => {
       <Logo />
       <ThemeSwitch />
       <LanguageSwitch />
-      {isLogin ? <DefaultButton callback={toggleIsLogin}>SignOut</DefaultButton> : null}
+      {isLogin ? <DefaultButton callback={toggleIsLogin}>Выйти</DefaultButton> : null}
     </header>
   );
 };

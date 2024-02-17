@@ -8,7 +8,7 @@ type DefaultButtonType = {
 
 const DefaultButton: FC<DefaultButtonType> = ({children, callback}) => {
     return (
-        <button className={classNames.button} onClick={callback}>{children}</button>
+        <button className={classNames.button} onClick={callback} onSubmit={callback}>{children}</button>
     )
 }
 

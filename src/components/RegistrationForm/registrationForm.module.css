@@ -4,3 +4,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.error {
+    color: red;
+    display: block;
+    font-size: 12px;
+}
+
+button {
+    margin-top: 20px;
+}

@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { useContext, useReducer } from 'react';
+import React, { useContext, useReducer, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { LoginContext } from '../../helper/contexts';
 import DefaultButton from '../Buttons/DefaultButton';
@@ -11,14 +11,14 @@ export type StateType = {
   password: string;
 };
 
+type ActionsType =
+  | { type: ActionTypeEnum.SET_EMAIL; payload: string }
+  | { type: ActionTypeEnum.SET_PASSWORD; payload: string };
+
 enum ActionTypeEnum {
   SET_EMAIL = 'setEmail',
   SET_PASSWORD = 'setPassword',
 }
-
-type ActionsType =
-  | { type: ActionTypeEnum.SET_EMAIL; payload: string }
-  | { type: ActionTypeEnum.SET_PASSWORD; payload: string };
 
 const userDataForSignIn: StateType = {
   email: 'test@mail.ru',
@@ -40,6 +40,7 @@ const reducer = (state: StateType, action: ActionsType): StateType => {
 };
 
 const RegistrationForm = () => {
+  const [wariningLogin, setWarningLogin] = useState<boolean>(false);
   const { toggleIsLogin, isLogin } = useContext(LoginContext);
   const [state, dispatch] = useReducer(reducer, initialState);
   const { register, handleSubmit } = useForm();
@@ -56,12 +57,16 @@ const RegistrationForm = () => {
   };
 
   const onSubmit: SubmitHandler<StateType> = (data) => {
-    console.log(data);
+    if(data.password !== userDataForSignIn.password || data.email !== userDataForSignIn.email) {
+      setWarningLogin(true);
+      return
+    }
+    toggleIsLogin()
   };
 
   return (
     <form className={clsx(classNames.form)} onSubmit={handleSubmit(onSubmit)}>
-      <h2>Логинизация</h2>
+      <h2>Вход</h2>
       <CustomInput
         register={register}
         label="email"
@@ -78,7 +83,8 @@ const RegistrationForm = () => {
         placeholder="Введите пароль"
         required
       />
-      <DefaultButton callback={toggleIsLogin}>{isLogin ? 'Выйти' : 'Войти'}</DefaultButton>
+      {wariningLogin ? <span className={clsx(classNames.error)}>Логин или пароль не подходит</span> : null}
+      <DefaultButton>{isLogin ? 'Выйти' : 'Войти'}</DefaultButton>
     </form>
   );
 };

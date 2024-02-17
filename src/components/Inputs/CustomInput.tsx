@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { UseFormRegister } from 'react-hook-form';
+import './customInput.module.css';
 
 export enum InputType {
   EMAIL = 'email',
@@ -19,7 +20,7 @@ const CustomInput: FC<CustomInputType> = ({ type, callback, placeholder, label, 
   return (
     <>
       <label>{label}</label>
-      <input {...register(label, { required })} type={type} onChange={callback} placeholder={placeholder} />;
+      <input {...register(label, { required })} type={type} onChange={callback} placeholder={placeholder} />
     </>
   );
 };
