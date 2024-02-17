@@ -23,4 +23,10 @@ export const Collapse: FC<collapseProps> = ({ children, visible }) => {
             </div>
         )
     }
+    else {
+        return (
+            <div className={cl.wrapper}></div>
+        )
+
+    }
 }
