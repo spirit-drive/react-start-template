@@ -1,0 +1,30 @@
+.dialog{
+        width: 400px;
+        min-height: 20px;
+        height: fit-content;
+        border: 1px solid silver;
+        border-radius: 15px;
+        padding: 15px;
+        overflow: hidden;
+        box-shadow: 0px 0 10px silver;
+}
+
+.content{
+        height: auto;
+        min-height: 20px;
+        width: 100%;
+}
+
+.сollapse {
+        height: auto;
+        margin-top: -50px;
+        opacity: 0;
+        transition: all 1s ease;
+}
+
+.normal {
+        height: auto;
+        margin-top: 0;
+        opacity: 1;
+        transition: all 1s ease;
+}
