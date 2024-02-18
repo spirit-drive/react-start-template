@@ -1,0 +1,19 @@
+.itemWrapper{
+
+}
+.itemWrapperHover{
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.hoverItem{
+    background-color: gold;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    width: fit-content;
+    max-width: 100%;
+
+    height: fit-content;
+}

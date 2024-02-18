@@ -28,3 +28,18 @@
      background-color: #000000;
      color: #ffffff;
 }
+.wrapper{
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     grid-template-rows: 1fr 1fr;
+     grid-gap: 40px;
+     height: 80vh;
+     .item{
+          box-shadow: 0px 0px 8px 9px rgba(34, 60, 80, 0.2);
+          padding: 10px;
+          border-radius: 20px;
+          height: 100%;
+          width: 100%;
+     }
+
+}
