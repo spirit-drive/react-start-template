@@ -1,9 +1,8 @@
-import React, { FC, useEffect, useLayoutEffect, useState } from 'react';
+import React, { FC, useLayoutEffect, useState } from 'react';
 import './сollapse.css';
 
 export interface CollapseProps {
   opened?: Boolean
-  // children?: JSX.Element;
   children?: string;
 }
 
