@@ -16,6 +16,7 @@ import { Collapse } from './components/Collapse/Collapse';
 import { Button } from './components/button/Button';
 import { InfoHoverWrapper } from './components/infoHover/InfoHoverWrapper';
 import { spawn } from 'child_process';
+import { HoverWrapper } from './components/infoHover/hoverWrapper';
 function App() {
   // const [popupState, setPopupState] = useState(false);
   // const operations = [
@@ -91,7 +92,7 @@ function App() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, architecto repudiandae. Consequuntur suscipit deleniti qui sed fugiat. Earum, explicabo aperiam.
         </Collapse>
       </Layout> */}
-      <Layout>
+      {/* <Layout>
         <div className="wrapper">
           <InfoHoverWrapper
             hoverComponent={
@@ -144,7 +145,8 @@ function App() {
             <div className="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, doloremque?</div>
           </InfoHoverWrapper>
         </div>
-      </Layout>
+      </Layout> */}
+      <HoverWrapper />
     </>
   );
 }
