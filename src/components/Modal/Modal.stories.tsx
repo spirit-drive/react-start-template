@@ -1,6 +1,6 @@
 import React from 'react';
 import { StoryFn , Meta } from '@storybook/react';
-import Modal, { IModal } from './index';
+import Modal, { IModal } from './Modal';
 
 export default {
   title: 'Modaleus',

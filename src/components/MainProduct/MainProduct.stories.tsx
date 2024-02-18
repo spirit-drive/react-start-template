@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { MainProduct } from '.';
+import { MainProduct } from './MainProduct';
 import React from 'react';
 
 

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import {ShortProduct} from '.';
+import { ShortProduct } from './ShortProduct';
 
 
 

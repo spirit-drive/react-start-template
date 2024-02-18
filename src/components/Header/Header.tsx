@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import * as styles from './styles.module.scss';
-import { Logo } from '../Logo';
-import { Button } from '../Button';
+import { Logo } from '../Logo/Logo';
+import { Button } from '../Button/Button';
 
 interface HeaderProps {
   size?: string;

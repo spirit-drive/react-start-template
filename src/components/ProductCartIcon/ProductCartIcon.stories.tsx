@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ProductCartIcon } from '.';
+import { ProductCartIcon } from './ProductCartIcon';
 import React from 'react';
 
 
