@@ -68,6 +68,7 @@ const RegistrationForm = () => {
     <form className={clsx(classNames.form)} onSubmit={handleSubmit(onSubmit)}>
       <h2>Вход</h2>
       <CustomInput
+        cn='loginInput'
         register={register}
         label="email"
         callback={setInputValue}
@@ -76,6 +77,7 @@ const RegistrationForm = () => {
         required
       />
       <CustomInput
+        cn="loginInput"
         register={register}
         label="password"
         callback={setInputValue}

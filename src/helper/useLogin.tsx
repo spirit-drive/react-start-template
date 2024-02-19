@@ -1,5 +1,6 @@
 import React, { FC, useContext, useState } from 'react';
 import { LoginContexType, LoginContext } from './contexts';
+import { clearIsLoginLocalStorage, getIsLoginLocalStorage, setIsLoginLocalStorage } from '../helper/localStorage';
 
 type useProviderType = {
   children: React.ReactNode;
@@ -12,9 +13,11 @@ export const useLogin = (): LoginContexType => {
 };
 
 export const LoginProvider: FC<useProviderType> = ({ children }) => {
-  const [isLogin, setIsLogin] = useState(false);
-
+  const loginUser: string = getIsLoginLocalStorage()
+  const [isLogin, setIsLogin] = useState(!!loginUser);
+  isLogin ? setIsLoginLocalStorage() : null
   const toggleIsLogin = () => {
+    isLogin ? clearIsLoginLocalStorage() : null;
     setIsLogin(!isLogin);
   };
 

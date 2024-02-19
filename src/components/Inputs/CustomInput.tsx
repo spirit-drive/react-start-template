@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { UseFormRegister } from 'react-hook-form';
-import './customInput.module.css';
+import classNames from './customInput.module.css';
+import clsx from 'clsx';
 
 export enum InputType {
   EMAIL = 'email',
@@ -8,6 +9,7 @@ export enum InputType {
 }
 
 type CustomInputType = {
+  cn?: string,
   type: InputType;
   placeholder?: string;
   callback?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -16,11 +18,11 @@ type CustomInputType = {
   required: boolean;
 };
 
-const CustomInput: FC<CustomInputType> = ({ type, callback, placeholder, label, register, required }) => {
+const CustomInput: FC<CustomInputType> = ({ type, callback, placeholder, label, register, required , cn}) => {
   return (
     <>
       <label>{label}</label>
-      <input {...register(label, { required })} type={type} onChange={callback} placeholder={placeholder} />
+      <input className={clsx(classNames.loginInput)} {...register(label, { required })} type={type} onChange={callback} placeholder={placeholder} />
     </>
   );
 };
