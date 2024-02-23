@@ -1,0 +1,1 @@
+export const generateUniqId = () => Math.floor(Math.random() * Date.now() * Math.random() * 10000);

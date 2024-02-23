@@ -1,0 +1,41 @@
+@import "../../variables.css";
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.boxGeneral {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.box-light {
+    background-color: var(--main-color-light);
+}
+
+.box-dark {
+    background-color: var(--main-color-dark);
+}
+
+.closeModal {
+    font-size: 2rem;
+    position: absolute;
+    cursor: pointer;
+    top: 20px;
+    right: 20px;
+}
+
