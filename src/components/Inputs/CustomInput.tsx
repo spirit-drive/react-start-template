@@ -3,26 +3,22 @@ import { UseFormRegister } from 'react-hook-form';
 import classNames from './customInput.module.css';
 import clsx from 'clsx';
 
-export enum InputType {
-  EMAIL = 'email',
-  PASSWORD = 'password',
-}
 
 type CustomInputType = {
   cn?: string,
-  type: InputType;
+  type: string;
   placeholder?: string;
   callback?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   label: string;
-  register?: UseFormRegister<any>;
+  register: UseFormRegister<any>;
   required: boolean;
+  defaultValue?: string
 };
 
-const CustomInput: FC<CustomInputType> = ({ type, callback, placeholder, label, register, required , cn}) => {
+const CustomInput: FC<CustomInputType> = ({ type, callback, placeholder, defaultValue, label, register, required , cn}) => {
   return (
     <>
-      <label>{label}</label>
-      <input className={clsx(classNames.loginInput)} {...register(label, { required })} type={type} onChange={callback} placeholder={placeholder} />
+      <input className={clsx(classNames.loginInput)} {...register(label, { required })} defaultValue={defaultValue} type={type} onChange={callback} placeholder={placeholder} />
     </>
   );
 };

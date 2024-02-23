@@ -14,6 +14,7 @@ export type LanguageContextType = {
 export type StoreContextType = {
   product: DisplayProductProps[];
   addProduct: (newPoduct: DisplayProductProps) => void;
+  getStore: () => Array<DisplayProductProps>
 };
 
 export type LoginContexType = {

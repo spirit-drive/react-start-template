@@ -1,38 +1,33 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import classNames from './modalController.module.css';
 import clsx from 'clsx';
 import ModalWindow from '../../components/ModalWindow/ModalWindow';
-import i18n from '../../helper/i18n';
 import { useLanguage } from '../../helper/useLanguage';
 import { createPortal } from 'react-dom';
+import DefaultButton from '../../components/Buttons/DefaultButton';
+import CreateProductForm from '../../components/CreateProductForm/CreateProductForm';
+
+type ModalControllerProps = {
+  buttonText?: string
+}
 
 const bodyElement = document.querySelector('body');
-const ModalController = () => {
+const ModalController: FC<ModalControllerProps> = ({buttonText}) => {
   const [isShow, setIsShow] = useState(false);
-  const [inputValue, setInputValue] = useState('');
   useLanguage();
-
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-  };
 
   const toggleModal = () => {
     setIsShow(!isShow);
   };
+
   return (
     <div className={clsx(classNames.modalController)}>
-      <label htmlFor="inputText">{i18n.t('test')}</label>
-      <input
-        className={clsx(classNames.inputText)}
-        id="inputText"
-        onChange={(e) => handleInput(e)}
-        value={inputValue}
-        type="text"
-      />
-      <button className={clsx(classNames.showModalBtn)} onClick={toggleModal}>
-        {i18n.t('buttons.modalBtn')}
-      </button>
-      {isShow && createPortal(<ModalWindow text={inputValue} toggleModal={toggleModal} />, bodyElement)}
+      { buttonText ? <DefaultButton callback={toggleModal}>{buttonText}</DefaultButton> : null }
+      { isShow && createPortal(<ModalWindow  toggleModal={toggleModal} >
+
+        <CreateProductForm toggleModal={toggleModal}/>
+
+      </ModalWindow>, bodyElement) }
     </div>
   );
 };

@@ -18,9 +18,13 @@ export const useStore = () => {
 export const StoreProvider: FC<StoreProviderType> = ({ children }) => {
   const [product, setProduct] = useState<DisplayProductProps[]>(store.products);
 
-  const addProduct = (newProduct: DisplayProductProps): any => {
+  const addProduct = (newProduct: DisplayProductProps): void => {
     setProduct([...product, newProduct]);
   };
 
-  return <StoreContext.Provider value={{ product, addProduct } as StoreContextType}>{children}</StoreContext.Provider>;
+  const getStore = () => {
+    return product
+  }
+
+  return <StoreContext.Provider value={{ product, addProduct, getStore } as StoreContextType}>{children}</StoreContext.Provider>;
 };

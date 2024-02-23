@@ -8,7 +8,12 @@ import { useIntersectionObserver } from '../../helper/useIntersectionObserver';
 
 const ProductList = () => {
   const { product } = useStore();
-  useIntersectionObserver();
+  /*
+    коментарий для упрощенного тестирования функционала
+    добваления карточки товара
+
+    useIntersectionObserver(); -- добвляет товар по скролу
+  */
 
   return (
     <section className={clsx(classNames.productList)}>

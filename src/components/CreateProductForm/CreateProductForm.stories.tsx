@@ -1,16 +1,16 @@
-import Layout from '../Layout/Layout';
-import { LanguageProvider } from '../../helper/useLanguage';
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { ThemeProvider } from '../../helper/useTheme';
 import { StoreProvider } from '../../helper/useStore';
+import { ThemeProvider } from '../../helper/useTheme';
+import { LanguageProvider } from '../../helper/useLanguage';
 import { LoginProvider } from '../../helper/useLogin';
+import React from 'react';
+import CreateProductForm from '../../components/CreateProductForm/CreateProductForm';
 
-const meta: Meta<typeof Layout> = {
-  component: Layout,
-};
+const meta: Meta<typeof CreateProductForm> = {
+  component: CreateProductForm,
+}
 
-type Story = StoryObj<typeof Layout>;
+type Story = StoryObj<typeof CreateProductForm>;
 
 export const Primary: Story = {
   args: {},
@@ -25,9 +25,8 @@ export const Primary: Story = {
           </ThemeProvider>
         </StoreProvider>
       </LoginProvider>
-
     ),
-  ],
-};
+  ]
+}
 
-export default meta;
+export default meta

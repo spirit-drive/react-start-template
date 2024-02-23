@@ -13,7 +13,7 @@ type Story = StoryObj<typeof ModalWindow>;
 
 export const Primary: Story = {
   args: {
-    text: 'test text',
+    children: 'test text',
     toggleModal: action('toggleModal'),
   },
   decorators: [

@@ -3,7 +3,7 @@ import React, { useContext, useReducer, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { LoginContext } from '../../helper/contexts';
 import DefaultButton from '../Buttons/DefaultButton';
-import CustomInput, { InputType } from '../Inputs/CustomInput';
+import CustomInput from '../Inputs/CustomInput';
 import classNames from './registrationForm.module.css';
 
 export type StateType = {
@@ -12,7 +12,7 @@ export type StateType = {
 };
 
 type ActionsType =
-  | { type: ActionTypeEnum.SET_EMAIL; payload: string }
+  { type: ActionTypeEnum.SET_EMAIL; payload: string }
   | { type: ActionTypeEnum.SET_PASSWORD; payload: string };
 
 enum ActionTypeEnum {
@@ -72,7 +72,7 @@ const RegistrationForm = () => {
         register={register}
         label="email"
         callback={setInputValue}
-        type={InputType.EMAIL}
+        type='email'
         placeholder="Введите email"
         required
       />
@@ -81,7 +81,7 @@ const RegistrationForm = () => {
         register={register}
         label="password"
         callback={setInputValue}
-        type={InputType.PASSWORD}
+        type='password'
         placeholder="Введите пароль"
         required
       />

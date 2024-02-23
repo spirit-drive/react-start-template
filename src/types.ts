@@ -5,7 +5,7 @@ export type ButtonBasketProps = {
 } & React.HTMLAttributes<HTMLButtonElement>;
 
 export type ModalWindowProps = {
-  text: string;
+  children: React.ReactNode;
   toggleModal: () => void;
 };
 
