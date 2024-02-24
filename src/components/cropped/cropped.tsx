@@ -9,39 +9,51 @@ export interface CroppedProps {
 }
 
 export const Cropped: FC<CroppedProps> = ({ children, rows, length, opened }) => {
-  const [text, setText] = useState<Array<JSX.Element>>([]);
 
-  useLayoutEffect(() => {
-    const res = [];
+  const [row, setRowCount] = useState(rows);
+  const [rowLength, setRowLength] = useState(length);
+
+  useEffect(() => {
+    setRowLength(length);
+    setRowCount(rows);
+  }, [rows, length]);
+
+  function getTextRows(): Array<JSX.Element> {
+    console.log('rows IN', rows)
+    console.log('rows ', row)
+    const res: Array<JSX.Element> = [];
     const massive = children.split('');
     let lineText = '';
     let array: Array<string> = [];
 
-    if (rows <= 0) {
-      rows = 1;
+    if (row <= 0) {
+      setRowCount(1);
     }
-    if (length <= 0) {
-      length = 1;
+
+    if (rowLength <= 0) {
+      setRowLength(1);
     }
-    if (length > 55) {
-      length = 55;
+
+    if (rowLength > 55) {
+      setRowLength(55);
     }
+
     for (let i = 0; i < massive.length; i++) {
       lineText += massive[i];
-      if (lineText.length >= length || i == massive.length - 1) {
+      if (lineText.length >= rowLength || i == massive.length - 1) {
         array = [...array, lineText];
         lineText = '';
       }
     }
 
     if (opened) {
-      if (array.length < rows) {
-        rows = array.length;
+      if (array.length < row) {
+        setRowCount(array.length);
       }
 
-      if (array.length >= rows) {
-        for (let i = 0; i < rows; i++) {
-          if (array.length != rows && i == rows - 1) {
+      if (array.length >= row) {
+        for (let i = 0; i < row; i++) {
+          if (array.length != row && i == row - 1) {
             array[i] += '...';
           }
 
@@ -54,12 +66,15 @@ export const Cropped: FC<CroppedProps> = ({ children, rows, length, opened }) =>
       }
       res.push(React.createElement('div', { key: 1 }, array[0]));
     }
-    setText(res);
-  }, [opened, rows, length, children]);
+
+    console.log('2    rows IN', rows)
+    console.log('2    rows ', row)
+    return res;
+  };
 
   return (
     <div className={'dialog'}>
-      <div className={'content'}>{text.map((x) => x)}</div>
+      <div className={'content'}>{getTextRows().map((x) => x)}</div>
     </div>
   );
 };
