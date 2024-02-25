@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+@import '../../variables.css';
+
+.general {
+    text-align: center;
+}
+
+.app-light {
+    background-color: var(--main-color-light);
+    color: var(--main-font-color-light);
+}
+
+.app-dark {
+    background-color: var(--main-color-dark);
+    color: var(--main-font-color-dark);
+}

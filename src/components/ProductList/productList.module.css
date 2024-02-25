@@ -1,0 +1,10 @@
+.productList {
+    display: grid;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-auto-flow: row;
+    justify-items: center;
+}

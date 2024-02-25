@@ -1,11 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './components/App/App';
+import { LanguageProvider } from './helper/useLanguage';
+import { LoginProvider } from './helper/useLogin';
+import { StoreProvider } from './helper/useStore';
+import { ThemeProvider } from './helper/useTheme';
 import './index.css';
-import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <StoreProvider>
+    <LanguageProvider>
+      <ThemeProvider>
+        <LoginProvider>
+          <App />
+        </LoginProvider>
+      </ThemeProvider>
+    </LanguageProvider>
+  </StoreProvider>
 );

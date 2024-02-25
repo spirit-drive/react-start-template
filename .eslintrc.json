@@ -11,7 +11,7 @@
         "plugin:import/recommended", // подсказки при импорте
         // "airbnb",
         "prettier", // отключает конфликты с prettier
-        "plugin:prettier/recommended",
+        // "plugin:prettier/recommended",
         "plugin:jest/recommended",
         "eslint:recommended",
         "plugin:react/recommended",
