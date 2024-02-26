@@ -1,0 +1,22 @@
+@import "../../variables.css";
+
+.navGeneral{
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    align-items: center;
+    a {
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+}
+
+.nav-light {
+    color: var(--main-font-color-light);
+
+}
+
+.nav-dark {
+    color: var(--main-font-color-dark);
+}
