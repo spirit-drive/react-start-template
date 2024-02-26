@@ -9,7 +9,7 @@
 .item-card_image {
   height: 236px;
   border-radius: 60px;
-  background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+  // background-image: no-repeat center url("../../img/cover.png");
 }
 
 .item-card_header {

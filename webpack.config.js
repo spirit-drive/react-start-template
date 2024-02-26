@@ -62,7 +62,7 @@ module.exports = (_, args) => {
           ],
         },
         {
-          test: /\.svg/,
+          test: /\.(jpe?g|png|gif|svg)$/i,
           type: 'asset/inline',
         },
         {
