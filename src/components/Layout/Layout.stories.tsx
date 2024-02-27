@@ -13,7 +13,6 @@ type Story = StoryObj<typeof meta>
 
 export const Default = {
   args: {
-    size: true,
     label: 'Layouteus',
   },
 };
