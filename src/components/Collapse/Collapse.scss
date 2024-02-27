@@ -1,0 +1,11 @@
+.collapse {
+  overflow: hidden;
+  transition: height 0.3s;
+  &__opened {
+  }
+  &__content {
+    padding: 10px;
+    background-color: #dddddd;
+    border: 1px solid red;
+  }
+}
