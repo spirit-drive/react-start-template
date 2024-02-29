@@ -1,10 +1,17 @@
-.button {
-    // display: inline-block;
-    background-color: var(--primary-color);
-    width: 220px;
-    height: 63px;
-    padding: 16px 20px;
-    border-radius: 99px;
-    justify-content: center;
-    align-items: center;
+.button-into-cart {
+    width: 375px;
+    height: 54px;
+    padding: 14px 20px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.buy {
+    color: var(--base-white);
+    background-color: var(--primary-500);
+}
+
+.count {
+    color: var(--primary-500);
+    border: 1px solid var(--primary-500);
 }

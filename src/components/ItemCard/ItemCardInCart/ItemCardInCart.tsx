@@ -18,7 +18,7 @@ export const ItemCardInCart: React.FC = () => {
           <div className="price-button-list">
             <div className="price"> 2500 руб.</div>
             <div className="button-list">
-              <ButtonIntoCart />
+              <ButtonIntoCart count={10} />
             </div>
           </div>
         </div>

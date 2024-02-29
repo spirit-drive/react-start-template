@@ -7,14 +7,18 @@ type ButtonIntoCartProps = {
 
 export const ButtonIntoCart: React.FC<ButtonIntoCartProps> = ({ count = 0 }) => {
   return (
-    <div className="button">
-      {count === 0 ? (
-        <span>В корзину</span>
+    <>
+      {count == 0 ? (
+        <div className="button-into-cart buy">
+          <span>В корзину</span>
+        </div>
       ) : (
-        <span>
-          Количество <button>+</button> {count} <button>-</button>
-        </span>
+        <div className="button-into-cart count">
+          <span>
+            Количество <button>+</button> {count} <button>-</button>
+          </span>
+        </div>
       )}
-    </div>
+    </>
   );
 };

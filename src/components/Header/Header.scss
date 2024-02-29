@@ -1,8 +1,8 @@
 .header {
-    width: 1200px;
-    padding: 20px 100px;
-    background-color: var(--black-color);
-    color: var(--white-color);
+    padding: 32px 40px;
+    background-color: var(--base-white-2);
+    color: var(--neutral-500);
     top: 20px;
     position: sticky;
+    border-bottom: 1px solid var(--gray-200);
 }
