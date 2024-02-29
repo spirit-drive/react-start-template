@@ -5,7 +5,7 @@ import { ButtonIntoCart } from '../Buttons/ButtonIntoCart';
 import { SimpleButton } from '../Buttons/SimpleButton';
 import { ItemCard, ItemCardFull, ItemCardInCart } from '../ItemCard';
 
-export const Layout = () => {
+export const Layout: React.FC = () => {
   return (
     <>
       <Header />

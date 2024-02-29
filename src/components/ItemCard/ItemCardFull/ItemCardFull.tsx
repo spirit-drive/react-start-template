@@ -1,9 +1,30 @@
 import React from 'react';
 import './ItemCardFull.scss';
 import { Badge } from '../../Badge';
-import { ButtonIntoCart } from 'src/components/Buttons/ButtonIntoCart';
+import { ButtonIntoCart } from '../../Buttons';
 
-export const ItemCardFull: React.FC = () => {
+type ItemCardFullProps = {
+  imgSrc?: Array<string>;
+  label?: string;
+  rate?: string;
+  reviews?: string;
+  sold?: string;
+  price?: string;
+  description?: string;
+  badges?: Array<string>;
+};
+
+const lorem =
+  'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deleniti dolore dolorum eaque expedita fugiat id molestias nostrum numquam odio odit pariatur, quibusdam quidem reiciendis similique totam vel vero vitae!';
+
+export const ItemCardFull: React.FC<ItemCardFullProps> = ({
+  label = 'Rexus X Pro 5',
+  reviews = '200 отзывов',
+  rate = '5.0/5.0',
+  sold = '20 продано',
+  price = '2 500 руб.',
+  description = lorem,
+}) => {
   return (
     <div className="item-card-full">
       <div className="content">
@@ -23,14 +44,14 @@ export const ItemCardFull: React.FC = () => {
           <div className="label-badge">
             <div className="label-review-sold">
               <div className="label">
-                <h4>Rexus X Pro 5</h4>
+                <h4>{label}</h4>
               </div>
               <div className="review-sold">
-                <p>5.0/5.0</p>
+                <p>{rate}</p>
                 <span className="vr" />
-                <p>200+ отзывов</p>
+                <p>{reviews}</p>
                 <span className="vr" />
-                <p>30 продано</p>
+                <p>{sold}</p>
               </div>
             </div>
             <div className="badge-list">
@@ -38,15 +59,9 @@ export const ItemCardFull: React.FC = () => {
               <Badge text="Best Seller" color="var(--violet-800)" bgColor="var(--violet-50)" />
             </div>
           </div>
-          <div className="price">
-            <p>2 500 руб.</p>
-          </div>
-          <div className="description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deleniti dolore dolorum eaque expedita
-            fugiat id molestias nostrum numquam odio odit pariatur, quibusdam quidem reiciendis similique totam vel vero
-            vitae!
-          </div>
-          <ButtonIntoCart />
+          <div className="price">{price}</div>
+          <div className="description">{description}</div>
+          <ButtonIntoCart disabled={true} />
         </div>
       </div>
     </div>

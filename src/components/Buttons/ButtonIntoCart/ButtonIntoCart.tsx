@@ -3,11 +3,12 @@ import './ButtonIntoCart.scss';
 
 type ButtonIntoCartProps = {
   count?: number;
+  disabled?: boolean;
 };
 
-export const ButtonIntoCart: React.FC<ButtonIntoCartProps> = ({ count = 0 }) => {
+export const ButtonIntoCart: React.FC<ButtonIntoCartProps> = ({ count = 0, disabled = false }) => {
   return (
-    <>
+    <div className={disabled ? `disabled` : ``}>
       {count == 0 ? (
         <div className="button-into-cart buy">
           <span>В корзину</span>
@@ -19,6 +20,6 @@ export const ButtonIntoCart: React.FC<ButtonIntoCartProps> = ({ count = 0 }) => 
           </span>
         </div>
       )}
-    </>
+    </div>
   );
 };

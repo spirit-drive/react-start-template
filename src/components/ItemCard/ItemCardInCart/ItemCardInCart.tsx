@@ -3,7 +3,13 @@ import React from 'react';
 import './ItemCardInCart.scss';
 import { ButtonIntoCart } from '../../Buttons/ButtonIntoCart';
 import { Badge } from '../../Badge';
-export const ItemCardInCart: React.FC = () => {
+
+type ItemCardInCartProps = {
+  imgSrc?: string;
+  label?: string;
+  price?: string;
+};
+export const ItemCardInCart: React.FC<ItemCardInCartProps> = ({ label = 'Rexus X Pro 5', price = '2500 руб.' }) => {
   return (
     <>
       <div className="item-card-in-cart">
@@ -12,11 +18,11 @@ export const ItemCardInCart: React.FC = () => {
         </div>
         <div className="container">
           <div className="label-type">
-            <div className="label">Rexus X Pro 5</div>
+            <div className="label">{label}</div>
             <Badge text="Mouse" />
           </div>
           <div className="price-button-list">
-            <div className="price"> 2500 руб.</div>
+            <div className="price">{price}</div>
             <div className="button-list">
               <ButtonIntoCart count={10} />
             </div>

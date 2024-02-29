@@ -1,14 +1,31 @@
 import React from 'react';
 import './ItemCard.scss';
+import { Badge } from '../../Badge';
+import { cutText } from '../../../helpers/helpers';
 
-export const ItemCard = () => {
+type ItemCardProps = {
+  price?: string;
+  description?: string;
+  label?: string;
+  imgSrc?: string;
+};
+
+export const ItemCard: React.FC<ItemCardProps> = ({
+  price = '100 руб',
+  description = 'Description',
+  label = 'Label',
+}) => {
   return (
     <div className="item-card">
-      <img className="item-card_image" src={require('../../../img/cover.png')} />
-      <div className="item-card_content">
-        <div className="item-card_header">Header</div>
-        <div className="item-card_description">Description</div>
-        <div className="item-card_price">101 rub.</div>
+      <img className="image" src={require('../../../img/mouseMainFull.png')} />
+      <div className="content">
+        <div className="badge-list">
+          <Badge text="Mouse" />
+          <Badge text="Best Seller" />
+        </div>
+        <div className="label">{label}</div>
+        <div className="description">{cutText(description)}</div>
+        <div className="price">{price}.</div>
       </div>
     </div>
   );

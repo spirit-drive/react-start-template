@@ -45,6 +45,12 @@
     border: 1px solid var(--gray-200);
     border-radius: 6px;
 
+    .item-information {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
     .badge-list {
       display: flex;
       gap:10px;
