@@ -26,4 +26,4 @@ https://your-account-name.github.io
 - ~~Button 'В корзину'~~
 - ~~ItemCard~~
 - ItemCardFull
-- ItemCardInCart
+- ~~ItemCardInCart~~

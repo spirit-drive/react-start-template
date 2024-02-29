@@ -1,10 +1,14 @@
 import React from 'react';
 import './ButtonIntoCart.scss';
 
-export const ButtonIntoCart = ({ count = 0 }: { count: number }) => {
+type ButtonIntoCartProps = {
+  count?: number;
+};
+
+export const ButtonIntoCart: React.FC<ButtonIntoCartProps> = ({ count = 0 }) => {
   return (
     <div className="button">
-      {count > 0 ? (
+      {count === 0 ? (
         <span>В корзину</span>
       ) : (
         <span>

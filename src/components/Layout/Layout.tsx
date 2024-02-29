@@ -1,9 +1,9 @@
 import React from 'react';
 import { Header } from '../Header';
 import { Modal } from '../Modal';
-import { ButtonIntoCart } from '../ButtonIntoCart';
-import { SimpleButton } from '../SimpleButton/SimpleButton';
-import { ItemCard } from '../ItemCard';
+import { ButtonIntoCart } from '../Buttons/ButtonIntoCart';
+import { SimpleButton } from '../Buttons/SimpleButton';
+import { ItemCard, ItemCardFull, ItemCardInCart } from '../ItemCard';
 
 export const Layout = () => {
   return (
@@ -14,6 +14,8 @@ export const Layout = () => {
       <ButtonIntoCart count={2} />
       <ButtonIntoCart count={0} />
       <SimpleButton />
+      <ItemCardFull />
+      <ItemCardInCart />
     </>
   );
 };
