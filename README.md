@@ -25,5 +25,5 @@ https://your-account-name.github.io
 - ~~Logo~~
 - ~~Button 'В корзину'~~
 - ~~ItemCard~~
-- ItemCardFull
+- ~~ItemCardFull~~
 - ~~ItemCardInCart~~

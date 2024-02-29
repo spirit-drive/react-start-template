@@ -2,6 +2,7 @@ import React from 'react';
 
 import './ItemCardInCart.scss';
 import { ButtonIntoCart } from '../../Buttons/ButtonIntoCart';
+import { Badge } from '../../Badge';
 export const ItemCardInCart: React.FC = () => {
   return (
     <>
@@ -12,7 +13,7 @@ export const ItemCardInCart: React.FC = () => {
         <div className="container">
           <div className="label-type">
             <div className="label">Rexus X Pro 5</div>
-            <div className="type">Комп.мышь</div>
+            <Badge text="Mouse" />
           </div>
           <div className="price-button-list">
             <div className="price"> 2500 руб.</div>

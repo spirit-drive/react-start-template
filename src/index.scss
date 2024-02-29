@@ -142,3 +142,9 @@ $grayColor: #5D5D5D;
 body {
     font-family: 'Inter', sans-serif;
 }
+
+.vr {
+    width: 1px;
+    margin: 5px 10px;
+    border-right: 1px solid var(--neutral-900);
+}
