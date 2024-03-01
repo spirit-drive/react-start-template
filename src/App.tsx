@@ -1,18 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { About } from 'src/homeworks/intro';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Текст писать тут
-        </p>
-      </header>
-    </div>
-  );
+  return <About />;
 }
 
 export default App;

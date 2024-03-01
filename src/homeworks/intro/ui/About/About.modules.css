@@ -1,0 +1,55 @@
+.about {
+  --color-main: #010101;
+  --color-accent: #738ADE;
+  --color-bg: #FCFAFF;
+  --color-gray: #A7ACBA;
+  --color-line: #E7EAF1;
+
+  min-height: 100vh;
+  padding: 2em 0;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  color: var(--color-main);
+  background-color: var(--color-bg);
+  background-size: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 560px) {
+  .about {
+    padding: 3.5em 0;
+    font-size: 16px;
+  }
+}
+
+.container {
+  width: 90%;
+  max-width: 90ch;
+  margin: 0 auto;
+}
+
+.content {
+  margin-bottom: 2em;
+  line-height: 1.4;
+}
+
+.content h3 {
+  display: flex;
+  align-items: flex-start;
+  margin: 1.5em 0 1em;
+  font-weight: 500;
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+
+.content h4 {
+  margin-bottom: 0.5em;
+}
+
+.content li:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
+.content li ul {
+  padding: 0;
+}

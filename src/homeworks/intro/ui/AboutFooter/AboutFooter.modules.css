@@ -1,0 +1,6 @@
+.footer {
+  display: flex;
+  gap: 1em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--color-line);
+}
