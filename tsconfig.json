@@ -3,7 +3,7 @@
 		"outDir": "./dist",
 	  "baseUrl": ".",
 	  "paths": {
-		"src/*": ["src/*"]
+			"src/*": ["src/*"]
 	  },
 	  "lib": ["dom", "dom.iterable", "esnext"],
 	  "allowJs": true,
