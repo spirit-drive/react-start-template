@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <p className="App-info">
         Добрый день, меня зовут Виталий, хочу лучше узнать реакт и его экосистему,
         особенно интересна оптимизация нагруженных систем, архитектура, тесты, заодно разобрать typescript, с ним еще не работал.
         На данный момент работаю в компании на позиции фронтенд разработчик, использую UI material, redux toolkit, react-hook-form и все что с этим связано.
