@@ -8,7 +8,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Текст писать тут
+                  Тимлид в МТС Диджитал. С 2009 года разрабатываю backend на .NET.<br />
+                  Хочу подтянуть ReactJs до уровня, чтобы точнее оценивать задачи и в критические моменты помогать команде с багами.
         </p>
       </header>
     </div>
