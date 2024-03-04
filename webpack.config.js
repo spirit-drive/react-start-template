@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 
 const port = 2233;
 const dist = path.join(__dirname, 'dist');
@@ -10,6 +11,9 @@ const src = path.join(__dirname, 'src');
 const host = 'localhost';
 
 module.exports = (_, args) => {
+  const isProd = args.mode === 'production';
+  const isDev = args.mode === 'development';
+
   return {
     entry: './index.tsx',
     devtool: 'source-map',
@@ -30,10 +34,9 @@ module.exports = (_, args) => {
     },
     output: {
       path: dist,
-      publicPath:
-        args.mode === 'development' ? `http://${host}:${port}/` : undefined /* <- прописать данные своего github */,
-      filename: `js/[name].[contenthash].js`,
-      chunkFilename: `js/[name].[contenthash].js`,
+      publicPath: isDev ? `http://${host}:${port}/` : undefined /* <- прописать данные своего github */,
+      filename: `js/[name]_[contenthash].js`,
+      chunkFilename: `js/[name]_[contenthash].js`,
     },
     module: {
       rules: [
@@ -91,7 +94,7 @@ module.exports = (_, args) => {
       }),
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({
-        filename: 'css/[name].css',
+        filename: 'css/[name]_[contenthash].css',
         chunkFilename: 'css/[name].css',
       }),
       new ForkTsCheckerWebpackPlugin({
@@ -99,6 +102,7 @@ module.exports = (_, args) => {
           configFile: path.join(__dirname, 'tsconfig.json'),
         },
       }),
+      ...(isProd ? [new CssMinimizerWebpackPlugin()] : []),
     ],
   };
 };
