@@ -1,5 +1,5 @@
 import React from 'react';
-import './Badge.scss';
+import * as styles from './Badge.module.scss';
 
 type BadgeProps = {
   text: string;
@@ -13,7 +13,7 @@ export const Badge: React.FC<BadgeProps> = ({
   color = 'var(--primary-800)',
 }) => {
   return (
-    <div className="badge" style={{ backgroundColor: bgColor, color: color }}>
+    <div className={styles.badge} style={{ backgroundColor: bgColor, color: color }}>
       {text}
     </div>
   );
