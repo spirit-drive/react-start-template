@@ -1,7 +1,7 @@
 import React from 'react';
-import './ItemCardFull.module.scss';
 import { Badge } from '../../Badge';
 import { ButtonIntoCart } from '../../Buttons';
+import * as styles from './ItemCardFull.module.scss';
 
 type ItemCardFullProps = {
   imgSrc?: Array<string>;
@@ -26,41 +26,41 @@ export const ItemCardFull: React.FC<ItemCardFullProps> = ({
   description = lorem,
 }) => {
   return (
-    <div className="item-card-full">
-      <div className="content">
-        <div className="images">
-          <div className="main-image">
+    <div className={styles.itemCardFull}>
+      <div className={styles.content}>
+        <div className={styles.images}>
+          <div className={styles.mainImage}>
             <img src={require('../../../img/mouseMainFull.png')} />
           </div>
-          <div className="image-list">
-            <img className="selected" src={require('../../../img/mouse1.png')} />
+          <div className={styles.imageList}>
+            <img className={styles.selected} src={require('../../../img/mouse1.png')} />
             <img src={require('../../../img/mouse2.png')} />
             <img src={require('../../../img/mouse3.png')} />
           </div>
         </div>
       </div>
-      <div className="item-card-detail">
-        <div className="item-information">
-          <div className="label-badge">
-            <div className="label-review-sold">
-              <div className="label">
+      <div className={styles.itemCardDetail}>
+        <div className={styles.itemInformation}>
+          <div className={styles.labelBadge}>
+            <div className={styles.labelReviewSold}>
+              <div className={styles.label}>
                 <h4>{label}</h4>
               </div>
-              <div className="review-sold">
+              <div className={styles.reviewSold}>
                 <p>{rate}</p>
-                <span className="vr" />
+                <span className={styles.vr} />
                 <p>{reviews}</p>
-                <span className="vr" />
+                <span className={styles.vr} />
                 <p>{sold}</p>
               </div>
             </div>
-            <div className="badge-list">
+            <div className={styles.badgeList}>
               <Badge text="Mouse" />
               <Badge text="Best Seller" color="var(--violet-800)" bgColor="var(--violet-50)" />
             </div>
           </div>
-          <div className="price">{price}</div>
-          <div className="description">{description}</div>
+          <div className={styles.price}>{price}</div>
+          <div className={styles.description}>{description}</div>
           <ButtonIntoCart disabled={true} />
         </div>
       </div>

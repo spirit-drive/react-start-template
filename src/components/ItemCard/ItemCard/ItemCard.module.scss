@@ -1,4 +1,4 @@
-.item-card {
+.itemCard {
   width: 300px;
   height: 444px;
   padding: 16px 16px 20px 16px;
@@ -20,7 +20,7 @@
     flex-direction: column;
     gap: 16px;
 
-    .badge-list {
+    .badgeList {
       display: flex;
       gap: 20px;
     }

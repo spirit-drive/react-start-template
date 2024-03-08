@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.module.scss';
 import { ItemCardFull } from '../ItemCard';
+import { Header } from '../Header';
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <ItemCardFull />
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt id, nam amet, numquam sint eveniet vero quam

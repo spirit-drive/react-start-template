@@ -1,11 +1,11 @@
 import React from 'react';
-import './Logo.scss';
+import * as styles from './Logo.module.scss';
 
 export const Logo: React.FC = () => {
   return (
-    <div className="logo">
+    <div className={styles.logo}>
       LOGO
-      <div className="logo-vector" />
+      <div className={styles.logoVector} />
     </div>
   );
 };

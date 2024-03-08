@@ -123,6 +123,10 @@ module.exports = (_, args) => {
             'sass-loader',
           ],
         },
+        {
+          test: /\.(jpe?g|png|gif)$/i,
+          type: 'asset/inline',
+        },
       ],
     },
     plugins: [

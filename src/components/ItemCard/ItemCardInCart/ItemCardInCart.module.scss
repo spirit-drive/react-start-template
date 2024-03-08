@@ -1,4 +1,4 @@
-.item-card-in-cart {
+.itemCardInCart {
   width: 889px;
   //height: 290px;
   padding: 24px;
@@ -7,7 +7,7 @@
   background: var(--base-white);
   display: flex;
 
-  .main-image {
+  .mainImage {
     width: 172px;
     height: 138px;
     padding: 12px;
@@ -29,7 +29,7 @@
     justify-content: space-between;
     margin-left: 32px;
 
-  .price-button-list {
+  .priceButtonList {
     display: flex;
     justify-content: space-between;
     align-items: center;

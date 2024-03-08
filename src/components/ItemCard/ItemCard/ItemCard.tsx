@@ -1,5 +1,5 @@
 import React from 'react';
-import './ItemCard.module.scss';
+import * as styles from './ItemCard.module.scss';
 import { Badge } from '../../Badge';
 import { cutText } from '../../../helpers/helpers';
 
@@ -16,16 +16,16 @@ export const ItemCard: React.FC<ItemCardProps> = ({
   label = 'Label',
 }) => {
   return (
-    <div className="item-card">
-      <img className="image" src={require('../../../img/mouseMainFull.png')} />
-      <div className="content">
-        <div className="badge-list">
+    <div className={styles.itemCard}>
+      <img className={styles.image} src={require('../../../img/mouseMainFull.png')} />
+      <div className={styles.content}>
+        <div className={styles.badgeList}>
           <Badge text="Mouse" />
           <Badge text="Best Seller" />
         </div>
-        <div className="label">{label}</div>
-        <div className="description">{cutText(description)}</div>
-        <div className="price">{price}.</div>
+        <div className={styles.label}>{label}</div>
+        <div className={styles.description}>{cutText(description)}</div>
+        <div className={styles.price}>{price}.</div>
       </div>
     </div>
   );
