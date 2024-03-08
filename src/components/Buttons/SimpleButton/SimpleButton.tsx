@@ -1,6 +1,6 @@
 import React from 'react';
-import './SimpleButton.module.scss';
+import * as styles from './SimpleButton.module.scss';
 
 export const SimpleButton: React.FC = ({ text = 'Simple Button' }: { text?: string }) => {
-  return <div className="simple-button">{text}</div>;
+  return <div className={styles.simpleButton}>{text}</div>;
 };

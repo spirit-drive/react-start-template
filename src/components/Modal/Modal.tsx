@@ -1,5 +1,5 @@
 import React from 'react';
-import './Modal.scss';
+import * as styles from './Modal.module.scss';
 
 type ModalProps = {
   visible?: boolean;
@@ -7,5 +7,5 @@ type ModalProps = {
 };
 
 export const Modal: React.FC<ModalProps> = ({ visible = false }) => {
-  return <div className="modal"></div>;
+  return <div className={styles.modal}></div>;
 };
