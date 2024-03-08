@@ -3,6 +3,7 @@
 .general {
   width: 100%;
   height: 100vh;
+  margin-top: 100px;
 }
 
 .contentBox-light {
