@@ -1,5 +1,5 @@
 import React from 'react';
-import './ItemCardFull.scss';
+import './ItemCardFull.module.scss';
 import { Badge } from '../../Badge';
 import { ButtonIntoCart } from '../../Buttons';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './ButtonIntoCart.scss';
+import './ButtonIntoCart.module.scss';
 
 type ButtonIntoCartProps = {
   count?: number;

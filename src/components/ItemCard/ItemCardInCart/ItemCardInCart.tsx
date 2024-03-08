@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './ItemCardInCart.scss';
+import './ItemCardInCart.module.scss';
 import { ButtonIntoCart } from '../../Buttons/ButtonIntoCart';
 import { Badge } from '../../Badge';
 

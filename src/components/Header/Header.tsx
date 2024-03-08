@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.scss';
+import './Header.module.scss';
 import { Logo } from '../Logo';
 
 export const Header: React.FC = (): React.ReactElement => {

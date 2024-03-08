@@ -1,5 +1,5 @@
 import React from 'react';
-import './ItemCard.scss';
+import './ItemCard.module.scss';
 import { Badge } from '../../Badge';
 import { cutText } from '../../../helpers/helpers';
 
