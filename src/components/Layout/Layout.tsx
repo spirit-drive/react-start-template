@@ -21,7 +21,6 @@ const Layout: FC = () => {
     <>
       <Header />
       <div className={clsx(classes, classNames.general)}>
-
         {isLogin ? (
           <>
             <Routes>

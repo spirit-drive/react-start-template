@@ -24,4 +24,25 @@ export  const setIsLoginLocalStorage = (): void => {
 
 export  const clearIsLoginLocalStorage = (): void => {
   localStorage.removeItem('isLogin');
+  removeEmailLocalStorage();
+}
+
+export const setEmailLocalStorage = (email: string): void => {
+  localStorage.setItem('email', email );
+}
+
+export const getEmailLocalStorage = () => {
+  return localStorage.getItem('email');
+}
+
+const removeEmailLocalStorage = () => {
+  localStorage.removeItem('email');
+}
+
+export const setUserNameLocalStorage = (userName: string) => {
+  localStorage.setItem('userName', userName);
+}
+
+export const getUserNameLocalStorage = () => {
+  return localStorage.getItem('userName');
 }

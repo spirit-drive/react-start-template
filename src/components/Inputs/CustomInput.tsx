@@ -10,7 +10,7 @@ type CustomInputType = {
   placeholder?: string;
   callback?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   label: string;
-  register: UseFormRegister<any>;
+  register?: UseFormRegister<any>;
   required: boolean;
   defaultValue?: string
 };

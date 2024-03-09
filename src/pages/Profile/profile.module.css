@@ -1,0 +1,34 @@
+.profileSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100% - 200px);
+}
+
+.profileFieldsGroup {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.generalInput {
+    padding: 0 4px;
+    border: none;
+    font-size: 16px;
+}
+
+.input-dark {
+    background-color: var(--main-color-dark);
+    color: var(--main-font-color-dark);
+    border-bottom: 1px solid var(--contrast-color-dark);
+}
+
+.input-light {
+    background-color: var(--main-color-light);
+    color: var(--main-font-color-light);
+    border-bottom: 1px solid var(--contrast-color-light);
+}
