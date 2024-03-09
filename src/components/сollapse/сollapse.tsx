@@ -7,22 +7,26 @@ export interface CollapseProps {
 }
 
 export const Collapse: FC<CollapseProps> = ({ children, opened }) => {
-  const [child, setChild] = useState<JSX.Element>();
-
+  const [child, setChild] = useState<boolean>(false);
+  const [timer, setTimer] = useState<NodeJS.Timeout>(null);
+ 
   useLayoutEffect(() => {
     if (opened) {
-      const elem = React.createElement('div', {}, children);
-      setChild(elem);
+      if(timer != null){
+        clearTimeout(timer)
+        setTimer(null)
+      }
+      setChild(true);
     } else {
-      setTimeout(() => {
-        setChild(null);
-      }, 1000);
+      setTimer(setTimeout(() => {
+        setChild(false);
+      }, 1000));
     }
   }, [opened]);
 
   return (
     <div className={'dialog'}>
-      <div className={opened ? 'content normal' : 'content сollapse'}>{child}</div>
+      <div className={opened ? 'content normal' : 'content сollapse'}>{child ? React.createElement('div', {}, children) : null }</div>
     </div>
   );
 };
