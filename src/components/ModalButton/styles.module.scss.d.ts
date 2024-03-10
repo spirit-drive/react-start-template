@@ -1,8 +1,8 @@
 declare namespace StylesModuleScssNamespace {
   export interface IStylesModuleScss {
-    storybookHeader: string;
-    storybookHeaderDark: string;
-    welcome: string;
+    background: string;
+    buttonClose: string;
+    modalContent: string;
   }
 }
 

@@ -1,7 +1,8 @@
 
-import React, { FC, useState } from 'react';
+import React, { FC, useContext, useState } from 'react';
 import * as styles from './styles.module.scss';
 import DeleteOutlineSharpIcon from '@mui/icons-material/DeleteOutlineSharp';
+import { ThemeContext } from '../Provider/ThemeProvider';
 
 export interface IShortProductCardProps {
   price: number;
@@ -17,9 +18,10 @@ const trunscateString = (value: string, maxSize: number): string => {
 
 
 export const ShortProduct: FC<IShortProductCardProps> = ({ price, image, description, name, ...props }) => {
+  const [theme, ] = useContext(ThemeContext) ;
 
   return (
-    <div className={styles.shortProductCard}>
+    <div className={styles.shortProductCard} style={theme === 'dark'?{backgroundColor: 'rgb(177, 189, 230)'}:{}}>
       <div style={{display:'flex',justifyContent:'space-between'}} >
         <img height={'70px'} src={image} /> <DeleteOutlineSharpIcon style={{ opacity: '0.4', padding: '5px' }}/>
       </div>
