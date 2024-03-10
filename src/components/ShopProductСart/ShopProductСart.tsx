@@ -19,7 +19,7 @@ const trunscateString = (value: string, maxSize: number): string => {
 
 export const ShopProductСart: FC<ShopProductСartProps> = ({ price, image, description, name, ...props }) => {
   const [theme, ] = useContext(ThemeContext) ;
-
+  debugger
   return (
     <div className={styles.shortProductCard} style={theme === 'dark'?{backgroundColor: 'rgb(177, 189, 230)'}:{}}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#F5F7FF' }} >
