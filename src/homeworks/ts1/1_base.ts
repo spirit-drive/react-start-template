@@ -51,8 +51,6 @@ export const checkColor = (color: HEXColor): void | never => {
   if (!longColorRegExp.test(color) && !shortColorRegExp.test(color)) throw new Error(`invalid hex color: ${color}`);
 };
 
-checkColor('#000yyy');
-
 export const hex2rgb = (color: HEXColor): ColorInRGB | never => {
   checkColor(color);
   if (shortColorRegExp.test(color)) {
