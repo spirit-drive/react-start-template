@@ -23,12 +23,7 @@ export const CategoryField = memo<CategoryFieldProps>(
     const { validateStatus, help } = getValidates(errors, touched, submitCount);
 
     return (
-      <FormItem
-        title='Категория'
-        required
-        validateStatus={validateStatus}
-        help={help}
-      >
+      <FormItem title="Категория" required validateStatus={validateStatus} help={help}>
         <Input
           disabled={disabled}
           ref={autoFocusElement}
@@ -38,7 +33,7 @@ export const CategoryField = memo<CategoryFieldProps>(
           onChange={onChange}
           onBlur={onBlur}
           value={value}
-          placeholder='Категория'
+          placeholder="Категория"
         />
       </FormItem>
     );

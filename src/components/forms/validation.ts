@@ -30,4 +30,3 @@ export const useValidates = (
   submitCount: number
 ): { validateStatus: ValidateStatus; help: Help } =>
   useMemo(() => getValidates(errors, touched, submitCount), [errors, touched, submitCount]);
-

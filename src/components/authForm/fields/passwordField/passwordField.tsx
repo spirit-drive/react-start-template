@@ -7,8 +7,6 @@ import { getValidates } from '../../../forms/validation';
 import { FormItem } from '../../../forms/formItem/formItem';
 import { AuthFormProps } from '../../types';
 
-
-
 export type PasswordFieldProps = Pick<AuthFormProps, 'className' | 'disabled' | 'autoFocusElement'> & {
   submitCount: number;
   touched: boolean;
@@ -25,12 +23,7 @@ export const PasswordField = memo<PasswordFieldProps>(
     const { validateStatus, help } = getValidates(errors, touched, submitCount);
 
     return (
-      <FormItem
-        title='Пароль'
-        required
-        validateStatus={validateStatus}
-        help={help}
-      >
+      <FormItem title="Пароль" required validateStatus={validateStatus} help={help}>
         <Input
           data-cy="input"
           autoFocus
@@ -38,7 +31,7 @@ export const PasswordField = memo<PasswordFieldProps>(
           onChange={onChange}
           onBlur={onBlur}
           value={value}
-          placeholder='Пароль'
+          placeholder="Пароль"
         />
       </FormItem>
     );

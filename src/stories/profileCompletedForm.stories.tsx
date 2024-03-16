@@ -1,4 +1,4 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { ProfileForm } from '../components/profileForm/profileForm';
 import { ProfileCompletedForm } from '../screens/profileScreen/profileCompletedForm';
@@ -13,5 +13,3 @@ export default meta;
 type Story = StoryObj<typeof ProfileForm>;
 
 export const Basic: Story = { args: {} };
-
-

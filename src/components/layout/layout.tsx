@@ -94,10 +94,10 @@ export const Layout: FC = () => {
             func={openOperation}
           />
         </main>
-        
+
         {modalActive ? createPortal(<Modal setActive={setModalActive}>{child}</Modal>, document.body) : ''}
-        <div className='block'>
-        <ProfileCompletedForm />
+        <div className="block">
+          <ProfileCompletedForm />
         </div>
       </div>
     </ThemeContext.Provider>

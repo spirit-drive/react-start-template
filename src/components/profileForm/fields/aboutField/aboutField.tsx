@@ -23,18 +23,14 @@ export const AboutField = memo<AboutFieldProps>(
     const { validateStatus, help } = getValidates(errors, touched, submitCount);
 
     return (
-      <FormItem
-        title='О себе'
-        validateStatus={validateStatus}
-        help={help}
-      >
+      <FormItem title="О себе" validateStatus={validateStatus} help={help}>
         <Input.TextArea
           disabled={disabled}
           name="about"
           onChange={onChange}
           onBlur={onBlur}
           value={value}
-          placeholder='О себе'
+          placeholder="О себе"
         />
       </FormItem>
     );

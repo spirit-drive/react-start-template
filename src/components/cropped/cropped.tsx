@@ -9,7 +9,6 @@ export interface CroppedProps {
 }
 
 export const Cropped: FC<CroppedProps> = ({ children, rows, length, opened }) => {
-
   const [row, setRowCount] = useState(rows);
   const [rowLength, setRowLength] = useState(length);
 
@@ -64,9 +63,9 @@ export const Cropped: FC<CroppedProps> = ({ children, rows, length, opened }) =>
       }
       res.push(React.createElement('div', { key: 1 }, array[0]));
     }
-    
+
     return res;
-  };
+  }
 
   return (
     <div className={'dialog'}>

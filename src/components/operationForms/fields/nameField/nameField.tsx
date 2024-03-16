@@ -7,8 +7,6 @@ import { getValidates } from '../../../forms/validation';
 import { FormItem } from '../../../forms/formItem/formItem';
 import { OperationFormProps } from '../../types';
 
-
-
 export type NameFieldProps = Pick<OperationFormProps, 'className' | 'disabled' | 'autoFocusElement'> & {
   submitCount: number;
   touched: boolean;
@@ -25,12 +23,7 @@ export const NameField = memo<NameFieldProps>(
     const { validateStatus, help } = getValidates(errors, touched, submitCount);
 
     return (
-      <FormItem
-        title='Название'
-        required
-        validateStatus={validateStatus}
-        help={help}
-      >
+      <FormItem title="Название" required validateStatus={validateStatus} help={help}>
         <Input
           disabled={disabled}
           ref={autoFocusElement}
@@ -40,7 +33,7 @@ export const NameField = memo<NameFieldProps>(
           onChange={onChange}
           onBlur={onBlur}
           value={value}
-          placeholder='Название'
+          placeholder="Название"
         />
       </FormItem>
     );

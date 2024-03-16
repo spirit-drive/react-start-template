@@ -20,7 +20,7 @@ export const OperationForm = memo<OperationFormProps>(
           touched={touched.name}
           disabled={disabled}
         />
-       <CostField
+        <CostField
           onBlur={handleBlur}
           onChange={handleChange}
           value={values.cost}

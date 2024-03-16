@@ -7,8 +7,6 @@ import { getValidates } from '../../../forms/validation';
 import { FormItem } from '../../../forms/formItem/formItem';
 import { AuthFormProps } from '../../types';
 
-
-
 export type EmailFieldProps = Pick<AuthFormProps, 'className' | 'disabled' | 'autoFocusElement'> & {
   submitCount: number;
   touched: boolean;
@@ -27,12 +25,7 @@ export const EmailField = memo<EmailFieldProps>(
     const { validateStatus, help } = getValidates(errors, touched, submitCount);
 
     return (
-      <FormItem
-        title='Логин'
-        required
-        validateStatus={validateStatus}
-        help={help}
-      >
+      <FormItem title="Логин" required validateStatus={validateStatus} help={help}>
         <Input
           prefix={prefix}
           disabled={disabled}
@@ -43,7 +36,7 @@ export const EmailField = memo<EmailFieldProps>(
           onChange={onChange}
           onBlur={onBlur}
           value={value}
-          placeholder='test@mail.com'
+          placeholder="test@mail.com"
         />
       </FormItem>
     );

@@ -2,7 +2,7 @@ import React, { memo, useMemo } from 'react';
 import { FormikConfig, useFormik } from 'formik';
 import { Button } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { ProfileForm} from '../../components/profileForm/profileForm';
+import { ProfileForm } from '../../components/profileForm/profileForm';
 import { isNotDefinedString } from '../../components/forms/validation';
 import { Title } from '../../components/forms/title/title';
 import { ProfileFormErrors, ProfileFormValues } from 'src/components/profileForm/types';
@@ -16,14 +16,13 @@ export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(({ className
   const { onSubmit, validate, initialValues } = useMemo<
     Pick<FormikConfig<ProfileFormValues>, 'onSubmit' | 'validate' | 'initialValues'>
   >(() => {
-    
     return {
       initialValues: {
-        name:'',
+        name: '',
         about: '',
       },
       onSubmit: (values, { setErrors }) => {
-             console.log(values);
+        console.log(values);
       },
       validate: (values) => {
         const errors = {} as ProfileFormErrors;
@@ -33,7 +32,7 @@ export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(({ className
         return errors;
       },
     };
-  }, [ t ]);
+  }, [t]);
 
   const formManager = useFormik<ProfileFormValues>({
     initialValues,
@@ -43,10 +42,10 @@ export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(({ className
   const { submitForm, setValues } = formManager;
 
   return (
-    <div className='root'>
-      <Title className='title'>{'Профиль пользователя'}</Title>
+    <div className="root">
+      <Title className="title">{'Профиль пользователя'}</Title>
       <ProfileForm formManager={formManager} />
-      <Button type="primary"  onClick={submitForm}>
+      <Button type="primary" onClick={submitForm}>
         {'Сохранить'}
       </Button>
     </div>

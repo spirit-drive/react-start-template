@@ -4,9 +4,8 @@ import { FormikHandlers } from 'formik/dist/types';
 import { UserOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { FormItem } from '../../../forms/formItem/formItem';
-import { getValidates } from '../../../forms/validation'
+import { getValidates } from '../../../forms/validation';
 import { ProfileFormProps } from '../../types';
-
 
 export type NameFieldProps = Pick<ProfileFormProps, 'className' | 'disabled' | 'autoFocusElement'> & {
   submitCount: number;
@@ -26,12 +25,7 @@ export const NameField = memo<NameFieldProps>(
     const { validateStatus, help } = getValidates(errors, touched, submitCount);
 
     return (
-      <FormItem
-        title='Имя'
-        required
-        validateStatus={validateStatus}
-        help={help}
-      >
+      <FormItem title="Имя" required validateStatus={validateStatus} help={help}>
         <Input
           prefix={prefix}
           disabled={disabled}
@@ -42,7 +36,7 @@ export const NameField = memo<NameFieldProps>(
           onChange={onChange}
           onBlur={onBlur}
           value={value}
-          placeholder='Имя'
+          placeholder="Имя"
         />
       </FormItem>
     );

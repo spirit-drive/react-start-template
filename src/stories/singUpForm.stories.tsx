@@ -1,4 +1,4 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { SingUpForm } from '../screens/authScreen/singUpForm/singUpForm';
 import { AuthForm } from '../components/authForm/authForm';
 

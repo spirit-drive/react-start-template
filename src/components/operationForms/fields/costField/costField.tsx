@@ -23,12 +23,7 @@ export const CostField = memo<CostFieldProps>(
     const { validateStatus, help } = getValidates(errors, touched, submitCount);
 
     return (
-      <FormItem
-        title='Стоимость'
-        required
-        validateStatus={validateStatus}
-        help={help}
-      >
+      <FormItem title="Стоимость" required validateStatus={validateStatus} help={help}>
         <Input
           disabled={disabled}
           ref={autoFocusElement}
@@ -39,7 +34,7 @@ export const CostField = memo<CostFieldProps>(
           onBlur={onBlur}
           value={value}
           type="number"
-          placeholder='Стоимость'
+          placeholder="Стоимость"
         />
       </FormItem>
     );

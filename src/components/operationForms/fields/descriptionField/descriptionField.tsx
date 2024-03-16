@@ -23,12 +23,7 @@ export const DescriptionField = memo<DescriptionFieldProps>(
     const { validateStatus, help } = getValidates(errors, touched, submitCount);
 
     return (
-      <FormItem
-        title='Описание'
-        required
-        validateStatus={validateStatus}
-        help={help}
-      >
+      <FormItem title="Описание" required validateStatus={validateStatus} help={help}>
         <Input
           disabled={disabled}
           ref={autoFocusElement}
@@ -38,7 +33,7 @@ export const DescriptionField = memo<DescriptionFieldProps>(
           onChange={onChange}
           onBlur={onBlur}
           value={value}
-          placeholder='Описание'
+          placeholder="Описание"
         />
       </FormItem>
     );
