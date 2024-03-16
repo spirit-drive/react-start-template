@@ -17,6 +17,7 @@ import { Button } from './components/button/Button';
 import { InfoHoverWrapper } from './components/infoHover/InfoHoverWrapper';
 import { spawn } from 'child_process';
 import { HoverWrapper } from './components/infoHover/hoverWrapper';
+import { HeaderWithLogin } from './components/headerWithLogin/headerWithLogin';
 function App() {
   // const [popupState, setPopupState] = useState(false);
   // const operations = [
@@ -61,92 +62,7 @@ function App() {
 
   return (
     <>
-      {/* <Suspense fallback="...Loading">
-        <LanguageProvider>
-          <ThemeProvider>
-            <Header />
-            <Layout>
-              <PopupWithButton />
-              <PreviewItems elementsData={operations} />
-              <LanguageConponent />
-              <PreviewItem elementData={operations[0]} />
-            </Layout>
-
-            <PopupWrapper visible={popupState}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, libero.12311
-            </PopupWrapper>
-          </ThemeProvider>
-        </LanguageProvider>
-      </Suspense> */}
-      {/* <ComponentsList/> */}
-      {/* <ComponentsList/> */}
-      {/* <PortalPopup /> */}
-      {/* <Button
-      onClick={}>
-        button
-      </Button> */}
-      {/* <Layout>
-        <Button onClick={() => setVisibility(!visibility)}>button</Button>
-
-        <Collapse visible={visibility}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, architecto repudiandae. Consequuntur suscipit deleniti qui sed fugiat. Earum, explicabo aperiam.
-        </Collapse>
-      </Layout> */}
-      {/* <Layout>
-        <div className="wrapper">
-          <InfoHoverWrapper
-            hoverComponent={
-              <span>
-                hover component top- left
-              </span>
-            }
-          >
-            <div className="item">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, doloremque? II
-            </div>
-          </InfoHoverWrapper>
-          <InfoHoverWrapper>
-            <div className="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, doloremque? iI</div>
-          </InfoHoverWrapper>
-          <InfoHoverWrapper>
-            <div className="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, doloremque?</div>
-          </InfoHoverWrapper>
-          <InfoHoverWrapper
-            hoverComponent={
-              <span>
-                hover component top- right
-              </span>
-            }
-          >
-            <div className="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, doloremque?</div>
-          </InfoHoverWrapper>
-          <InfoHoverWrapper
-            hoverComponent={
-              <span>
-                hover component bottom - left
-              </span>
-            }
-          >
-            <div className="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, doloremque?</div>
-          </InfoHoverWrapper>
-          <InfoHoverWrapper>
-            <div className="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, doloremque?</div>
-          </InfoHoverWrapper>
-          <InfoHoverWrapper>
-            <div className="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, doloremque?</div>
-          </InfoHoverWrapper>
-          <InfoHoverWrapper
-            hoverComponent={
-              <span>
-                hover component bottom - right
-              </span>
-            }
-          >
-            <div className="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, doloremque?</div>
-          </InfoHoverWrapper>
-        </div>
-      </Layout> */}
-      <HoverWrapper />
+  <HeaderWithLogin/>
     </>
   );
 }
