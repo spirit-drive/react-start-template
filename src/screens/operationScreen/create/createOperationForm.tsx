@@ -11,14 +11,17 @@ import '../create/createOperationForm.css';
 export const CreateOperationForm = memo(() => {
   const { t } = useTranslation();
 
-  const { onSubmit, validate, initialValues } = useMemo<
+  const { initialValues, onSubmit, validate } = useMemo<
     Pick<FormikConfig<OperationFormValues>, 'onSubmit' | 'validate' | 'initialValues'>
   >(() => {
     return {
       initialValues: {
         name: '',
+        cost: 0,
+        category: '',
+        description: '',
       },
-      onSubmit: (values, { setErrors }) => {
+      onSubmit: (values) => {
         console.log('Операция создана :', values.name);
       },
       validate: (values) => {

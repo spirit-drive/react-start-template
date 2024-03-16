@@ -1,8 +1,6 @@
 import React, { memo } from 'react';
 import { Input } from 'antd';
-import { FormikHandlers } from 'formik/dist/types';
-import { UserOutlined } from '@ant-design/icons';
-import { useTranslation } from 'react-i18next';
+import { FormikHandlers } from 'formik/dist/types.d';
 import { getValidates } from '../../../forms/validation';
 import { FormItem } from '../../../forms/formItem/formItem';
 import { AuthFormProps } from '../../types';
@@ -16,26 +14,22 @@ export type PasswordFieldProps = Pick<AuthFormProps, 'className' | 'disabled' | 
   onBlur: FormikHandlers['handleBlur'];
 };
 
-export const PasswordField = memo<PasswordFieldProps>(
-  ({ className, onChange, onBlur, autoFocusElement, touched, value, errors, disabled, submitCount }) => {
-    const { t } = useTranslation();
+export const PasswordField = memo<PasswordFieldProps>(({ onChange, onBlur, touched, value, errors, submitCount }) => {
+  const { validateStatus, help } = getValidates(errors, touched, submitCount);
 
-    const { validateStatus, help } = getValidates(errors, touched, submitCount);
-
-    return (
-      <FormItem title="Пароль" required validateStatus={validateStatus} help={help}>
-        <Input
-          data-cy="input"
-          autoFocus
-          name="password"
-          onChange={onChange}
-          onBlur={onBlur}
-          value={value}
-          placeholder="Пароль"
-        />
-      </FormItem>
-    );
-  }
-);
+  return (
+    <FormItem title="Пароль" required validateStatus={validateStatus} help={help}>
+      <Input
+        data-cy="input"
+        autoFocus
+        name="password"
+        onChange={onChange}
+        onBlur={onBlur}
+        value={value}
+        placeholder="Пароль"
+      />
+    </FormItem>
+  );
+});
 
 PasswordField.displayName = 'PasswordField';

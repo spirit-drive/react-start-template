@@ -19,6 +19,7 @@ export const UpdateOperationForm = memo(() => {
         name: 'Test',
         cost: 50,
         category: 'CategoryTest',
+        description: 'DescriptionTest',
       },
       onSubmit: (values, { setErrors }) => {
         console.log('Операция обновлена:', initialValues.name, 'новое имя:', values.name);

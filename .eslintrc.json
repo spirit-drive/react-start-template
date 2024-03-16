@@ -15,7 +15,10 @@
         "plugin:jest/recommended",
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript"
     ],
     "overrides": [],
     "parser": "@typescript-eslint/parser",
@@ -30,7 +33,8 @@
         "@typescript-eslint/no-var-requires": 0,
         "@typescript-eslint/triple-slash-reference": "error",
         "react/jsx-uses-vars": "error",
-        "react/jsx-uses-react": "error"
+        "react/jsx-uses-react": "error",
+        "react/prop-types": "off"
     },
     "settings": {
         "react": {

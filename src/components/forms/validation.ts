@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { Help } from 'src/components/forms/formItem/formItem';
+import { Help } from '../../components/forms/formItem/formItem';
 
 export type ValidateStatus = 'error' | '';
 

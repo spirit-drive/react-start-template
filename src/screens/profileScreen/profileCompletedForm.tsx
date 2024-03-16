@@ -5,13 +5,13 @@ import { useTranslation } from 'react-i18next';
 import { ProfileForm } from '../../components/profileForm/profileForm';
 import { isNotDefinedString } from '../../components/forms/validation';
 import { Title } from '../../components/forms/title/title';
-import { ProfileFormErrors, ProfileFormValues } from 'src/components/profileForm/types';
+import { ProfileFormErrors, ProfileFormValues } from '../../components/profileForm/types';
 
 export type ProfileCompletedFormProps = {
   className?: string;
 };
 
-export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(({ className }) => {
+export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(() => {
   const { t } = useTranslation();
   const { onSubmit, validate, initialValues } = useMemo<
     Pick<FormikConfig<ProfileFormValues>, 'onSubmit' | 'validate' | 'initialValues'>
@@ -21,7 +21,7 @@ export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(({ className
         name: '',
         about: '',
       },
-      onSubmit: (values, { setErrors }) => {
+      onSubmit: (values) => {
         console.log(values);
       },
       validate: (values) => {
@@ -39,7 +39,7 @@ export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(({ className
     onSubmit,
     validate,
   });
-  const { submitForm, setValues } = formManager;
+  const { submitForm } = formManager;
 
   return (
     <div className="root">

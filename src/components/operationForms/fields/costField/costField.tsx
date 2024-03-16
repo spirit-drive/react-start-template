@@ -1,8 +1,6 @@
 import React, { memo } from 'react';
 import { Input } from 'antd';
-import { FormikHandlers } from 'formik/dist/types';
-import { UserOutlined } from '@ant-design/icons';
-import { useTranslation } from 'react-i18next';
+import { FormikHandlers } from 'formik/dist/types.d';
 import { getValidates } from '../../../forms/validation';
 import { FormItem } from '../../../forms/formItem/formItem';
 import { OperationFormProps } from '../../types';
@@ -17,9 +15,7 @@ export type CostFieldProps = Pick<OperationFormProps, 'className' | 'disabled' |
 };
 
 export const CostField = memo<CostFieldProps>(
-  ({ className, onChange, onBlur, autoFocusElement, touched, value, errors, disabled, submitCount }) => {
-    const { t } = useTranslation();
-
+  ({ onChange, onBlur, autoFocusElement, touched, value, errors, disabled, submitCount }) => {
     const { validateStatus, help } = getValidates(errors, touched, submitCount);
 
     return (

@@ -1,8 +1,7 @@
 import React, { memo } from 'react';
 import { Input } from 'antd';
-import { FormikHandlers } from 'formik/dist/types';
+import { FormikHandlers } from 'formik/dist/types.d';
 import { UserOutlined } from '@ant-design/icons';
-import { useTranslation } from 'react-i18next';
 import { getValidates } from '../../../forms/validation';
 import { FormItem } from '../../../forms/formItem/formItem';
 import { AuthFormProps } from '../../types';
@@ -19,9 +18,7 @@ export type EmailFieldProps = Pick<AuthFormProps, 'className' | 'disabled' | 'au
 const prefix = <UserOutlined />;
 
 export const EmailField = memo<EmailFieldProps>(
-  ({ className, onChange, onBlur, autoFocusElement, touched, value, errors, disabled, submitCount }) => {
-    const { t } = useTranslation();
-
+  ({ onChange, onBlur, autoFocusElement, touched, value, errors, disabled, submitCount }) => {
     const { validateStatus, help } = getValidates(errors, touched, submitCount);
 
     return (

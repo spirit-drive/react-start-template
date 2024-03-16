@@ -1,8 +1,7 @@
 import React, { memo } from 'react';
 import { Input } from 'antd';
-import { FormikHandlers } from 'formik/dist/types';
+import { FormikHandlers } from 'formik/dist/types.d';
 import { UserOutlined } from '@ant-design/icons';
-import { useTranslation } from 'react-i18next';
 import { FormItem } from '../../../forms/formItem/formItem';
 import { getValidates } from '../../../forms/validation';
 import { ProfileFormProps } from '../../types';
@@ -19,9 +18,7 @@ export type NameFieldProps = Pick<ProfileFormProps, 'className' | 'disabled' | '
 const prefix = <UserOutlined />;
 
 export const NameField = memo<NameFieldProps>(
-  ({ className, onChange, onBlur, autoFocusElement, touched, value, errors, disabled, submitCount }) => {
-    const { t } = useTranslation();
-
+  ({ onChange, onBlur, autoFocusElement, touched, value, errors, disabled, submitCount }) => {
     const { validateStatus, help } = getValidates(errors, touched, submitCount);
 
     return (

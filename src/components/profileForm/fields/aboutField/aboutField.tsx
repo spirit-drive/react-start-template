@@ -1,11 +1,9 @@
 import React, { memo } from 'react';
-import cn from 'clsx';
 import Input from 'antd/lib/input';
-import { FormikHandlers } from 'formik/dist/types';
-import { useTranslation } from 'react-i18next';
+import { FormikHandlers } from 'formik/dist/types.d';
 import { FormItem } from '../../../forms/formItem/formItem';
 import { getValidates } from '../../../forms/validation';
-import { ProfileFormProps } from 'src/components/profileForm/types';
+import { ProfileFormProps } from '../../types';
 
 export type AboutFieldProps = Pick<ProfileFormProps, 'className' | 'disabled'> & {
   submitCount: number;
@@ -17,9 +15,7 @@ export type AboutFieldProps = Pick<ProfileFormProps, 'className' | 'disabled'> &
 };
 
 export const AboutField = memo<AboutFieldProps>(
-  ({ className, onChange, onBlur, touched, value, errors, disabled, submitCount }) => {
-    const { t } = useTranslation();
-
+  ({ onChange, onBlur, touched, value, errors, disabled, submitCount }) => {
     const { validateStatus, help } = getValidates(errors, touched, submitCount);
 
     return (
@@ -36,3 +32,5 @@ export const AboutField = memo<AboutFieldProps>(
     );
   }
 );
+
+AboutField.displayName = 'AboutField';
