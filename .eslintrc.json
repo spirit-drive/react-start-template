@@ -27,10 +27,16 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "indent":["error", 4],
         "@typescript-eslint/no-var-requires": 0,
         "@typescript-eslint/triple-slash-reference": "error",
         "react/jsx-uses-vars": "error",
-        "react/jsx-uses-react": "error"
+        "react/jsx-uses-react": "error",
+        "prettier/prettier": ["error",{
+            "endOfLine": "auto",
+            "tabWidth": 4
+            }
+          ]
     },
     "settings": {
         "react": {
