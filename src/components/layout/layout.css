@@ -23,3 +23,9 @@
     align-items: flex-start;
     margin: 10px;
 }
+
+.block {
+    display: flex;
+    color: red;
+    width: 100%;
+}

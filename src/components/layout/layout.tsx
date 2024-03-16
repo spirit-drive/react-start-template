@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import { Toggle } from '../toggles/toggle';
 import { OperationTable } from '../table/operationTable';
 import { createPortal } from 'react-dom';
+import { ProfileCompletedForm } from '../../screens/profileScreen/profileCompletedForm';
 
 export interface layoutProps {
   prop?: string;
@@ -93,8 +94,11 @@ export const Layout: FC = () => {
             func={openOperation}
           />
         </main>
-
+        
         {modalActive ? createPortal(<Modal setActive={setModalActive}>{child}</Modal>, document.body) : ''}
+        <div className='block'>
+        <ProfileCompletedForm />
+        </div>
       </div>
     </ThemeContext.Provider>
   );

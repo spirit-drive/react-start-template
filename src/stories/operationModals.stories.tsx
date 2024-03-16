@@ -1,7 +1,8 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Modal } from '../components/modal/modal';
-import { TestContent } from '../components/testContent/testContent';
+import { CreateOperationForm } from '../screens/operationScreen/create/createOperationForm';
+import { UpdateOperationForm } from '../screens/operationScreen/update/updateOperationForm';
 
 const meta: Meta<typeof Modal> = {
   component: Modal,
@@ -9,16 +10,16 @@ const meta: Meta<typeof Modal> = {
 
 export default meta;
 
-export const Test1 = {
+export const createOperation = {
   args: {
-    children: <TestContent prop="test" />,
+    children: <CreateOperationForm />,
     setActive: (close: boolean) => console.log('visible ', close),
   },
 };
 
-export const Test2 = {
+export const updateOperationt = {
   args: {
-    children: <TestContent prop="hamster" />,
+    children: <UpdateOperationForm />,
     setActive: (close: boolean) => console.log('visible ', close),
   },
 };
