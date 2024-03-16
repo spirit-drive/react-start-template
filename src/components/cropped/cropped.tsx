@@ -19,8 +19,6 @@ export const Cropped: FC<CroppedProps> = ({ children, rows, length, opened }) =>
   }, [rows, length]);
 
   function getTextRows(): Array<JSX.Element> {
-    console.log('rows IN', rows)
-    console.log('rows ', row)
     const res: Array<JSX.Element> = [];
     const massive = children.split('');
     let lineText = '';
@@ -66,9 +64,7 @@ export const Cropped: FC<CroppedProps> = ({ children, rows, length, opened }) =>
       }
       res.push(React.createElement('div', { key: 1 }, array[0]));
     }
-
-    console.log('2    rows IN', rows)
-    console.log('2    rows ', row)
+    
     return res;
   };
 
