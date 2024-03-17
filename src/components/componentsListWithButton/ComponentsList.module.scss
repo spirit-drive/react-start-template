@@ -1,0 +1,44 @@
+.operations_wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-gap: 20px;
+}
+.item_wrapper{
+    max-width: 100%;
+    padding: 10px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin-top: 50px;
+}
+.showMore{
+    width: 100%;
+    margin-top: 20px;
+    background-color: brown !important;
+}
+.showMore2{
+    background-color: cadetblue;
+}
+.label{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.formWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.button{
+    margin-top: 20px !important;
+}
+.error{
+    color:red
+}
