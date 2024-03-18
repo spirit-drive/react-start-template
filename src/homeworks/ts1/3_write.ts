@@ -5,6 +5,47 @@
  * В целом сделайте так, как вам будет удобно.
  * */
 
+export type IdName = {
+  id: string;
+  name: string;
+};
+
+export type Category = IdName & {
+  photo?: string;
+};
+
+export type Record = IdName & {
+  desc?: string;
+  createdAt: string;
+  category: Category;
+};
+
+export type Product = Record & {
+  photo: string;
+  oldPrice?: number;
+  price: number;
+};
+
+export type CostType = 'Cost';
+export type ProfitType = 'Profit';
+export const CostConst: CostType = 'Cost';
+export const ProfitConst: ProfitType = 'Profit';
+export type OperationType = CostType | ProfitType;
+
+export type Operation = Record & {
+  id: string;
+  amount: number;
+  type: OperationType;
+};
+
+export type Cost = Operation & {
+  type: CostType;
+};
+
+export type Profit = Operation & {
+  type: ProfitType;
+};
+
 /**
  * Нужно создать тип Category, он будет использоваться ниже.
  * Категория содержит
@@ -47,10 +88,31 @@
  * Создает случайный продукт (Product).
  * Принимает дату создания (строка)
  * */
-// export const createRandomProduct = (createdAt: string) => {};
+export const createRandomProduct = (createdAt: string): Product => {
+  return {
+    id: 'id_' + createdAt,
+    name: 'name_' + createdAt,
+    category: { id: '1', name: 'Default' },
+    createdAt: createdAt,
+    photo: 'photo_' + createdAt,
+    desc: 'desc_' + createdAt,
+    price: 1,
+    oldPrice: 2,
+  };
+};
 
 /**
  * Создает случайную операцию (Operation).
  * Принимает дату создания (строка)
  * */
-// export const createRandomOperation = (createdAt: string) => {};
+export const createRandomOperation = (createdAt: string): Operation => {
+  return {
+    id: 'id_' + createdAt,
+    name: 'name_' + createdAt,
+    category: { id: '1', name: 'Default' },
+    createdAt: createdAt,
+    desc: 'desc_' + createdAt,
+    amount: 3,
+    type: CostConst,
+  };
+};
