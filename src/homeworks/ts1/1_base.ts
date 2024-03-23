@@ -54,7 +54,15 @@ export const hex2rgb = (color : string) : [number,number,number] => {
   return [red, green, blue];
 };
 
-export const getNumberedArray = (arr : any[]) : Array<{number : any, value : any }> => arr.map((value, number) => ({ value, number }));
+type NumberedArrayElement<T> = {
+  value : T
+  number : number
+}
+
+export const getNumberedArray = (arr : any[]) : Array<NumberedArrayElement<any>> => {
+  return arr.map<NumberedArrayElement<any>>((value, number) => ({ value, number }));
+} 
+
 export const toStringArray = (arr : any[]) : string[] => arr.map(({ value, number }) => `${value}_${number}`);
 
 type Customer = {
@@ -65,8 +73,8 @@ type Customer = {
 }
 
 export const transformCustomers = (customers : Array<Customer>) : {[key: number ]: Omit<Customer, 'id'> } => {
-  return customers.reduce((acc : {[key: number] : Omit<Customer, 'id'>}, customer : Customer) => {
+  return customers.reduce((acc, customer) => {
     acc[customer.id] = { name: customer.name, age: customer.age, isSubscribed: customer.isSubscribed };
     return acc;
-  }, {});
+  }, {} as {[key: number] : Omit<Customer, 'id'>});
 };

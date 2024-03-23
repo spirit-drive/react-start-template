@@ -58,7 +58,8 @@ class Product {
     }
 }
 
-type TOperation = "Cost" | "Profit";
+const Operations = ["Cost", "Profit"] as const;
+type TOperation = (typeof Operations)[number];
 
 /**
  * Операция (Operation) может быть либо тратой (Cost), либо доходом (Profit)
@@ -219,9 +220,8 @@ const operations = [
     let operationIndex = getRandomNumber(operations.length);
     let operationName = operations[operationIndex];
     
-    let operationTypes = ['Cost' , 'Profit'];
-    let operationTypeIndex = getRandomNumber(operationTypes.length);
-    let operationType = operationTypes[operationTypeIndex] as TOperation;
+    let operationTypeIndex = getRandomNumber(Operations.length);
+    let operationType = Operations[operationTypeIndex] as TOperation;
     
     let amount = getRandomNumber(maxOperationAmount, 1);
     return new Operation(getRandomString(), operationName, createdAt, amount, category, operationType);
