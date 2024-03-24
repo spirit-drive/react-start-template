@@ -3,8 +3,9 @@ import { PopupWrapper } from "../PopupWrapper/PopupWrapper";
 import { Layout } from "../lauout/Layout";
 import cl from './headerWithLogin.module.scss';
 import { Button } from "../button/Button";
-import { Field, Form, Formik } from "formik";
+
 import { useLocalStorageState } from "./helpers";
+import { AuthForm } from "../Forms/AuthForm";
 
 
 export const HeaderWithLogin = () => {
@@ -58,49 +59,12 @@ export const HeaderWithLogin = () => {
         <PopupWrapper
             visible={popupState}
             close={()=>{setPopupState(!popupState)}}
+
         >
-                <Formik
-                    initialValues={{
-                        email: '',
-                        password:''
-                    }}
-                    onSubmit = {values => {
-                        console.log('submit', values)
-                        if (values.email == loginData.login && values.password == loginData.pass) {
-                            setLoginCondition(!loginCondition)
-                            setPopupState(!popupState)
-                        }
-                        }}
-                >
-
-
-                    {({ errors, touched }) => (
-                        <Form className={cl.formWrapper}>
-                            <label className={cl.label}>
-                                 Электронная почта(login)
-                                <Field
-                                    className={cl.inputField}
-                                    name="email"
-                                    validate={validateEmail}
-                                />
-                            </label>
-                            <label className={cl.label}>
-                                 пароль
-                                <Field
-                                    className={cl.inputField}
-                                    name="password"
-                                    type="password"
-                                    validate={validatePassword}
-                                />
-                                {errors.password && touched.password && (
-                                    <div className={cl.error}>{errors.password}</div>
-                                )}
-                            </label>
-                            <button className={cl.submit} type="submit">Войти</button>
-                        </Form>
-                    )}
-
-</Formik>
+                <AuthForm
+                    closePopup={() => { setPopupState(!popupState) }}
+                    loginCondition = {()=>setLoginCondition(!loginCondition)}
+                />
             </PopupWrapper>
             </>
     )

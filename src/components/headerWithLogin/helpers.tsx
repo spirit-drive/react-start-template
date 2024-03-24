@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { localStorageWrapper } from "./storege";
+import { localStorageWrapper } from "../Helpers/storage";
 
 type AnyFunction = (...args: any[]) => any;
 
