@@ -35,10 +35,8 @@ export const AuthForm: FC<data> = ({closePopup,loginCondition}) => {
                     onSubmit = {values => {
                         console.log('submit', values)
                         if (values.email == loginData.login && values.password == loginData.pass) {
-                            // setLoginCondition(!loginCondition)
                             loginCondition()
                             closePopup()
-                            console.log('sss')
                         }
                         }}
                 >

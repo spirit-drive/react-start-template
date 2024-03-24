@@ -19,3 +19,20 @@
     flex-direction: column;
     margin-top: 15px;
 }
+.label{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.formWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.button{
+    margin-top: 20px !important;
+}
+.error{
+    color:red
+}
