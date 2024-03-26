@@ -1,11 +1,26 @@
 import React from 'react';
+import DisplayProductBasket from '../../components/DisplayProductBasket/DisplayProductBasket';
+import { useStore } from '../../helper/useStore';
+import { DisplayProductProps } from '../../types';
 
 const Basket = () => {
-  return (
-    <>
-      <h2>it is basket page</h2>
-    </>
-  )
-}
+  const { product } = useStore();
 
-export default Basket
+  return (
+    <section>
+      {product.map((product: DisplayProductProps) => {
+        return (
+          <DisplayProductBasket
+            key={product.key}
+            coast={product.coast}
+            img={product.img}
+            title={product.title}
+            shortDescription={product.description}
+          />
+        );
+      })}
+    </section>
+  );
+};
+
+export default Basket;
