@@ -16,9 +16,9 @@ export const AuthForm = memo<AuthFormProps>(({ formManager, formElement, autoFoc
         submitCount={submitCount}
         touched={touched.email}
         disabled={disabled}
-        title='Email' 
-        nameInput ='email'
-        type='input'
+        title="Email"
+        nameInput="email"
+        type="input"
       />
       <FormInput
         autoFocusElement={autoFocusElement}
@@ -29,11 +29,12 @@ export const AuthForm = memo<AuthFormProps>(({ formManager, formElement, autoFoc
         submitCount={submitCount}
         touched={touched.password}
         disabled={disabled}
-        title='Пароль' 
-        nameInput ='password'
-        type='input'
+        title="Пароль"
+        nameInput="password"
+        type="input"
       />
     </form>
   );
 });
 
+AuthForm.displayName = 'AuthForm';

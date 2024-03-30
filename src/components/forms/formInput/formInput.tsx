@@ -1,12 +1,9 @@
-
 import React, { memo } from 'react';
 import { Input } from 'antd';
 import { FormikHandlers } from 'formik/dist/types.d';
-import { UserOutlined } from '@ant-design/icons';
 import { FormItem } from '../formItem/formItem';
 import { getValidates } from '../validation';
-import { ProfileFormProps } from 'src/components/profileForm/types';
-
+import { ProfileFormProps } from '../../../components/profileForm/types';
 
 export type FormInputProps = Pick<ProfileFormProps, 'className' | 'disabled' | 'autoFocusElement'> & {
   submitCount: number;
@@ -21,7 +18,7 @@ export type FormInputProps = Pick<ProfileFormProps, 'className' | 'disabled' | '
 };
 
 export const FormInput = memo<FormInputProps>(
-  ({ onChange, onBlur, autoFocusElement, touched, value, errors, disabled, submitCount, title, nameInput , type}) => {
+  ({ onChange, onBlur, autoFocusElement, touched, value, errors, disabled, submitCount, title, nameInput, type }) => {
     const { validateStatus, help } = getValidates(errors, touched, submitCount);
 
     return (
@@ -35,9 +32,11 @@ export const FormInput = memo<FormInputProps>(
           onBlur={onBlur}
           value={value}
           placeholder={title}
-          type = {type}
+          type={type}
         />
       </FormItem>
     );
   }
 );
+
+FormInput.displayName = 'FormInput';
