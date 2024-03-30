@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
-import { EmailField } from './fields/emailField/emailField';
-import { PasswordField } from './fields/passwordField/passwordField';
+import { FormInput } from '../forms/formInput/formInput';
 import { AuthFormProps } from './types';
 
 export const AuthForm = memo<AuthFormProps>(({ formManager, formElement, autoFocusElement, disabled }) => {
@@ -8,7 +7,7 @@ export const AuthForm = memo<AuthFormProps>(({ formManager, formElement, autoFoc
 
   return (
     <form ref={formElement} onSubmit={handleSubmit}>
-      <EmailField
+      <FormInput
         autoFocusElement={autoFocusElement}
         onBlur={handleBlur}
         onChange={handleChange}
@@ -17,8 +16,11 @@ export const AuthForm = memo<AuthFormProps>(({ formManager, formElement, autoFoc
         submitCount={submitCount}
         touched={touched.email}
         disabled={disabled}
+        title='Логин' 
+        nameInput ='email'
+        type='input'
       />
-      <PasswordField
+      <FormInput
         autoFocusElement={autoFocusElement}
         onBlur={handleBlur}
         onChange={handleChange}
@@ -27,9 +29,11 @@ export const AuthForm = memo<AuthFormProps>(({ formManager, formElement, autoFoc
         submitCount={submitCount}
         touched={touched.password}
         disabled={disabled}
+        title='Пароль' 
+        nameInput ='password'
+        type='input'
       />
     </form>
   );
 });
 
-AuthForm.displayName = 'AuthForm';

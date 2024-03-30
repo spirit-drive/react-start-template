@@ -1,14 +1,14 @@
 import React, { memo } from 'react';
+import { FormInput } from '../forms/formInput/formInput';
 import { ProfileFormProps } from './types';
-import { NameField } from './fields/nameField/nameField';
-import { AboutField } from './fields/aboutField/aboutField';
+
 
 export const ProfileForm = memo<ProfileFormProps>(({ formManager, formElement, autoFocusElement, disabled }) => {
   const { values, touched, errors, submitCount, handleBlur, handleSubmit, handleChange } = formManager;
 
   return (
     <form ref={formElement} onSubmit={handleSubmit}>
-      <NameField
+      <FormInput
         autoFocusElement={autoFocusElement}
         onBlur={handleBlur}
         onChange={handleChange}
@@ -17,8 +17,11 @@ export const ProfileForm = memo<ProfileFormProps>(({ formManager, formElement, a
         submitCount={submitCount}
         touched={touched.name}
         disabled={disabled}
+        title='Имя'
+        nameInput='name'
+        type='input'
       />
-      <AboutField
+      <FormInput
         onBlur={handleBlur}
         onChange={handleChange}
         value={values.about}
@@ -26,6 +29,9 @@ export const ProfileForm = memo<ProfileFormProps>(({ formManager, formElement, a
         submitCount={submitCount}
         touched={touched.about}
         disabled={disabled}
+        title='О себе'
+        nameInput='about'
+        type='input'
       />
     </form>
   );

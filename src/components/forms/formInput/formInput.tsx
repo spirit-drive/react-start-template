@@ -1,0 +1,43 @@
+
+import React, { memo } from 'react';
+import { Input } from 'antd';
+import { FormikHandlers } from 'formik/dist/types.d';
+import { UserOutlined } from '@ant-design/icons';
+import { FormItem } from '../formItem/formItem';
+import { getValidates } from '../validation';
+import { ProfileFormProps } from 'src/components/profileForm/types';
+
+
+export type FormInputProps = Pick<ProfileFormProps, 'className' | 'disabled' | 'autoFocusElement'> & {
+  submitCount: number;
+  touched: boolean;
+  errors: string;
+  value: string;
+  title: string;
+  nameInput: string;
+  type: string;
+  onChange: FormikHandlers['handleChange'];
+  onBlur: FormikHandlers['handleBlur'];
+};
+
+export const FormInput = memo<FormInputProps>(
+  ({ onChange, onBlur, autoFocusElement, touched, value, errors, disabled, submitCount, title, nameInput , type}) => {
+    const { validateStatus, help } = getValidates(errors, touched, submitCount);
+
+    return (
+      <FormItem title={title} required validateStatus={validateStatus} help={help}>
+        <Input
+          disabled={disabled}
+          ref={autoFocusElement}
+          autoFocus
+          name={nameInput}
+          onChange={onChange}
+          onBlur={onBlur}
+          value={value}
+          placeholder={title}
+          type = {type}
+        />
+      </FormItem>
+    );
+  }
+);

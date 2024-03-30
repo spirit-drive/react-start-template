@@ -1,16 +1,13 @@
 import React, { memo } from 'react';
 import { OperationFormProps } from './types';
-import { NameField } from './fields/nameField/nameField';
-import { CostField } from './fields/costField/costField';
-import { CategoryField } from './fields/categoryField/categoryField';
-import { DescriptionField } from './fields/descriptionField/descriptionField';
+import { FormInput } from '../forms/formInput/formInput';
 
 export const OperationForm = memo<OperationFormProps>(({ formManager, formElement, disabled }) => {
   const { values, touched, errors, submitCount, handleBlur, handleSubmit, handleChange } = formManager;
 
   return (
     <form ref={formElement} onSubmit={handleSubmit}>
-      <NameField
+      <FormInput
         onBlur={handleBlur}
         onChange={handleChange}
         value={values.name}
@@ -18,8 +15,11 @@ export const OperationForm = memo<OperationFormProps>(({ formManager, formElemen
         submitCount={submitCount}
         touched={touched.name}
         disabled={disabled}
+        title='Название'
+        nameInput='name'
+        type='input'
       />
-      <CostField
+      <FormInput
         onBlur={handleBlur}
         onChange={handleChange}
         value={values.cost}
@@ -27,8 +27,11 @@ export const OperationForm = memo<OperationFormProps>(({ formManager, formElemen
         submitCount={submitCount}
         touched={touched.cost}
         disabled={disabled}
+        title='Стоимость'
+        nameInput='cost'
+        type='number'
       />
-      <CategoryField
+      <FormInput
         onBlur={handleBlur}
         onChange={handleChange}
         value={values.category}
@@ -36,8 +39,11 @@ export const OperationForm = memo<OperationFormProps>(({ formManager, formElemen
         submitCount={submitCount}
         touched={touched.category}
         disabled={disabled}
+        title='Категория'
+        nameInput='category'
+        type='input'
       />
-      <DescriptionField
+      <FormInput
         onBlur={handleBlur}
         onChange={handleChange}
         value={values.description}
@@ -45,9 +51,11 @@ export const OperationForm = memo<OperationFormProps>(({ formManager, formElemen
         submitCount={submitCount}
         touched={touched.description}
         disabled={disabled}
+        title='Описание'
+        nameInput='description'
+        type='input'
       />
     </form>
   );
 });
 
-OperationForm.displayName = 'OperationForm';
