@@ -16,7 +16,7 @@ export const AuthForm = memo<AuthFormProps>(({ formManager, formElement, autoFoc
         submitCount={submitCount}
         touched={touched.email}
         disabled={disabled}
-        title='Логин' 
+        title='Email' 
         nameInput ='email'
         type='input'
       />
