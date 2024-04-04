@@ -5,7 +5,7 @@ import { LoginContext } from '../../helper/contexts';
 import DefaultButton from '../Buttons/DefaultButton';
 import CustomInput from '../Inputs/CustomInput';
 import classNames from './registrationForm.module.css';
-import { setEmailLocalStorage } from 'src/helper/localStorage';
+import { setEmailLocalStorage } from '../../helper/localStorage';
 
 export type StateType = {
   email: string;
