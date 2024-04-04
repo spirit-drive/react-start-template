@@ -7,19 +7,22 @@ import { StoreProvider } from './helper/useStore';
 import { ThemeProvider } from './helper/useTheme';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
+import { ModalProvider } from './helper/useModalCreateProduct';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
   <BrowserRouter>
-    <StoreProvider>
-      <LanguageProvider>
-        <ThemeProvider>
-          <LoginProvider>
-            <App />
-          </LoginProvider>
-        </ThemeProvider>
-      </LanguageProvider>
-    </StoreProvider>
+    <ModalProvider>
+      <StoreProvider>
+        <LanguageProvider>
+          <ThemeProvider>
+            <LoginProvider>
+              <App />
+            </LoginProvider>
+          </ThemeProvider>
+        </LanguageProvider>
+      </StoreProvider>
+    </ModalProvider>
   </BrowserRouter>
 );

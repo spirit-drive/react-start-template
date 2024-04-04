@@ -22,6 +22,11 @@ export type LoginContexType = {
   toggleIsLogin: () => void;
 };
 
+export type ModalCreateProductContextType = {
+  isShow: boolean;
+  toggleModal: () => void;
+}
+
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -29,3 +34,5 @@ export const LanguageContext = createContext<LanguageContextType | undefined>(un
 export const StoreContext = createContext<StoreContextType | undefined>(undefined);
 
 export const LoginContext = createContext<LoginContexType | undefined>(undefined);
+
+export const ModalCreateProductContext = createContext<ModalCreateProductContextType | undefined>(undefined)

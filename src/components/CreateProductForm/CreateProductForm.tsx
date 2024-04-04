@@ -7,7 +7,7 @@ import { DisplayProductProps } from '../../types';
 import { generateUniqId } from '../../helper/utils';
 
 type CreateProductFormProps = {
-  toggleModal: () => void,
+  navigateModal: () => void,
 }
 
 type StateFormType = {
@@ -57,7 +57,7 @@ const reducer = (stateForm: StateFormType, action: ActionType): StateFormType =>
   }
 }
 
-const CreateProductForm: FC<CreateProductFormProps> = ({toggleModal}) => {
+const CreateProductForm: FC<CreateProductFormProps> = ({navigateModal}) => {
   const {register, handleSubmit} = useForm();
   const { getStore, addProduct } = useStore();
 
@@ -88,7 +88,7 @@ const CreateProductForm: FC<CreateProductFormProps> = ({toggleModal}) => {
   const onSubmit = (product: DisplayProductProps) => {
     const productWithKey = { ...product, key: generateUniqId() };
     addProduct(productWithKey)
-    toggleModal();
+    navigateModal();
   }
 
   return (

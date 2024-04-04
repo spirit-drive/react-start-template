@@ -6,7 +6,7 @@ export type ButtonBasketProps = {
 
 export type ModalWindowProps = {
   children: React.ReactNode;
-  toggleModal: () => void;
+  navigateModal: () => void;
 };
 
 export type DisplayProductProps = {
