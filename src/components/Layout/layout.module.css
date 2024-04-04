@@ -15,3 +15,15 @@
   background-color: var(--main-color-dark);
   color: var(--main-font-color-dark);
 }
+
+.labelUploader {
+  height: auto;
+  width: max-content;
+  color: black;
+  padding: 5px 10px;
+  background-color:aquamarine;
+}
+
+.none {
+  visibility: hidden;
+}
