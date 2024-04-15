@@ -8,21 +8,26 @@ import { ThemeProvider } from './helper/useTheme';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import { ModalProvider } from './helper/useModalCreateProduct';
+import { store } from './store/store'
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
-  <BrowserRouter>
-    <ModalProvider>
-      <StoreProvider>
-        <LanguageProvider>
-          <ThemeProvider>
-            <LoginProvider>
-              <App />
-            </LoginProvider>
-          </ThemeProvider>
-        </LanguageProvider>
-      </StoreProvider>
-    </ModalProvider>
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+        <ModalProvider>
+          <StoreProvider>
+            <LanguageProvider>
+              <ThemeProvider>
+                <LoginProvider>
+                  <App />
+                </LoginProvider>
+              </ThemeProvider>
+            </LanguageProvider>
+          </StoreProvider>
+        </ModalProvider>
+      </BrowserRouter>
+  </Provider>
+  
 );

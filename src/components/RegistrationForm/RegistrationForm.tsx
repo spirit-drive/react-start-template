@@ -6,6 +6,8 @@ import DefaultButton from '../Buttons/DefaultButton';
 import CustomInput from '../Inputs/CustomInput';
 import classNames from './registrationForm.module.css';
 import { setEmailLocalStorage } from '../../helper/localStorage';
+import { useDispatch } from 'react-redux';
+import { setToken } from '../../store/tokenSlice';
 
 export type StateType = {
   email: string;
@@ -41,18 +43,19 @@ const reducer = (state: StateType, action: ActionsType): StateType => {
 };
 
 const RegistrationForm = () => {
+  const dispatch = useDispatch();
   const [wariningLogin, setWarningLogin] = useState<boolean>(false);
   const { toggleIsLogin, isLogin } = useContext(LoginContext);
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatchStore] = useReducer(reducer, initialState);
   const { register, handleSubmit } = useForm();
 
   const setInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     switch (e.target.type) {
       case 'email':
-        dispatch({ type: ActionTypeEnum.SET_EMAIL, payload: e.target.value });
+        dispatchStore({ type: ActionTypeEnum.SET_EMAIL, payload: e.target.value });
         break;
       case 'password':
-        dispatch({ type: ActionTypeEnum.SET_PASSWORD, payload: e.target.value });
+        dispatchStore({ type: ActionTypeEnum.SET_PASSWORD, payload: e.target.value });
         break;
     }
   };
@@ -64,6 +67,7 @@ const RegistrationForm = () => {
     }
     setEmailLocalStorage(data.email);
     toggleIsLogin();
+    dispatch(setToken());
   };
 
   return (
