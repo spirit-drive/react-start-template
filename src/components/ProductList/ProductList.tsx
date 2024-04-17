@@ -1,12 +1,13 @@
 import clsx from 'clsx';
 import React from 'react';
 import DisplayProduct from '../../components/DisplayProduct/DisplayProduct';
-import { useStore } from '../../helper/useStore';
 import { DisplayProductProps } from '../../types';
 import classNames from './productList.module.css';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
 
 const ProductList = () => {
-  const { product } = useStore();
+  const product = useSelector((store:RootState) => store.productCatalogSlice.products);
   /*
     коментарий для упрощенного тестирования функционала
     добваления карточки товара
