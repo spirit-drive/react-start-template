@@ -11,10 +11,12 @@ import classNames from './modalController.module.css';
 const ModalController: FC = () => {
   const { isShow, toggleModal } = useModalCreateProduct();
   const navigate = useNavigate();
+
+
   useLanguage();
 
   useEffect(() => {
-    if(!isShow) {
+    if (!isShow) {
       toggleModal();
     }
   }, []);

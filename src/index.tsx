@@ -17,7 +17,6 @@ root.render(
   <Provider store={store}>
     <BrowserRouter>
         <ModalProvider>
-          <StoreProvider>
             <LanguageProvider>
               <ThemeProvider>
                 <LoginProvider>
@@ -25,9 +24,7 @@ root.render(
                 </LoginProvider>
               </ThemeProvider>
             </LanguageProvider>
-          </StoreProvider>
         </ModalProvider>
       </BrowserRouter>
   </Provider>
-  
 );
