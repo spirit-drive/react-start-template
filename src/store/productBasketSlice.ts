@@ -1,4 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+
 import { getProductBasketListLocalStorage } from '../helper/localStorage';
 import { DisplayProductBasketProps } from '../types';
 
@@ -15,17 +17,17 @@ const productBasketSlice = createSlice({
   initialState,
   reducers: {
     addToBasket: (state: IInitialState, action: PayloadAction<DisplayProductBasketProps>) => {
-        return {
-            ...state,
-            productBasketList: [...state.productBasketList, action.payload],
-        };
+      return {
+        ...state,
+        productBasketList: [...state.productBasketList, action.payload],
+      };
     },
     removeFromBasket: (state: IInitialState, action: PayloadAction<number>) => {
-       return {
+      return {
         ...state,
-        productBasketList: state.productBasketList.filter((product) => product.id !== action.payload)
-       }
-    }
+        productBasketList: state.productBasketList.filter((product) => product.id !== action.payload),
+      };
+    },
   },
 });
 
