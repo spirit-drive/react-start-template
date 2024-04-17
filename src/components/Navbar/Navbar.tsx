@@ -7,15 +7,17 @@ import classNames from './navbar.module.css';
 const Navbar = () => {
   const { theme } = useTheme();
   const themeClass = `nav-${theme}`;
+  const token = localStorage.getItem("token");
 
   return (
     <nav className={clsx(classNames.navGeneral)}>
       <NavLink className={clsx(classNames[themeClass])} to="/">
         Главная
       </NavLink>
-      <NavLink className={clsx(classNames[themeClass])} to="/profile">
-        Профиль
-      </NavLink>
+      {token !== null ?  
+          <NavLink className={clsx(classNames[themeClass])} to="/profile">
+            Профиль
+          </NavLink> : null }
       <NavLink className={clsx(classNames[themeClass])} to="/basket">
         Корзина
       </NavLink>
