@@ -8,6 +8,7 @@ const store: StoreType = {
   products: [
     {
       key: 1,
+      id: 1123,
       coast: 500,
       category: 'computer',
       img: 'http://placehold.it/50x50',
@@ -15,8 +16,9 @@ const store: StoreType = {
       description: 'amazing computer',
     },
     {
-      key: 2,
-      coast: 400,
+      key: 2123,
+      id: Date.now(),
+      coast: 2,
       category: 'computer',
       img: 'http://placehold.it/50x50',
       title: 'HP',
@@ -24,7 +26,8 @@ const store: StoreType = {
     },
     {
       key: 3,
-      coast: 300,
+      id: Date.now(),
+      coast: 3243,
       category: 'computer',
       img: 'http://placehold.it/50x50',
       title: 'ACER',

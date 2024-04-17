@@ -18,6 +18,7 @@ const Basket = () => {
         return (
           <DisplayProductBasket
             key={product.key}
+            id={product.id}
             coast={product.coast}
             img={product.img}
             title={product.title}

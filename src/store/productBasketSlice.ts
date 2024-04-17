@@ -23,7 +23,7 @@ const productBasketSlice = createSlice({
     removeFromBasket: (state: IInitialState, action: PayloadAction<number>) => {
        return {
         ...state,
-        productBasketList: state.productBasketList.filter((product) => product.key !== action.payload)
+        productBasketList: state.productBasketList.filter((product) => product.id !== action.payload)
        }
     }
   },

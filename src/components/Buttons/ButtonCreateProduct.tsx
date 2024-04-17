@@ -10,6 +10,7 @@ export const ButtonCreateProduct = () => {
     const randomProduct = createRandomProduct('now');
     const validProduct = {
       key: Date.now(),
+      id: Date.now(),
       coast: randomProduct.price,
       category: randomProduct.category.name,
       img: 'http://placehold.it/50x50',

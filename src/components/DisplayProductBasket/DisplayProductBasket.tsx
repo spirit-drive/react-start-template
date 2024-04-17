@@ -4,12 +4,15 @@ import clsx from 'clsx';
 import { DisplayProductBasketProps } from '../../types';
 import { useDispatch } from 'react-redux';
 import { removeFromBasket } from '../../store/productBasketSlice';
+import { removeProductFromBasketLocalStorage } from '../../helper/localStorage';
 
-const DisplayProductBasket: FC<DisplayProductBasketProps> = ({ coast, img, title, shortDescription }) => {
+const DisplayProductBasket: FC<DisplayProductBasketProps> = ({ coast, img, title, shortDescription, id }) => {
   const dispatch = useDispatch();
 
-  const removeProduct = () => {
-    dispatch(removeFromBasket(2))
+  const  removeProduct =  () => {
+    dispatch(removeFromBasket(id));
+    removeProductFromBasketLocalStorage(id);
+
   }
 
   return (

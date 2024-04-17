@@ -8,12 +8,12 @@ import { DisplayProductProps } from '../../types';
 import ButtonBasket from '../ButtonBasket/ButtonBasket';
 import classNames from './displayProduct.module.css';
 
-const DisplayProduct: FC<DisplayProductProps> = ({ coast, category, img, title, description}) => {
+const DisplayProduct: FC<DisplayProductProps> = ({ coast, category, img, title, description, id}) => {
   const dispatch = useDispatch();
   const productInBasket = useSelector((store: RootState) => store.productBasketSlice.productBasketList);
   const shortDescription = description;
   const handleProduct = () => {
-    dispatch(addToBasket({ coast, img, title, shortDescription }));
+    dispatch(addToBasket({ coast, img, title, shortDescription, id }));
     setProductBasketListLocalStorage(productInBasket);
   };
 

@@ -1,4 +1,3 @@
-import { DisplayProductBasketProps } from "../types";
 
 export const setThemeLocalStorage = (theme: string): void => {
   localStorage.setItem('theme', theme);
@@ -55,4 +54,28 @@ export const getProductBasketListLocalStorage = () => {
 
 export const setProductBasketListLocalStorage = (product: any) => {
   localStorage.setItem('productBasketList', JSON.stringify(product));
+}
+
+export const removeProductFromBasketLocalStorage = (id: number) => {
+   const productsString = localStorage.getItem('productBasketList');
+   if (!productsString) {
+       console.error('Нет productBasketList в localStorage');
+       return;
+   }
+   
+   try {
+       const products = JSON.parse(productsString);
+
+       const index = products.findIndex((product: { id: number }) => product.id === id);
+       
+       if (index !== -1) {
+           products.splice(index, 1);
+
+           localStorage.setItem('productBasketList', JSON.stringify(products));
+       } else {
+           console.error(`Товар с id ${id} не наиден в localStorage`);
+       }
+   } catch (error) {
+       console.error('Ошибка удаления из localStorage:', error);
+   }
 }
