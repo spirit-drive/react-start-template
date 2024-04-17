@@ -3,8 +3,8 @@ import classNames from './ButtonBasket.module.css';
 import clsx from 'clsx';
 import { ButtonBasketProps } from '../../types';
 
-const ButtonBasket: FC<ButtonBasketProps> = ({ productCount }) => {
-  if (!productCount) return <button className={clsx(classNames.buttonBasket)}>В корзину</button>;
+const ButtonBasket: FC<ButtonBasketProps> = ({ productCount, callback }) => {
+  if (!productCount) return <button onClick={callback} className={clsx(classNames.buttonBasket)}>В корзину</button>;
 
   return (
     <>

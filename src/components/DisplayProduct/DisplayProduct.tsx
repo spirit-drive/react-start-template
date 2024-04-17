@@ -1,10 +1,22 @@
-import React, { FC } from 'react';
-import classNames from './displayProduct.module.css';
 import clsx from 'clsx';
-import ButtonBasket from '../ButtonBasket/ButtonBasket';
+import React, { FC } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setProductBasketListLocalStorage } from '../../helper/localStorage';
+import { addToBasket } from '../../store/productBasketSlice';
+import { RootState } from '../../store/store';
 import { DisplayProductProps } from '../../types';
+import ButtonBasket from '../ButtonBasket/ButtonBasket';
+import classNames from './displayProduct.module.css';
 
-const DisplayProduct: FC<DisplayProductProps> = ({ coast, category, img, title, description }) => {
+const DisplayProduct: FC<DisplayProductProps> = ({ coast, category, img, title, description}) => {
+  const dispatch = useDispatch();
+  const productInBasket = useSelector((store: RootState) => store.productBasketSlice.productBasketList);
+  const shortDescription = description;
+  const handleProduct = () => {
+    dispatch(addToBasket({ coast, img, title, shortDescription }));
+    setProductBasketListLocalStorage(productInBasket);
+  };
+
   return (
     <div className={clsx(classNames.DisplayProductWrapper)}>
       <h3 className={clsx(classNames.title)}>{title}</h3>
@@ -17,7 +29,7 @@ const DisplayProduct: FC<DisplayProductProps> = ({ coast, category, img, title, 
           <p className={clsx(classNames.description)}>{description}</p>
           <div className={clsx(classNames.buyProduct)}>
             <span>{coast}&#8381;</span>
-            <ButtonBasket productCount={0} />
+            <ButtonBasket callback={handleProduct} productCount={0} />
           </div>
         </div>
       </div>

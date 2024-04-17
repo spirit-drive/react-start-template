@@ -2,6 +2,7 @@ import React from 'react';
 
 export type ButtonBasketProps = {
   productCount: number;
+  callback?: () => void;
 } & React.HTMLAttributes<HTMLButtonElement>;
 
 export type ModalWindowProps = {
@@ -10,7 +11,7 @@ export type ModalWindowProps = {
 };
 
 export type DisplayProductProps = {
-  key: number;
+  key?: number;
   coast: number;
   category: string;
   img: string;

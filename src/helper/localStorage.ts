@@ -1,3 +1,5 @@
+import { DisplayProductBasketProps } from "../types";
+
 export const setThemeLocalStorage = (theme: string): void => {
   localStorage.setItem('theme', theme);
 };
@@ -45,4 +47,12 @@ export const setUserNameLocalStorage = (userName: string) => {
 
 export const getUserNameLocalStorage = () => {
   return localStorage.getItem('userName');
+}
+
+export const getProductBasketListLocalStorage = () => {
+  return JSON.parse(localStorage.getItem('productBasketList'));
+}
+
+export const setProductBasketListLocalStorage = (product: any) => {
+  localStorage.setItem('productBasketList', JSON.stringify(product));
 }
