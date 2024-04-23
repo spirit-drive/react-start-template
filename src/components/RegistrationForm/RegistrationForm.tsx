@@ -1,13 +1,15 @@
 import clsx from 'clsx';
 import React, { useContext, useReducer, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import { LoginContext } from '../../helper/contexts';
+import { setEmailLocalStorage } from '../../helper/localStorage';
+import { setToken } from '../../store/tokenSlice';
 import DefaultButton from '../Buttons/DefaultButton';
 import CustomInput from '../Inputs/CustomInput';
 import classNames from './registrationForm.module.css';
-import { setEmailLocalStorage } from '../../helper/localStorage';
-import { useDispatch } from 'react-redux';
-import { setToken } from '../../store/tokenSlice';
+import signIn from '../../api/signIn';
+import { login } from '../../store/loginSlice';
 
 export type StateType = {
   email: string;
@@ -15,18 +17,13 @@ export type StateType = {
 };
 
 type ActionsType =
-  { type: ActionTypeEnum.SET_EMAIL; payload: string }
+  | { type: ActionTypeEnum.SET_EMAIL; payload: string }
   | { type: ActionTypeEnum.SET_PASSWORD; payload: string };
 
 enum ActionTypeEnum {
   SET_EMAIL = 'setEmail',
   SET_PASSWORD = 'setPassword',
 }
-
-const userDataForSignIn: StateType = {
-  email: 'test@mail.ru',
-  password: '1234',
-};
 
 const initialState: StateType = {
   email: '',
@@ -45,7 +42,6 @@ const reducer = (state: StateType, action: ActionsType): StateType => {
 const RegistrationForm = () => {
   const dispatch = useDispatch();
   const [wariningLogin, setWarningLogin] = useState<boolean>(false);
-  const { toggleIsLogin, isLogin } = useContext(LoginContext);
   const [state, dispatchStore] = useReducer(reducer, initialState);
   const { register, handleSubmit } = useForm();
 
@@ -60,25 +56,27 @@ const RegistrationForm = () => {
     }
   };
 
-  const onSubmit: SubmitHandler<StateType> = (data) => {
-    if(data.password !== userDataForSignIn.password || data.email !== userDataForSignIn.email) {
-      setWarningLogin(true);
-      return
-    }
+  const onSubmit: SubmitHandler<StateType> = async (data) => {
+
     setEmailLocalStorage(data.email);
-    toggleIsLogin();
-    dispatch(setToken());
+    const a = await signIn(data);
+
+    const token = a.token;
+    const userEmail = a.profile.email; // for profile
+    dispatch(login());
+    localStorage.setItem('login', 'login');
+    dispatch(setToken(token));
   };
 
   return (
     <form className={clsx(classNames.form)} onSubmit={handleSubmit(onSubmit)}>
       <h2>Вход</h2>
       <CustomInput
-        cn='loginInput'
+        cn="loginInput"
         register={register}
         label="email"
         callback={setInputValue}
-        type='email'
+        type="email"
         placeholder="Введите email"
         required
       />
@@ -87,12 +85,12 @@ const RegistrationForm = () => {
         register={register}
         label="password"
         callback={setInputValue}
-        type='password'
+        type="password"
         placeholder="Введите пароль"
         required
       />
       {wariningLogin ? <span className={clsx(classNames.error)}>Логин или пароль не подходит</span> : null}
-      <DefaultButton>{isLogin ? 'Выйти' : 'Войти'}</DefaultButton>
+      <DefaultButton>Войти</DefaultButton>
     </form>
   );
 };

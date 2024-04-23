@@ -1,22 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { rand } from '../helper/utils';
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 interface IInitalState {
   token: string;
 }
 
 const initialState: IInitalState = {
-  token: '',
+  token: localStorage.getItem('token') || '',
 };
 
 const tokenSlice = createSlice({
   name: 'tokenSlice',
   initialState,
   reducers: {
-    setToken: (state: IInitalState) => {
-      const randomToken = rand() + rand();
-      state.token = randomToken;
-      localStorage.setItem('token', randomToken);
+    setToken: (state: IInitalState, action: PayloadAction<string>) => {
+      const token = action.payload;
+      state.token = token;
+      localStorage.setItem('token', token);
     },
     removeToken: (state: IInitalState) => {
         state.token = '';

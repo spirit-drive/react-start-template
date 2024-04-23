@@ -3,6 +3,7 @@ import tokenSlice from './tokenSlice';
 import profileSlice from './profileSlice';
 import productBasketSlice from './productBasketSlice';
 import productCatalogSlice from './productCatalogSlice';
+import loginSlice from './loginSlice';
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     profileSlice,
     productBasketSlice,
     productCatalogSlice,
+    loginSlice,
   },
 });
 

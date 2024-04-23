@@ -1,0 +1,25 @@
+.error {
+    color: red;
+    display: block;
+    font-size: 12px;
+}
+
+button {
+    margin-top: 20px;
+}
+
+.registerInput {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.registerInput:focus {
+    border: 3px solid #e8670b;
+}

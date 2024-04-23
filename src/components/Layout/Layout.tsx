@@ -2,18 +2,20 @@ import clsx from 'clsx';
 import React, { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Header from '../../components/Header/Header';
-import { useLogin } from '../../helper/useLogin';
 import { useTheme } from '../../helper/useTheme';
-import Main from '../../pages/Main/Main';
 import Basket from '../../pages/Basket/Basket';
+import Main from '../../pages/Main/Main';
 import NotFound from '../../pages/NotFound/NotFound';
 import Profile from '../../pages/Profile/Profile';
 import ModalController from '../ModalController/ModalController';
 import RegistrationForm from '../RegistrationForm/RegistrationForm';
+import SignUp from '../SignUp/SignUp';
 import classNames from './layout.module.css';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
 
 const Layout: FC = () => {
-  const { isLogin } = useLogin();
+  const isLogin = useSelector((store: RootState) => store.loginSlice.isLogin);
   const { theme } = useTheme();
   const classes = `contentBox-${theme}`;
 
@@ -32,7 +34,10 @@ const Layout: FC = () => {
             </Routes>
           </>
         ) : (
-          <RegistrationForm />
+          <div className={clsx(classNames.formWrapper)}>
+            <RegistrationForm />
+            <SignUp />
+          </div>
         )}
       </div>
     </>
