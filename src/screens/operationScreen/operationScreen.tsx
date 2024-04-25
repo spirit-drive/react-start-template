@@ -8,7 +8,6 @@ import { OperationTable } from '../../components/table/operationTable';
 import { Button } from '../../components/button/Button';
 import { Operation } from '../../components/operation/operation';
 import ThemeContext from 'src/components/layout/layout';
-import { OperationForm } from 'src/components/operationForms/createOperationForm';
 import { CreateOperationForm } from './ui/create/createOperationForm';
 
 

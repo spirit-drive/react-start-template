@@ -48,7 +48,7 @@ export const CreateOperationForm = memo(() => {
   const backgroundColor = theme == 'dark' ? '#b4c4d1' : '#4682b4';
 
   return (
-    <div className="modal">
+    <div>
       <Title className="title">{'Создать операцию'}</Title>
       <OperationForm formManager={formManager} />
       <div>
@@ -61,6 +61,7 @@ export const CreateOperationForm = memo(() => {
           />
       </div>
     </div>
+
   );
 });
 

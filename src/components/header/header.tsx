@@ -1,5 +1,4 @@
 import React, { FC, useContext, useState } from 'react';
-import ThemeContext from '../layout/layout';
 import { Logo } from '../logo/logo';
 import { LocaleSwitcher } from '../switchers/localSwitcher';
 import { useTranslation } from 'react-i18next';
