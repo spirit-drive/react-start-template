@@ -28,7 +28,7 @@ jobs:
 
       # Устанавливаем зависимости
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install
 
       # Запускаем тесты и линтер
       - name: Run tests and linter
@@ -39,22 +39,11 @@ jobs:
       #   run: npm run build
 
       # # Публикуем приложение на Github Pages
-      # - name: Deploy to Github Pages
-      #   uses: JamesIves/github-pages-deploy-action@4.2.1
-      #   with:
-      #     branch: gh-pages
-      #     folder: dist
-
-      # Собираем Storybook
-      - name: Build Storybook
-        run: npm run build-storybook
-            # Публикуем Storybook на Github Pages
-      - name: Deploy Storybook to Github Pages
+      - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@4.2.1
         with:
           branch: gh-pages
-          folder: storybook-static
-          commit-message: "Automatically publish Storybook"
+          folder: dist
 
       # Останавливаем выполнение строго при неудачных тестах
       - name: Fail on failed tests
