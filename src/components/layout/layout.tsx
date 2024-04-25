@@ -1,12 +1,12 @@
 import React, { FC, useState, createContext, useEffect, useContext } from 'react';
-import '../layout/layout.css';
-import { Header } from '../header/header';
-import { Navigate, Route } from 'react-router';
+import '../layout/layout.css';;
+import { Route } from 'react-router';
 import OperationScreen from '../../screens/operationScreen/operationScreen';
 import { ProfileScreen } from '../../screens/profileScreen/profileScreen';
 import { RouterProvider } from '../../providers/RouterProvider';
-import { Routes } from 'react-router';
 import { CommonScreen } from 'src/screens/commonScreen/commonScreen';
+import { CreateOperationForm } from 'src/screens/operationScreen/ui/create/createOperationForm';
+import { Modal } from '../modal/modal';
 
 export interface layoutProps {
   prop?: string;
@@ -25,6 +25,7 @@ export const Layout: FC = () => {
         >
           <Route path='' element={<ProfileScreen />} />
           <Route path='operations' element={<OperationScreen />} />
+          <Route path="operations/add" element={<Modal>{<CreateOperationForm />}</Modal>} />
         </Route>
 
       </RouterProvider>
