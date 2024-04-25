@@ -28,7 +28,7 @@ jobs:
 
       # Устанавливаем зависимости
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       # Запускаем тесты и линтер
       - name: Run tests and linter
