@@ -1,13 +1,19 @@
 @import '../global.css';
 
 .header {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
   color: rgb(0, 0, 0);
   width: 100%;
 }
 
 .title {
-  display: inline-flex;
   font-family: "Lucida Console", Courier, monospace;
+  margin-top: 1rem;
 }
 
+.active {
+  cursor: pointer;
+}
 

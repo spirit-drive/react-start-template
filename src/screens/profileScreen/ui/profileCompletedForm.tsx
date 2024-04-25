@@ -1,11 +1,13 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo, useContext, useMemo } from 'react';
 import { FormikConfig, useFormik } from 'formik';
-import { Button } from 'antd';
+
 import { useTranslation } from 'react-i18next';
-import { ProfileForm } from '../../components/profileForm/profileForm';
-import { isNotDefinedString } from '../../components/forms/validation';
-import { Title } from '../../components/forms/title/title';
-import { ProfileFormErrors, ProfileFormValues } from '../../components/profileForm/types';
+import { ProfileForm } from '../../../components/profileForm/profileForm';
+import { isNotDefinedString } from '../../../components/forms/validation';
+import { Title } from '../../../components/forms/title/title';
+import { ProfileFormErrors, ProfileFormValues } from '../../../components/profileForm/types';
+import { Button } from '../../../components/button/Button';
+import ThemeContext from '../../../components/layout/layout';
 
 export type ProfileCompletedFormProps = {
   className?: string;
@@ -13,6 +15,7 @@ export type ProfileCompletedFormProps = {
 
 export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(() => {
   const { t } = useTranslation();
+  const theme = useContext(ThemeContext);
   const { onSubmit, validate, initialValues } = useMemo<
     Pick<FormikConfig<ProfileFormValues>, 'onSubmit' | 'validate' | 'initialValues'>
   >(() => {
@@ -41,13 +44,19 @@ export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(() => {
   });
   const { submitForm } = formManager;
 
+  const backgroundColor = theme == 'dark' ? '#b4c4d1' : '#4682b4';
+
   return (
     <div className="root">
       <Title className="title">{'Профиль пользователя'}</Title>
       <ProfileForm formManager={formManager} />
-      <Button type="primary" onClick={submitForm}>
-        {'Сохранить'}
-      </Button>
+      <Button
+            primary={true}
+            size={'m'}
+            backgroundColor={backgroundColor}
+            label={t('Save')}
+            func={submitForm}
+          />
     </div>
   );
 });

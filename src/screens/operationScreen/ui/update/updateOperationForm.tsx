@@ -2,10 +2,10 @@ import React, { memo, useMemo } from 'react';
 import { FormikConfig, useFormik } from 'formik';
 import { Button } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { OperationFormErrors, OperationFormValues } from '../../../components/operationForms/types';
-import { isNotDefinedString } from '../../../components/forms/validation';
-import { Title } from '../../../components/forms/title/title';
-import { OperationForm } from '../../../components/operationForms/createOperationForm';
+import { OperationFormErrors, OperationFormValues } from '../../../../components/operationForms/types';
+import { isNotDefinedString } from '../../../../components/forms/validation';
+import { Title } from '../../../../components/forms/title/title';
+import { OperationForm } from '../../../../components/operationForms/createOperationForm';
 import '../update/updateOperationForm.css';
 
 export const UpdateOperationForm = memo(() => {
@@ -17,7 +17,7 @@ export const UpdateOperationForm = memo(() => {
     return {
       initialValues: {
         name: 'Test',
-        cost: 50,
+        cost: '50',
         category: 'CategoryTest',
         description: 'DescriptionTest',
       },

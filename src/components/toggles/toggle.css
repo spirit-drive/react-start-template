@@ -4,6 +4,7 @@
     align-items: center;
     gap: 1rem;
     cursor: pointer;
+    float: right;
   }
   
   .toggle__conteiner {

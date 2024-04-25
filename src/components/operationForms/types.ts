@@ -2,7 +2,7 @@ import { FormProps } from '../forms/types';
 
 export type OperationFormValues = {
   name: string;
-  cost: number;
+  cost: string;
   category: string;
   description: string;
 };
