@@ -18,11 +18,15 @@ export const Header: FC = () => {
 
   return (
     <div className={theme == 'dark' ? 'dark' : 'light'}>
-      <div className='header'>
-      <Logo />
-      <div className="title">{t('title')}</div>
-      <div className="title active" onClick={() => navigate('/')}>Профиль</div>
-      <div className="title active" onClick={() => navigate('/operations')}>Операции</div>
+      <div className="header">
+        <Logo />
+        <div className="title">{t('title')}</div>
+        <div className="title active" onClick={() => navigate('/')}>
+          Профиль
+        </div>
+        <div className="title active" onClick={() => navigate('/operations')}>
+          Операции
+        </div>
       </div>
       <LocaleSwitcher />
       <Toggle func={handleChange} theme={theme} />

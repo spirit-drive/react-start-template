@@ -4,9 +4,8 @@ import { ProfileCompletedForm } from '../../screens/profileScreen/ui/profileComp
 
 export const ProfileScreen: FC = () => {
   return (
-
-        <div className="block">
-              <ProfileCompletedForm />
-        </div>
+    <div className="block">
+      <ProfileCompletedForm />
+    </div>
   );
 };

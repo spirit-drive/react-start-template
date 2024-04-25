@@ -7,13 +7,13 @@ import { isNotDefinedString } from '../../../../components/forms/validation';
 import { Title } from '../../../../components/forms/title/title';
 import { OperationForm } from '../../../../components/operationForms/createOperationForm';
 import '../create/createOperationForm.css';
-import ThemeContext from 'src/components/layout/layout';
-import { Button } from 'src/components/button/Button';
+import ThemeContext from '../../../../components/layout/layout';
+import { Button } from '../../../../components/button/Button';
 
 export const CreateOperationForm = memo(() => {
   const { t } = useTranslation();
   const theme = useContext(ThemeContext);
-  
+
   const { initialValues, onSubmit, validate } = useMemo<
     Pick<FormikConfig<OperationFormValues>, 'onSubmit' | 'validate' | 'initialValues'>
   >(() => {
@@ -52,16 +52,9 @@ export const CreateOperationForm = memo(() => {
       <Title className="title">{'Создать операцию'}</Title>
       <OperationForm formManager={formManager} />
       <div>
-       <Button
-            primary={true}
-            size={'m'}
-            backgroundColor={backgroundColor}
-            label={t('Save')}
-            func={submitForm}
-          />
+        <Button primary={true} size={'m'} backgroundColor={backgroundColor} label={t('Save')} func={submitForm} />
       </div>
     </div>
-
   );
 });
 

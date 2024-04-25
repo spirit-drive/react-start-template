@@ -7,9 +7,8 @@ import { Modal } from '../../components/modal/modal';
 import { OperationTable } from '../../components/table/operationTable';
 import { Button } from '../../components/button/Button';
 import { Operation } from '../../components/operation/operation';
-import ThemeContext from 'src/components/layout/layout';
+import ThemeContext from '../../components/layout/layout';
 import { CreateOperationForm } from './ui/create/createOperationForm';
-
 
 export const OperationScreen: FC = () => {
   const headers = ['Название', 'Стоимость', 'Категория'];
@@ -40,38 +39,35 @@ export const OperationScreen: FC = () => {
   }
 
   function createOperation(): void {
-    setChild(
-      <CreateOperationForm />
-    );
+    setChild(<CreateOperationForm />);
     setModalActive(true);
   }
-
 
   const className = 'layout' + theme;
   const backgroundColor = theme == 'dark' ? '#b4c4d1' : '#4682b4';
 
   return (
-      <div>
-        <OperationTable headers={headers} rows={modalCost} />
+    <div>
+      <OperationTable headers={headers} rows={modalCost} />
+      <Button
+        primary={true}
+        size={'small'}
+        backgroundColor={backgroundColor}
+        label={t('buttonCreateOperation')}
+        func={createOperation}
+      />
+      <main className={className}>
         <Button
           primary={true}
           size={'small'}
           backgroundColor={backgroundColor}
-          label={t('buttonCreateOperation')}
-          func={createOperation}
+          label={t('buttonShowOperation')}
+          func={openOperation}
         />
-        <main className={className}>
-          <Button
-            primary={true}
-            size={'small'}
-            backgroundColor={backgroundColor}
-            label={t('buttonShowOperation')}
-            func={openOperation}
-          />
-        </main>
+      </main>
 
-        {modalActive ? createPortal(<Modal setActive={setModalActive}>{child}</Modal>, document.body) : ''}
-      </div>
+      {modalActive ? createPortal(<Modal setActive={setModalActive}>{child}</Modal>, document.body) : ''}
+    </div>
   );
 };
 

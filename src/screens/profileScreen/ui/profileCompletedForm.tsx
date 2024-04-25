@@ -50,13 +50,7 @@ export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(() => {
     <div className="root">
       <Title className="title">{'Профиль пользователя'}</Title>
       <ProfileForm formManager={formManager} />
-      <Button
-            primary={true}
-            size={'m'}
-            backgroundColor={backgroundColor}
-            label={t('Save')}
-            func={submitForm}
-          />
+      <Button primary={true} size={'m'} backgroundColor={backgroundColor} label={t('Save')} func={submitForm} />
     </div>
   );
 });
