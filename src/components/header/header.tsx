@@ -1,4 +1,4 @@
-import React, { FC, useContext, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Logo } from '../logo/logo';
 import { LocaleSwitcher } from '../switchers/localSwitcher';
 import { useTranslation } from 'react-i18next';
@@ -21,7 +21,7 @@ export const Header: FC = () => {
       <div className="header">
         <Logo />
         <div className="title">{t('title')}</div>
-        <div className="title active" onClick={() => navigate('/')}>
+        <div className="title active" onClick={() => navigate('/profile')}>
           Профиль
         </div>
         <div className="title active" onClick={() => navigate('/operations')}>

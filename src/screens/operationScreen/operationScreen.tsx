@@ -9,21 +9,24 @@ import { Button } from '../../components/button/Button';
 import { Operation } from '../../components/operation/operation';
 import ThemeContext from '../../components/layout/layout';
 import { CreateOperationForm } from './ui/create/createOperationForm';
+import { useDispatch, useSelector } from 'react-redux';
+import { profileActions, profileSelector } from '../../entities/profileSlice';
 
 export const OperationScreen: FC = () => {
   const headers = ['Название', 'Стоимость', 'Категория'];
 
   const [modalActive, setModalActive] = useState(false);
-  const [modalCost, setCost] = useState<Cost[]>([]);
+  const { costList } = useSelector(profileSelector);
+  const dispatch = useDispatch();
   const [child, setChild] = useState<JSX.Element>();
   const { t } = useTranslation();
   const theme = useContext(ThemeContext);
-
   useEffect(() => {
-    const cost = createRandomOperation('12.12.2023');
-    setCost([...modalCost, cost]);
+    if(costList.length == 0 ) {
+      const cost = createRandomOperation('12.12.2023');
+      dispatch(profileActions.setCostList([...costList, cost]));
+    }
   }, []);
-
   function openOperation(): void {
     const cost = createRandomOperation('12.12.2023');
     setChild(
@@ -48,7 +51,7 @@ export const OperationScreen: FC = () => {
 
   return (
     <div>
-      <OperationTable headers={headers} rows={modalCost} />
+      <OperationTable headers={headers} rows={costList} />
       <Button
         primary={true}
         size={'small'}

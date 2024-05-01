@@ -9,10 +9,23 @@ import { OperationForm } from '../../../../components/operationForms/createOpera
 import '../create/createOperationForm.css';
 import ThemeContext from '../../../../components/layout/layout';
 import { Button } from '../../../../components/button/Button';
+import { useDispatch, useSelector } from 'react-redux';
+import { profileActions, profileSelector } from '../../../../entities/profileSlice';
+import { useNavigate } from 'react-router';
+import { createRandomOperation } from 'src/objects/mainObjects';
 
 export const CreateOperationForm = memo(() => {
   const { t } = useTranslation();
   const theme = useContext(ThemeContext);
+  const { authProfileInfo } = useSelector(profileSelector);
+  const navigate = useNavigate();
+  const { costList } = useSelector(profileSelector);
+  const dispatch = useDispatch();
+  
+  if(!authProfileInfo?.isAdmin) {
+    console.log('Операция доступна только админу. Заполните профиль пользователя');
+    navigate('/profile');
+  }
 
   const { initialValues, onSubmit, validate } = useMemo<
     Pick<FormikConfig<OperationFormValues>, 'onSubmit' | 'validate' | 'initialValues'>
@@ -25,12 +38,14 @@ export const CreateOperationForm = memo(() => {
         description: '',
       },
       onSubmit: (values) => {
-        console.log('Операция создана :', values.name);
+        const cost = createRandomOperation('12.12.2023');
+        dispatch(profileActions.setCostList([...costList, cost]));    
+        navigate('/operations');    
       },
       validate: (values) => {
         const errors = {} as OperationFormErrors;
-        if (isNotDefinedString(values.name) || isNotDefinedString(values.category)) {
-          errors.name = 'Обязательно для заполнения';
+        if (isNotDefinedString(values.name)) {
+          errors.name = 'Обязательно для заполнения';       
         }
         return errors;
       },
