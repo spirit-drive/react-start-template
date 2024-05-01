@@ -6,14 +6,13 @@ import { AuthFormErrors, AuthFormValues } from '../../../components/authForm/typ
 import { isNotDefinedString } from '../../../components/forms/validation';
 import { Title } from '../../../components/forms/title/title';
 import { AuthForm } from '../../../components/authForm/authForm';
-import { useDispatch } from 'src/store/useDispatch';
-import { profileActions, profileSelector } from 'src/entities/profileSlice';
+import { useDispatch } from '../../../store/useDispatch';
+import { profileActions, profileSelector } from '../../../entities/profileSlice';
 import { useNavigate } from 'react-router';
 
-
-export const SingInForm = memo(() => { 
+export const SingInForm = memo(() => {
   const { t } = useTranslation();
-	const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const { onSubmit, validate, initialValues } = useMemo<
@@ -25,8 +24,8 @@ export const SingInForm = memo(() => {
         password: undefined,
       },
       onSubmit: (values, { setErrors }) => {
-          dispatch(profileActions.setToken('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9'));
-          navigate('/profile');
+        dispatch(profileActions.setToken('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9'));
+        navigate('/profile');
       },
       validate: (values) => {
         const errors = {} as AuthFormErrors;
@@ -46,7 +45,7 @@ export const SingInForm = memo(() => {
         return errors;
       },
     };
-  }, [dispatch, t ]);
+  }, [dispatch, t]);
 
   const formManager = useFormik<AuthFormValues>({
     initialValues,

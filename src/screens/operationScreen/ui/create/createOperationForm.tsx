@@ -12,7 +12,7 @@ import { Button } from '../../../../components/button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { profileActions, profileSelector } from '../../../../entities/profileSlice';
 import { useNavigate } from 'react-router';
-import { createRandomOperation } from 'src/objects/mainObjects';
+import { createRandomOperation } from '../../../../objects/mainObjects';
 
 export const CreateOperationForm = memo(() => {
   const { t } = useTranslation();
@@ -21,8 +21,8 @@ export const CreateOperationForm = memo(() => {
   const navigate = useNavigate();
   const { costList } = useSelector(profileSelector);
   const dispatch = useDispatch();
-  
-  if(!authProfileInfo?.isAdmin) {
+
+  if (!authProfileInfo?.isAdmin) {
     console.log('Операция доступна только админу. Заполните профиль пользователя');
     navigate('/profile');
   }
@@ -39,13 +39,13 @@ export const CreateOperationForm = memo(() => {
       },
       onSubmit: (values) => {
         const cost = createRandomOperation('12.12.2023');
-        dispatch(profileActions.setCostList([...costList, cost]));    
-        navigate('/operations');    
+        dispatch(profileActions.setCostList([...costList, cost]));
+        navigate('/operations');
       },
       validate: (values) => {
         const errors = {} as OperationFormErrors;
         if (isNotDefinedString(values.name)) {
-          errors.name = 'Обязательно для заполнения';       
+          errors.name = 'Обязательно для заполнения';
         }
         return errors;
       },

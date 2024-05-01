@@ -22,7 +22,7 @@ export const OperationScreen: FC = () => {
   const { t } = useTranslation();
   const theme = useContext(ThemeContext);
   useEffect(() => {
-    if(costList.length == 0 ) {
+    if (costList.length == 0) {
       const cost = createRandomOperation('12.12.2023');
       dispatch(profileActions.setCostList([...costList, cost]));
     }

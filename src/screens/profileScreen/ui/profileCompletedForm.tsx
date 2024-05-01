@@ -9,8 +9,8 @@ import { ProfileFormErrors, ProfileFormValues } from '../../../components/profil
 import { Button } from '../../../components/button/Button';
 import ThemeContext from '../../../components/layout/layout';
 import { useDispatch, useSelector } from 'react-redux';
-import { profileActions, profileSelector } from 'src/entities/profileSlice';
-import { useAuth } from 'src/components/layout/lib/useAuth';
+import { profileActions, profileSelector } from '../../../entities/profileSlice';
+import { useAuth } from '../../../components/layout/lib/useAuth';
 import { useNavigate } from 'react-router';
 
 export type ProfileCompletedFormProps = {
@@ -20,8 +20,8 @@ export type ProfileCompletedFormProps = {
 export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(() => {
   const { t } = useTranslation();
   const theme = useContext(ThemeContext);
-	const dispatch = useDispatch();
-	const { isAuth } = useAuth();
+  const dispatch = useDispatch();
+  const { isAuth } = useAuth();
   const navigate = useNavigate();
   const { authToken } = useSelector(profileSelector);
 
@@ -34,13 +34,12 @@ export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(() => {
         about: '',
       },
       onSubmit: (values) => {
-        if(isAuth || Boolean(authToken)) {
-          dispatch(profileActions.getProfileInfo({name: values.name, about: values.about, isAdmin: true}));
-        }
-        else {     
+        if (isAuth || Boolean(authToken)) {
+          dispatch(profileActions.getProfileInfo({ name: values.name, about: values.about, isAdmin: true }));
+        } else {
           console.log('Пользователь не авторизован');
           navigate('/');
-      }
+        }
       },
       validate: (values) => {
         const errors = {} as ProfileFormErrors;
