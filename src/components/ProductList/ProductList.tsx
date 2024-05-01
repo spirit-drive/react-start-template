@@ -1,32 +1,30 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import DisplayProduct from '../../components/DisplayProduct/DisplayProduct';
-import { DisplayProductProps } from '../../types';
+import { getProductList, Product } from '../../store/productCatalogSlice';
+import { AppDispatch, RootState } from '../../store/store';
 import classNames from './productList.module.css';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
 
 const ProductList = () => {
-  const product = useSelector((store:RootState) => store.productCatalogSlice.products);
-  /*
-    коментарий для упрощенного тестирования функционала
-    добваления карточки товара
-
-    useIntersectionObserver(); -- добвляет товар по скролу
-  */
+  const product = useSelector((store: RootState) => store.productCatalogSlice.products);
+  const dispatch = useDispatch<AppDispatch>();
+  useEffect(() => {
+    dispatch(getProductList());
+  }, [dispatch]);
 
   return (
     <section className={clsx(classNames.productList)}>
-      {product.map((currentProduct: DisplayProductProps) => {
+      {product.map((currentProduct: Product) => {
         return (
           <DisplayProduct
-            key={currentProduct.key}
+            key={currentProduct.id}
             id={currentProduct.id}
-            coast={currentProduct.coast}
+            coast={currentProduct.price}
             category={currentProduct.category}
-            img={currentProduct.img}
-            title={currentProduct.title}
-            description={currentProduct.description}
+            img={currentProduct.photo}
+            title={currentProduct.name}
+            description={currentProduct.desc}
           />
         );
       })}

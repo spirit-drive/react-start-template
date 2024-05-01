@@ -54,7 +54,8 @@ type Product = {
   name: string;
   photo: string;
   desc?: string;
-  createdAt: string;
+  createdAt: any;
+  updatedAt: any;
   oldPrice?: number;
   price: number;
   category: Category;
@@ -145,6 +146,7 @@ export const createRandomProduct = (createdAt: string): Product => {
     photo: pickRandomArrayValue(fakeDB.product.photoUrlList) as string,
     desc: pickRandomArrayValue(fakeDB.product.descrList) as string,
     createdAt: createdAt,
+    updatedAt: Date.now(),
     oldPrice: pickRandomArrayValue(fakeDB.product.oldPrice) as number,
     price: pickRandomArrayValue(fakeDB.product.price) as number,
     category: {

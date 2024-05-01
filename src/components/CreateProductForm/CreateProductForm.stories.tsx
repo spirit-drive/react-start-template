@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { StoreProvider } from '../../helper/useStore';
 import { ThemeProvider } from '../../helper/useTheme';
 import { LanguageProvider } from '../../helper/useLanguage';
 import { LoginProvider } from '../../helper/useLogin';
@@ -17,13 +16,11 @@ export const Primary: Story = {
   decorators: [
     (Story) => (
       <LoginProvider>
-        <StoreProvider>
           <ThemeProvider>
             <LanguageProvider>
               <Story />
             </LanguageProvider>
           </ThemeProvider>
-        </StoreProvider>
       </LoginProvider>
     ),
   ]

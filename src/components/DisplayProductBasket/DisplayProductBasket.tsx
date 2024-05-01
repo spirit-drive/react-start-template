@@ -12,7 +12,6 @@ const DisplayProductBasket: FC<DisplayProductBasketProps> = ({ coast, img, title
   const  removeProduct =  () => {
     dispatch(removeFromBasket(id));
     removeProductFromBasketLocalStorage(id);
-
   }
 
   return (

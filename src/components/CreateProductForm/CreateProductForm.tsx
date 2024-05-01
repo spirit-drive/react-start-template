@@ -4,8 +4,9 @@ import { useDispatch } from 'react-redux';
 import DefaultButton from '../../components/Buttons/DefaultButton';
 import CustomInput from '../../components/Inputs/CustomInput';
 import { generateUniqId } from '../../helper/utils';
-import { addProduct } from '../../store/productCatalogSlice';
+import { addProduct, Product } from '../../store/productCatalogSlice';
 import { DisplayProductProps } from '../../types';
+import { createProduct } from '../../store/productCatalogSlice';
 
 type CreateProductFormProps = {
   navigateModal: () => void;
@@ -84,9 +85,10 @@ const CreateProductForm: FC<CreateProductFormProps> = ({ navigateModal }) => {
     }
   };
 
-  const onSubmit = (product: DisplayProductProps) => {
-    const productWithKey = { ...product, key: generateUniqId(), id: Date.now() };
-    dispatcher(addProduct(productWithKey));
+  const onSubmit = (product: Product) => {
+    // const productWithKey = { ...product, key: generateUniqId(), id: Date.now() };
+    dispatcher(addProduct(product));
+    createProduct(product);
     navigateModal();
   };
 

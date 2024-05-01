@@ -11,14 +11,16 @@ export const ButtonCreateProduct = () => {
   const handleRandomProduct = () => {
     const randomProduct = createRandomProduct('now');
     const validProduct = {
-      key: Date.now(),
-      id: Date.now(),
-      coast: randomProduct.price,
-      category: randomProduct.category.name,
-      img: 'http://placehold.it/50x50',
-      title: randomProduct.name,
-      description: randomProduct.desc,
-    };
+      id: randomProduct.id,
+      name: randomProduct.name,
+      photo: 'http://placehold.it/50x50',
+      desc: randomProduct.desc,
+      createdAt: randomProduct.createdAt,
+      updatedAt: randomProduct.updatedAt,
+      key: randomProduct.id,
+      price: randomProduct.price,
+      category: randomProduct.category.name
+    }
     dispatch(addProduct(validProduct))
   };
 

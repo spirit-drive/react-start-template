@@ -3,7 +3,6 @@ import { LanguageProvider } from '../../helper/useLanguage';
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider } from '../../helper/useTheme';
-import { StoreProvider } from '../../helper/useStore';
 import { LoginProvider } from '../../helper/useLogin';
 
 
@@ -18,7 +17,6 @@ export const Primary: Story = {
   decorators: [
     (Story) => (
       <LoginProvider>
-        <StoreProvider>
           <ThemeProvider>
             <LanguageProvider>
               <div style={{marginTop: 90}}>
@@ -29,7 +27,6 @@ export const Primary: Story = {
               <Story />
             </LanguageProvider>
           </ThemeProvider>
-        </StoreProvider>
       </LoginProvider>
     ),
   ],

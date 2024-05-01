@@ -56,7 +56,7 @@ export const setProductBasketListLocalStorage = (product: any) => {
   localStorage.setItem('productBasketList', JSON.stringify(product));
 }
 
-export const removeProductFromBasketLocalStorage = (id: number) => {
+export const removeProductFromBasketLocalStorage = (id: string) => {
    const productsString = localStorage.getItem('productBasketList');
    if (!productsString) {
        console.error('Нет productBasketList в localStorage');
@@ -66,7 +66,7 @@ export const removeProductFromBasketLocalStorage = (id: number) => {
    try {
        const products = JSON.parse(productsString);
 
-       const index = products.findIndex((product: { id: number }) => product.id === id);
+       const index = products.findIndex((product: { id: string }) => product.id === id);
        
        if (index !== -1) {
            products.splice(index, 1);

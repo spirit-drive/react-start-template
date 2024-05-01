@@ -1,9 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
-import ProductList from '../ProductList/ProductList';
-import { ThemeProvider } from '../../helper/useTheme';
 import React from 'react';
 import { LanguageProvider } from '../../helper/useLanguage';
-import { StoreProvider } from '../../helper/useStore';
+import { ThemeProvider } from '../../helper/useTheme';
+import ProductList from '../ProductList/ProductList';
 
 const meta: Meta<typeof ProductList> = {
   component: ProductList,
@@ -15,13 +14,11 @@ export const Primary: Story = {
   args: {},
   decorators: [
     (Story) => (
-      <StoreProvider>
-        <LanguageProvider>
-          <ThemeProvider>
-            <Story />
-          </ThemeProvider>
-        </LanguageProvider>
-      </StoreProvider>
+      <LanguageProvider>
+        <ThemeProvider>
+          <Story />
+        </ThemeProvider>
+      </LanguageProvider>
     ),
   ],
 };

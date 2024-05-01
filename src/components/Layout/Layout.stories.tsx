@@ -1,10 +1,9 @@
-import Layout from '../Layout/Layout';
-import { LanguageProvider } from '../../helper/useLanguage';
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { ThemeProvider } from '../../helper/useTheme';
-import { StoreProvider } from '../../helper/useStore';
+import React from 'react';
+import { LanguageProvider } from '../../helper/useLanguage';
 import { LoginProvider } from '../../helper/useLogin';
+import { ThemeProvider } from '../../helper/useTheme';
+import Layout from '../Layout/Layout';
 
 const meta: Meta<typeof Layout> = {
   component: Layout,
@@ -17,15 +16,12 @@ export const Primary: Story = {
   decorators: [
     (Story) => (
       <LoginProvider>
-        <StoreProvider>
-          <ThemeProvider>
-            <LanguageProvider>
-              <Story />
-            </LanguageProvider>
-          </ThemeProvider>
-        </StoreProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <Story />
+          </LanguageProvider>
+        </ThemeProvider>
       </LoginProvider>
-
     ),
   ],
 };

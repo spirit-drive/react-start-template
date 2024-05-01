@@ -11,10 +11,10 @@ export type ModalWindowProps = {
 };
 
 export type DisplayProductProps = {
-  key?: number;
-  id: number
+  key?: string;
+  id: string;
   coast: number;
-  category: string;
+  category: any;
   img: string;
   title: string;
   description: string;
