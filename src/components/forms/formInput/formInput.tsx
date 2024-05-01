@@ -19,7 +19,20 @@ export type FormInputProps = Pick<ProfileFormProps, 'className' | 'disabled' | '
 };
 
 export const FormInput = memo<FormInputProps>(
-  ({ onChange, onBlur, autoFocusElement, touched, value, errors, disabled, submitCount, title, nameInput, type, placeholder }) => {
+  ({
+    onChange,
+    onBlur,
+    autoFocusElement,
+    touched,
+    value,
+    errors,
+    disabled,
+    submitCount,
+    title,
+    nameInput,
+    type,
+    placeholder,
+  }) => {
     const { validateStatus, help } = getValidates(errors, touched, submitCount);
 
     return (
