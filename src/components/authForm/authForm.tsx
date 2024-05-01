@@ -19,6 +19,7 @@ export const AuthForm = memo<AuthFormProps>(({ formManager, formElement, autoFoc
         title="Email"
         nameInput="email"
         type="input"
+        placeholder="A@gmail.com"
       />
       <FormInput
         autoFocusElement={autoFocusElement}
@@ -32,6 +33,7 @@ export const AuthForm = memo<AuthFormProps>(({ formManager, formElement, autoFoc
         title="Пароль"
         nameInput="password"
         type="input"
+        placeholder="Xx12345@"
       />
     </form>
   );

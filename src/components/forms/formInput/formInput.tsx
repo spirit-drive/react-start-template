@@ -11,6 +11,7 @@ export type FormInputProps = Pick<ProfileFormProps, 'className' | 'disabled' | '
   errors: string;
   value: string;
   title: string;
+  placeholder?: string;
   nameInput: string;
   type: string;
   onChange: FormikHandlers['handleChange'];
@@ -18,7 +19,7 @@ export type FormInputProps = Pick<ProfileFormProps, 'className' | 'disabled' | '
 };
 
 export const FormInput = memo<FormInputProps>(
-  ({ onChange, onBlur, autoFocusElement, touched, value, errors, disabled, submitCount, title, nameInput, type }) => {
+  ({ onChange, onBlur, autoFocusElement, touched, value, errors, disabled, submitCount, title, nameInput, type, placeholder }) => {
     const { validateStatus, help } = getValidates(errors, touched, submitCount);
 
     return (
@@ -31,7 +32,7 @@ export const FormInput = memo<FormInputProps>(
           onChange={onChange}
           onBlur={onBlur}
           value={value}
-          placeholder={title}
+          placeholder={placeholder ? placeholder : title}
           type={type}
         />
       </FormItem>
