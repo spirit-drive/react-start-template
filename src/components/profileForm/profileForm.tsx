@@ -16,20 +16,7 @@ export const ProfileForm = memo<ProfileFormProps>(({ formManager, formElement, a
         submitCount={submitCount}
         touched={touched.name}
         disabled={disabled}
-        title="Имя"
         nameInput="name"
-        type="input"
-      />
-      <FormInput
-        onBlur={handleBlur}
-        onChange={handleChange}
-        value={values.about}
-        errors={errors.about}
-        submitCount={submitCount}
-        touched={touched.about}
-        disabled={disabled}
-        title="О себе"
-        nameInput="about"
         type="input"
       />
     </form>

@@ -2,7 +2,7 @@ import { FormProps } from '../forms/types';
 
 export type ProfileFormValues = {
   name: string;
-  about: string;
+  email: string;
 };
 
 export type ProfileFormErrors = Record<keyof ProfileFormValues, string>;

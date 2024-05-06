@@ -12,6 +12,37 @@ import { useDispatch, useSelector } from 'react-redux';
 import { profileActions, profileSelector } from '../../../entities/profileSlice';
 import { useAuth } from '../../../components/layout/lib/useAuth';
 import { useNavigate } from 'react-router';
+import { gql, useMutation, useQuery } from '@apollo/client';
+import { Mutation, UpdateProfileBody, UpdateProfileInput } from 'src/graphql.types';
+import { storage } from 'src/utils/storage';
+
+
+const GET_PROFILE = gql`
+  query getProfile {
+    profile {
+      id
+      name
+      email
+    }
+  }
+`;
+
+const EDIT_PROFILE = gql`
+  mutation ($input: UpdateProfileInput!) {
+  profile {
+    update(input: $input) {
+      id
+      email
+      name
+      signUpDate
+   }
+  } 
+}`;
+
+export type SignInBodyVariables = {
+  input: UpdateProfileInput;
+};
+
 
 export type ProfileCompletedFormProps = {
   className?: string;
@@ -23,33 +54,37 @@ export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(() => {
   const dispatch = useDispatch();
   const { isAuth } = useAuth();
   const navigate = useNavigate();
-  const { authToken } = useSelector(profileSelector);
+  const { data } = useQuery(GET_PROFILE);
+  const [editProfile, { loading, error }] = useMutation<Pick<Mutation, 'profile'>, SignInBodyVariables>(EDIT_PROFILE);
+
+  // dispatch(profileActions.getProfileInfo({ name: data.name, about: data.about, isAdmin: true }));
 
   const { onSubmit, validate, initialValues } = useMemo<
     Pick<FormikConfig<ProfileFormValues>, 'onSubmit' | 'validate' | 'initialValues'>
   >(() => {
     return {
       initialValues: {
-        name: '',
-        about: '',
+        name: data ? data.profile.email : 'test',
+        email: '',
       },
       onSubmit: (values) => {
-        if (isAuth || Boolean(authToken)) {
-          dispatch(profileActions.getProfileInfo({ name: values.name, about: values.about, isAdmin: true }));
-        } else {
-          console.log('Пользователь не авторизован');
-          navigate('/');
-        }
+        editProfile({
+          variables: {
+            input: { name: values.name }
+          }
+        });
       },
       validate: (values) => {
         const errors = {} as ProfileFormErrors;
         if (isNotDefinedString(values.name)) {
           errors.name = 'Обязательно для заполнения';
+        } else if (!/^[_a-zа-я0-9-]{7,}$/i.test(values.name)) {
+          errors.name = 'Значение указано некорректно. Не менее 7 символов.';
         }
         return errors;
       },
     };
-  }, [t]);
+  }, [t, data]);
 
   const formManager = useFormik<ProfileFormValues>({
     initialValues,
@@ -62,7 +97,13 @@ export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(() => {
 
   return (
     <div className="root">
-      <Title className="title">{'Профиль пользователя'}</Title>
+      <div>
+        <h3>Профиль</h3>
+        <div>имя: {data ? data.profile.name : ''}</div>
+        <div>почта: {data ? data.profile.email : ''}</
+        div>
+      </div>
+      <h3>Редактировать имя профиля</h3>
       <ProfileForm formManager={formManager} />
       <Button primary={true} size={'m'} backgroundColor={backgroundColor} label={t('Save')} func={submitForm} />
     </div>

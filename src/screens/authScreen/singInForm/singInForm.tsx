@@ -9,11 +9,29 @@ import { AuthForm } from '../../../components/authForm/authForm';
 import { useDispatch } from '../../../store/useDispatch';
 import { profileActions, profileSelector } from '../../../entities/profileSlice';
 import { useNavigate } from 'react-router';
+import { gql, useMutation } from '@apollo/client';
+import { storage } from 'src/utils/storage';
+import { Mutation } from 'src/graphql.types';
+
+const SING_IN = gql`
+  mutation ($password: String!, $email: String!) {
+  profile {
+    signin(password: $password, email: $email) {
+    token
+   }
+  } 
+}`;
+
+export type SignInBodyVariables = {
+  email: string;
+  password: string;
+};
 
 export const SingInForm = memo(() => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [signin, { loading, error }] = useMutation<Pick<Mutation, 'profile'>, SignInBodyVariables>(SING_IN);
 
   const { onSubmit, validate, initialValues } = useMemo<
     Pick<FormikConfig<AuthFormValues>, 'onSubmit' | 'validate' | 'initialValues'>
@@ -24,8 +42,15 @@ export const SingInForm = memo(() => {
         password: undefined,
       },
       onSubmit: (values, { setErrors }) => {
-        dispatch(profileActions.setToken('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9'));
-        navigate('/profile');
+        signin({
+          variables: { email: values.email, password: values.password },
+        })
+          .then((res) => {
+            dispatch(profileActions.setToken(res.data.profile.signin.token));
+            storage.set('token', res.data.profile.signin.token);
+            navigate('/profile');
+          })
+          .catch((err) => console.error(err));
       },
       validate: (values) => {
         const errors = {} as AuthFormErrors;

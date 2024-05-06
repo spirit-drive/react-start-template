@@ -1,0 +1,12 @@
+overwrite: true
+schema: "https://cea3c11a3f62.vps.myjino.ru/graphql"
+documents: ""
+generates:
+  src/graphql.types.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"

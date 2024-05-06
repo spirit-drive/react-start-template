@@ -4,22 +4,56 @@ import { Button } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { AuthFormErrors, AuthFormValues } from '../../../components/authForm/types';
 import { isNotDefinedString } from '../../../components/forms/validation';
-import { Title } from '../../../components/forms/title/title';
+import { gql, useMutation } from '@apollo/client';
+import { Mutation } from 'src/graphql.types';
+import { profileActions } from '../../../entities/profileSlice';
 import { AuthForm } from '../../../components/authForm/authForm';
+import { Title } from 'src/components/forms/title/title';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
+import { storage } from 'src/utils/storage';
+
+const SING_UP = gql`
+  mutation ($commandId: String!, $password: String!, $email: String!) {
+  profile {
+    signup(commandId: $commandId, password: $password, email: $email) {
+    token
+   }
+  } 
+}`;
+
+export type SignUpBodyVariables = {
+  commandId: string;
+  email: string;
+  password: string;
+};
 
 export const SingUpForm = memo(() => {
+
   const { t } = useTranslation();
+  const [signup, { loading, error }] = useMutation<Pick<Mutation, 'profile'>, SignUpBodyVariables>(SING_UP);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { onSubmit, validate, initialValues } = useMemo<
     Pick<FormikConfig<AuthFormValues>, 'onSubmit' | 'validate' | 'initialValues'>
   >(() => {
     return {
       initialValues: {
+        commandId: undefined,
         email: undefined,
         password: undefined,
       },
       onSubmit: (values, { setErrors }) => {
-        console.log('Регистрация прошла успешно');
+        signup({
+          variables: { commandId: "1", email: values.email, password: values.password },
+        })
+          .then((res) => {
+            dispatch(profileActions.setToken(res.data.profile.signup.token));
+            storage.set('token', res.data.profile.signup.token);
+            navigate('/profile');
+          })
+          .catch((err) => console.error(err));
       },
       validate: (values) => {
         const errors = {} as AuthFormErrors;

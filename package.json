@@ -9,8 +9,7 @@
     "build": "webpack --mode production",
     "test": "jest src",
     "lint": "eslint src --fix",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "schemagen": "graphql-codegen"
   },
   "license": "MIT",
   "devDependencies": {
@@ -66,10 +65,17 @@
   },
   "dependencies": {
     "-": "^0.0.1",
+    "@apollo/client": "^3.10.2",
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/introspection": "^4.0.3",
+    "@graphql-codegen/typescript": "^4.0.6",
+    "@graphql-codegen/typescript-operations": "^4.2.0",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.0",
     "@reduxjs/toolkit": "^2.2.3",
     "antd": "^5.16.2",
     "clsx": "^1.2.1",
     "formik": "^2.4.5",
+    "graphql": "^16.8.1",
     "i18next": "^23.11.2",
     "i18next-browser-languagedetector": "^7.2.1",
     "react": "^18.2.0",

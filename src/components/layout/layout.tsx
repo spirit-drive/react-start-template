@@ -11,6 +11,8 @@ import { AuthProvider } from '../../components/layout/provider/AuthProvider';
 import { Provider } from 'react-redux';
 import { store } from '../../store/configureStore';
 import { AuthScreen } from '../../screens/authScreen/authScreen';
+import { Client } from 'src/client/Client';
+import { RegScreen } from 'src/screens/authScreen/regScreen';
 
 export interface layoutProps {
   prop?: string;
@@ -21,20 +23,23 @@ const ThemeContext = createContext(null);
 export const Layout: FC = () => {
   const theme = useContext(ThemeContext);
   return (
-    <ThemeContext.Provider value={theme}>
-      <Provider store={store}>
-        <AuthProvider>
-          <RouterProvider>
-            <Route path="" element={<AuthScreen />} />
-            <Route path="/" element={<CommonScreen />}>
-              <Route path="profile" element={<ProfileScreen />} />
-              <Route path="operations" element={<OperationScreen />} />
-              <Route path="operations/add" element={<Modal>{<CreateOperationForm />}</Modal>} />
-            </Route>
-          </RouterProvider>
-        </AuthProvider>
-      </Provider>
-    </ThemeContext.Provider>
+    <Provider store={store}>
+      <Client>
+        <ThemeContext.Provider value={theme}>
+          <AuthProvider>
+            <RouterProvider>
+              <Route path="" element={<AuthScreen />} />
+              <Route path="/regustration" element={<RegScreen />} />
+              <Route path="/" element={<CommonScreen />}>
+                <Route path="profile" element={<ProfileScreen />} />
+                <Route path="operations" element={<OperationScreen />} />
+                <Route path="operations/add" element={<Modal>{<CreateOperationForm />}</Modal>} />
+              </Route>
+            </RouterProvider>
+          </AuthProvider>
+        </ThemeContext.Provider>
+      </Client>
+    </Provider>
   );
 };
 

@@ -11,9 +11,31 @@ import ThemeContext from '../../components/layout/layout';
 import { CreateOperationForm } from './ui/create/createOperationForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { profileActions, profileSelector } from '../../entities/profileSlice';
+import { useLazyQuery } from '@apollo/client/react/hooks';
+import { gql } from '@apollo/client';
+
+export const GET_OPERATIONS = gql`
+  query getMany {
+    operations {
+      id
+      name
+      desc
+      date
+      createdAt
+      updatedAt
+      amount
+      category
+      type
+    }
+  }
+`;
 
 export const OperationScreen: FC = () => {
+
   const headers = ['Название', 'Стоимость', 'Категория'];
+  const [getMany, { data, error }] = useLazyQuery(GET_OPERATIONS);
+
+  if (error) return <div>{error.message}</div>;
 
   const [modalActive, setModalActive] = useState(false);
   const { costList } = useSelector(profileSelector);
@@ -21,12 +43,16 @@ export const OperationScreen: FC = () => {
   const [child, setChild] = useState<JSX.Element>();
   const { t } = useTranslation();
   const theme = useContext(ThemeContext);
+
   useEffect(() => {
+
     if (costList.length == 0) {
       const cost = createRandomOperation('12.12.2023');
       dispatch(profileActions.setCostList([...costList, cost]));
     }
   }, []);
+
+
   function openOperation(): void {
     const cost = createRandomOperation('12.12.2023');
     setChild(

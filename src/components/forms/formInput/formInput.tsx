@@ -10,7 +10,7 @@ export type FormInputProps = Pick<ProfileFormProps, 'className' | 'disabled' | '
   touched: boolean;
   errors: string;
   value: string;
-  title: string;
+  title?: string;
   placeholder?: string;
   nameInput: string;
   type: string;
