@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router';
 import { gql, useMutation } from '@apollo/client';
 import { storage } from 'src/utils/storage';
 import { Mutation } from 'src/graphql.types';
+import { Link } from 'react-router-dom';
 
 const SING_IN = gql`
   mutation ($password: String!, $email: String!) {
@@ -89,7 +90,10 @@ export const SingInForm = memo(() => {
           {'Войти'}
         </Button>
       </div>
-    </div>
+      <Link to='/regustration'>
+        {'Зарегистрироваться'}
+      </Link>
+    </div >
   );
 });
 

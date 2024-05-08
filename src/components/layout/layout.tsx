@@ -13,6 +13,7 @@ import { store } from '../../store/configureStore';
 import { AuthScreen } from '../../screens/authScreen/authScreen';
 import { Client } from 'src/client/Client';
 import { RegScreen } from 'src/screens/authScreen/regScreen';
+import { OperationProvider } from '../operationForms/provider/OperationProvider';
 
 export interface layoutProps {
   prop?: string;
@@ -27,15 +28,17 @@ export const Layout: FC = () => {
       <Client>
         <ThemeContext.Provider value={theme}>
           <AuthProvider>
-            <RouterProvider>
-              <Route path="" element={<AuthScreen />} />
-              <Route path="/regustration" element={<RegScreen />} />
-              <Route path="/" element={<CommonScreen />}>
-                <Route path="profile" element={<ProfileScreen />} />
-                <Route path="operations" element={<OperationScreen />} />
-                <Route path="operations/add" element={<Modal>{<CreateOperationForm />}</Modal>} />
-              </Route>
-            </RouterProvider>
+            <OperationProvider>
+              <RouterProvider>
+                <Route path="" element={<AuthScreen />} />
+                <Route path="/regustration" element={<RegScreen />} />
+                <Route path="/" element={<CommonScreen />}>
+                  <Route path="profile" element={<ProfileScreen />} />
+                  <Route path="operations" element={<OperationScreen />} />
+                  <Route path="operations/add" element={<Modal>{<CreateOperationForm />}</Modal>} />
+                </Route>
+              </RouterProvider>
+            </OperationProvider>
           </AuthProvider>
         </ThemeContext.Provider>
       </Client>

@@ -13,34 +13,80 @@ import { useDispatch, useSelector } from 'react-redux';
 import { profileActions, profileSelector } from '../../../../entities/profileSlice';
 import { useNavigate } from 'react-router';
 import { createRandomOperation } from '../../../../objects/mainObjects';
+import { gql, useMutation } from '@apollo/client';
+import { Mutation, OperationAddInput, OperationType } from 'src/graphql.types';
+import { GET_OPERATIONS } from '../../operationScreen';
+import { useOperation } from 'src/components/operationForms/lib/useOperation';
+
+
+const ADD_OPERATIONS = gql`
+  mutation ($input: OperationAddInput!) {
+    operations {
+    add(input: $input) {
+      ...on Cost {
+        id
+        name
+        desc
+        date
+        createdAt
+        updatedAt
+        amount
+        category{
+          createdAt
+          id
+          name
+          photo
+          updatedAt
+        }
+        type
+      }
+      ...on Profit {
+        id
+        name
+        desc
+        date
+        createdAt
+        updatedAt
+        amount
+        category{
+          createdAt
+          id
+          name
+          photo
+          updatedAt
+        }
+        type
+      }
+   }
+  } 
+}`;
+
+export type AddBodyVariables = {
+  input: OperationAddInput;
+};
 
 export const CreateOperationForm = memo(() => {
   const { t } = useTranslation();
   const theme = useContext(ThemeContext);
-  const { authProfileInfo } = useSelector(profileSelector);
-  const navigate = useNavigate();
-  const { costList } = useSelector(profileSelector);
-  const dispatch = useDispatch();
-
-  if (!authProfileInfo?.isAdmin) {
-    console.log('Операция доступна только админу. Заполните профиль пользователя');
-    navigate('/profile');
-  }
-
+  const [add, { loading, error }] = useMutation<Pick<Mutation, 'operations'>, AddBodyVariables>(ADD_OPERATIONS);
+  const { category } = useOperation();
   const { initialValues, onSubmit, validate } = useMemo<
     Pick<FormikConfig<OperationFormValues>, 'onSubmit' | 'validate' | 'initialValues'>
   >(() => {
     return {
       initialValues: {
         name: '',
-        cost: '',
+        cost: 0,
         category: '',
         description: '',
       },
       onSubmit: (values) => {
-        const cost = createRandomOperation('12.12.2023');
-        dispatch(profileActions.setCostList([...costList, cost]));
-        navigate('/operations');
+        add({
+          variables: { input: { amount: values.cost, desc: values.description, categoryId: category.id, date: new Date(), type: OperationType.Cost, name: values.name } },
+          refetchQueries: [{ query: GET_OPERATIONS }],
+        })
+          .then((res) => console.error(res))
+          .catch((err) => console.error(err));
       },
       validate: (values) => {
         const errors = {} as OperationFormErrors;
@@ -50,7 +96,7 @@ export const CreateOperationForm = memo(() => {
         return errors;
       },
     };
-  }, [t]);
+  }, [t, category]);
 
   const formManager = useFormik<OperationFormValues>({
     initialValues,

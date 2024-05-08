@@ -8,4 +8,5 @@ export interface FormProps<Values = unknown> {
   formManager?: FormikContextType<Values>;
   formElement?: MutableRefObject<HTMLFormElement>;
   autoFocusElement?: MutableRefObject<InputRef>;
+  isUpdate?: boolean;
 }

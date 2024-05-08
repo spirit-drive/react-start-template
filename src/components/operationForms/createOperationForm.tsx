@@ -1,9 +1,72 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { OperationFormProps } from './types';
 import { FormInput } from '../forms/formInput/formInput';
 
-export const OperationForm = memo<OperationFormProps>(({ formManager, formElement, disabled }) => {
+import '../operationForms/createOperationFrom.css'
+import { gql, useLazyQuery } from '@apollo/client';
+import { Category } from 'src/graphql.types';
+import { SelItem } from './provider/OperationProvider';
+import { useOperation } from './lib/useOperation';
+import { profileActions } from 'src/entities/profileSlice';
+import { useDispatch } from 'react-redux';
+
+export const GET_CATEGORIES = gql`
+  query {
+    categories {
+      getMany {
+      data {
+        id
+        name
+        photo
+        createdAt
+        updatedAt                 
+      }
+      pagination {
+        pageNumber
+        pageSize
+        total
+      }
+      sorting {
+        field
+        type
+      }
+      }     
+    }
+  }`;
+
+
+
+export const OperationForm = memo<OperationFormProps>(({ formManager, formElement, disabled, isUpdate }) => {
   const { values, touched, errors, submitCount, handleBlur, handleSubmit, handleChange } = formManager;
+  const [getMany, { data, error }] = useLazyQuery(GET_CATEGORIES);
+  const [categoryList, setCategoryList] = useState<SelItem[]>([]);
+  const { category, setCategory } = useOperation();
+
+  useEffect(() => {
+    getMany();
+
+    if (data) {
+      var a = JSON.stringify(data, null, 2);
+      var b = JSON.parse(a);
+      setCategoryList(b.categories.getMany.data.map((item: Category) => {
+        return { id: item.id, name: item.name }
+      }));
+      setCategory(categoryList[0]);
+    }
+  }, [data, categoryList]);
+
+
+  const getOptions = function (): JSX.Element[] {
+    return categoryList.map((item: SelItem) => {
+      return (<option value={item.id} selected={category ? category.id == item.id : (item.id == categoryList[0].id ? true : false)}>{item.name}</option>)
+    })
+  }
+
+  const changeSelect = function (e: SelItem): void {
+    var t = categoryList.find((x: any) => x.id == e);
+    console.log(t);
+    setCategory(categoryList.find((x: any) => x.id == e));
+  }
 
   return (
     <form ref={formElement} onSubmit={handleSubmit}>
@@ -22,7 +85,7 @@ export const OperationForm = memo<OperationFormProps>(({ formManager, formElemen
       <FormInput
         onBlur={handleBlur}
         onChange={handleChange}
-        value={values.cost}
+        value={values.cost.toString()}
         errors={errors.cost}
         submitCount={submitCount}
         touched={touched.cost}
@@ -31,18 +94,17 @@ export const OperationForm = memo<OperationFormProps>(({ formManager, formElemen
         nameInput="cost"
         type="number"
       />
-      <FormInput
-        onBlur={handleBlur}
-        onChange={handleChange}
-        value={values.category}
-        errors={errors.category}
-        submitCount={submitCount}
-        touched={touched.category}
-        disabled={disabled}
-        title="Категория"
-        nameInput="category"
-        type="input"
-      />
+      {!isUpdate && (<label className='labelSelect'>
+        Категория:
+        <select onChange={(e: any) => changeSelect(e.target.value)} >
+          {categoryList && categoryList.length > 0 ? getOptions() : <option />}
+          {/* {categoryList.length > 0 && categoryList.map((item: SelItem) =>
+
+            <option value={item.id}>{item.name}</option>
+          )} */}
+        </select>
+      </label>)
+      }
       <FormInput
         onBlur={handleBlur}
         onChange={handleChange}
@@ -55,8 +117,12 @@ export const OperationForm = memo<OperationFormProps>(({ formManager, formElemen
         nameInput="description"
         type="input"
       />
-    </form>
+    </form >
   );
 });
 
 OperationForm.displayName = 'OperationForm';
+function dispatch(arg0: { payload: import("src/graphql.types").Operation[]; type: "profile/setCostList"; }) {
+  throw new Error('Function not implemented.');
+}
+

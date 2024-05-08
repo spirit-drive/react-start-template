@@ -1,4 +1,5 @@
 import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Operation } from 'src/graphql.types';
 import { Cost } from '../objects/mainObjects';
 
 export interface ProfileDto {
@@ -10,7 +11,7 @@ export interface ProfileDto {
 export interface ProfileState {
   authProfileInfo: ProfileDto | null;
   authToken: string | null;
-  costList: Cost[];
+  costList: Operation[];
 }
 
 const initialState: ProfileState = {
@@ -38,7 +39,7 @@ export const profileSlice = createSlice({
     getCostList: (_, __: PayloadAction<Cost[]>) => {
       [];
     },
-    setCostList: (state, action: PayloadAction<Cost[]>) => {
+    setCostList: (state, action: PayloadAction<Operation[]>) => {
       state.costList = action.payload;
     },
   },

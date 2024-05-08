@@ -4,17 +4,11 @@ import { FormikConfig, useFormik } from 'formik';
 import { useTranslation } from 'react-i18next';
 import { ProfileForm } from '../../../components/profileForm/profileForm';
 import { isNotDefinedString } from '../../../components/forms/validation';
-import { Title } from '../../../components/forms/title/title';
 import { ProfileFormErrors, ProfileFormValues } from '../../../components/profileForm/types';
 import { Button } from '../../../components/button/Button';
 import ThemeContext from '../../../components/layout/layout';
-import { useDispatch, useSelector } from 'react-redux';
-import { profileActions, profileSelector } from '../../../entities/profileSlice';
-import { useAuth } from '../../../components/layout/lib/useAuth';
-import { useNavigate } from 'react-router';
 import { gql, useMutation, useQuery } from '@apollo/client';
-import { Mutation, UpdateProfileBody, UpdateProfileInput } from 'src/graphql.types';
-import { storage } from 'src/utils/storage';
+import { Mutation, UpdateProfileInput } from 'src/graphql.types';
 
 
 const GET_PROFILE = gql`
@@ -51,9 +45,6 @@ export type ProfileCompletedFormProps = {
 export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(() => {
   const { t } = useTranslation();
   const theme = useContext(ThemeContext);
-  const dispatch = useDispatch();
-  const { isAuth } = useAuth();
-  const navigate = useNavigate();
   const { data } = useQuery(GET_PROFILE);
   const [editProfile, { loading, error }] = useMutation<Pick<Mutation, 'profile'>, SignInBodyVariables>(EDIT_PROFILE);
 
