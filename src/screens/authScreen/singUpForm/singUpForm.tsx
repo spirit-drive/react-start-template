@@ -5,22 +5,23 @@ import { useTranslation } from 'react-i18next';
 import { AuthFormErrors, AuthFormValues } from '../../../components/authForm/types';
 import { isNotDefinedString } from '../../../components/forms/validation';
 import { gql, useMutation } from '@apollo/client';
-import { Mutation } from 'src/graphql.types';
+import { Mutation } from '../../../graphql.types';
 import { profileActions } from '../../../entities/profileSlice';
 import { AuthForm } from '../../../components/authForm/authForm';
-import { Title } from 'src/components/forms/title/title';
+import { Title } from '../../../components/forms/title/title';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { storage } from 'src/utils/storage';
+import { storage } from '../../../utils/storage';
 
 const SING_UP = gql`
   mutation ($commandId: String!, $password: String!, $email: String!) {
-  profile {
-    signup(commandId: $commandId, password: $password, email: $email) {
-    token
-   }
-  } 
-}`;
+    profile {
+      signup(commandId: $commandId, password: $password, email: $email) {
+        token
+      }
+    }
+  }
+`;
 
 export type SignUpBodyVariables = {
   commandId: string;
@@ -29,7 +30,6 @@ export type SignUpBodyVariables = {
 };
 
 export const SingUpForm = memo(() => {
-
   const { t } = useTranslation();
   const [signup, { loading, error }] = useMutation<Pick<Mutation, 'profile'>, SignUpBodyVariables>(SING_UP);
   const dispatch = useDispatch();
@@ -46,7 +46,7 @@ export const SingUpForm = memo(() => {
       },
       onSubmit: (values, { setErrors }) => {
         signup({
-          variables: { commandId: "1", email: values.email, password: values.password },
+          variables: { commandId: '1', email: values.email, password: values.password },
         })
           .then((res) => {
             dispatch(profileActions.setToken(res.data.profile.signup.token));

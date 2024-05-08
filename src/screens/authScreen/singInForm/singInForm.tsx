@@ -10,18 +10,19 @@ import { useDispatch } from '../../../store/useDispatch';
 import { profileActions, profileSelector } from '../../../entities/profileSlice';
 import { useNavigate } from 'react-router';
 import { gql, useMutation } from '@apollo/client';
-import { storage } from 'src/utils/storage';
-import { Mutation } from 'src/graphql.types';
+import { storage } from '../../../utils/storage';
+import { Mutation } from '../../../graphql.types';
 import { Link } from 'react-router-dom';
 
 const SING_IN = gql`
   mutation ($password: String!, $email: String!) {
-  profile {
-    signin(password: $password, email: $email) {
-    token
-   }
-  } 
-}`;
+    profile {
+      signin(password: $password, email: $email) {
+        token
+      }
+    }
+  }
+`;
 
 export type SignInBodyVariables = {
   email: string;
@@ -90,10 +91,8 @@ export const SingInForm = memo(() => {
           {'Войти'}
         </Button>
       </div>
-      <Link to='/regustration'>
-        {'Зарегистрироваться'}
-      </Link>
-    </div >
+      <Link to="/regustration">{'Зарегистрироваться'}</Link>
+    </div>
   );
 });
 

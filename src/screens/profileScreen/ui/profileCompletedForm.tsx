@@ -8,8 +8,7 @@ import { ProfileFormErrors, ProfileFormValues } from '../../../components/profil
 import { Button } from '../../../components/button/Button';
 import ThemeContext from '../../../components/layout/layout';
 import { gql, useMutation, useQuery } from '@apollo/client';
-import { Mutation, UpdateProfileInput } from 'src/graphql.types';
-
+import { Mutation, UpdateProfileInput } from '../../../graphql.types';
 
 const GET_PROFILE = gql`
   query getProfile {
@@ -23,20 +22,20 @@ const GET_PROFILE = gql`
 
 const EDIT_PROFILE = gql`
   mutation ($input: UpdateProfileInput!) {
-  profile {
-    update(input: $input) {
-      id
-      email
-      name
-      signUpDate
-   }
-  } 
-}`;
+    profile {
+      update(input: $input) {
+        id
+        email
+        name
+        signUpDate
+      }
+    }
+  }
+`;
 
 export type SignInBodyVariables = {
   input: UpdateProfileInput;
 };
-
 
 export type ProfileCompletedFormProps = {
   className?: string;
@@ -61,8 +60,8 @@ export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(() => {
       onSubmit: (values) => {
         editProfile({
           variables: {
-            input: { name: values.name }
-          }
+            input: { name: values.name },
+          },
         });
       },
       validate: (values) => {
@@ -91,8 +90,7 @@ export const ProfileCompletedForm = memo<ProfileCompletedFormProps>(() => {
       <div>
         <h3>Профиль</h3>
         <div>имя: {data ? data.profile.name : ''}</div>
-        <div>почта: {data ? data.profile.email : ''}</
-        div>
+        <div>почта: {data ? data.profile.email : ''}</div>
       </div>
       <h3>Редактировать имя профиля</h3>
       <ProfileForm formManager={formManager} />

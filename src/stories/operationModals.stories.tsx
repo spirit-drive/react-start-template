@@ -15,4 +15,3 @@ export const createOperation = {
     setActive: (close: boolean) => console.log('visible ', close),
   },
 };
-

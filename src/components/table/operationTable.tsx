@@ -1,11 +1,10 @@
-import React, { FC, useEffect, useState } from 'react';
-import { gql, useLazyQuery } from '@apollo/client';
+import React, { FC, useState } from 'react';
 import './operationTable.css';
-import { Operation } from 'src/graphql.types';
-import { profileActions, profileSelector } from 'src/entities/profileSlice';
+import { Operation } from '../../graphql.types';
+import { profileActions, profileSelector } from '../../entities/profileSlice';
 import { useSelector } from 'react-redux';
 import { Modal } from '../modal/modal';
-import { UpdateOperationForm } from 'src/screens/operationScreen/ui/update/updateOperationForm';
+import { UpdateOperationForm } from '../../screens/operationScreen/ui/update/updateOperationForm';
 import { createPortal } from 'react-dom';
 
 interface OperationTableProps {
@@ -23,32 +22,33 @@ export const OperationTable: FC<OperationTableProps> = ({ headers, rows }) => {
     setModalUpdate(true);
   }
 
-  return (<table>
-    <thead>
-      <tr>
-        {' '}
-        {Array.isArray(headers)
-          ? headers.map((header) => {
-            return <th key={header}>{header}</th>;
-          })
+  return (
+    <table>
+      <thead>
+        <tr>
+          {' '}
+          {Array.isArray(headers)
+            ? headers.map((header) => {
+                return <th key={header}>{header}</th>;
+              })
+            : null}
+        </tr>
+      </thead>
+      <tbody>
+        {costList.length > 0
+          ? costList.map((row) => {
+              return (
+                <tr key={row.id}>
+                  <td>{row.name}</td>
+                  <td>{row.amount}</td>
+                  <td>{row.category.name}</td>
+                  <button onClick={() => updateOperation(row.id)}>Редактировать</button>
+                </tr>
+              );
+            })
           : null}
-      </tr>
-    </thead>
-    <tbody>
-      {costList.length > 0
-        ? costList.map((row) => {
-          return (
-            <tr key={row.id}>
-              <td>{row.name}</td>
-              <td>{row.amount}</td>
-              <td>{row.category.name}</td>
-              <button onClick={() => updateOperation(row.id)}>Редактировать</button>
-            </tr>
-          );
-        })
-        : null}
-    </tbody>
-    {modalUpdate ? createPortal(<Modal setActive={setModalUpdate}>{childUpdate}</Modal>, document.body) : ''}
-  </table>
+      </tbody>
+      {modalUpdate ? createPortal(<Modal setActive={setModalUpdate}>{childUpdate}</Modal>, document.body) : ''}
+    </table>
   );
 };

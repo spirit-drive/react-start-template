@@ -11,8 +11,8 @@ import { AuthProvider } from '../../components/layout/provider/AuthProvider';
 import { Provider } from 'react-redux';
 import { store } from '../../store/configureStore';
 import { AuthScreen } from '../../screens/authScreen/authScreen';
-import { Client } from 'src/client/Client';
-import { RegScreen } from 'src/screens/authScreen/regScreen';
+import { Client } from '../../client/Client';
+import { RegScreen } from '../../screens/authScreen/regScreen';
 import { OperationProvider } from '../operationForms/provider/OperationProvider';
 
 export interface layoutProps {

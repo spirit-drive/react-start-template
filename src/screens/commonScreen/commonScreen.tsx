@@ -5,7 +5,6 @@ import { profileActions, profileSelector } from '../../entities/profileSlice';
 import { useDispatch } from '../../store/useDispatch';
 import { Header } from '../../components/header/header';
 import { useSelector } from 'react-redux';
-import { AuthProvider } from 'src/components/layout/provider/AuthProvider';
 
 export const CommonScreen: FC = () => {
   const dispatch = useDispatch();

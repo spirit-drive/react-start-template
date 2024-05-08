@@ -8,51 +8,51 @@ import { Title } from '../../../../components/forms/title/title';
 import { OperationForm } from '../../../../components/operationForms/createOperationForm';
 import '../update/updateOperationForm.css';
 import { gql, useMutation } from '@apollo/client';
-import { Mutation, OperationType, OperationUpdateInput } from 'src/graphql.types';
-import { useNavigate } from 'react-router';
+import { Mutation, OperationType, OperationUpdateInput } from '../../../../graphql.types';
 import { GET_OPERATIONS } from '../../operationScreen';
-import { profileSelector } from 'src/entities/profileSlice';
+import { profileSelector } from '../../../../entities/profileSlice';
 import { useSelector } from 'react-redux';
 
 const UPDATE_OPERATIONS = gql`
   mutation ($input: OperationUpdateInput!, $id: ID!) {
     operations {
-    put(input: $input, id: $id) {
-      ...on Cost {
-        name
-        desc
-        date
-        createdAt
-        updatedAt
-        amount
-        category{
-          createdAt
-          id
+      put(input: $input, id: $id) {
+        ... on Cost {
           name
-          photo
-          updatedAt
-        }
-        type
-      }
-      ...on Profit {
-        name
-        desc
-        date
-        createdAt
-        updatedAt
-        amount
-        category{
+          desc
+          date
           createdAt
-          id
-          name
-          photo
           updatedAt
+          amount
+          category {
+            createdAt
+            id
+            name
+            photo
+            updatedAt
+          }
+          type
         }
-        type
+        ... on Profit {
+          name
+          desc
+          date
+          createdAt
+          updatedAt
+          amount
+          category {
+            createdAt
+            id
+            name
+            photo
+            updatedAt
+          }
+          type
+        }
       }
-   }
-  } 
-}`;
+    }
+  }
+`;
 
 export type AddBodyVariables = {
   id: string;
@@ -71,7 +71,7 @@ export const UpdateOperationForm: FC<ModalProps> = memo(({ id }) => {
   const { onSubmit, validate, initialValues } = useMemo<
     Pick<FormikConfig<OperationFormValues>, 'onSubmit' | 'validate' | 'initialValues'>
   >(() => {
-    var costValue = costList.find(x => x.id == id);
+    const costValue = costList.find((x) => x.id == id);
     return {
       initialValues: {
         name: costValue.name,
@@ -80,7 +80,17 @@ export const UpdateOperationForm: FC<ModalProps> = memo(({ id }) => {
       },
       onSubmit: (values, { setErrors }) => {
         put({
-          variables: { id: id, input: { amount: values.cost, desc: values.description, categoryId: '663a685e40505ca249a23652', date: new Date(), type: OperationType.Cost, name: values.name } },
+          variables: {
+            id: id,
+            input: {
+              amount: values.cost,
+              desc: values.description,
+              categoryId: '663a685e40505ca249a23652',
+              date: new Date(),
+              type: OperationType.Cost,
+              name: values.name,
+            },
+          },
           refetchQueries: [{ query: GET_OPERATIONS }],
         })
           .then((res) => console.error(res))

@@ -1,8 +1,8 @@
 import { FormProps } from '../forms/types';
 
 export type CategoryFormValues = {
-    name: string;
-    photo: string;
+  name: string;
+  photo: string;
 };
 
 export type CategoryFormErrors = Record<keyof CategoryFormValues, string>;

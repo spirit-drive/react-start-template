@@ -4,12 +4,9 @@ interface OperationProviderProps {
     children: ReactNode;
 }
 
-
 export interface OperationContextProps {
-    category: SelItem;
-    setCategory: Dispatch<SetStateAction<SelItem>>;
-    modalActive: boolean;
-    setModalActive: Dispatch<SetStateAction<boolean>>;
+    category: SelItem | null;
+    setCategory: Dispatch<SetStateAction<SelItem | null>>;
 }
 
 export type SelItem = {
@@ -17,26 +14,20 @@ export type SelItem = {
     name: string;
 };
 
-
 const operationContextDefault: OperationContextProps = {
     category: null,
     setCategory: () => { },
-    modalActive: false,
-    setModalActive: () => { },
 };
 
 export const OperationContext = createContext(operationContextDefault);
 
 export const OperationProvider: FC<OperationProviderProps> = ({ children }) => {
-    const [category, setCategory] = useState<SelItem>();
-    const [modalActive, setModalActive] = useState(false);
+    const [category, setCategory] = useState<SelItem>(null);
 
     const providerValue = useMemo(
         () => ({
             category,
             setCategory,
-            modalActive,
-            setModalActive
         }),
         [category]
     );

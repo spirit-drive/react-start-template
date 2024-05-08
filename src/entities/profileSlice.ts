@@ -1,5 +1,5 @@
 import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Operation } from 'src/graphql.types';
+import { Operation } from '../graphql.types';
 import { Cost } from '../objects/mainObjects';
 
 export interface ProfileDto {
