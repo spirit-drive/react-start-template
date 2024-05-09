@@ -18,7 +18,7 @@ export const OperationTable: FC<OperationTableProps> = ({ headers, rows }) => {
   const [childUpdate, setChildUpdate] = useState<JSX.Element>();
 
   function updateOperation(id: string): void {
-    setChildUpdate(<UpdateOperationForm id={id} />);
+    setChildUpdate(<UpdateOperationForm id={id} onClose={setModalUpdate} />);
     setModalUpdate(true);
   }
 

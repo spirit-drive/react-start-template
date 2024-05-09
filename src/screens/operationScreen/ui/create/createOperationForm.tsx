@@ -1,4 +1,4 @@
-import React, { memo, useContext, useMemo } from 'react';
+import React, { FC, memo, useContext, useMemo } from 'react';
 import { FormikConfig, useFormik } from 'formik';
 
 import { useTranslation } from 'react-i18next';
@@ -61,7 +61,11 @@ export type AddBodyVariables = {
   input: OperationAddInput;
 };
 
-export const CreateOperationForm = memo(() => {
+interface CreateOperationProps {
+  onClose?: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const CreateOperationForm: FC<CreateOperationProps> = memo(({ onClose }) => {
   const { t } = useTranslation();
   const theme = useContext(ThemeContext);
   const [add, { loading, error }] = useMutation<Pick<Mutation, 'operations'>, AddBodyVariables>(ADD_OPERATIONS);
@@ -90,7 +94,7 @@ export const CreateOperationForm = memo(() => {
           },
           refetchQueries: [{ query: GET_OPERATIONS }],
         })
-          .then((res) => console.error(res))
+          .then((res) => onClose(false))
           .catch((err) => console.error(err));
       },
       validate: (values) => {

@@ -61,9 +61,10 @@ export type AddBodyVariables = {
 
 interface ModalProps {
   id: string;
+  onClose?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const UpdateOperationForm: FC<ModalProps> = memo(({ id }) => {
+export const UpdateOperationForm: FC<ModalProps> = memo(({ id, onClose }) => {
   const { t } = useTranslation();
   const [put, { loading, error }] = useMutation<Pick<Mutation, 'operations'>, AddBodyVariables>(UPDATE_OPERATIONS);
   const { costList } = useSelector(profileSelector);
@@ -85,7 +86,6 @@ export const UpdateOperationForm: FC<ModalProps> = memo(({ id }) => {
             input: {
               amount: values.cost,
               desc: values.description,
-              categoryId: '663a685e40505ca249a23652',
               date: new Date(),
               type: OperationType.Cost,
               name: values.name,
@@ -93,7 +93,7 @@ export const UpdateOperationForm: FC<ModalProps> = memo(({ id }) => {
           },
           refetchQueries: [{ query: GET_OPERATIONS }],
         })
-          .then((res) => console.error(res))
+          .then((res) => onClose(false))
           .catch((err) => console.error(err));
       },
       validate: (values) => {

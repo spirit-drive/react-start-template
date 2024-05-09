@@ -91,12 +91,12 @@ export const OperationScreen: FC = () => {
   }, [data]);
 
   function createOperation(): void {
-    setChild(<CreateOperationForm />);
+    setChild(<CreateOperationForm onClose={setModalActive} />);
     setModalActive(true);
   }
 
   function createCategory(): void {
-    setChildUpdate(<CreateCategoryForm />);
+    setChildUpdate(<CreateCategoryForm onClose={setModalUpdate} />);
     setModalUpdate(true);
   }
 

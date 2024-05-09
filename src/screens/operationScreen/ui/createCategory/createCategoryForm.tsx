@@ -1,4 +1,4 @@
-import React, { memo, useContext, useMemo } from 'react';
+import React, { FC, memo, useContext, useMemo } from 'react';
 import { FormikConfig, useFormik } from 'formik';
 
 import { useTranslation } from 'react-i18next';
@@ -31,7 +31,11 @@ export type AddCategoryBodyVariables = {
   input: CategoryAddInput;
 };
 
-export const CreateCategoryForm = memo(() => {
+interface CreateCategoryProps {
+  onClose?: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const CreateCategoryForm: FC<CreateCategoryProps> = memo(({ onClose }) => {
   const { t } = useTranslation();
   const theme = useContext(ThemeContext);
   const navigate = useNavigate();
@@ -51,9 +55,7 @@ export const CreateCategoryForm = memo(() => {
             input: { name: values.name, photo: '' },
           },
         })
-          .then((res) => {
-            navigate('/operations');
-          })
+          .then((res) => onClose(false))
           .catch((err) => console.error(err));
       },
       validate: (values) => {
