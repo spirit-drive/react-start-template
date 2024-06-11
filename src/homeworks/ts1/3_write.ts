@@ -11,8 +11,9 @@
  * - id (строка)
  * - name (строка)
  * - photo (строка, необязательно)
- *
- * Продукт (Product) содержит
+ */
+
+/* Продукт (Product) содержит
  * - id (строка)
  * - name (строка)
  * - photo (строка)
@@ -21,8 +22,9 @@
  * - oldPrice (число, необязательно)
  * - price (число)
  * - category (Категория)
- *
- * Операция (Operation) может быть либо тратой (Cost), либо доходом (Profit)
+ */
+
+/* Операция (Operation) может быть либо тратой (Cost), либо доходом (Profit)
  *
  * Трата (Cost) содержит
  * - id (строка)
@@ -43,14 +45,109 @@
  * - type ('Profit')
  * */
 
+type Category = {
+    id: string;
+    name: string;
+    photo?: string;
+}
+
+type BaseId = Omit<Category, "photo">
+type PhotoNotRequired = Pick<Category, "photo">
+type PhotoRequired = Required<PhotoNotRequired>
+
+type Product = BaseId & PhotoRequired & {
+    desc?: string;
+    createdAt: string;
+    oldPrice: string;
+    price: number;
+    category: Category;
+}
+
+type Operation = Profit | Cost
+
+type Profit = BaseId & {
+    desc?: string;
+    createdAt: string;
+    amount: number;
+    category: Category;
+    type: 'Profit';
+}
+
+type OperationWithoutType = Omit<Profit, "type">
+
+type Cost = OperationWithoutType & {
+    type: 'Cost';
+}
+
+const getRandomNumber = (limit: number) => {
+    return Math.floor(Math.random() * 1000 + 1);
+}
+
+const testCategories: Category[] = [
+    {
+        id: "1",
+        name: "Овощи",
+    },
+    {
+        id: "2",
+        name: "Бытовая химия",
+    },
+    {
+        id: "3",
+        name: "Алкоголь",
+    },
+]
+
 /**
  * Создает случайный продукт (Product).
  * Принимает дату создания (строка)
  * */
 // export const createRandomProduct = (createdAt: string) => {};
+export const createRandomProduct = (createdAt: string): Product => {
+    const id = getRandomNumber(10000).toString();
+    const name = 'ProductName' + getRandomNumber(1000).toString();
+    const photo = 'https://productPhoto/';
+    const price = getRandomNumber(10000);
+    const desc = 'description ' + getRandomNumber(1000).toString();
+    const oldPrice = (price - getRandomNumber(10000)).toString();
+    const category = testCategories[getRandomNumber(2)];
+
+    return {
+        id,
+        name,
+        photo,
+        createdAt,
+        price,
+        category,
+        desc,
+        oldPrice
+    }
+};
 
 /**
  * Создает случайную операцию (Operation).
  * Принимает дату создания (строка)
  * */
 // export const createRandomOperation = (createdAt: string) => {};
+
+export const createRandomOperation = (createdAt: string): Operation => {
+    let randomOperation = Math.floor(Math.random() * 100 % 2);
+    let type: 'Profit' | 'Cost' = randomOperation == 0 ? "Profit" : "Cost" ;
+
+    let id = getRandomNumber(10000).toString();
+    let name = `Операция - ${type}`;
+    let amount = getRandomNumber(10000);
+    let desc = type;
+    const category = testCategories[getRandomNumber(2)];
+
+    return {
+        id,
+        name,
+        createdAt,
+        amount,
+        category,
+        type,
+        desc,
+    }
+}
+
