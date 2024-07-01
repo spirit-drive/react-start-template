@@ -1,17 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Layout } from '../components/Layout/Layout';
+import Header from '../components/Header/Header';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Текст писать тут
-        </p>
-      </header>
-    </div>
+    <Layout>
+      <Header />
+      <p className="p-5 mt-5">Lorem Ipsum</p>
+    </Layout>
   );
 }
 

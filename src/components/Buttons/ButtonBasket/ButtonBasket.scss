@@ -1,0 +1,20 @@
+.add2cart {
+    .input-group {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        width: 250px;
+
+        input {
+            text-align: center;
+            background-color: var(--bkg-color);
+            border-color: var(--primary-color);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+    }
+}
