@@ -1,16 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Resizer } from 'src/shared/resizer';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Текст писать тут
-        </p>
-      </header>
+      <React.Fragment>
+          <Resizer>
+              <div>
+                  <ul>
+                      <li>Neil Armstrong</li>
+                      <li>Alan Bean</li>
+                      <li>Peter Conrad</li>
+                      <li>Edgar Mitchell</li>
+                      <li>Alan Shepard</li>
+                  </ul>
+              </div>
+          </Resizer>
+      </React.Fragment>
     </div>
   );
 }
