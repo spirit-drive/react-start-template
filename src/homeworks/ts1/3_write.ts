@@ -1,56 +1,89 @@
-/**
- * Функции написанные здесь пригодятся на последующих уроках
- * С помощью этих функций мы будем добавлять элементы в список для проверки динамической загрузки
- * Поэтому в идеале чтобы функции возвращали случайные данные, но в то же время не абракадабру.
- * В целом сделайте так, как вам будет удобно.
- * */
+import { v4 } from 'uuid';
 
-/**
- * Нужно создать тип Category, он будет использоваться ниже.
- * Категория содержит
- * - id (строка)
- * - name (строка)
- * - photo (строка, необязательно)
- *
- * Продукт (Product) содержит
- * - id (строка)
- * - name (строка)
- * - photo (строка)
- * - desc (строка, необязательно)
- * - createdAt (строка)
- * - oldPrice (число, необязательно)
- * - price (число)
- * - category (Категория)
- *
- * Операция (Operation) может быть либо тратой (Cost), либо доходом (Profit)
- *
- * Трата (Cost) содержит
- * - id (строка)
- * - name (строка)
- * - desc (строка, необязательно)
- * - createdAt (строка)
- * - amount (число)
- * - category (Категория)
- * - type ('Cost')
- *
- * Доход (Profit) содержит
- * - id (строка)
- * - name (строка)
- * - desc (строка, необязательно)
- * - createdAt (строка)
- * - amount (число)
- * - category (Категория)
- * - type ('Profit')
- * */
+export type Category = {
+  id: string;
+  name: string;
+  photo?: string;
+};
 
-/**
- * Создает случайный продукт (Product).
- * Принимает дату создания (строка)
- * */
-// export const createRandomProduct = (createdAt: string) => {};
+export type Product = {
+  id: string;
+  name: string;
+  photo: string;
+  desc?: string;
+  createdAt: string;
+  oldPrice?: number;
+  price: number;
+  category: Category;
+};
 
-/**
- * Создает случайную операцию (Operation).
- * Принимает дату создания (строка)
- * */
-// export const createRandomOperation = (createdAt: string) => {};
+interface IOperation {
+  id: string;
+  name: string;
+  desc?: string;
+  createdAt: string;
+  amount: number;
+  category: Category;
+}
+
+interface ICost extends IOperation {
+  type: 'Cost';
+}
+
+interface IProfit extends IOperation {
+  type: 'Profit';
+}
+
+export type Operation = Cost | Profit;
+
+export type Cost = ICost;
+
+export type Profit = IProfit;
+
+const getRandomNumber = (max: number): number => {
+  return Math.floor(Math.random() * max);
+};
+
+const getRandomElement = <T>(array: T[]): T | undefined => {
+  const randomIndex = getRandomNumber(array.length);
+  return array[randomIndex];
+};
+
+const categories: Category[] = [
+  { id: '1', name: 'Телевизоры' },
+  { id: '2', name: 'Телефоны' },
+  { id: '3', name: 'Игровые консоли' },
+];
+
+// create random product
+export const createRandomProduct = (createdAt: string): Product => {
+  const productId = v4();
+  const category = getRandomElement(categories);
+  const price = getRandomNumber(999);
+  const name = `${category.name}-${getRandomNumber(100)}`;
+
+  return {
+    id: productId,
+    name: name,
+    photo: `/static/images/products/${productId}.png`,
+    createdAt: createdAt,
+    oldPrice: price < 4000 ? price * 1.3 : null, //иногда заполняем старую цену
+    price: price,
+    desc: `Cool description of ${name}`,
+    category: category,
+  };
+};
+
+// create random operation
+export const createRandomOperation = (createdAt: string): Operation => {
+  const product = createRandomProduct(createdAt);
+  return {
+    id: v4(),
+    name: product.name,
+    desc: product.desc,
+    createdAt: createdAt,
+    amount: product.price,
+    category: product.category,
+    type: getRandomElement(['Cost', 'Profit']),
+  };
+};
