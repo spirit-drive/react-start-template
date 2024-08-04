@@ -1,0 +1,33 @@
+.container {
+  position: relative;
+  display: flex;
+}
+.tooltip {
+  position: absolute;
+  min-width: 120px;
+  padding: 4px 12px;
+  justify-content: center;
+  color: #FFFFFF;
+  background-color: #a3a09b;
+  border-radius: 5px ;
+  text-align: center;
+  white-space: pre-line;
+  font-weight: 700;
+  pointer-events: none;
+}
+.tooltip-right {
+  top: -5px;
+  left: 105%;
+}
+.tooltip-left {
+  top: -5px;
+  right: 105%;
+}
+.tooltip-top {
+  bottom: 105%;
+  left: 0;
+}
+.tooltip-bottom {
+  top: 105%;
+  left: 0;
+}
