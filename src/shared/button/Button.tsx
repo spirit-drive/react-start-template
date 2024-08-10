@@ -8,6 +8,7 @@ interface ButtonProps {
   backgroundColor?: string | null;
   size?: string;
   label: string;
+  onClick: () => void;
 }
 /**
  * Primary UI component for user interaction
@@ -24,7 +25,7 @@ export const Button: FC<ButtonProps> = ({ primary, backgroundColor, size, label,
     <button
       type="button"
       className={cn('storybook-button', `storybook-button--${size}`, mode)}
-      style={{ backgroundColor: backgroundColor || 'green' }}
+      style={{ backgroundColor: backgroundColor || 'green', marginRight: '20px' }}
       onClick={onClick}
       {...props}
     >

@@ -1,17 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { ThemeProvider } from './providers/theme/ThemeProvider';
+import { LocalizationProvider } from './providers/localization/LocalizationProvider';
+import Layout from 'src/pages/Layout/Layout';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Текст писать тут
-        </p>
-      </header>
-    </div>
+    <>
+      <LocalizationProvider />
+      <ThemeProvider>
+        <div className="App">
+          <Layout />
+        </div>
+      </ThemeProvider>
+    </>
   );
 }
 
