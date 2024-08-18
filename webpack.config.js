@@ -27,7 +27,6 @@ module.exports = (_, args) => {
         src,
       },
     },
-
     entry: './index.tsx',
     output: {
       path: dist,

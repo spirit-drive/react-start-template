@@ -1,0 +1,33 @@
+.button {
+  background-color: rgb(var(--background-secondary));
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.count_button {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.count_side_buttons {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.count_side_buttons:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}

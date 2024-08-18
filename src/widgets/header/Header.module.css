@@ -1,0 +1,14 @@
+.header {
+  height: 60px;
+  background-color: rgb(var(--background-secondary));
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

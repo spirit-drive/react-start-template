@@ -1,0 +1,49 @@
+.card_block {
+  width: 200px;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+.card_block:hover {
+  cursor: pointer;
+  scale: 1.02;
+}
+
+.image {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+.price {
+  color: #a73afd;
+  font-size: 20px;
+}
+
+.container {
+  padding: 10px;
+}
+
+.title {
+  padding: 0;
+  margin: 0;
+  font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: gray;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}

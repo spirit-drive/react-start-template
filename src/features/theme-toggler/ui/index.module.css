@@ -1,0 +1,49 @@
+:root {
+  --toggler-padding: 3px;
+  --toggler-border: 2px;
+  --ball-diameter: 14px;
+  --toggler-width: 47px;
+}
+
+.simpleToggler {
+  display: flex;
+  width: var(--toggler-width);
+  border-radius: var(--toggler-width);
+  padding: var(--toggler-padding);
+  background-color: rgb(var(--background-primary));
+  border: var(--toggler-border) solid rgb(var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  transition: backgroundColor 0.2s ease;
+}
+
+.ball {
+  position: relative;
+  z-index: 1;
+  width: var(--ball-diameter);
+  height: var(--ball-diameter);
+  background-color: rgb(var(--background-primary));
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  transition: transform 0.2s linear, backgroundColor 0.2s ease;
+}
+
+.ball[data-theme='dark'] {
+  background-color: gray;
+}
+.ball[data-theme='light'] {
+  background-color: yellow;
+}
+
+html[data-theme='light'] .simpleToggler {
+  transform: translateX(0);
+}
+
+html[data-theme='dark'] .ball {
+  transform: translateX(calc(var(--toggler-width) - var(--ball-diameter) - 4 * var(--toggler-padding)));
+}

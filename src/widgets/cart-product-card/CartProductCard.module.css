@@ -1,0 +1,31 @@
+.main {
+  display: flex;
+  gap: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.image {
+  width: 100px;
+  border-radius: 10px;
+}
+
+.price {
+  color: #a73afd;
+}
+
+.right_block {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
