@@ -1,0 +1,142 @@
+@import './constants.scss';
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+        'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+html,
+body {
+    background-color: #f3f4f6;
+}
+
+body {
+    line-height: 1;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+    font-size: inherit;
+}
+
+button {
+    cursor: pointer;
+    color: inherit;
+    background-color: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+.df {
+    display: flex;
+}
+
+.dfc {
+    display: flex;
+    flex-direction: column;
+}
+.fc{
+    align-items: center;
+    justify-content: center;
+  }
+  .jsb{
+    justify-content: space-between;
+  }
+.wAll {
+    width: 100%;
+}
+
+.error {
+    color: red;
+}
+
+.App-body {
+    overflow: auto;
+    margin-top: 80px;
+    padding: 0px 4rem 0;
+    //  min-height: calc(100vh) ;
+    height: calc(100vh - 80px);
+
+    &.light {
+        background-color: $main-bg-color;
+        color: black;
+    }
+
+    &.dark {
+        background-color: $mainDark-bg-color;
+        color: white;
+        .themeBg{
+            background-color: $secondDark-bg-color;
+        }
+    }
+}
+
+.link {
+    display: block;
+    height: 100%;
+    width: 100%;
+}

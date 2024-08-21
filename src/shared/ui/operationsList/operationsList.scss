@@ -1,0 +1,86 @@
+@import 'constants';
+
+.operations{
+    width: 100%;
+    height:100%;
+    overflow: auto;
+    border-radius: 10px;
+    background-color: white;
+}
+.operationsheader{
+    padding: 10px 10px;
+    border-bottom: 1px solid $main-bg-color;
+}
+
+.tableItem{
+    &.short{
+        min-height: 100px;
+        
+    }
+    width: 100%;
+    border-radius: 10px;
+    &__body{
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 1.3rem;
+
+        border-bottom: 0.5px solid rgba(128, 128, 128, 0.459);
+    }
+    &__info{
+        padding: 10px;
+        gap: 5px;
+        span{
+            font-size: 1rem;
+            color: grey;
+        }
+    }
+    &__right{
+        cursor: pointer;
+        width: 100%;
+        align-items: center;
+        border-left: 0.5px solid rgba(128, 128, 128, 0.459);
+    }
+    &__actions{
+        gap: 10px;
+        height: 100%;
+        padding: 10px;
+    }
+    &__amount{
+        justify-self: flex-end;
+        padding: 10px;
+        font-weight: 700;
+    }
+    &__description{
+        font-size: 1rem;
+        padding-top: 10px;
+    }
+    &__button{
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    &__photo{
+        margin-right: 20px;
+        overflow: hidden;
+        border-radius: 50%;
+        position: relative;
+        width: 60px;
+        height: 60px;
+        img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+    }
+}
+.operations{
+
+    &__list{
+        display: flex;
+    flex-direction: column;
+    }
+    
+}

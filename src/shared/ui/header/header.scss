@@ -1,0 +1,44 @@
+@import '../../../constants.scss';
+
+.header {
+    position: fixed;
+    height: 80px;
+    z-index: 100;
+    width: 100%;
+    //  background-color: rgb(100, 150, 190);
+    padding: 10px;
+    top: 0;
+    left: 0;
+
+    &.light {
+        background-color: $header-bg-color;
+        color: $header-text-color;
+    }
+
+    &.dark {
+        background-color: $headerDark-bg-color;
+        color: $headerDark-text-color;
+    }
+
+    &__actions {
+        gap: 20px;
+    }
+
+    &__list {
+        gap: 20px;
+    }
+
+    &__li {
+        &.active {
+            color: blue;
+        }
+    }
+
+    &__container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "amount": 200,
+    "category": {"id": "vegetables", "name": "овощи"},
+    "name": "название 1",
+    "description": "полное описание 1",
+    "date": "04-06-2024",
+    "type": "cost"
+  },
+  {
+    "id": "2",
+    "amount": 300,
+    "category": {"id": "vegetables", "name": "овощи"},
+    "name": "название 2",
+    "description": "полное описание 2",
+    "date": "04-06-2024",
+    "type": "cost"
+  },
+  {
+    "id": "3",
+    "amount": 300,
+    "category": {"id": "vegetables", "name": "овощи"},
+    "name": "название 2",
+    "description": "полное описание 2",
+    "date": "04-06-2024",
+    "type": "cost"
+  }
+]

@@ -1,0 +1,22 @@
+.tooltip-container {
+    display: inline-flex;
+    margin: 2px;
+    transition: opacity 0.3s ease 0s;
+}
+
+
+.tooltip-text {
+    transition: opacity 0.3s ease 0s;
+    position: absolute;
+    background-color: #00000085;
+    color: #ffffff;
+    padding: 7px;
+    border-radius: 6px;
+    opacity: 1;
+
+    &.hide {
+        transition: opacity 0.3s ease 0s;
+        opacity: 0;
+    }
+
+}
