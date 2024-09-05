@@ -1,0 +1,10 @@
+export type ProductFormValues = {
+  name: string;
+  price: number;
+  oldPrice?: number;
+  desc?: string;
+  photo: string;
+  category: string;
+};
+
+export type ProductFormErrors = Record<keyof ProductFormValues, string>;

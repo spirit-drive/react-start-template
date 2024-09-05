@@ -1,17 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { ReactElement } from 'react';
 import './App.css';
+import { Layout } from '../components/Layout/Layout';
+import { Header } from '../components/Header/Header';
+import { LocalizationInitiator } from 'src/localization/LocalizationInitiator';
+import { ProductList } from '../components/Product/ProductList';
+import { Product, generateRandomProduct } from '../components/Product/types';
 
-function App() {
+const productList: Product[] = [
+  generateRandomProduct('55'),
+  generateRandomProduct('55'),
+  generateRandomProduct('55'),
+  generateRandomProduct('55'),
+  generateRandomProduct('55'),
+];
+
+function App(): ReactElement {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Текст писать тут
-        </p>
-      </header>
-    </div>
+    <>
+      <LocalizationInitiator />
+      <Layout>
+        <Header />
+        <div className="app-content">
+          <ProductList products={productList} />
+        </div>
+      </Layout>
+    </>
   );
 }
 

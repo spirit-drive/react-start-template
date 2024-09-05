@@ -1,0 +1,30 @@
+.slider_track {
+  position: relative;
+  height: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;     
+}
+
+.slider_touch {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary-color);
+  cursor: pointer;  
+}
+
+.positionInput {
+  width: 50px;
+  height: auto;
+  margin: 10px auto 0;
+  display: block;
+}
+
+.small{
+  box-shadow: 1px 5px 10px 0px  #007bff6d;
+  height: 10px;
+}

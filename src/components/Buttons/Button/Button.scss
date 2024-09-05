@@ -1,0 +1,40 @@
+.button {
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    height: 37px;
+    padding: 8px 26px;
+    cursor: pointer;
+    width: max-content;
+    &:active {
+        box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2) inset;
+    }
+}
+
+.primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+}
+.secondary{
+    background-color: var(--secondary-color);
+    color: var(--color-text);
+    border: 2px solid var(--secondary-color);
+}
+.info{
+    background-color: var(--info-color-background);
+    color: var(--white-color-text);
+    border: 2px solid var(--info-color-border);
+}
+.disabled{
+    background-color: var(--secondary-color-background);
+    color: var(--white-color-text);
+    border: 2px solid var(--secondary-color-border);
+    cursor: not-allowed;
+    &:active {
+        box-shadow: none;
+    }
+}
+.full-width{
+    width: 100%;
+}
