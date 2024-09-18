@@ -1,0 +1,19 @@
+.mainContainer
+    display: grid
+    height: 100vh
+    gap: 10px 20px
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: auto 1fr auto
+    grid-template-areas: 'header header header' 'menu content content' 'footer footer footer'
+
+.headerData
+    grid-area: header
+
+.menuData
+    grid-area: menu
+
+.contentData
+    grid-area: content
+
+.footerData
+    grid-area: footer
