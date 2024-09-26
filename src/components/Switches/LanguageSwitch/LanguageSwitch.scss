@@ -1,0 +1,24 @@
+.lang-switch {
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0;
+  text-transform: uppercase;
+
+  a {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--contrast-color);
+      color: var(--accent-color);
+      transition: all 0.3s;
+    }
+  }
+}
