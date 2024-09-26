@@ -1,17 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { ReactElement } from 'react';
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import './App.css';
+import { Layout } from '../components/Layout/Layout';
+import { Header } from '../components/Header/Header';
+import { LocalizationInitiator } from 'src/localization/LocalizationInitiator';
+import { Home } from '../pages/Home';
+import { Cart } from '../pages/Cart';
+import { Account } from '../pages/Account';
+import { AddProduct } from '../pages/AddProduct';
 
-function App() {
+function App(): ReactElement {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Текст писать тут
-        </p>
-      </header>
-    </div>
+    <BrowserRouter>
+      <LocalizationInitiator />
+      <Layout>
+        <Header />
+        <Routes>
+          <Route path="account" element={<Account />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="" element={<Home />} />
+          <Route path="product/add" element={<AddProduct />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
