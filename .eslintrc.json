@@ -30,7 +30,8 @@
         "@typescript-eslint/no-var-requires": 0,
         "@typescript-eslint/triple-slash-reference": "error",
         "react/jsx-uses-vars": "error",
-        "react/jsx-uses-react": "error"
+        "react/jsx-uses-react": "error",
+        "react/prop-types": "off"
     },
     "settings": {
         "react": {
