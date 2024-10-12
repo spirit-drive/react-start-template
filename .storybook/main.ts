@@ -1,3 +1,5 @@
+import custom from '../webpack.config.js';
+
 const config = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -13,6 +15,12 @@ const config = {
   },
   docs: {
     autodocs: "tag",
+  },
+  webpackFinal: async (config) => {
+    return {
+      ...config,
+      resolve: custom(0, 'development').resolve,
+    };
   },
 };
 export default config;

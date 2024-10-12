@@ -1,0 +1,21 @@
+@import src/app/styles/common
+  
+.product-card
+  width: 250px
+  height: 300px
+  border: 2px solid
+  margin: 10px
+  padding: 12px
+  +theme(background-color, mainBg)
+  +theme(color, text)
+  +theme(border-color, borderColor)  
+
+  &__description
+    width: 250px
+    text-overflow: ellipsis
+    overflow: hidden
+    white-space: nowrap
+
+  &__image
+    width: 150px
+    height: 150px

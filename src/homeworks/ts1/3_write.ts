@@ -43,14 +43,78 @@
  * - type ('Profit')
  * */
 
+type Category = {
+  id: string;
+  name: string;
+  photo?: string;
+};
+
+type Product = {
+  id: string;
+  name: string;
+  photo: string;
+  desc?: string;
+  createdAt: string;
+  oldPrice?: number;
+  price: number;
+  category: Category;
+};
+
+type Operation = Cost | Profit;
+
+type Cost = {
+  id: string;
+  name: string;
+  desc?: string;
+  createdAt: string;
+  amount: number;
+  category: Category;
+  type: 'Cost';
+};
+
+type Profit = {
+  id: string;
+  name: string;
+  desc?: string;
+  createdAt: string;
+  amount: number;
+  category: Category;
+  type: 'Profit';
+};
+
 /**
  * Создает случайный продукт (Product).
  * Принимает дату создания (строка)
  * */
-// export const createRandomProduct = (createdAt: string) => {};
+export const createRandomProduct = (createdAt: string): Product => ({
+  id: '1',
+  name: 'Laptop',
+  photo: 'somephoto',
+  desc: 'Good quality',
+  createdAt: createdAt,
+  oldPrice: 1000,
+  price: 1500,
+  category: {
+    id: '100',
+    name: 'Appliances',
+    photo: 'someicon',
+  },
+});
 
 /**
  * Создает случайную операцию (Operation).
  * Принимает дату создания (строка)
  * */
-// export const createRandomOperation = (createdAt: string) => {};
+export const createRandomOperation = (createdAt: string): Operation => ({
+  id: '1',
+  name: 'Computer mouse',
+  desc: 'Computer mouse cost',
+  createdAt: createdAt,
+  amount: 2,
+  category: {
+    id: '100',
+    name: 'Appliances',
+    photo: 'someicon',
+  },
+  type: 'Cost',
+});

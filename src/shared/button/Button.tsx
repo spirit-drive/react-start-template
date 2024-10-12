@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cn from 'clsx';
 import { sum } from './sum';
 import './button.css';
@@ -13,7 +13,7 @@ interface ButtonProps {
  * Primary UI component for user interaction
  */
 
-export const Button: FC<ButtonProps> = ({ primary, backgroundColor, size, label, ...props }) => {
+export const Button = ({ primary, backgroundColor, size, label, ...props }: ButtonProps) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
 
   const onClick = () => {
