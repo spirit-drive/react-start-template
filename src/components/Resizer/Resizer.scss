@@ -1,0 +1,36 @@
+.resizer_wrapper{
+  position: relative;
+  display: inline-block;
+  transition: border-color 0.3s;
+  border: 1px solid transparent;
+  z-index: 1;
+}  
+
+.resizer {
+  padding: 20px;
+  border: 1px solid #eff1f3;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.resizer_btn{
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: 0;
+  bottom: 0;
+  transform: translate(50%, 50%);
+  background-color: #1BA829;
+  cursor: move;
+  outline: none;
+  border: 1px solid #BCF788;
+  border-radius: 100%;
+
+  & .active{
+    background-color: #ec26cb;
+  }
+    
+}
+ 

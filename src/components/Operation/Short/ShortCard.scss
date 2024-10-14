@@ -1,0 +1,125 @@
+.container {
+    max-width: 1170px;
+    max-height: 500px;
+    margin: auto;
+    padding: 0 15px;
+    overflow-y: scroll;
+}
+
+.mtb-3 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.tm-table-flex {
+    --bs-table-bg: none;
+    --bs-border-width: 0;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-collapse: collapse;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .tm-table-flex__row {
+        display: flex;
+        flex-direction: row;
+
+        .tm-table-flex__cell {
+            width: 100%;
+            flex: 1 1 auto;
+
+            &:nth-child(1) {
+                max-width: 50px;
+            }
+
+            &:nth-child(2) {
+                max-width: 100px;
+            }
+
+            &:nth-child(3) {
+                max-width: 150px;
+            }
+
+            &:nth-child(4) {
+                max-width: 200px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            &:nth-child(5) {
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    &.tm-table-flex--sticky-head {
+        .tm-table-flex__head {
+            position: sticky;
+            top: 0;
+        }
+    }
+
+    &.tm-table-flex--sticky-foot {
+        .tm-table-flex__foot {
+            position: sticky;
+            bottom: 0;
+        }
+    }
+
+    &.tm-table-flex--theme-default {
+        .tm-table-flex__head {
+            background-color: var(--contrast-color);
+            color: #fff;
+            text-align: center;
+
+            .tm-table-flex__cell {
+                padding: 10px 0;
+
+                &:nth-child(odd) {
+                    background-color: #4f585f;
+                }
+            }
+        }
+        .tm-table-flex__body {
+            text-align: center;
+
+            .tm-table-flex__row {
+                transition: all .3s;
+                cursor: pointer;
+
+                &:nth-child(even) {
+                    background-color: var(--light-grey-color);
+                }
+
+                &:hover {
+                    background-color: #ccc;
+                }
+
+                .tm-table-flex__cell {
+                    padding: 10px;
+
+                    &:not(:last-child) {
+                        border-right: 1px solid #ccc;
+                    }
+                }
+            }
+        }
+
+        .tm-table-flex__foot {
+            background-color: var(--contrast-color);
+            color: #fff;
+            text-align: center;
+
+            .tm-table-flex__cell {
+                padding: 10px 0;
+                
+                &:nth-child(odd) {
+                    background-color: #4f585f;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+.navbar {
+  background-color: var(--bkg-color) !important;
+
+  .nav-item {
+    .nav-link {
+      @media only screen and (min-width: 992px) {
+        padding: 1rem;
+      }
+
+      color:var(--nav-color);
+      transition: 0.3s all;
+      letter-spacing: 0.1rem;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+
+    .active {
+      color: var(--accent-color);
+    }
+
+    &:first-child {
+      .nav-link {
+        padding-left: 0;
+      }
+    }
+
+    .dropdown-menu {
+      background-color: var(--contrast-color) !important;
+      margin-top: 7px;
+      @media only screen and (max-width: 991.98px) {
+        padding-left: 1rem;
+      }
+    }
+
+    .dropdown-menu-end {
+      @media only screen and (min-width: 992px) {
+        margin-left: 0;
+        border: 0;
+      }
+    }
+  }
+
+  .dropdown {
+    cursor: pointer;
+  }
+}
