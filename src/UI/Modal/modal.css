@@ -1,0 +1,66 @@
+.modal-wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(30, 30, 30, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  color: #333;
+}
+
+.modal-window {
+  width: 300px;
+  background: white;
+  border-radius: 14px;
+  padding: 16px;
+  position: relative;
+}
+
+.modal-header {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 14px;
+}
+
+.modal-body {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.modal-footer {
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+  margin-top: 12px;
+  text-align: right;
+}
+
+.modal-close {
+  background-image: url(https://img.icons8.com/ios-filled/60/ffffff/close-window.png);
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-size: 30px;
+  position: absolute;
+  right: -34px;
+  top: -2px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: .2s;
+  opacity: .9;
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
+
+.modal-close:active {
+  opacity: .5;
+}
+
+.form input {
+  width: 292px !important;
+}

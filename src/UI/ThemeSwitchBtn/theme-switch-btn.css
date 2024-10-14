@@ -1,0 +1,8 @@
+.light-mode-btn { 
+  background: transparent;
+  border-radius: 10px;
+  border: 1px solid grey;
+  padding: 4px 12px;
+  cursor: pointer;
+  display: flex;
+}

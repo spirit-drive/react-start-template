@@ -1,0 +1,36 @@
+.card {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.layout_dark .card {
+  background-color: transparent;
+  border: 1px solid #f7f7f7;
+}
+
+.card h1 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 15px;
+  margin-left: 14px;
+}
+
+.category {
+  background: #ffffff;
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #666;
+  font-size: 10px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

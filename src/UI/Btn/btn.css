@@ -1,0 +1,42 @@
+.btn {
+  background: #1358bf;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 8px;
+  height: 24px;
+}
+
+.btn:disabled {
+  background: #87b0ed;
+  opacity: .5;
+  cursor: inherit;
+}
+
+.link-button {
+  border: 1px solid #87b0ed;
+  color: #1358bf;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  transition: .2s;
+}
+
+.link-button:hover {
+  background-color: #1358bf;
+  border-color: #1358bf;
+  color: white;
+}
+
+.link-button.danger {
+  color: white;
+  border: 1px solid red;
+  background-color: red;
+  opacity: .7;
+}
+
+.link-button.danger:hover {
+  opacity: 1;
+}

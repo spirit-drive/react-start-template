@@ -1,0 +1,46 @@
+.form label {
+  font-size: 12px;
+  margin-right: 12px;
+  width: 180px;
+  display: inline-block;
+  padding-top: 6px;
+}
+
+.form input,
+.form select {
+  font-size: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.form input[type='text'],
+.form input[type='password'] {
+  width: 320px;
+}
+
+.form select {
+  width: 320px;
+  outline: none;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  height: 28px;
+}
+
+.form input[type='number'] {
+  width: 80px;
+}
+
+.form input[type='radio'] + label {
+  width: auto;
+  padding-top: 3px;
+}
+
+.form .error-message {
+  color: red;
+  font-size: 10px;
+  padding-bottom: 0;
+}
+
+.form .invalid {
+  border-color: red;
+}
