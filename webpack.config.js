@@ -54,16 +54,16 @@ module.exports = (_, args) => {
           ],
         },
         {
-          test: /\.css$/,
+          test: /\.css$/i,
           use: [
             {
               loader: MiniCssExtractPlugin.loader,
             },
             'css-loader',
-          ],
-        },
+          ],         
+        },  
         {
-          test: /\.svg/,
+          test: /\.svg|\.jpg/,
           type: 'asset/inline',
         },
         {
@@ -74,11 +74,11 @@ module.exports = (_, args) => {
             },
             {
               loader: 'css-loader',
-              options: {
-                modules: {
-                  localIdentName: '[name]_[local]-[hash:base64:5]',
-                },
-              },
+              // options: {
+              //   modules: {
+              //     localIdentName: '[name]_[local]-[hash:base64:5]',
+              //   },
+              // },
             },
             'sass-loader',
           ],
