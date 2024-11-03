@@ -1,0 +1,40 @@
+.outer {
+  &_disabled {
+    opacity: 0.4;
+  }
+  color:rgb(31, 31, 31);
+}
+
+.title {
+  margin-bottom: 1em;
+}
+
+.picOuter {
+  position: relative;
+}
+
+.pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  cursor: pointer;
+  background: var(--color-main);
+}
+
+.input {
+  display: none;
+}
+
+i{
+  color: black;
+}
