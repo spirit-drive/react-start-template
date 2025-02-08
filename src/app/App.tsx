@@ -1,17 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { I18nextProvider } from 'react-i18next';
+import i18n from '../shared/i18n';
+import AppRouter from "src/app/routes/AppRouter";
+import {Layout} from "src/shared/components/Layout";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Текст писать тут
-        </p>
-      </header>
-    </div>
+    <I18nextProvider i18n={i18n}>
+      {/*<ThemeProvider>*/}
+        <Layout>
+          <AppRouter />
+        </Layout>
+      {/*</ThemeProvider>*/}
+    </I18nextProvider>
   );
 }
 

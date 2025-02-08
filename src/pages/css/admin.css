@@ -1,0 +1,79 @@
+.admin-page {
+    padding: 20px;
+}
+
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input,
+textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: green;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Распределяет блоки с промежутком между ними */
+    gap: 20px; /* Промежуток между блоками */
+    margin-top: 20px;
+}
+
+.left, .right {
+    flex: 1; /* Равное распределение ширины */
+    padding: 20px;
+    border: 1px solid #ccc; /* Граница для наглядности */
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Фон */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    max-width: 48%; /* Ограничение ширины */
+}
+
+.left {
+    align-self: flex-start; /* Для выравнивания по верхнему краю, если содержимое разное */
+}
+
+.right {
+    align-self: flex-start;
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Расположение блоков вертикально */
+    }
+
+    .left, .right {
+        max-width: 100%; /* Блоки занимают всю ширину */
+    }
+}

@@ -1,0 +1,17 @@
+body{
+    margin: 0!important;
+}
+.layout{
+    margin-top: 80px;
+    height: 100vh;
+}
+
+.theme-light {
+    background-color: #d7a8a8;
+    color: #000000;
+}
+
+.theme-dark {
+    background-color: #333333;
+    color: #d2a9a9;
+}

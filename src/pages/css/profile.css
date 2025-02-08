@@ -1,0 +1,70 @@
+/* Общий стиль страницы профиля */
+.profile-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Заголовок профиля */
+.profile-page h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Информация о профиле */
+.profile-page div {
+  margin-bottom: 20px;
+}
+
+.profile-page p {
+  font-size: 16px;
+  color: #555;
+  margin: 8px 0;
+}
+
+/* Кнопка "Выйти" */
+.logout-button {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #d9534f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Эффекты наведения и нажатия на кнопку */
+.logout-button:hover {
+  background-color: #c9302c;
+}
+
+.logout-button:active {
+  transform: scale(0.98);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 480px) {
+  .profile-page {
+    padding: 15px;
+  }
+
+  .profile-page h1 {
+    font-size: 20px;
+  }
+
+  .logout-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

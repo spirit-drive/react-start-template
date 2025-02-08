@@ -1,0 +1,15 @@
+.storybook-button {
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.storybook-button--type-one {
+    color: white;
+    background-color: #007bff;
+}
+.storybook-button--type-two {
+    color: white;
+    background-color: #c91e39;
+}
