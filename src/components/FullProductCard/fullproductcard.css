@@ -1,0 +1,10 @@
+img {
+    float: left;
+    margin-right: 20px; /* отступ между картинкой и текстом */
+}
+p {
+    margin-top: 0; /* убрать отступ сверху */
+}
+div {
+    max-width: 500px;
+}
