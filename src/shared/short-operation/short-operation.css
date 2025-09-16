@@ -1,0 +1,34 @@
+.short-operation {
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+    width: 120px;
+    border: 1px solid rgb(207, 202, 202);
+    border-radius: 3px;
+    padding: 5px;
+    box-shadow: 2px 2px 1px 1px rgb(212, 212, 212);
+}
+
+.short-container .sum {
+    font-size: xx-large;
+}
+
+.short-container .category {
+    font-size: smaller;
+    color: #25dc8a;
+}
+
+.short-container .name {
+    font-size: larger;
+}
+
+.short-container .desc {
+    font-size: smaller;
+    color: rgb(111, 117, 117);
+}
+
+.short-string {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

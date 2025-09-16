@@ -1,0 +1,36 @@
+.button-container {
+    padding: 2px;
+}
+
+.button-container .button {
+    border: 3px;
+    padding: 8px;
+    background-color: rgb(68, 125, 210);
+    color: #f4f1f1;
+    font-weight: bolder;
+}
+
+.button-container .button:active {
+    background-color: salmon;
+    color: white;
+}
+
+.button-container .input {
+    border: 0;
+    border-bottom: 1px solid #7b7474;
+    padding: 4px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.button-container .button-up {
+    padding: 5px 5px 5px 5px;
+}
+
+.button-container .button-down {
+    padding: 5px 5px 5px 5px;
+}

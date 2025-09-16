@@ -1,0 +1,26 @@
+.theme-toggle {
+    display: flex;
+}
+.theme-toggle button {
+    border: none;
+    padding: 10px 15px;
+    font-weight: bolder;
+}
+
+.theme-toggle.light-theme button {
+    background-color: #8070dd;
+    color: white;
+}
+
+.theme-toggle.light-theme button:active {
+    background-color: rgb(127, 139, 233);;
+}
+
+.theme-toggle.dark-theme button {
+    background-color: rgb(28, 36, 92);
+    color: white;
+}
+
+.theme-toggle.dark-theme button:active {
+    background-color: rgb(127, 139, 233);
+}

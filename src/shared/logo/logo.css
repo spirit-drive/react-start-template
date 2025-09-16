@@ -1,0 +1,25 @@
+#root {
+  --logo-width: 200px;
+}
+
+.wrapper{
+  margin: auto;
+  text-align: center;
+  width: var(--logo-width);
+  height: var(--logo-width);
+}
+.circle{
+  border-radius: 100%;
+  width: var(--logo-width);
+  height: var(--logo-width);
+  border: 1px solid #d51010;
+  display: block;
+  box-shadow: 0px 3px 1px #a42327;
+  cursor: pointer;
+}
+#text{
+  font: Arial;
+  font-size: calc(var(--logo-width) - 15%);
+  font-weight: solid;
+  color: #961313;
+}

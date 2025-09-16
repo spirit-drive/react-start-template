@@ -1,0 +1,200 @@
+@protocol = http
+@host = 19429ba06ff2.vps.myjino.ru
+@graphql =  http://cea3c11a3f62.vps.myjino.ru/graphql
+
+### Authentication
+### Register
+POST {{protocol}}://{{host}}/api/signup HTTP/1.1
+content-type: application/json
+
+{
+    "email": "user1@mail.com",
+    "password": "123123",
+    "commandId": "01984812-d9f2-720b-afe2-39617b164305"
+}
+
+### Signin
+POST {{protocol}}://{{host}}/api/signin HTTP/1.1
+content-type: application/json
+
+{
+    "email": "user@mail.com",
+    "password": "123123"
+}
+
+### BAD auth request
+POST {{protocol}}://{{host}}/api/signin HTTP/1.1
+content-type: application/json
+
+{
+    "email": "user123@mail.com",
+    "password": "123123"
+}
+
+
+###
+### GET Profile
+GET {{protocol}}://{{host}}/api/profile  HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODUyNTcyOGU4NzdhYzhhOWM0Y2JkZiIsImlhdCI6MTc1NjU3OTI2OCwiZXhwIjoxNzU3NDQzMjY4fQ.8agSGwFIyuxHpGXef_95I1-BVdpplSIbs951dJx1Hwc
+
+
+### Set name
+POST {{protocol}}://{{host}}/api/profile  HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODUyNTcyOGU4NzdhYzhhOWM0Y2JkZiIsImlhdCI6MTc1NjU3OTI2OCwiZXhwIjoxNzU3NDQzMjY4fQ.8agSGwFIyuxHpGXef_95I1-BVdpplSIbs951dJx1Hwc
+content-type: application/json
+
+{
+    "name": "John-a1"
+}
+
+### Change password
+POST {{protocol}}://{{host}}/api/profile/change-password  HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODUyNTcyOGU4NzdhYzhhOWM0Y2JkZiIsImlhdCI6MTc1NjU3OTI2OCwiZXhwIjoxNzU3NDQzMjY4fQ.8agSGwFIyuxHpGXef_95I1-BVdpplSIbs951dJx1Hwc
+content-type: application/json
+
+{
+    "password": "123123",
+    "newPassword": "Qwe-123"
+}
+
+
+###
+### Категории все
+GET {{protocol}}://{{host}}/api/categories
+
+### Категории команды
+GET {{protocol}}://{{host}}/api/categories
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODUyNTcyOGU4NzdhYzhhOWM0Y2JkZiIsImlhdCI6MTc1NzE4MjMzMiwiZXhwIjoxNzU4MDQ2MzMyfQ.qHiXGpOZPHovZpX93H02oM__A_LKlqQ2_wDuZW_wmzY
+
+### Новая категоря
+POST  {{protocol}}://{{host}}/api/categories
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODUyNTcyOGU4NzdhYzhhOWM0Y2JkZiIsImlhdCI6MTc1NzE4MjMzMiwiZXhwIjoxNzU4MDQ2MzMyfQ.qHiXGpOZPHovZpX93H02oM__A_LKlqQ2_wDuZW_wmzY
+content-type: application/json
+
+{
+    "name": "Category 1"
+}
+
+### Обновление категории
+PUT  {{protocol}}://{{host}}/api/categories/68bc7b588e877ac8a9c6a82c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODUyNTcyOGU4NzdhYzhhOWM0Y2JkZiIsImlhdCI6MTc1NzE4MjMzMiwiZXhwIjoxNzU4MDQ2MzMyfQ.qHiXGpOZPHovZpX93H02oM__A_LKlqQ2_wDuZW_wmzY
+content-type: application/json
+
+{
+    "name": "Category 2"
+}
+
+### удаление категории
+DELETE  {{protocol}}://{{host}}/api/categories/68bc7b588e877ac8a9c6a82c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODUyNTcyOGU4NzdhYzhhOWM0Y2JkZiIsImlhdCI6MTc1NzE4MjMzMiwiZXhwIjoxNzU4MDQ2MzMyfQ.qHiXGpOZPHovZpX93H02oM__A_LKlqQ2_wDuZW_wmzY
+
+
+### Категория по ID
+GET {{protocol}}://{{host}}/api/categories/651c26138a42911d60f0305d
+
+
+
+###
+### Продукты все
+GET {{protocol}}://{{host}}/api/products?pagination={"pageSize":2,"pageNumber":1}&sorting={"type":"ASC", "field":"name"}
+
+### Продукты команды
+GET {{protocol}}://{{host}}/api/products?pagination={"pageSize":2,"pageNumber":1}&sorting={"type":"ASC", "field":"name"}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODUyNTcyOGU4NzdhYzhhOWM0Y2JkZiIsImlhdCI6MTc1NzE4MjMzMiwiZXhwIjoxNzU4MDQ2MzMyfQ.qHiXGpOZPHovZpX93H02oM__A_LKlqQ2_wDuZW_wmzY
+
+###
+GET {{protocol}}://{{host}}/api/products/68bc7c208e877ac8a9c6a843
+
+
+### Создание нового продукта
+POST {{protocol}}://{{host}}/api/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODUyNTcyOGU4NzdhYzhhOWM0Y2JkZiIsImlhdCI6MTc1NzE4MjMzMiwiZXhwIjoxNzU4MDQ2MzMyfQ.qHiXGpOZPHovZpX93H02oM__A_LKlqQ2_wDuZW_wmzY
+content-type: application/json
+
+{
+  "name": "111",
+  "price": 100,
+  "categoryId": "68bc7bc78e877ac8a9c6a83e"
+}
+
+### Создание нового продукта ERROR!
+POST {{protocol}}://{{host}}/api/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODUyNTcyOGU4NzdhYzhhOWM0Y2JkZiIsImlhdCI6MTc1NzE4MjMzMiwiZXhwIjoxNzU4MDQ2MzMyfQ.qHiXGpOZPHovZpX93H02oM__A_LKlqQ2_wDuZW_wmzY
+content-type: application/json
+
+{
+  "price": 100,
+  "categoryId": "68bc7bc78e877ac8a9c6a83e"
+}
+
+### Remove product
+DELETE {{protocol}}://{{host}}/api/products/68bc7c208e877ac8a9c6a843
+
+### Update product
+PUT {{protocol}}://{{host}}/api/products/68bc7c208e877ac8a9c6a843
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODUyNTcyOGU4NzdhYzhhOWM0Y2JkZiIsImlhdCI6MTc1NzE4MjMzMiwiZXhwIjoxNzU4MDQ2MzMyfQ.qHiXGpOZPHovZpX93H02oM__A_LKlqQ2_wDuZW_wmzY
+content-type: application/json
+
+{
+  "name": "112",
+  "price": 200,
+  "categoryId": "68bc7bc78e877ac8a9c6a83e"
+}
+
+### Update product for selected fields
+PATCH {{protocol}}://{{host}}/api/products/68bc7c208e877ac8a9c6a843
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODUyNTcyOGU4NzdhYzhhOWM0Y2JkZiIsImlhdCI6MTc1NzE4MjMzMiwiZXhwIjoxNzU4MDQ2MzMyfQ.qHiXGpOZPHovZpX93H02oM__A_LKlqQ2_wDuZW_wmzY
+content-type: application/json
+
+{
+  "price": 300
+}
+
+
+###
+### Заказы
+GET {{protocol}}://{{host}}/api/orders?pagination={"pageSize":2,"pageNumber":1}&sorting={"type":"ASC", "field":"createdAt"}
+
+### Заказы команды
+GET {{protocol}}://{{host}}/api/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODUyNTcyOGU4NzdhYzhhOWM0Y2JkZiIsImlhdCI6MTc1NzE4MjMzMiwiZXhwIjoxNzU4MDQ2MzMyfQ.qHiXGpOZPHovZpX93H02oM__A_LKlqQ2_wDuZW_wmzY
+
+### Заказ
+GET {{protocol}}://{{host}}/api/orders/68c185028e877ac8a9c6c03e
+
+### Создает новый заказ
+POST {{protocol}}://{{host}}/api/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODUyNTcyOGU4NzdhYzhhOWM0Y2JkZiIsImlhdCI6MTc1NzE4MjMzMiwiZXhwIjoxNzU4MDQ2MzMyfQ.qHiXGpOZPHovZpX93H02oM__A_LKlqQ2_wDuZW_wmzY
+content-type: application/json
+
+{
+  "products": [{
+    "id": "68bc7c208e877ac8a9c6a843",
+    "quantity": 10
+  }]
+}
+
+### Удаляет заказ
+DELETE {{protocol}}://{{host}}/api/orders/68c1b8da8e877ac8a9c6c123
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODUyNTcyOGU4NzdhYzhhOWM0Y2JkZiIsImlhdCI6MTc1NzE4MjMzMiwiZXhwIjoxNzU4MDQ2MzMyfQ.qHiXGpOZPHovZpX93H02oM__A_LKlqQ2_wDuZW_wmzY
+
+### Обновляет заказ
+PATCH {{protocol}}://{{host}}/api/orders/68c185028e877ac8a9c6c03e
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODUyNTcyOGU4NzdhYzhhOWM0Y2JkZiIsImlhdCI6MTc1NzE4MjMzMiwiZXhwIjoxNzU4MDQ2MzMyfQ.qHiXGpOZPHovZpX93H02oM__A_LKlqQ2_wDuZW_wmzY
+content-type: application/json
+
+{
+  "status": "processing"
+}
+
+###
+### Операции
+GET {{protocol}}://{{host}}/api/operations
+
+###
+GET {{protocol}}://{{host}}/api/operations/651b1a5bba9cfae1c95bd3a6
+
+
+###
+### Файлы
+GET {{protocol}}://{{host}}/api/upload

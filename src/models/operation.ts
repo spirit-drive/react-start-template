@@ -1,0 +1,1 @@
+type Operation = Profit | Cost;

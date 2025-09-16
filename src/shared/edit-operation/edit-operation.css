@@ -1,0 +1,65 @@
+.edit-operation {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    border: 1px solid rgb(207, 202, 202);
+    border-radius: 3px;
+    padding: 5px;
+    box-shadow: 2px 2px 1px 1px rgb(212, 212, 212);
+}
+
+.edit-header {
+    display: flex;
+    width: 100%;
+}
+
+.edit-header .sum {
+    flex-grow: 1;
+    font-size: xx-large;
+    font-weight: bolder;
+    width: 50%;
+}
+
+.edit-header .date {
+    flex-grow: 1;
+    font-weight: lighter;
+    text-align: center;
+    width: 50%;
+}
+
+.category {
+    font-size: smaller;
+    color: #25dc8a;
+}
+
+.edit-container .name {
+    font-size: larger;
+}
+
+.edit-container .desc {
+    font-size: smaller;
+    color: rgb(111, 117, 117);
+}
+
+.edit-footer {
+    display: flex;
+    justify-content: right;
+}
+
+.short-string {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.edit-footer .edit-button {
+    border: 0;
+    padding: 2px;
+    background-color: #70ddac;
+    font-weight: bolder;
+    color: white;
+}
+
+.edit-footer .edit-button:active {
+    background-color: #419f75;
+}

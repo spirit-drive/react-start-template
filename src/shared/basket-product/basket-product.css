@@ -1,0 +1,68 @@
+.basket-product {
+    display: flex;
+    width: 290px;
+    border: 1px solid rgb(207, 202, 202);
+    border-radius: 3px;
+    padding: 5px;
+    box-shadow: 2px 2px 1px 1px rgb(212, 212, 212);
+}
+
+.basket-product .image {
+    height: 80px;
+    width: 80px;
+    padding: 2px;
+}
+
+.basket-product img {
+    height: 78px;
+    width: 78px;
+}
+
+.basket-product .product {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 2px;
+    width: 110px;
+}
+
+.basket-product .name {
+    font-size: x-large;
+}
+
+.basket-string {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.basket-product .basket {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 2px;
+}
+
+.basket-product .price {
+    font-size: xx-large;
+    font-weight: bolder;
+    padding: 2px;
+}
+
+.basket {
+    display: flex;
+    justify-content: center;
+}
+
+.basket .basket-button {
+    border: 1px solid salmon;
+    background-color: white;
+    height: 45px;
+    width: 65px;
+    color: salmon;
+}
+
+.basket .basket-button:active {
+    background-color: salmon;
+    color: white;
+}

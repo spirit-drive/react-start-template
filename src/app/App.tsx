@@ -1,18 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC, useContext, useEffect } from "react"
+import "./App.css"
+import "src/i18n/config"
+import { useTranslation } from "react-i18next"
+import { useDispatch } from 'react-redux'
 
-function App() {
+import { LanguageContext } from "src/context/lang-provider/lang-provider"
+import { appActions } from "src/store/app"
+import AppRoutes from "./Routes"
+
+
+
+const App: FC = () => {
+  const { language } = useContext(LanguageContext);
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    document.title = t("title")
+  }, [language])
+
+  useDispatch()(appActions.set())
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Текст писать тут
-        </p>
-      </header>
-    </div>
-  );
+    <AppRoutes />
+  )
 }
 
 export default App;

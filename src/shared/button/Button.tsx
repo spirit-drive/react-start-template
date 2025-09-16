@@ -13,7 +13,7 @@ interface ButtonProps {
  * Primary UI component for user interaction
  */
 
-export const Button: FC<ButtonProps> = ({ primary, backgroundColor, size, label, ...props }) => {
+export const Button: FC<ButtonProps> = ({ primary, backgroundColor, size, label }) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
 
   const onClick = () => {
@@ -26,7 +26,6 @@ export const Button: FC<ButtonProps> = ({ primary, backgroundColor, size, label,
       className={cn('storybook-button', `storybook-button--${size}`, mode)}
       style={{ backgroundColor: backgroundColor || 'green' }}
       onClick={onClick}
-      {...props}
     >
       {label}
     </button>

@@ -1,0 +1,20 @@
+.input-button {
+    width: 120px;
+}
+
+.input-button-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-button-container button {
+    border: 0;
+    padding: 2px;
+    background-color: #70ddac;
+    font-weight: bolder;
+    color: white;
+}
+
+.input-button-container button:active {
+    background-color: #419f75;
+}

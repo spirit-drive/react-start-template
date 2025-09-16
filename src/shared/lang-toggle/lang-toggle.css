@@ -1,0 +1,20 @@
+.language-toggle {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.language-toggle button {
+    background-color: rgb(127, 139, 233);
+    border: none;
+    padding: 10px 15px;
+}
+
+.language-toggle button.selected {
+    background-color: rgb(28, 36, 92);
+    color: white;
+}
+
+.language-toggle button:hover {
+    background-color: rgb(75, 84, 151);
+    color: white;
+}

@@ -1,0 +1,38 @@
+.app-logo {
+    height: 48px;
+    width: 48px;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .app-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.header-link {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.header-tools {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: auto;
+}
+
+.layout-header {
+    display: flex;
+}
+
+.layout-content {
+    display: flex;
+    justify-content: center;
+    padding: 36px 48px;
+}
+
+.menu {
+    flex-grow: 1;
+    flex-shrink: 1;
+}

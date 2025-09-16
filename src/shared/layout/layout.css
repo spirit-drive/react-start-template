@@ -1,0 +1,28 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 600px;
+}
+
+.content {
+    display: flex;
+    flex-grow: 1;
+}
+
+.content .left-side {
+    display: flex;
+    flex-grow: 1;
+    background-color: rgb(242, 235, 224);
+}
+
+.content .center {
+    display: flex;
+    flex-grow: 3;
+    background-color: rgb(202, 195, 185);
+}
+
+.layout .footer {
+    height: 30px;
+    background-color: rgb(147, 145, 142);
+}

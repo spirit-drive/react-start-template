@@ -1,0 +1,7 @@
+.scrollBox {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: min-content;
+    overflow: auto;
+}

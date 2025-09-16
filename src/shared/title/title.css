@@ -1,0 +1,11 @@
+.root {
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.required::after {
+  display: inline-block;
+  padding-left: 4px;
+  content: '*';
+  font-size: 12px;
+}

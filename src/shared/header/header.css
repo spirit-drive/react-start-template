@@ -1,0 +1,8 @@
+.header {
+    position: sticky;
+    background-color: rgb(240, 240, 233);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
